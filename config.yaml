@@ -2,7 +2,7 @@
 # Benchmark collection configuration
 
 benchmark:
-  name: "Multi-SABR"
+  name: "MULTI-SABR-2026"
   version: "1.0.0"
   description: "Cross-Domain Selective Attention Benchmark for Reasoning — measures LLM attention consistency across four subject domains"
   track: "Attention"

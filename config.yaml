@@ -1,0 +1,60 @@
+# Multi-SABR: Cross-Domain Selective Attention Benchmark
+# Benchmark collection configuration
+
+benchmark:
+  name: "Multi-SABR"
+  version: "1.0.0"
+  description: "Cross-Domain Selective Attention Benchmark for Reasoning — measures LLM attention consistency across four subject domains"
+  track: "Attention"
+  type: "collection"
+  competition: "kaggle-measuring-agi"
+
+domains:
+  sabr:
+    name: "SABR"
+    subject: "General Knowledge"
+    dataset: "shepscientific/sabr-selective-attention-data"
+    benchmark: "shepscientific/sabr-selective-attention-benchmark-for-reasoning"
+    github: "https://github.com/shepsci/SABR"
+    evals: 280
+
+  bio_sabr:
+    name: "Bio-SABR"
+    subject: "Biosafety / Biosecurity"
+    dataset: "shepscientific/bio-sabr-biosafety-attention-data"
+    benchmark: "shepscientific/bio-sabr-biosafety-selective-attention-benchmark"
+    github: "https://github.com/shepsci/bio-sabr"
+    evals: 280
+
+  cyber_sabr:
+    name: "Cyber-SABR"
+    subject: "Cybersecurity / AI Security"
+    dataset: "shepscientific/cyber-sabr-cybersecurity-attention-data"
+    benchmark: "shepscientific/cyber-sabr-cybersecurity-selective-attention-benc"
+    github: "https://github.com/shepsci/cyber-sabr"
+    evals: 280
+
+  chem_sabr:
+    name: "Chem-SABR"
+    subject: "Chemical Safety / Chemical Security"
+    dataset: "shepscientific/chem-sabr-chemical-safety-attention-data"
+    benchmark: "shepscientific/chem-sabr-chemical-safety-selective-attention-benchmark"
+    github: "https://github.com/shepsci/chem-sabr"
+    evals: 280
+
+scoring:
+  total_evals: 1120
+  domain_weight: 0.25  # Equal weight per domain
+  refusal_score: 0.0   # Models that refuse a domain score 0% for that domain
+  composite: "mean_of_domain_composites"
+
+  per_domain:
+    distractor_robustness:
+      weight: 0.40
+      metric: "attention_robustness_score"
+    source_selective:
+      weight: 0.30
+      metric: "accuracy"
+    attentional_spotlight:
+      weight: 0.30
+      metric: "mean_claim_f1"

@@ -4,11 +4,12 @@
 
 ### Resources
 
+- **Benchmark Task:** [Cyber-SABR on Kaggle Benchmarks](https://www.kaggle.com/benchmarks/shepscientific/cyber-sabr-cybersecurity-selective-attention-benc)
 - **Benchmark Notebook:** [Cyber-SABR Benchmark on Kaggle](https://www.kaggle.com/code/shepscientific/cyber-sabr-benchmark)
 - **Dataset:** [Cyber-SABR Cybersecurity Attention Data on Kaggle](https://www.kaggle.com/datasets/shepscientific/cyber-sabr-cybersecurity-attention-data)
-- **GitHub:** [github.com/shepsci/cyber-sabr](https://github.com/shepsci/cyber-sabr)
-- **Benchmark Collection:** [Cyber-SABR on Kaggle Benchmarks](https://www.kaggle.com/benchmarks/shepscientific/cyber-sabr-cybersecurity-selective-attention-benc)
-- **Related benchmarks:** [SABR: Selective Attention Benchmark for Reasoning](https://www.kaggle.com/benchmarks/shepscientific/sabr-selective-attention-benchmark-for-reasoning) | [Bio-SABR](https://www.kaggle.com/benchmarks/shepscientific/bio-sabr-biosafety-selective-attention-benchmark) | [Chem-SABR](https://www.kaggle.com/benchmarks/shepscientific/chem-sabr-chemical-safety-selective-attention-benchmark)
+- **GitHub:** [github.com/shepsci/multi-sabr](https://github.com/shepsci/multi-sabr/tree/main/benchmarks/cyber-sabr)
+- **Multi-SABR Collection:** [Multi-SABR on Kaggle Benchmarks](https://www.kaggle.com/benchmarks/shepscientific/multi-sabr-cross-domain-selective-attention-benchm)
+- **Related benchmarks:** [SABR](https://www.kaggle.com/benchmarks/shepscientific/sabr-selective-attention-benchmark-for-reasoning) | [Bio-SABR](https://www.kaggle.com/benchmarks/shepscientific/bio-sabr-biosafety-selective-attention-benchmark) | [Chem-SABR](https://www.kaggle.com/benchmarks/shepscientific/chem-sabr-chemical-safety-selective-attention-benchmark)
 
 ### Problem Statement
 
@@ -92,7 +93,7 @@ Cyber-SABR produces the strongest discriminatory signal across all SABR variants
 11. Mazeika, M., et al. (2024). ["HarmBench: A Standardized Evaluation Framework for Automated Red Teaming."](https://arxiv.org/abs/2402.04249) *ICML 2024.*
 12. Chao, P., et al. (2024). ["JailbreakBench: An Open Robustness Benchmark for Jailbreaking Large Language Models."](https://arxiv.org/abs/2404.01318) *NeurIPS 2024 D&B Track.*
 13. NIST. (2024). ["AI 600-1: AI Risk Management Framework: Generative AI Profile."](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf)
-14. Zhang, J., et al. (2025). ["CVE-Bench: A Benchmark for AI Agents' Ability to Exploit Real-World Web Application Vulnerabilities."](https://arxiv.org/abs/2503.17332) arXiv.
+14. Zhu, Y., et al. (2025). ["CVE-Bench: A Benchmark for AI Agents' Ability to Exploit Real-World Web Application Vulnerabilities."](https://arxiv.org/abs/2503.17332) arXiv.
 15. Google DeepMind. (2025). ["A Framework for Evaluating Emerging Cyberattack Capabilities of AI."](https://arxiv.org/abs/2503.11917) arXiv.
 16. Stroop, J.R. (1935). ["Studies of interference in serial verbal reactions."](https://doi.org/10.1037/h0054651) *Journal of Experimental Psychology*, 18(6), 643–662.
 17. Cherry, E.C. (1953). ["Some experiments on the recognition of speech, with one and with two ears."](https://doi.org/10.1121/1.1907229) *Journal of the Acoustical Society of America*, 25(5), 975–979.

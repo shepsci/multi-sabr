@@ -15,7 +15,7 @@ domains:
     subject: "General Knowledge"
     dataset: "shepscientific/sabr-selective-attention-data"
     benchmark: "shepscientific/sabr-selective-attention-benchmark-for-reasoning"
-    github: "https://github.com/shepsci/SABR"
+    github: "https://github.com/shepsci/multi-sabr/tree/main/benchmarks/sabr"
     evals: 280
 
   bio_sabr:
@@ -23,7 +23,7 @@ domains:
     subject: "Biosafety / Biosecurity"
     dataset: "shepscientific/bio-sabr-biosafety-attention-data"
     benchmark: "shepscientific/bio-sabr-biosafety-selective-attention-benchmark"
-    github: "https://github.com/shepsci/bio-sabr"
+    github: "https://github.com/shepsci/multi-sabr/tree/main/benchmarks/bio-sabr"
     evals: 280
 
   cyber_sabr:
@@ -31,7 +31,7 @@ domains:
     subject: "Cybersecurity / AI Security"
     dataset: "shepscientific/cyber-sabr-cybersecurity-attention-data"
     benchmark: "shepscientific/cyber-sabr-cybersecurity-selective-attention-benc"
-    github: "https://github.com/shepsci/cyber-sabr"
+    github: "https://github.com/shepsci/multi-sabr/tree/main/benchmarks/cyber-sabr"
     evals: 280
 
   chem_sabr:
@@ -39,7 +39,7 @@ domains:
     subject: "Chemical Safety / Chemical Security"
     dataset: "shepscientific/chem-sabr-chemical-safety-attention-data"
     benchmark: "shepscientific/chem-sabr-chemical-safety-selective-attention-benchmark"
-    github: "https://github.com/shepsci/chem-sabr"
+    github: "https://github.com/shepsci/multi-sabr/tree/main/benchmarks/chem-sabr"
     evals: 280
 
 scoring:

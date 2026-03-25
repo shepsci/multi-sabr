@@ -4,10 +4,12 @@
 
 ### Resources
 
+- **Benchmark Task:** [Bio-SABR on Kaggle Benchmarks](https://www.kaggle.com/benchmarks/shepscientific/bio-sabr-biosafety-selective-attention-benchmark)
 - **Benchmark Notebook:** [Bio-SABR Benchmark on Kaggle](https://www.kaggle.com/code/shepscientific/new-benchmark-task-13123)
 - **Dataset:** [Bio-SABR Biosafety Attention Data on Kaggle](https://www.kaggle.com/datasets/shepscientific/bio-sabr-biosafety-attention-data)
-- **GitHub:** [github.com/shepsci/bio-sabr](https://github.com/shepsci/bio-sabr)
-- **Related benchmark:** [SABR: Selective Attention Benchmark for Reasoning](https://www.kaggle.com/benchmarks/shepscientific/sabr-selective-attention-benchmark-for-reasoning)
+- **GitHub:** [github.com/shepsci/multi-sabr](https://github.com/shepsci/multi-sabr/tree/main/benchmarks/bio-sabr)
+- **Multi-SABR Collection:** [Multi-SABR on Kaggle Benchmarks](https://www.kaggle.com/benchmarks/shepscientific/multi-sabr-cross-domain-selective-attention-benchm)
+- **Related benchmarks:** [SABR](https://www.kaggle.com/benchmarks/shepscientific/sabr-selective-attention-benchmark-for-reasoning) | [Cyber-SABR](https://www.kaggle.com/benchmarks/shepscientific/cyber-sabr-cybersecurity-selective-attention-benc) | [Chem-SABR](https://www.kaggle.com/benchmarks/shepscientific/chem-sabr-chemical-safety-selective-attention-benchmark)
 
 ### Problem Statement
 

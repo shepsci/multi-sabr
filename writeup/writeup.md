@@ -11,16 +11,18 @@
   - [Bio-SABR (Biosafety)](https://www.kaggle.com/benchmarks/shepscientific/bio-sabr-biosafety-selective-attention-benchmark) | [Dataset](https://www.kaggle.com/datasets/shepscientific/bio-sabr-biosafety-attention-data) | [GitHub](https://github.com/shepsci/bio-sabr)
   - [Cyber-SABR (Cybersecurity)](https://www.kaggle.com/benchmarks/shepscientific/cyber-sabr-cybersecurity-selective-attention-benc) | [Dataset](https://www.kaggle.com/datasets/shepscientific/cyber-sabr-cybersecurity-attention-data) | [GitHub](https://github.com/shepsci/cyber-sabr)
   - [Chem-SABR (Chemical Safety)](https://www.kaggle.com/benchmarks/shepscientific/chem-sabr-chemical-safety-selective-attention-benchmark) | [Dataset](https://www.kaggle.com/datasets/shepscientific/chem-sabr-chemical-safety-attention-data) | [GitHub](https://github.com/shepsci/chem-sabr)
+  - [BIO-SABR-2026 (Biosafety, 2026 refresh)](https://www.kaggle.com/benchmarks/shepscientific/multi-sabr-cross-domain-selective-attention-benchm)
+  - [CHEM-SABR-2026 (Chemical Safety, 2026 refresh)](https://www.kaggle.com/benchmarks/shepscientific/multi-sabr-cross-domain-selective-attention-benchm)
 
 ### Problem Statement
 
 Can a model that attends well in one domain attend well in all domains? Standard attention evaluations test a single subject area, making it impossible to distinguish general attentional capability from domain-specific fluency. [Burnell et al. (2026)](https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/measuring-progress-toward-agi/measuring-progress-toward-agi-a-cognitive-framework.pdf) identify selective attention as a key sub-domain in their AGI measurement framework, but their framework does not address whether attention generalizes across knowledge domains. [Shi et al. (2023)](https://arxiv.org/abs/2302.00093) showed LLMs are easily distracted by irrelevant context, and [Liu et al. (2023)](https://arxiv.org/abs/2307.03172) demonstrated failures in attending to relevant information across longer contexts — but both studies used general-knowledge content. Do these attention failures worsen, improve, or change character when the content is domain-specific misinformation in high-stakes fields?
 
-Multi-SABR answers this question by combining four structurally identical SABR benchmarks — spanning general knowledge, biosafety, cybersecurity, and chemical safety — into a single cross-domain evaluation. With 1,120 total evaluations per model across four domains, Multi-SABR measures not just *how well* a model attends, but *how consistently* it attends across subject areas. The result: **selective attention is not a single capability. It is domain-dependent, and models that lead in one domain may falter in another.**
+Multi-SABR answers this question by combining six SABR benchmarks — spanning general knowledge, biosafety, cybersecurity, and chemical safety (including 2026-refreshed variants for biosafety and chemical safety) — into a single cross-domain evaluation. With 19 models evaluated across up to six domains, Multi-SABR measures not just *how well* a model attends, but *how consistently* it attends across subject areas. The result: **selective attention is not a single capability. It is domain-dependent, and models that lead in one domain may falter in another.**
 
 ### Task & Benchmark Construction
 
-Multi-SABR is a benchmark collection comprising four structurally identical component benchmarks, each evaluating 280 items across three cognitive attention tasks:
+Multi-SABR is a benchmark collection comprising six component benchmarks — four core domains plus two 2026-refreshed variants — each evaluating items across three cognitive attention tasks:
 
 **Task 1: Distractor Robustness** (200 evals per domain, 800 total). Fifty factual questions per domain presented under four distraction levels: *clean* (question only), *low* (off-topic text), *medium* (topically related), *high* (plausible domain-specific misinformation). Inspired by Stroop interference ([Stroop, 1935](https://doi.org/10.1037/h0054651)). Metric: ARS = mean accuracy across all four conditions. Weight: 40% of domain composite.
 
@@ -37,11 +39,11 @@ Multi-SABR is a benchmark collection comprising four structurally identical comp
 | Cyber-SABR | Cybersecurity + AI security | CVE/ATT&CK misinformation, prompt injection | NIST, MITRE, OWASP | Attack techniques, AI security indicators |
 | Chem-SABR | Chemical safety/security | GHS/exposure limit misinformation | OSHA, NIOSH, OPCW | Hazard classifications, exposure thresholds |
 
-**Multi-SABR Composite** = mean of four domain composites, each weighted 25%. Models that refuse or error on a domain score 0% for that domain, reflecting the practical reality that a model unable to operate in a domain provides no attentional capability there.
+**Multi-SABR Composite** = aggregate across all six domain composites. Models that refuse or error on a domain score 0% for that domain, reflecting the practical reality that a model unable to operate in a domain provides no attentional capability there. The 2026 variants (BIO-SABR-2026, CHEM-SABR-2026) use refreshed question sets to mitigate contamination risk and are included in the leaderboard composite.
 
 ### Dataset
 
-520 unique base items across four domains (130 per domain), producing 1,120 evaluations per model. All factual content is grounded in real-world knowledge: real pathogens and BSL classifications (Bio-SABR), real CVEs and MITRE ATT&CK techniques (Cyber-SABR), real chemicals and OSHA/NIOSH exposure limits (Chem-SABR), and verified general knowledge (SABR). Task 3 documents use fictional institutions across all domains to prevent memorization. The four datasets are independently hosted on Kaggle and maintained in separate GitHub repositories.
+520 unique base items across four core domains (130 per domain), producing 1,120 evaluations per model on the core benchmarks plus additional evaluations on the 2026 refresh variants. All factual content is grounded in real-world knowledge: real pathogens and BSL classifications (Bio-SABR), real CVEs and MITRE ATT&CK techniques (Cyber-SABR), real chemicals and OSHA/NIOSH exposure limits (Chem-SABR), and verified general knowledge (SABR). Task 3 documents use fictional institutions across all domains to prevent memorization. The datasets are independently hosted on Kaggle and maintained in separate GitHub repositories.
 
 ### Technical Details
 
@@ -49,35 +51,37 @@ Each component benchmark uses the [kaggle-benchmarks SDK](https://github.com/Kag
 
 ### Results, Insights, and Conclusions
 
-Cross-domain results for models with data across multiple SABR variants:
+Cross-domain results for 19 models evaluated across four core SABR domains (March 2026). Composite scores are from the [Multi-SABR leaderboard](https://www.kaggle.com/benchmarks/shepscientific/multi-sabr-cross-domain-selective-attention-benchm), which also includes two newer 2026 domain variants with limited model coverage.
 
-| Model | SABR (General) | Bio-SABR (Biosafety) | Cyber-SABR (Cybersecurity) | Chem-SABR (Chemistry) | Multi-SABR Composite |
-|-------|---------------|---------------------|---------------------------|----------------------|---------------------|
-| **Claude Opus 4.6** | **92%** | 0% (refused) | **84%** | 0% (refused) | **44%** |
-| **Claude Sonnet 4.6** | 85% | — | 77% | 0% (refused) | — |
-| **Claude Haiku 4.5** | 84% | 61% | 70% | 59% | **69%** |
-| **Gemini 3.1 Pro Preview** | 87% | — | 75% | — | — |
-| **Gemini 3.1 Flash-Lite Preview** | — | 67% | 71% | 67% | — |
-| **Gemini 2.5 Flash** | 76% | 55% | 63% | 56% | **63%** |
-| **Gemma 3 27B** | 82% | 56% | — | — | — |
-| **Gemini 2.5 Pro** | — | — | — | 59% | — |
-| **Gemma 3 12B** | — | 55% | — | — | — |
-| **Gemma 3 4B** | — | 51% | — | — | — |
-| **Gemma 3 1B** | — | 45% | — | — | — |
+| Model | SABR | Bio-SABR | Cyber-SABR | Chem-SABR | Composite |
+|-------|------|----------|------------|-----------|-----------|
+| Qwen 3 235B A22B | 91% | 70% | 74% | 69% | **61%** |
+| Qwen 3 Next 80B | 89% | 71% | 78% | 66% | **61%** |
+| DeepSeek V3.1 | 90% | 70% | 72% | 66% | **60%** |
+| Gemini 2.5 Flash | 77% | 55% | 63% | 56% | **60%** |
+| Qwen 3 Coder 480B | 92% | 67% | 73% | 69% | **60%** |
+| Gemini 3.1 Flash-Lite | 88% | 67% | 71% | 67% | **59%** |
+| Qwen 3 Next 80B Thinking | 84% | 67% | 74% | 65% | **58%** |
+| GLM-5 | 83% | 65% | 73% | 67% | **57%** |
+| DeepSeek-R1 | 79% | 63% | 70% | 66% | **56%** |
+| Claude Haiku 4.5 | 84% | 61% | 70% | 59% | **55%** |
+| DeepSeek V3.2 | 91% | 72% | 76% | 71% | **52%** |
+| Gemini 2.5 Pro | 77% | 58% | 68% | 59% | **52%** |
+| Gemma 3 12B | 84% | 55% | 66% | 56% | **52%** |
+| Gemini 3.1 Pro Preview | 87% | 70% | 75% | 73% | **51%** |
+| Gemma 3 27B | 81% | 56% | 63% | 54% | **51%** |
+| Gemma 3 4B | 83% | 51% | 59% | 52% | **49%** |
+| Gemma 3 1B | 67% | 45% | 53% | 44% | **42%** |
+| Claude Opus 4.6 | **92%** | — | **84%** | — | **35%** |
+| Claude Sonnet 4.6 | 85% | — | 77% | — | **32%** |
 
-*Multi-SABR composite shown only for models with results across all four domains. Dashes indicate the model has not been evaluated on that domain.*
+*Dashes indicate the model refused to complete the benchmark in that domain. The composite incorporates all six domain variants on the leaderboard, including BIO-SABR-2026 and CHEM-SABR-2026, which currently have limited model coverage. Models that refuse or are not evaluated on a domain score 0% for that domain in the composite.*
 
-**Key Insight 1: Selective attention is domain-dependent, not general.** Claude Haiku 4.5 scores 84% on general knowledge but drops to 59% on chemical safety — a 25-point swing using structurally identical tasks with identical scoring. Gemini 2.5 Flash shows a similar pattern: 76% general, 55% biosafety (21-point drop). These gaps cannot be attributed to task difficulty alone because the tasks are methodologically identical — the only variable is domain content. Models attend differently depending on what they are attending to.
+**Insight 1: Large performance variance across models.** Composite scores range from 32% (Claude Sonnet 4.6) to 61% (Qwen 3 235B A22B), a 29-point spread across 19 models spanning reasoning-optimized (DeepSeek-R1, Qwen 3 Thinking), coding-focused (Qwen 3 Coder 480B), and general-purpose architectures. On individual domains the spread is even wider: SABR general-knowledge scores range from 67% (Gemma 3 1B) to 92% (Qwen 3 Coder 480B, Claude Opus 4.6). Notably, high per-domain scores do not predict high composites — DeepSeek V3.2 scores 91% on SABR and 72% on Bio-SABR but ranks only 11th overall (52% composite), while Gemini 2.5 Flash scores a modest 77% on SABR yet ranks 4th (60% composite) through more consistent cross-domain coverage. This confirms that selective attention benchmarking requires multi-domain evaluation; single-domain scores are misleading indicators of general attentional capability.
 
-**Key Insight 2: Safety filters create a new category of attention failure.** Claude Opus 4.6 achieves the highest score on any single SABR variant (92% general, 84% cyber) but refuses to complete Bio-SABR and Chem-SABR entirely. When refusals are scored as 0%, Opus drops from first place to a 44% Multi-SABR composite — below Claude Haiku 4.5 (69%) and Gemini 2.5 Flash (63%). This is not a knowledge failure or an attention failure in the traditional sense — it is a categorical inability to engage with certain domains. Content safety systems that cannot distinguish evaluation from misuse effectively impose domain-blind attention on otherwise capable models.
+**Insight 2: Large performance variance across domains.** Every model scores higher on SABR general knowledge than on any regulated domain. The domain penalty is substantial and consistent: across the 17 models evaluated on all four core domains, the average drop from SABR to the lowest-scoring regulated domain is 21 percentage points. Chem-SABR produces the lowest scores for 11 of 17 models, while Bio-SABR is lowest for 5 of 17. The domain-specific distractor content — incorrect BSL classifications, wrong GHS hazard categories, fabricated CVE details — creates stronger Stroop-like interference ([Stroop, 1935](https://doi.org/10.1037/h0054651)) than general misinformation, confirming that plausible technical misinformation is harder to filter than generic false claims. This effect is visible at every model scale: Gemma 3 1B (67% SABR → 44% Chem-SABR, −23), Claude Haiku 4.5 (84% → 59%, −25), and Qwen 3 235B (91% → 69%, −22).
 
-**Key Insight 3: Domain-specific misinformation is harder to resist.** Across all models, Bio-SABR and Chem-SABR scores are 15-25 points lower than SABR general-knowledge scores. The distractor robustness task shows the sharpest effect: domain-specific misinformation (e.g., incorrect BSL classifications, wrong GHS hazard categories) creates stronger interference than general misinformation. This confirms that the Stroop-like interference effect scales with the domain specificity of distractors — plausible-sounding technical misinformation is harder to filter than generic false claims.
-
-**Key Insight 4: Task-level patterns are consistent across domains.** Source-selective QA is the easiest task across all four domains (near-perfect accuracy), confirming that explicit top-down attention instructions ("use only Source B") are robustly followed regardless of domain. Distractor robustness is universally the hardest, with sharp non-linear degradation from clean to medium distraction. Spotlight F1 varies substantially across models (63-84% in SABR, comparable ranges in domain variants). This consistency suggests these three tasks capture genuinely different attentional mechanisms that generalize across content areas.
-
-**Key Insight 5: No single model dominates across all domains.** Gemini 3.1 Flash-Lite Preview shows the most consistent cross-domain performance (67-71% across Bio/Cyber/Chem), while Claude models show the widest variance (0-92%). For applications requiring reliable attention across diverse domains, cross-domain consistency may be more valuable than peak single-domain performance. The Multi-SABR composite rewards this consistency by design.
-
-**Key Insight 6: The cybersecurity domain is uniquely evaluable.** Cyber-SABR produces the broadest model comparison across all SABR variants because cybersecurity content does not trigger content moderation refusals from any tested model. This makes it the only domain where the full Claude model hierarchy (Opus 84% > Sonnet 77% > Haiku 70%) is visible. The monotonic scaling with model capability suggests attention improves with scale when safety filters do not interfere.
+**Insight 3: Some models refuse to operate in heavily regulated domains.** Claude Opus 4.6 and Claude Sonnet 4.6 achieve the highest individual domain scores in the benchmark (92% and 85% on SABR; 84% and 77% on Cyber-SABR) but refuse to complete Bio-SABR and Chem-SABR entirely. When refusals score 0%, Opus drops from first-in-class to 18th of 19 models (35% composite), and Sonnet to last (32%). This is not a knowledge or attention failure — it is a categorical inability to engage with biosafety and chemical safety content. Content safety systems that cannot distinguish evaluation from misuse impose domain-blind attention on otherwise top-performing models. Cybersecurity is the only regulated domain where all 19 models operate, making Cyber-SABR the sole benchmark where the full Claude hierarchy (Opus 84% > Sonnet 77% > Haiku 70%) is visible. Anthropic has documented the tension between safety filtering and evaluation capability in regulated domains ([Anthropic, 2025](https://red.anthropic.com/2025/biorisk/)), and Multi-SABR quantifies its impact: safety-induced refusal is the single largest driver of composite score variance in this benchmark.
 
 ### Organizational Affiliations
 
@@ -87,15 +91,15 @@ Independent research (Shep Scientific).
 
 **Evidence that the dataset and task are both high quality**
 
-Multi-SABR comprises 1,120 evaluations across 520 unique items spanning four domains: general knowledge, biosafety, cybersecurity, and chemical safety. The four component benchmarks share identical task structure and scoring methodology, enabling controlled cross-domain comparison. Three structurally distinct tasks (distractor robustness, source-selective QA, attentional spotlight) prevent gaming via a single strategy. All content is factually grounded in real-world knowledge. Tasks 1-2 use deterministic exact-match scoring; Task 3 uses token-overlap F1. Each evaluation runs in an isolated chat context.
+Multi-SABR comprises six benchmarks across 520+ unique items spanning general knowledge, biosafety, cybersecurity, and chemical safety (including 2026-refreshed variants). The component benchmarks share identical task structure and scoring methodology, enabling controlled cross-domain comparison. Three structurally distinct tasks (distractor robustness, source-selective QA, attentional spotlight) prevent gaming via a single strategy. All content is factually grounded in real-world knowledge. Tasks 1-2 use deterministic exact-match scoring; Task 3 uses token-overlap F1. Each evaluation runs in an isolated chat context.
 
 **Evidence that the writeup is high quality**
 
-This writeup presents the first systematic cross-domain analysis of LLM selective attention. It covers all required sections with cross-domain comparison tables, six key insights supported by quantitative evidence, and references spanning cognitive science, AI safety, cybersecurity, biosafety, and chemical safety literature. All component benchmarks and datasets are linked. The analysis reveals novel findings — particularly that selective attention is domain-dependent and that safety filters constitute a previously unrecognized category of attention failure.
+This writeup presents the first systematic cross-domain analysis of LLM selective attention across 19 models. It covers all required sections with a full cross-domain comparison table, three key insights supported by quantitative evidence, and references spanning cognitive science, AI safety, cybersecurity, biosafety, and chemical safety literature. All component benchmarks and datasets are linked. The analysis reveals novel findings — particularly that selective attention is domain-dependent and that safety filters constitute a previously unrecognized category of attention failure.
 
 **Evidence that the benchmark has sufficient discriminatory power**
 
-Multi-SABR produces dramatic discriminatory signal. Within models: 25-point cross-domain swings (Claude Haiku: 84% general vs. 59% chemistry). Between models: the Multi-SABR composite completely reorders the leaderboard compared to any single domain — Claude Opus drops from #1 (92% general) to below Haiku and Gemini Flash when refusals are counted. The 0% refusal scoring reveals that peak performance in accessible domains does not predict cross-domain reliability. Per-domain and per-task breakdowns provide fine-grained diagnostic signal beyond the aggregate composite.
+Multi-SABR produces dramatic discriminatory signal across 19 models. Within models: 22-25 point cross-domain swings (e.g., Qwen 3 235B: 91% general vs. 69% chemistry; Claude Haiku: 84% vs. 59%). Between models: composite scores span 32%-61%, and the leaderboard completely reorders compared to any single domain — Claude Opus drops from joint-first on SABR (92%) to 18th of 19 overall (35% composite) when refusals are counted. Models optimized for different capabilities (reasoning, coding, general-purpose) show distinct cross-domain profiles, providing fine-grained diagnostic signal beyond aggregate composites.
 
 ### References & Citations
 

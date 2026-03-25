@@ -6,10 +6,10 @@ Multi-SABR combines six SABR benchmarks into a single cross-domain evaluation of
 
 | Benchmark | Domain | Evaluations | Kaggle |
 |-----------|--------|-------------|--------|
-| [SABR](https://github.com/shepsci/SABR) | General knowledge | 280 | [Benchmark](https://www.kaggle.com/benchmarks/shepscientific/sabr-selective-attention-benchmark-for-reasoning) |
-| [Bio-SABR](https://github.com/shepsci/bio-sabr) | Biosafety / Biosecurity | 280 | [Benchmark](https://www.kaggle.com/benchmarks/shepscientific/bio-sabr-biosafety-selective-attention-benchmark) |
-| [Cyber-SABR](https://github.com/shepsci/cyber-sabr) | Cybersecurity / AI Security | 280 | [Benchmark](https://www.kaggle.com/benchmarks/shepscientific/cyber-sabr-cybersecurity-selective-attention-benc) |
-| [Chem-SABR](https://github.com/shepsci/chem-sabr) | Chemical Safety / Security | 280 | [Benchmark](https://www.kaggle.com/benchmarks/shepscientific/chem-sabr-chemical-safety-selective-attention-benchmark) |
+| [SABR](benchmarks/sabr/) | General knowledge | 280 | [Benchmark](https://www.kaggle.com/benchmarks/shepscientific/sabr-selective-attention-benchmark-for-reasoning) |
+| [Bio-SABR](benchmarks/bio-sabr/) | Biosafety / Biosecurity | 280 | [Benchmark](https://www.kaggle.com/benchmarks/shepscientific/bio-sabr-biosafety-selective-attention-benchmark) |
+| [Cyber-SABR](benchmarks/cyber-sabr/) | Cybersecurity / AI Security | 280 | [Benchmark](https://www.kaggle.com/benchmarks/shepscientific/cyber-sabr-cybersecurity-selective-attention-benc) |
+| [Chem-SABR](benchmarks/chem-sabr/) | Chemical Safety / Security | 280 | [Benchmark](https://www.kaggle.com/benchmarks/shepscientific/chem-sabr-chemical-safety-selective-attention-benchmark) |
 | BIO-SABR-2026 | Biosafety (2026 refresh) | — | [Leaderboard](https://www.kaggle.com/benchmarks/shepscientific/multi-sabr-cross-domain-selective-attention-benchm) |
 | CHEM-SABR-2026 | Chemical Safety (2026 refresh) | — | [Leaderboard](https://www.kaggle.com/benchmarks/shepscientific/multi-sabr-cross-domain-selective-attention-benchm) |
 
@@ -41,7 +41,7 @@ multi-sabr/
 └── config.yaml
 ```
 
-Each `benchmarks/` subdirectory contains a complete, standalone copy of its component benchmark (data, scoring code, Kaggle notebook, and domain-specific writeup). The component benchmarks are also maintained as independent repositories linked in the table above.
+Each `benchmarks/` subdirectory contains a complete, standalone copy of its component benchmark (data, scoring code, Kaggle notebook, and domain-specific writeup).
 
 ## Resources
 

@@ -25,6 +25,24 @@ Multi-SABR combines six SABR benchmarks into a single cross-domain evaluation of
 
 Across 19 models, composite scores range from 32% to 61% — driven by three effects: (1) large variance between models, (2) large variance between domains (every model scores higher on general knowledge than any regulated domain), and (3) some frontier models refuse to operate in biosafety and chemical safety domains entirely, dropping from first-in-class to near-last when refusals are scored as 0%.
 
+## Repository Structure
+
+This is a monorepo containing all component SABR benchmarks:
+
+```
+multi-sabr/
+├── benchmarks/
+│   ├── sabr/           # SABR (General Knowledge)
+│   ├── bio-sabr/       # Bio-SABR (Biosafety)
+│   ├── cyber-sabr/     # Cyber-SABR (Cybersecurity)
+│   └── chem-sabr/      # Chem-SABR (Chemical Safety)
+├── writeup/            # Multi-SABR cross-domain writeup
+├── README.md
+└── config.yaml
+```
+
+Each `benchmarks/` subdirectory contains a complete, standalone copy of its component benchmark (data, scoring code, Kaggle notebook, and domain-specific writeup). The component benchmarks are also maintained as independent repositories linked in the table above.
+
 ## Resources
 
 - [Multi-SABR Writeup](writeup/writeup.md)

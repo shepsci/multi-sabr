@@ -1,0 +1,1475 @@
+{
+  "metadata": {
+    "task": "attentional_spotlight",
+    "version": "1.0.0",
+    "description": "30 items testing sustained attention and attention shifting in chemistry/chemical safety/chemical security contexts. Each item presents a document with 8-15 embedded claims. The model must extract ONLY claims matching a specific filter criterion.",
+    "filter_categories": [
+      "hazard_classifications",
+      "exposure_thresholds",
+      "regulatory_requirements",
+      "safety_procedures",
+      "temporal_claims",
+      "attribution"
+    ],
+    "total_items": 30,
+    "total_evaluations": 30
+  },
+  "items": [
+    {
+      "id": "AS-HAZ-001",
+      "category": "hazard_classifications",
+      "filter_criterion": "Extract ONLY claims that mention specific GHS hazard categories, signal words (Danger/Warning), hazard pictogram designations, NFPA 704 ratings, or specific hazard class assignments. Do not include claims about general risk without a specific classification.",
+      "document": "The Eastlake Chemical Research Institute recently completed a comprehensive hazard characterization study of a novel organofluorine compound provisionally designated ECI-4471, synthesized during a collaborative project with the Pinecrest Advanced Materials Laboratory. Senior chemist Dr. Marcus Thornton and his team performed extensive physicochemical testing following OECD standardized protocols over a nine-month evaluation period. Acute oral toxicity studies in validated rodent models yielded an LD50 of 285 mg/kg, placing ECI-4471 in GHS Acute Toxicity Category 3 for the oral route. The compound exhibits a flash point of 18 degrees Celsius with a boiling point of 62 degrees Celsius, resulting in classification as a GHS Flammable Liquid Category 1, the most severe flammability classification. Based on these determinations, the label must carry the signal word Danger for both the acute toxicity and flammability hazards. The research team conducted a total of forty-seven individual tests across six analytical platforms. Skin sensitization studies following OECD Test Guideline 429 were negative, indicating no allergenic potential through dermal contact. The compound's NFPA 704 health rating was assigned as 3, indicating that short exposure could cause serious temporary or residual injury. Environmental fate testing revealed a half-life of approximately 340 days in freshwater systems, which is considered significant for environmental persistence assessment. The Institute's Chemical Hygiene Officer reviewed all safety documentation and approved the compound for continued synthesis at laboratory scale. Chronic toxicity studies are currently underway using a 90-day repeated dose protocol, with preliminary results suggesting hepatotoxicity at doses above 50 mg/kg/day. The compound does not exhibit oxidizing properties under standard test conditions and is stable when stored below 25 degrees Celsius in amber glass containers.",
+      "all_claims": [
+        {
+          "text": "ECI-4471 was synthesized at the Pinecrest Advanced Materials Laboratory",
+          "matches_filter": false
+        },
+        {
+          "text": "Acute oral toxicity studies yielded an LD50 of 285 mg/kg",
+          "matches_filter": false
+        },
+        {
+          "text": "ECI-4471 is classified as GHS Acute Toxicity Category 3 for the oral route",
+          "matches_filter": true
+        },
+        {
+          "text": "The compound is classified as GHS Flammable Liquid Category 1",
+          "matches_filter": true
+        },
+        {
+          "text": "The label must carry the signal word Danger",
+          "matches_filter": true
+        },
+        {
+          "text": "The research team conducted forty-seven individual tests",
+          "matches_filter": false
+        },
+        {
+          "text": "Skin sensitization studies were negative",
+          "matches_filter": false
+        },
+        {
+          "text": "The NFPA 704 health rating was assigned as 3",
+          "matches_filter": true
+        },
+        {
+          "text": "Environmental half-life is approximately 340 days in freshwater",
+          "matches_filter": false
+        },
+        {
+          "text": "The compound does not exhibit oxidizing properties",
+          "matches_filter": false
+        },
+        {
+          "text": "Chronic toxicity studies suggest hepatotoxicity above 50 mg/kg/day",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "ECI-4471 is classified as GHS Acute Toxicity Category 3 for the oral route||The compound is classified as GHS Flammable Liquid Category 1||The label must carry the signal word Danger||The NFPA 704 health rating was assigned as 3",
+      "gold_count": 4
+    },
+    {
+      "id": "AS-HAZ-002",
+      "category": "hazard_classifications",
+      "filter_criterion": "Extract ONLY claims that mention specific GHS hazard categories, signal words (Danger/Warning), hazard pictogram designations, NFPA 704 ratings, or specific hazard class assignments. Do not include claims about general risk without a specific classification.",
+      "document": "The Silverton Institute of Industrial Chemistry completed a safety evaluation of its newly developed corrosion inhibitor formulation designated SII-780, intended for use in offshore petroleum infrastructure. Project lead Dr. Ingrid Vasquez coordinated the testing program across three analytical facilities over a period of fourteen months. The formulation contains a proprietary blend of nitrogen-containing heterocyclic compounds dissolved in a glycol ether carrier solvent at 35 percent active ingredient concentration. Dermal corrosion testing conducted per OECD Test Guideline 431 demonstrated irreversible skin damage within 4 hours of exposure, resulting in GHS Skin Corrosion Category 1A classification. The carrier solvent component carries the signal word Warning due to its classification as a GHS Health Hazard Category 2 reproductive toxicant. The formulation's pH was measured at 1.4, well below the corrosive threshold. According to the assessment, the GHS corrosion pictogram (GHS05) and the health hazard pictogram (GHS08) are both required on the product label. Twenty-two employees at the Silverton facility have completed specialized handling training for the new formulation. The formulation is not classified for environmental hazards based on aquatic toxicity testing in three freshwater species. Vapor pressure measurements at standard conditions indicate minimal inhalation risk under normal use temperatures. The material is shipped in HDPE-lined steel drums with a maximum capacity of 200 liters. Long-term stability testing showed no significant degradation over 24 months of storage at ambient conditions.",
+      "all_claims": [
+        {
+          "text": "SII-780 is intended for use in offshore petroleum infrastructure",
+          "matches_filter": false
+        },
+        {
+          "text": "The formulation contains nitrogen-containing heterocyclic compounds at 35 percent active ingredient",
+          "matches_filter": false
+        },
+        {
+          "text": "OECD testing demonstrated irreversible skin damage resulting in GHS Skin Corrosion Category 1A",
+          "matches_filter": true
+        },
+        {
+          "text": "The carrier solvent carries the signal word Warning as a GHS Health Hazard Category 2 reproductive toxicant",
+          "matches_filter": true
+        },
+        {
+          "text": "The GHS corrosion pictogram (GHS05) and health hazard pictogram (GHS08) are both required",
+          "matches_filter": true
+        },
+        {
+          "text": "Twenty-two employees completed specialized handling training",
+          "matches_filter": false
+        },
+        {
+          "text": "The formulation is not classified for environmental hazards",
+          "matches_filter": true
+        },
+        {
+          "text": "The material is shipped in HDPE-lined steel drums",
+          "matches_filter": false
+        },
+        {
+          "text": "The pH was measured at 1.4",
+          "matches_filter": false
+        },
+        {
+          "text": "No significant degradation was observed over 24 months of storage",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "OECD testing demonstrated irreversible skin damage resulting in GHS Skin Corrosion Category 1A||The carrier solvent carries the signal word Warning as a GHS Health Hazard Category 2 reproductive toxicant||The GHS corrosion pictogram (GHS05) and health hazard pictogram (GHS08) are both required||The formulation is not classified for environmental hazards",
+      "gold_count": 4
+    },
+    {
+      "id": "AS-HAZ-003",
+      "category": "hazard_classifications",
+      "filter_criterion": "Extract ONLY claims that mention specific GHS hazard categories, signal words (Danger/Warning), hazard pictogram designations, NFPA 704 ratings, or specific hazard class assignments. Do not include claims about general risk without a specific classification.",
+      "document": "The Oakridge Center for Polymer Research published its latest safety assessment covering a family of novel photoinitiator compounds used in ultraviolet-curable coating systems. These compounds, designated OPR-Series A through E, were developed over three years of iterative synthesis and optimization. All five compounds share a common benzophenone core structure with varying substituent groups that modulate their absorption spectra and reactivity. The research team, led by polymer chemist Dr. Yuki Tanaka, tested each variant through the complete GHS hazard classification battery. None of the five compounds exhibited flammable, oxidizing, or explosive properties under any test conditions. Aquatic toxicity testing across three trophic levels showed no adverse effects at concentrations up to 100 mg/L for any of the five compounds. Acute dermal toxicity testing was negative at the limit dose of 2000 mg/kg for all variants. The compounds are solids at room temperature with melting points ranging from 145 to 210 degrees Celsius. The center employs fifty-three researchers and technical staff dedicated to polymer coating technologies. Production quantities for the OPR series are expected to reach 500 kilograms annually within two years. Storage requirements specify dry conditions below 30 degrees Celsius in original containers protected from direct sunlight. The photoinitiator market is projected to grow at 6.2 percent annually through 2030 according to industry analysts.",
+      "all_claims": [
+        {
+          "text": "OPR-Series compounds share a common benzophenone core structure",
+          "matches_filter": false
+        },
+        {
+          "text": "None of the five compounds exhibited flammable, oxidizing, or explosive properties",
+          "matches_filter": false
+        },
+        {
+          "text": "Aquatic toxicity testing showed no adverse effects at concentrations up to 100 mg/L",
+          "matches_filter": false
+        },
+        {
+          "text": "Acute dermal toxicity was negative at the limit dose of 2000 mg/kg",
+          "matches_filter": false
+        },
+        {
+          "text": "The compounds are solids with melting points from 145 to 210 degrees Celsius",
+          "matches_filter": false
+        },
+        {
+          "text": "The center employs fifty-three researchers and technical staff",
+          "matches_filter": false
+        },
+        {
+          "text": "Production quantities are expected to reach 500 kg annually",
+          "matches_filter": false
+        },
+        {
+          "text": "Storage requires dry conditions below 30 degrees Celsius",
+          "matches_filter": false
+        },
+        {
+          "text": "The photoinitiator market is projected to grow at 6.2 percent annually",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "",
+      "gold_count": 0
+    },
+    {
+      "id": "AS-HAZ-004",
+      "category": "hazard_classifications",
+      "filter_criterion": "Extract ONLY claims that mention specific GHS hazard categories, signal words (Danger/Warning), hazard pictogram designations, NFPA 704 ratings, or specific hazard class assignments. Do not include claims about general risk without a specific classification.",
+      "document": "The Meridian Valley Chemical Safety Board released its annual review of hazardous materials incidents involving misclassified chemicals in the regional supply chain. The report documented fourteen incidents over the past fiscal year in which incorrect GHS classifications on shipping labels contributed to improper handling or storage. In one notable case, a concentrated sulfuric acid solution was erroneously labeled with the signal word Warning instead of Danger, leading to inadequate PPE selection by receiving warehouse staff. Three incidents involved flammable solvents classified as GHS Flammable Liquid Category 4 when they should have been Category 2, based on their measured flash points between 23 and 60 degrees Celsius. The Board found that supplier error was the primary root cause in nine of the fourteen incidents, while the remaining five resulted from outdated classification data in electronic inventory systems. An adhesive product was shipped with NFPA 704 ratings of 1-2-0 when independent testing confirmed the correct ratings should be 2-3-1 due to significant flammability and reactivity concerns. The Board employs twelve full-time investigators and four part-time consultants. Regional chemical distributors handle approximately 8,500 unique chemical products annually. The Board recommended mandatory third-party verification of GHS classifications for all chemicals entering the regional distribution network. Enforcement actions resulting from the review included three formal citations and eleven corrective action orders. Annual training requirements for chemical handlers were increased from 8 hours to 16 hours following the Board's recommendations.",
+      "all_claims": [
+        {
+          "text": "Fourteen incidents involved misclassified chemicals over the past fiscal year",
+          "matches_filter": false
+        },
+        {
+          "text": "Sulfuric acid was labeled with signal word Warning instead of Danger",
+          "matches_filter": true
+        },
+        {
+          "text": "Three incidents involved solvents classified as GHS Flammable Liquid Category 4 when they should have been Category 2",
+          "matches_filter": true
+        },
+        {
+          "text": "Supplier error was the primary root cause in nine of fourteen incidents",
+          "matches_filter": false
+        },
+        {
+          "text": "An adhesive was shipped with NFPA 704 ratings of 1-2-0 when correct ratings were 2-3-1",
+          "matches_filter": true
+        },
+        {
+          "text": "The Board employs twelve full-time investigators",
+          "matches_filter": false
+        },
+        {
+          "text": "Regional distributors handle approximately 8,500 unique products annually",
+          "matches_filter": false
+        },
+        {
+          "text": "Three formal citations and eleven corrective action orders were issued",
+          "matches_filter": false
+        },
+        {
+          "text": "Annual training was increased from 8 to 16 hours",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Sulfuric acid was labeled with signal word Warning instead of Danger||Three incidents involved solvents classified as GHS Flammable Liquid Category 4 when they should have been Category 2||An adhesive was shipped with NFPA 704 ratings of 1-2-0 when correct ratings were 2-3-1",
+      "gold_count": 3
+    },
+    {
+      "id": "AS-HAZ-005",
+      "category": "hazard_classifications",
+      "filter_criterion": "Extract ONLY claims that mention specific GHS hazard categories, signal words (Danger/Warning), hazard pictogram designations, NFPA 704 ratings, or specific hazard class assignments. Do not include claims about general risk without a specific classification.",
+      "document": "The Briarwood Institute of Applied Chemistry has been conducting a comparative classification study of industrial solvents used in semiconductor manufacturing. Lead researcher Dr. Felix Okonkwo and his team evaluated twenty-three solvents against both the GHS framework and the legacy HMIS classification system to identify discrepancies. Isopropyl alcohol was confirmed as GHS Flammable Liquid Category 2 with the signal word Danger, consistent with its well-established flash point of 12 degrees Celsius. N-methyl-2-pyrrolidone received a GHS Reproductive Toxicity Category 1B classification based on developmental toxicity studies in rabbits, requiring the health hazard pictogram GHS08 on its label. The study covered solvents from seven different chemical families including alcohols, ketones, ethers, esters, aromatics, halogenated compounds, and glycol ethers. Briarwood's semiconductor cleanroom facility processes approximately 12,000 wafers per month using these solvents. Acetone was classified as GHS Flammable Liquid Category 2 with an NFPA 704 flammability rating of 3, reflecting its low flash point and high vapor pressure. Six of the twenty-three solvents required no GHS hazard pictogram for health effects based on current toxicological data. The study was funded through a three-year grant from the Regional Semiconductor Manufacturers Consortium. All classification determinations were independently verified by a certified toxicologist with twenty years of experience in chemical hazard assessment.",
+      "all_claims": [
+        {
+          "text": "Twenty-three solvents were evaluated against GHS and HMIS systems",
+          "matches_filter": false
+        },
+        {
+          "text": "Isopropyl alcohol was confirmed as GHS Flammable Liquid Category 2 with signal word Danger",
+          "matches_filter": true
+        },
+        {
+          "text": "N-methyl-2-pyrrolidone received GHS Reproductive Toxicity Category 1B requiring pictogram GHS08",
+          "matches_filter": true
+        },
+        {
+          "text": "The study covered solvents from seven different chemical families",
+          "matches_filter": false
+        },
+        {
+          "text": "The facility processes approximately 12,000 wafers per month",
+          "matches_filter": false
+        },
+        {
+          "text": "Acetone was classified as GHS Flammable Liquid Category 2 with NFPA 704 flammability rating of 3",
+          "matches_filter": true
+        },
+        {
+          "text": "Six solvents required no GHS hazard pictogram for health effects",
+          "matches_filter": true
+        },
+        {
+          "text": "The study was funded by the Regional Semiconductor Manufacturers Consortium",
+          "matches_filter": false
+        },
+        {
+          "text": "Classifications were verified by a certified toxicologist with twenty years of experience",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Isopropyl alcohol was confirmed as GHS Flammable Liquid Category 2 with signal word Danger||N-methyl-2-pyrrolidone received GHS Reproductive Toxicity Category 1B requiring pictogram GHS08||Acetone was classified as GHS Flammable Liquid Category 2 with NFPA 704 flammability rating of 3||Six solvents required no GHS hazard pictogram for health effects",
+      "gold_count": 4
+    },
+    {
+      "id": "AS-EXP-001",
+      "category": "exposure_thresholds",
+      "filter_criterion": "Extract ONLY claims that mention specific numerical exposure limits, including PELs, TLVs, RELs, IDLH values, LD50/LC50 values, or dose-response thresholds. Do not include claims about general toxicity or health effects without a specific numerical limit.",
+      "document": "The Clearwater Occupational Health Institute published a comprehensive exposure assessment for workers at a regional paint manufacturing facility. Industrial hygienist Dr. Rebecca Huang led the twelve-month monitoring campaign covering three production lines and a quality control laboratory. Personal breathing zone samples for toluene showed geometric mean concentrations of 38 ppm across all monitored workers, well below the OSHA PEL of 200 ppm but approaching the more protective ACGIH TLV-TWA of 20 ppm. The facility uses approximately 45,000 gallons of toluene-based formulations annually. Methyl ethyl ketone (MEK) exposures averaged 112 ppm against an OSHA PEL of 200 ppm, while several short-duration tasks during batch changeovers generated peak concentrations exceeding the ACGIH TLV-STEL of 300 ppm for periods of up to eight minutes. Xylene exposures were consistently below 50 ppm against the OSHA PEL of 100 ppm. The facility employs 87 production workers across three shifts. Hexavalent chromium concentrations in the pigment mixing area averaged 2.8 micrograms per cubic meter, exceeding the OSHA PEL of 5 micrograms per cubic meter on two of sixteen sampling days. All workers in the pigment mixing area are enrolled in the facility's medical surveillance program. The monitoring campaign collected a total of 384 personal air samples and 96 area samples using calibrated sampling pumps and appropriate collection media.",
+      "all_claims": [
+        {
+          "text": "Toluene geometric mean concentration was 38 ppm across monitored workers",
+          "matches_filter": false
+        },
+        {
+          "text": "OSHA PEL for toluene is 200 ppm",
+          "matches_filter": true
+        },
+        {
+          "text": "ACGIH TLV-TWA for toluene is 20 ppm",
+          "matches_filter": true
+        },
+        {
+          "text": "The facility uses approximately 45,000 gallons of toluene-based formulations annually",
+          "matches_filter": false
+        },
+        {
+          "text": "MEK exposures averaged 112 ppm against an OSHA PEL of 200 ppm",
+          "matches_filter": true
+        },
+        {
+          "text": "ACGIH TLV-STEL for MEK is 300 ppm",
+          "matches_filter": true
+        },
+        {
+          "text": "Xylene exposures were consistently below 50 ppm against an OSHA PEL of 100 ppm",
+          "matches_filter": true
+        },
+        {
+          "text": "The facility employs 87 production workers across three shifts",
+          "matches_filter": false
+        },
+        {
+          "text": "Hexavalent chromium averaged 2.8 \u00b5g/m\u00b3 against the OSHA PEL of 5 \u00b5g/m\u00b3",
+          "matches_filter": true
+        },
+        {
+          "text": "384 personal air samples and 96 area samples were collected",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "OSHA PEL for toluene is 200 ppm||ACGIH TLV-TWA for toluene is 20 ppm||MEK exposures averaged 112 ppm against an OSHA PEL of 200 ppm||ACGIH TLV-STEL for MEK is 300 ppm||Xylene exposures were consistently below 50 ppm against an OSHA PEL of 100 ppm||Hexavalent chromium averaged 2.8 \u00b5g/m\u00b3 against the OSHA PEL of 5 \u00b5g/m\u00b3",
+      "gold_count": 6
+    },
+    {
+      "id": "AS-EXP-002",
+      "category": "exposure_thresholds",
+      "filter_criterion": "Extract ONLY claims that mention specific numerical exposure limits, including PELs, TLVs, RELs, IDLH values, LD50/LC50 values, or dose-response thresholds. Do not include claims about general toxicity or health effects without a specific numerical limit.",
+      "document": "The Thornberry Environmental Health Laboratory completed a toxicological profile for a new fumigant compound designated TEH-225, developed as a replacement for methyl bromide in agricultural post-harvest treatment. The compound was synthesized by Dr. Alan Chowdhury's team and underwent the full battery of acute and subchronic toxicity testing. Oral LD50 in rats was determined to be 175 mg/kg, indicating significant acute toxicity. The 4-hour inhalation LC50 in rats was measured at 520 ppm, which informed the recommended workplace ceiling limit of 0.5 ppm proposed by the research team. Subchronic 90-day feeding studies identified a NOAEL of 5 mg/kg/day based on liver enzyme elevations observed at the next higher dose of 15 mg/kg/day. The compound degrades rapidly in sunlight with a photolysis half-life of approximately 4 hours. Seven field trials were conducted across different climatic zones to evaluate efficacy against stored grain pests. The compound has no detectable odor at concentrations below 50 ppm, which is concerning because it exceeds the proposed workplace limit by a factor of 100. All testing was performed in GLP-certified facilities with independent quality assurance audits. The regulatory submission package includes over 2,400 pages of study reports and supporting documentation. Dermal absorption studies showed less than 3 percent of applied dose is absorbed through intact skin over 24 hours.",
+      "all_claims": [
+        {
+          "text": "Oral LD50 in rats was 175 mg/kg",
+          "matches_filter": true
+        },
+        {
+          "text": "The 4-hour inhalation LC50 in rats was 520 ppm",
+          "matches_filter": true
+        },
+        {
+          "text": "The recommended workplace ceiling limit is 0.5 ppm",
+          "matches_filter": true
+        },
+        {
+          "text": "Subchronic NOAEL was 5 mg/kg/day based on liver enzyme elevations",
+          "matches_filter": true
+        },
+        {
+          "text": "Liver enzyme elevations observed at 15 mg/kg/day",
+          "matches_filter": true
+        },
+        {
+          "text": "The compound degrades with a photolysis half-life of approximately 4 hours",
+          "matches_filter": false
+        },
+        {
+          "text": "Seven field trials were conducted across different climatic zones",
+          "matches_filter": false
+        },
+        {
+          "text": "No detectable odor at concentrations below 50 ppm",
+          "matches_filter": false
+        },
+        {
+          "text": "Testing was performed in GLP-certified facilities",
+          "matches_filter": false
+        },
+        {
+          "text": "The submission package includes over 2,400 pages",
+          "matches_filter": false
+        },
+        {
+          "text": "Less than 3 percent of applied dose is absorbed through intact skin",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Oral LD50 in rats was 175 mg/kg||The 4-hour inhalation LC50 in rats was 520 ppm||The recommended workplace ceiling limit is 0.5 ppm||Subchronic NOAEL was 5 mg/kg/day based on liver enzyme elevations||Liver enzyme elevations observed at 15 mg/kg/day",
+      "gold_count": 5
+    },
+    {
+      "id": "AS-EXP-003",
+      "category": "exposure_thresholds",
+      "filter_criterion": "Extract ONLY claims that mention specific numerical exposure limits, including PELs, TLVs, RELs, IDLH values, LD50/LC50 values, or dose-response thresholds. Do not include claims about general toxicity or health effects without a specific numerical limit.",
+      "document": "The Grandview Institute of Occupational Medicine released its updated emergency response guidelines for hydrogen fluoride incidents at industrial facilities. The document was prepared by an expert panel chaired by Dr. Patricia Nolan and reviewed by representatives from six regional chemical manufacturers. Hydrogen fluoride has an IDLH concentration of 30 ppm, making rapid detection and evacuation critical during any uncontrolled release. The OSHA PEL for hydrogen fluoride is 3 ppm as an 8-hour TWA, with the ACGIH TLV-C set at 0.5 ppm as a ceiling value that should not be exceeded at any time. Workers exposed to concentrations above 5 ppm should be immediately removed from the exposure area and assessed for signs of fluoride toxicity. The acute oral LD50 for hydrogen fluoride in rats is approximately 150 mg/kg. The guidelines recommend calcium gluconate gel as the first-line topical treatment for dermal exposures, applied immediately after decontamination. Hydrogen fluoride detectors must be calibrated monthly and maintained according to manufacturer specifications. The institute reviewed forty-three HF incidents over the past decade to inform the updated recommendations. Emergency responders must wear self-contained breathing apparatus when entering areas with unknown HF concentrations. The guidelines were distributed to 128 facilities in the regional industrial corridor.",
+      "all_claims": [
+        {
+          "text": "IDLH concentration for hydrogen fluoride is 30 ppm",
+          "matches_filter": true
+        },
+        {
+          "text": "OSHA PEL for hydrogen fluoride is 3 ppm as 8-hour TWA",
+          "matches_filter": true
+        },
+        {
+          "text": "ACGIH TLV-C for hydrogen fluoride is 0.5 ppm ceiling",
+          "matches_filter": true
+        },
+        {
+          "text": "Workers exposed above 5 ppm should be immediately removed",
+          "matches_filter": true
+        },
+        {
+          "text": "Acute oral LD50 in rats is approximately 150 mg/kg",
+          "matches_filter": true
+        },
+        {
+          "text": "Calcium gluconate gel is the first-line topical treatment",
+          "matches_filter": false
+        },
+        {
+          "text": "HF detectors must be calibrated monthly",
+          "matches_filter": false
+        },
+        {
+          "text": "Forty-three HF incidents were reviewed over the past decade",
+          "matches_filter": false
+        },
+        {
+          "text": "Emergency responders must wear SCBA",
+          "matches_filter": false
+        },
+        {
+          "text": "Guidelines were distributed to 128 facilities",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "IDLH concentration for hydrogen fluoride is 30 ppm||OSHA PEL for hydrogen fluoride is 3 ppm as 8-hour TWA||ACGIH TLV-C for hydrogen fluoride is 0.5 ppm ceiling||Workers exposed above 5 ppm should be immediately removed||Acute oral LD50 in rats is approximately 150 mg/kg",
+      "gold_count": 5
+    },
+    {
+      "id": "AS-EXP-004",
+      "category": "exposure_thresholds",
+      "filter_criterion": "Extract ONLY claims that mention specific numerical exposure limits, including PELs, TLVs, RELs, IDLH values, LD50/LC50 values, or dose-response thresholds. Do not include claims about general toxicity or health effects without a specific numerical limit.",
+      "document": "The Ridgemont Chemical Safety Consortium published comparative toxicological profiles for four common laboratory solvents used in academic research institutions. Dr. Samuel Park compiled data from validated regulatory databases and peer-reviewed literature spanning the past fifteen years. Chloroform, widely used as an extraction solvent, has an OSHA PEL of 50 ppm and an ACGIH TLV-TWA of 10 ppm, reflecting concerns about hepatotoxicity and potential carcinogenicity. The consortium represents forty-seven academic institutions across three states. Dichloromethane has an OSHA PEL of 25 ppm and a NIOSH REL of 75 ppm as a ceiling limit, with the ACGIH TLV-TWA set at 50 ppm. Methanol carries an OSHA PEL of 200 ppm and an ACGIH TLV-TWA of 200 ppm, with a TLV-STEL of 250 ppm. Ethyl acetate has the highest PEL among the four at 400 ppm, with an ACGIH TLV-TWA matching at 400 ppm. The consortium's annual survey found that 78 percent of member institutions use ventilated solvent handling stations for these chemicals. Average annual solvent consumption across member institutions is approximately 1,200 liters per institution. All four solvents are readily available from commercial suppliers in various grades including ACS reagent, HPLC, and spectroscopic quality. Dr. Park's team noted that proper ventilation requirements vary significantly depending on the volatility and vapor pressure of each solvent. Chloroform's vapor pressure of 211 mmHg at 25\u00b0C makes it particularly prone to generating hazardous concentrations in enclosed spaces. The consortium recommends that all new laboratory construction include dedicated solvent storage rooms with continuous air monitoring capabilities. Standard operating procedures developed by the consortium emphasize the importance of substituting less hazardous solvents whenever scientifically feasible. For instance, replacing dichloromethane with cyclopentyl methyl ether has shown promising results in several extraction applications without compromising analytical outcomes. The consortium's training program, which has graduated over 3,400 researchers since its inception, covers proper solvent selection, handling techniques, and emergency response procedures. Each member institution is required to conduct annual audits of solvent usage patterns and waste generation rates. The toxicological review also addressed dermal absorption pathways, noting that prolonged skin contact with these solvents can cause irritation, defatting, and in some cases systemic toxicity through percutaneous absorption. Proper glove selection is essential, as nitrile gloves provide adequate protection for most of these solvents but offer limited resistance to chloroform penetration, for which laminate gloves are recommended.",
+      "all_claims": [
+        {
+          "text": "Chloroform has an OSHA PEL of 50 ppm and ACGIH TLV-TWA of 10 ppm",
+          "matches_filter": true
+        },
+        {
+          "text": "The consortium represents forty-seven academic institutions",
+          "matches_filter": false
+        },
+        {
+          "text": "Dichloromethane has an OSHA PEL of 25 ppm, NIOSH REL ceiling of 75 ppm, and ACGIH TLV-TWA of 50 ppm",
+          "matches_filter": true
+        },
+        {
+          "text": "Methanol has an OSHA PEL of 200 ppm, ACGIH TLV-TWA of 200 ppm, and TLV-STEL of 250 ppm",
+          "matches_filter": true
+        },
+        {
+          "text": "Ethyl acetate has a PEL of 400 ppm and ACGIH TLV-TWA of 400 ppm",
+          "matches_filter": true
+        },
+        {
+          "text": "78 percent of institutions use ventilated solvent handling stations",
+          "matches_filter": false
+        },
+        {
+          "text": "Average annual solvent consumption is approximately 1,200 liters per institution",
+          "matches_filter": false
+        },
+        {
+          "text": "All four solvents are available in ACS reagent, HPLC, and spectroscopic grades",
+          "matches_filter": false
+        },
+        {
+          "text": "Chloroform has a vapor pressure of 211 mmHg at 25\u00b0C",
+          "matches_filter": false
+        },
+        {
+          "text": "The training program has graduated over 3,400 researchers",
+          "matches_filter": false
+        },
+        {
+          "text": "Nitrile gloves offer limited resistance to chloroform penetration",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Chloroform has an OSHA PEL of 50 ppm and ACGIH TLV-TWA of 10 ppm||Dichloromethane has an OSHA PEL of 25 ppm, NIOSH REL ceiling of 75 ppm, and ACGIH TLV-TWA of 50 ppm||Methanol has an OSHA PEL of 200 ppm, ACGIH TLV-TWA of 200 ppm, and TLV-STEL of 250 ppm||Ethyl acetate has a PEL of 400 ppm and ACGIH TLV-TWA of 400 ppm",
+      "gold_count": 4
+    },
+    {
+      "id": "AS-EXP-005",
+      "category": "exposure_thresholds",
+      "filter_criterion": "Extract ONLY claims that mention specific numerical exposure limits, including PELs, TLVs, RELs, IDLH values, LD50/LC50 values, or dose-response thresholds. Do not include claims about general toxicity or health effects without a specific numerical limit.",
+      "document": "The Harborview Center for Toxicology Research completed an updated risk assessment for cadmium exposure among workers at a nickel-cadmium battery recycling plant. The assessment was led by board-certified toxicologist Dr. Miriam Johansson over a sixteen-month study period. Airborne cadmium levels in the disassembly area averaged 8.2 micrograms per cubic meter, exceeding the OSHA PEL of 5 micrograms per cubic meter. The ACGIH TLV-TWA for cadmium is set at 0.01 mg/m3 for the respirable fraction and 0.002 mg/m3 for total dust, making the ACGIH limits significantly more protective than the OSHA standard. The plant processes approximately 14,000 batteries per month using manual disassembly and hydrometallurgical extraction. Biological monitoring revealed that 12 of 43 workers had urinary cadmium levels exceeding the ACGIH BEI of 5 micrograms per gram of creatinine. The NIOSH REL for cadmium is the lowest of the major standards at 0.005 mg/m3 as a 10-hour TWA. Kidney function biomarkers were within normal limits for all workers at the time of the assessment. Engineering controls including local exhaust ventilation and enclosed processing systems have been recommended to reduce exposures. The facility's existing ventilation system was installed twelve years ago and has not been upgraded. Worker rotation schedules and administrative controls alone were found insufficient to maintain exposures below the OSHA PEL.",
+      "all_claims": [
+        {
+          "text": "Airborne cadmium averaged 8.2 \u00b5g/m\u00b3 in the disassembly area",
+          "matches_filter": false
+        },
+        {
+          "text": "OSHA PEL for cadmium is 5 \u00b5g/m\u00b3",
+          "matches_filter": true
+        },
+        {
+          "text": "ACGIH TLV-TWA for cadmium is 0.01 mg/m\u00b3 respirable and 0.002 mg/m\u00b3 total dust",
+          "matches_filter": true
+        },
+        {
+          "text": "The plant processes approximately 14,000 batteries per month",
+          "matches_filter": false
+        },
+        {
+          "text": "ACGIH BEI for urinary cadmium is 5 \u00b5g per gram creatinine",
+          "matches_filter": true
+        },
+        {
+          "text": "NIOSH REL for cadmium is 0.005 mg/m\u00b3 as 10-hour TWA",
+          "matches_filter": true
+        },
+        {
+          "text": "Kidney function biomarkers were within normal limits",
+          "matches_filter": false
+        },
+        {
+          "text": "The ventilation system was installed twelve years ago",
+          "matches_filter": false
+        },
+        {
+          "text": "Worker rotation alone was insufficient to maintain exposures below the PEL",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "OSHA PEL for cadmium is 5 \u00b5g/m\u00b3||ACGIH TLV-TWA for cadmium is 0.01 mg/m\u00b3 respirable and 0.002 mg/m\u00b3 total dust||ACGIH BEI for urinary cadmium is 5 \u00b5g per gram creatinine||NIOSH REL for cadmium is 0.005 mg/m\u00b3 as 10-hour TWA",
+      "gold_count": 4
+    },
+    {
+      "id": "AS-REG-001",
+      "category": "regulatory_requirements",
+      "filter_criterion": "Extract ONLY claims that state specific regulatory mandates, compliance obligations, legal requirements, or enforceable standards. Do not include general recommendations, best practices, or voluntary guidelines.",
+      "document": "The Lakewood Chemical Compliance Group issued its annual regulatory update covering changes affecting chemical manufacturers and distributors operating in the northeastern region. Compliance analyst Maria Chen compiled the report from federal and state regulatory publications over the preceding twelve months. Under OSHA's updated Hazard Communication Standard, employers must ensure that all workplace chemical containers are labeled with GHS-compliant labels by the extended compliance deadline. The EPA finalized amendments to TSCA Section 6 that require manufacturers of five specific persistent chemicals to submit risk evaluations within 180 days of the rule's effective date. Three new chemicals were added to the California Proposition 65 list, requiring businesses to provide clear and reasonable warnings before exposing individuals to these substances. The regional chemical industry generated approximately 2.3 billion dollars in revenue during the reporting period. OSHA requires employers to maintain Safety Data Sheets for every hazardous chemical present in the workplace and make them readily accessible to employees during each work shift. The Lakewood group serves 340 corporate clients across six states. State-level right-to-know laws in two jurisdictions now mandate quarterly chemical inventory reporting to local fire departments. Import regulations under TSCA Section 13 require that chemicals imported into the United States comply with all applicable TSCA rules, with importers certifying compliance at the port of entry. The group recommended that all clients conduct an internal audit of their chemical management systems before the end of the fiscal year.",
+      "all_claims": [
+        {
+          "text": "Employers must ensure workplace containers have GHS-compliant labels by the compliance deadline",
+          "matches_filter": true
+        },
+        {
+          "text": "EPA requires manufacturers of five specific chemicals to submit risk evaluations within 180 days",
+          "matches_filter": true
+        },
+        {
+          "text": "California Proposition 65 requires clear and reasonable warnings before exposure to listed substances",
+          "matches_filter": true
+        },
+        {
+          "text": "The regional industry generated approximately 2.3 billion dollars in revenue",
+          "matches_filter": false
+        },
+        {
+          "text": "OSHA requires employers to maintain SDSs for every hazardous chemical and make them accessible during each work shift",
+          "matches_filter": true
+        },
+        {
+          "text": "The Lakewood group serves 340 corporate clients",
+          "matches_filter": false
+        },
+        {
+          "text": "Two state jurisdictions mandate quarterly chemical inventory reporting to local fire departments",
+          "matches_filter": true
+        },
+        {
+          "text": "TSCA Section 13 requires imported chemicals to comply with TSCA rules with certification at port of entry",
+          "matches_filter": true
+        },
+        {
+          "text": "The group recommended internal audits before end of fiscal year",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Employers must ensure workplace containers have GHS-compliant labels by the compliance deadline||EPA requires manufacturers of five specific chemicals to submit risk evaluations within 180 days||California Proposition 65 requires clear and reasonable warnings before exposure to listed substances||OSHA requires employers to maintain SDSs for every hazardous chemical and make them accessible during each work shift||Two state jurisdictions mandate quarterly chemical inventory reporting to local fire departments||TSCA Section 13 requires imported chemicals to comply with TSCA rules with certification at port of entry",
+      "gold_count": 6
+    },
+    {
+      "id": "AS-REG-002",
+      "category": "regulatory_requirements",
+      "filter_criterion": "Extract ONLY claims that state specific regulatory mandates, compliance obligations, legal requirements, or enforceable standards. Do not include general recommendations, best practices, or voluntary guidelines.",
+      "document": "The Pinehurst Center for Regulatory Affairs reviewed REACH compliance obligations for small and medium enterprises exporting specialty chemicals to the European Union. Director of Regulatory Sciences Dr. Thomas Gruber authored the guidance document based on consultations with ECHA and industry associations. Under REACH Article 6, any substance manufactured or imported into the EU in quantities of one tonne or more per year per registrant must be registered with the European Chemicals Agency. Registration dossiers for substances above 10 tonnes per year must include a Chemical Safety Report with exposure scenarios for identified uses. The center has assisted 215 companies with REACH compliance since the regulation's implementation. Substances of Very High Concern identified under REACH Article 57 require authorization before they can be placed on the market after the sunset date established for each substance. The CLP Regulation requires manufacturers and importers to notify ECHA of the classification and labelling of hazardous substances within one month of placing them on the market. Supply chain communication obligations under REACH Article 31 mandate that Safety Data Sheets must be provided free of charge in an official language of the Member State where the substance is placed on the market. The European chemical industry employs approximately 1.2 million workers directly. REACH Article 33 requires suppliers of articles containing SVHCs above 0.1 percent by weight to provide sufficient information to allow safe use of the article.",
+      "all_claims": [
+        {
+          "text": "REACH Article 6 requires registration for substances at 1 tonne or more per year per registrant",
+          "matches_filter": true
+        },
+        {
+          "text": "Registration above 10 tonnes requires a Chemical Safety Report with exposure scenarios",
+          "matches_filter": true
+        },
+        {
+          "text": "The center has assisted 215 companies with REACH compliance",
+          "matches_filter": false
+        },
+        {
+          "text": "SVHCs under REACH Article 57 require authorization before market placement after sunset date",
+          "matches_filter": true
+        },
+        {
+          "text": "CLP requires notification of classification to ECHA within one month of market placement",
+          "matches_filter": true
+        },
+        {
+          "text": "REACH Article 31 mandates SDSs must be provided free of charge in an official language of the Member State",
+          "matches_filter": true
+        },
+        {
+          "text": "European chemical industry employs approximately 1.2 million workers",
+          "matches_filter": false
+        },
+        {
+          "text": "REACH Article 33 requires SVHC disclosure above 0.1 percent by weight in articles",
+          "matches_filter": true
+        }
+      ],
+      "gold_claims": "REACH Article 6 requires registration for substances at 1 tonne or more per year per registrant||Registration above 10 tonnes requires a Chemical Safety Report with exposure scenarios||SVHCs under REACH Article 57 require authorization before market placement after sunset date||CLP requires notification of classification to ECHA within one month of market placement||REACH Article 31 mandates SDSs must be provided free of charge in an official language of the Member State||REACH Article 33 requires SVHC disclosure above 0.1 percent by weight in articles",
+      "gold_count": 6
+    },
+    {
+      "id": "AS-REG-003",
+      "category": "regulatory_requirements",
+      "filter_criterion": "Extract ONLY claims that state specific regulatory mandates, compliance obligations, legal requirements, or enforceable standards. Do not include general recommendations, best practices, or voluntary guidelines.",
+      "document": "The Westfield Chemical Plant underwent its triennial OSHA Process Safety Management audit last quarter, with compliance officer Linda Nakamura overseeing the comprehensive review of all fourteen PSM elements. The facility produces chlorinated solvents and stores anhydrous ammonia in quantities exceeding the OSHA PSM threshold quantity of 10,000 pounds. Under 29 CFR 1910.119, the facility must maintain a written process safety information compilation that includes toxicity data, permissible exposure limits, and physical data for all highly hazardous chemicals on site. The audit team consisted of five certified safety professionals and two chemical engineers. Operating procedures must be reviewed and updated at least annually to ensure they reflect current operations and incorporate lessons learned from incidents. The facility handles seventeen chemicals listed on the PSM list of highly hazardous chemicals. Pre-startup safety reviews are required for new or modified processes before introducing highly hazardous chemicals. Employee participation in PSM program development must be documented, and employees must have access to process hazard analyses and other PSM information. The facility's emergency action plan was last exercised eight months before the audit. Mechanical integrity procedures must include documentation of inspections and tests for all process equipment operating at or above the design intent. Training records indicate that all operators have completed their annual refresher training. The audit identified three findings requiring corrective action within 90 days.",
+      "all_claims": [
+        {
+          "text": "The facility stores ammonia exceeding the PSM threshold of 10,000 pounds",
+          "matches_filter": false
+        },
+        {
+          "text": "29 CFR 1910.119 requires a written process safety information compilation with toxicity data and PELs",
+          "matches_filter": true
+        },
+        {
+          "text": "The audit team consisted of five certified safety professionals",
+          "matches_filter": false
+        },
+        {
+          "text": "Operating procedures must be reviewed and updated at least annually",
+          "matches_filter": true
+        },
+        {
+          "text": "The facility handles seventeen PSM-listed chemicals",
+          "matches_filter": false
+        },
+        {
+          "text": "Pre-startup safety reviews are required for new or modified processes before introducing HHCs",
+          "matches_filter": true
+        },
+        {
+          "text": "Employee participation must be documented with access to PHAs and PSM information",
+          "matches_filter": true
+        },
+        {
+          "text": "The emergency action plan was last exercised eight months ago",
+          "matches_filter": false
+        },
+        {
+          "text": "Mechanical integrity procedures must include documentation of inspections and tests",
+          "matches_filter": true
+        },
+        {
+          "text": "All operators completed annual refresher training",
+          "matches_filter": false
+        },
+        {
+          "text": "Three findings require corrective action within 90 days",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "29 CFR 1910.119 requires a written process safety information compilation with toxicity data and PELs||Operating procedures must be reviewed and updated at least annually||Pre-startup safety reviews are required for new or modified processes before introducing HHCs||Employee participation must be documented with access to PHAs and PSM information||Mechanical integrity procedures must include documentation of inspections and tests",
+      "gold_count": 5
+    },
+    {
+      "id": "AS-REG-004",
+      "category": "regulatory_requirements",
+      "filter_criterion": "Extract ONLY claims that state specific regulatory mandates, compliance obligations, legal requirements, or enforceable standards. Do not include general recommendations, best practices, or voluntary guidelines.",
+      "document": "The Brookfield Institute of Chemical Regulation published its quarterly newsletter focusing on recent changes to the CWC verification regime. Editor Dr. James Whitfield summarized decisions from the most recent Conference of the States Parties. Under CWC Article VI, states parties must declare all Schedule 1 chemical production, acquisition, retention, and transfer activities to the OPCW Technical Secretariat annually. Facilities producing Schedule 2 chemicals above specified thresholds are subject to routine OPCW inspections with a frequency determined by the risk assessment of the facility. The newsletter is distributed to approximately 4,500 subscribers in the arms control and chemical industry communities. Schedule 3 chemicals produced above 30 tonnes per year at a single facility must be declared to the OPCW. The OPCW has conducted over 8,500 inspections at industrial and military sites since the convention entered into force. States parties are required to enact national implementing legislation that establishes criminal penalties for CWC violations by individuals and legal entities within their jurisdiction. Challenge inspections under Article IX may be requested by any state party concerning compliance by another state party, with no right of refusal by the inspected state. The Brookfield Institute was founded in 2003 and operates independently of government funding. All transfers of Schedule 1 chemicals between states parties require advance notification to the OPCW at least 30 days before the transfer occurs.",
+      "all_claims": [
+        {
+          "text": "CWC Article VI requires annual declaration of all Schedule 1 activities to the OPCW",
+          "matches_filter": true
+        },
+        {
+          "text": "Schedule 2 facilities above thresholds are subject to routine OPCW inspections",
+          "matches_filter": true
+        },
+        {
+          "text": "The newsletter is distributed to approximately 4,500 subscribers",
+          "matches_filter": false
+        },
+        {
+          "text": "Schedule 3 chemicals above 30 tonnes per year must be declared to the OPCW",
+          "matches_filter": true
+        },
+        {
+          "text": "OPCW has conducted over 8,500 inspections since entry into force",
+          "matches_filter": false
+        },
+        {
+          "text": "States parties must enact national legislation with criminal penalties for CWC violations",
+          "matches_filter": true
+        },
+        {
+          "text": "Challenge inspections under Article IX may be requested with no right of refusal",
+          "matches_filter": true
+        },
+        {
+          "text": "The Institute was founded in 2003",
+          "matches_filter": false
+        },
+        {
+          "text": "Schedule 1 transfers require advance OPCW notification at least 30 days before transfer",
+          "matches_filter": true
+        }
+      ],
+      "gold_claims": "CWC Article VI requires annual declaration of all Schedule 1 activities to the OPCW||Schedule 2 facilities above thresholds are subject to routine OPCW inspections||Schedule 3 chemicals above 30 tonnes per year must be declared to the OPCW||States parties must enact national legislation with criminal penalties for CWC violations||Challenge inspections under Article IX may be requested with no right of refusal||Schedule 1 transfers require advance OPCW notification at least 30 days before transfer",
+      "gold_count": 6
+    },
+    {
+      "id": "AS-REG-005",
+      "category": "regulatory_requirements",
+      "filter_criterion": "Extract ONLY claims that state specific regulatory mandates, compliance obligations, legal requirements, or enforceable standards. Do not include general recommendations, best practices, or voluntary guidelines.",
+      "document": "The Ashford Center for Environmental Compliance reviewed the requirements of EPA's Risk Management Program as they apply to water treatment facilities using chlorine gas. The review was commissioned by the regional water utility association representing 28 member utilities. Under the Clean Air Act Section 112(r), facilities that store chlorine in quantities at or above 2,500 pounds must develop and submit a Risk Management Plan to EPA. The RMP must include a hazard assessment with worst-case release scenarios and five-year accident history. Facilities must conduct a process hazard analysis using recognized methodologies such as what-if, checklist, or HAZOP reviews. Average chlorine usage across member utilities is 450 pounds per day during peak demand periods. The RMP must be updated and resubmitted to EPA at least every five years or within 60 days of a reportable accident. Facilities must establish an emergency response program that is coordinated with local emergency planning committees and response agencies. The Ashford Center provides compliance support to utilities in twelve states. Standard operating procedures must be developed for all covered processes and made available to employees in the language they understand. Twenty-two of the twenty-eight member utilities currently use chlorine gas, while the remaining six have converted to sodium hypochlorite solution. Incident investigation reports must be completed within 48 hours of the event and retained for five years.",
+      "all_claims": [
+        {
+          "text": "Facilities storing chlorine at or above 2,500 pounds must develop and submit an RMP to EPA",
+          "matches_filter": true
+        },
+        {
+          "text": "RMP must include hazard assessment with worst-case release scenarios and five-year accident history",
+          "matches_filter": true
+        },
+        {
+          "text": "Facilities must conduct a process hazard analysis using recognized methodologies",
+          "matches_filter": true
+        },
+        {
+          "text": "Average chlorine usage is 450 pounds per day during peak demand",
+          "matches_filter": false
+        },
+        {
+          "text": "RMP must be updated and resubmitted every five years or within 60 days of a reportable accident",
+          "matches_filter": true
+        },
+        {
+          "text": "Facilities must establish emergency response coordinated with local planning committees",
+          "matches_filter": true
+        },
+        {
+          "text": "The Ashford Center provides support to utilities in twelve states",
+          "matches_filter": false
+        },
+        {
+          "text": "SOPs must be developed for covered processes and available in the language employees understand",
+          "matches_filter": true
+        },
+        {
+          "text": "Twenty-two of twenty-eight utilities currently use chlorine gas",
+          "matches_filter": false
+        },
+        {
+          "text": "Incident investigation reports must be completed within 48 hours and retained for five years",
+          "matches_filter": true
+        }
+      ],
+      "gold_claims": "Facilities storing chlorine at or above 2,500 pounds must develop and submit an RMP to EPA||RMP must include hazard assessment with worst-case release scenarios and five-year accident history||Facilities must conduct a process hazard analysis using recognized methodologies||RMP must be updated and resubmitted every five years or within 60 days of a reportable accident||Facilities must establish emergency response coordinated with local planning committees||SOPs must be developed for covered processes and available in the language employees understand||Incident investigation reports must be completed within 48 hours and retained for five years",
+      "gold_count": 7
+    },
+    {
+      "id": "AS-SAF-001",
+      "category": "safety_procedures",
+      "filter_criterion": "Extract ONLY claims that describe specific safety procedures, PPE requirements, emergency protocols, decontamination steps, or equipment operation instructions. Do not include general risk descriptions or regulatory references.",
+      "document": "The Crestview Analytical Laboratory issued updated standard operating procedures for handling perchloric acid in its wet chemistry department. Laboratory manager Dr. Elise Barrington coordinated the revision with input from the institutional Chemical Hygiene Officer and the fire safety department. Perchloric acid must be used only in a dedicated perchloric acid fume hood constructed of stainless steel or other acid-resistant materials with a built-in washdown system. Workers must wear acid-resistant gloves, chemical splash goggles, and a rubber or PVC apron when handling concentrated perchloric acid solutions. The washdown system must be activated at the end of each work session to prevent accumulation of perchloric acid residues that could become explosive upon drying. Perchloric acid digestions must not be conducted on wooden or organic material bench surfaces, as dried perchlorate residues on organic materials are shock-sensitive explosives. The laboratory processes approximately 200 perchloric acid digestions per year for trace metal analysis. All perchloric acid waste must be collected in designated glass or compatible plastic containers and labeled with the date of first addition. The fume hood ductwork must be inspected and cleaned at least annually by trained maintenance personnel to remove perchlorate deposits. Spills of concentrated perchloric acid must be immediately diluted with copious amounts of water before neutralization, and the spill area must be thoroughly rinsed. The revised procedures were approved by the department safety committee on a unanimous vote. Emergency showers and eyewash stations must be verified functional before beginning any perchloric acid procedure.",
+      "all_claims": [
+        {
+          "text": "Perchloric acid must be used only in a dedicated perchloric acid fume hood with washdown system",
+          "matches_filter": true
+        },
+        {
+          "text": "Workers must wear acid-resistant gloves, chemical splash goggles, and rubber or PVC apron",
+          "matches_filter": true
+        },
+        {
+          "text": "Washdown system must be activated at end of each work session to prevent residue accumulation",
+          "matches_filter": true
+        },
+        {
+          "text": "Digestions must not be conducted on wooden or organic bench surfaces",
+          "matches_filter": true
+        },
+        {
+          "text": "The laboratory processes approximately 200 digestions per year",
+          "matches_filter": false
+        },
+        {
+          "text": "Waste must be collected in designated glass or compatible plastic containers with date labels",
+          "matches_filter": true
+        },
+        {
+          "text": "Hood ductwork must be inspected and cleaned at least annually",
+          "matches_filter": true
+        },
+        {
+          "text": "Spills must be immediately diluted with copious water before neutralization",
+          "matches_filter": true
+        },
+        {
+          "text": "The procedures were approved by unanimous vote",
+          "matches_filter": false
+        },
+        {
+          "text": "Emergency showers and eyewash must be verified functional before beginning procedures",
+          "matches_filter": true
+        }
+      ],
+      "gold_claims": "Perchloric acid must be used only in a dedicated perchloric acid fume hood with washdown system||Workers must wear acid-resistant gloves, chemical splash goggles, and rubber or PVC apron||Washdown system must be activated at end of each work session to prevent residue accumulation||Digestions must not be conducted on wooden or organic bench surfaces||Waste must be collected in designated glass or compatible plastic containers with date labels||Hood ductwork must be inspected and cleaned at least annually||Spills must be immediately diluted with copious water before neutralization||Emergency showers and eyewash must be verified functional before beginning procedures",
+      "gold_count": 8
+    },
+    {
+      "id": "AS-SAF-002",
+      "category": "safety_procedures",
+      "filter_criterion": "Extract ONLY claims that describe specific safety procedures, PPE requirements, emergency protocols, decontamination steps, or equipment operation instructions. Do not include general risk descriptions or regulatory references.",
+      "document": "The Greenfield University Chemistry Department published new protocols for the safe handling of pyrophoric reagents including n-butyllithium, potassium tert-butoxide, and diethylzinc. Professor Hannah Osei-Mensah developed the protocols in consultation with the university's environmental health and safety office after reviewing incident reports from the past five years. All transfers of pyrophoric liquids must be performed using air-free techniques with a Schlenk line or glovebox under inert atmosphere of nitrogen or argon. Researchers must wear fire-resistant lab coats, cryogenic gloves rated for the specific pyrophoric reagent, and full-face shields during all transfers. A dry chemical fire extinguisher (Class D for metal fires) and a container of dry sand must be within arm's reach during pyrophoric reagent use. Syringes used for pyrophoric liquid transfers must be purged three times with inert gas before drawing the reagent. The department reported four pyrophoric reagent incidents in the past five years, none resulting in serious injury. Spills of pyrophoric materials must not be extinguished with water; instead, dry sand should be applied to smother the fire, followed by cleanup once the material is fully consumed. All researchers must complete a hands-on training session with an experienced user before independently handling pyrophoric reagents. Empty containers that held pyrophoric reagents must be carefully rinsed with an appropriate quenching solvent such as isopropanol before disposal. The training program includes both a written examination and a practical skills assessment observed by a senior researcher.",
+      "all_claims": [
+        {
+          "text": "All transfers must be performed using air-free techniques with Schlenk line or glovebox under inert atmosphere",
+          "matches_filter": true
+        },
+        {
+          "text": "Researchers must wear fire-resistant lab coats, cryogenic gloves, and full-face shields",
+          "matches_filter": true
+        },
+        {
+          "text": "A Class D fire extinguisher and dry sand must be within arm's reach during use",
+          "matches_filter": true
+        },
+        {
+          "text": "Syringes must be purged three times with inert gas before drawing reagent",
+          "matches_filter": true
+        },
+        {
+          "text": "The department reported four incidents in the past five years",
+          "matches_filter": false
+        },
+        {
+          "text": "Spills must not be extinguished with water; dry sand should be applied to smother the fire",
+          "matches_filter": true
+        },
+        {
+          "text": "Researchers must complete hands-on training before independently handling pyrophorics",
+          "matches_filter": true
+        },
+        {
+          "text": "Empty containers must be rinsed with quenching solvent such as isopropanol before disposal",
+          "matches_filter": true
+        },
+        {
+          "text": "Training includes written examination and practical skills assessment",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "All transfers must be performed using air-free techniques with Schlenk line or glovebox under inert atmosphere||Researchers must wear fire-resistant lab coats, cryogenic gloves, and full-face shields||A Class D fire extinguisher and dry sand must be within arm's reach during use||Syringes must be purged three times with inert gas before drawing reagent||Spills must not be extinguished with water; dry sand should be applied to smother the fire||Researchers must complete hands-on training before independently handling pyrophorics||Empty containers must be rinsed with quenching solvent such as isopropanol before disposal",
+      "gold_count": 7
+    },
+    {
+      "id": "AS-SAF-003",
+      "category": "safety_procedures",
+      "filter_criterion": "Extract ONLY claims that describe specific safety procedures, PPE requirements, emergency protocols, decontamination steps, or equipment operation instructions. Do not include general risk descriptions or regulatory references.",
+      "document": "The Fairview Medical Center's pathology department updated its formaldehyde handling procedures after its annual chemical hygiene plan review. Pathology safety coordinator Dr. Raj Gupta led the revision process involving twelve staff members from tissue processing, histology, and anatomic pathology sections. Formaldehyde solutions above 0.1 percent concentration must be handled within a chemical fume hood or a ventilated tissue processing station to minimize airborne exposure. Nitrile gloves with a minimum thickness of 8 mils must be worn when handling formalin-fixed specimens, as thinner gloves do not provide adequate breakthrough protection. The department processes over 50,000 tissue specimens annually using formalin fixation. Spills of formaldehyde solution must be absorbed with commercially available formaldehyde spill kits containing sodium bisulfite-based neutralizing agents, and the area must be ventilated for at least 30 minutes after cleanup. Continuous air monitoring using formaldehyde-specific electrochemical sensors is maintained in all areas where formalin is used. If airborne formaldehyde concentrations exceed 0.5 ppm in any monitored area, work must cease and ventilation systems must be inspected before resuming operations. Fixed tissue specimens must be transferred in sealed, leak-proof containers when moved between departments. Dr. Gupta has been the department's safety coordinator for seven years. All formaldehyde waste must be segregated from other chemical waste streams and disposed of through the institution's hazardous waste contractor. Weekly inspections of all formaldehyde storage areas must include verification of container integrity, proper labeling, and ventilation function.",
+      "all_claims": [
+        {
+          "text": "Formaldehyde above 0.1% must be handled in a fume hood or ventilated processing station",
+          "matches_filter": true
+        },
+        {
+          "text": "Nitrile gloves with minimum 8 mil thickness must be worn with formalin-fixed specimens",
+          "matches_filter": true
+        },
+        {
+          "text": "The department processes over 50,000 tissue specimens annually",
+          "matches_filter": false
+        },
+        {
+          "text": "Spills must be absorbed with sodium bisulfite-based kits and area ventilated for 30 minutes",
+          "matches_filter": true
+        },
+        {
+          "text": "If concentrations exceed 0.5 ppm, work must cease and ventilation must be inspected",
+          "matches_filter": true
+        },
+        {
+          "text": "Fixed specimens must be transferred in sealed, leak-proof containers",
+          "matches_filter": true
+        },
+        {
+          "text": "Dr. Gupta has been safety coordinator for seven years",
+          "matches_filter": false
+        },
+        {
+          "text": "Formaldehyde waste must be segregated from other chemical waste",
+          "matches_filter": true
+        },
+        {
+          "text": "Weekly inspections must verify container integrity, labeling, and ventilation function",
+          "matches_filter": true
+        }
+      ],
+      "gold_claims": "Formaldehyde above 0.1% must be handled in a fume hood or ventilated processing station||Nitrile gloves with minimum 8 mil thickness must be worn with formalin-fixed specimens||Spills must be absorbed with sodium bisulfite-based kits and area ventilated for 30 minutes||If concentrations exceed 0.5 ppm, work must cease and ventilation must be inspected||Fixed specimens must be transferred in sealed, leak-proof containers||Formaldehyde waste must be segregated from other chemical waste||Weekly inspections must verify container integrity, labeling, and ventilation function",
+      "gold_count": 7
+    },
+    {
+      "id": "AS-SAF-004",
+      "category": "safety_procedures",
+      "filter_criterion": "Extract ONLY claims that describe specific safety procedures, PPE requirements, emergency protocols, decontamination steps, or equipment operation instructions. Do not include general risk descriptions or regulatory references.",
+      "document": "The Harrington Institute of Materials Science developed comprehensive protocols for handling hydrofluoric acid in its glass etching and semiconductor processing laboratories. Principal scientist Dr. Aisha Rahman authored the procedures based on her twenty years of HF handling experience and current best practices. Workers must complete a site-specific HF safety training course and pass a written examination before being authorized for independent HF use. Full-face shields, chemical splash goggles worn underneath, acid-resistant gloves (neoprene or butyl rubber rated for HF), and acid-resistant aprons must be worn during all HF handling. Calcium gluconate gel must be stored at every HF workstation and applied immediately to any skin area that contacts HF solution, even if no pain or visible injury is present. The institute conducts approximately 150 HF procedures per month across its three laboratories. HF waste must never be collected in glass containers, as HF dissolves glass; only compatible HDPE or polypropylene containers may be used. A designated buddy system requires that no individual works alone when handling HF in any concentration. The cost of HF safety equipment per workstation is approximately three thousand dollars. All HF spills, regardless of size, must be reported to the laboratory supervisor and the institutional safety office within one hour. Containers of HF must be stored in secondary containment trays with capacity equal to 110 percent of the largest container volume.",
+      "all_claims": [
+        {
+          "text": "Workers must complete site-specific HF training and pass written exam before independent use",
+          "matches_filter": true
+        },
+        {
+          "text": "Full-face shields, splash goggles, HF-rated gloves, and acid-resistant aprons must be worn",
+          "matches_filter": true
+        },
+        {
+          "text": "Calcium gluconate gel must be stored at every workstation and applied immediately to any contact area",
+          "matches_filter": true
+        },
+        {
+          "text": "The institute conducts approximately 150 HF procedures per month",
+          "matches_filter": false
+        },
+        {
+          "text": "HF waste must never be collected in glass; only HDPE or polypropylene containers may be used",
+          "matches_filter": true
+        },
+        {
+          "text": "A buddy system requires that no individual works alone when handling HF",
+          "matches_filter": true
+        },
+        {
+          "text": "HF safety equipment per workstation costs approximately three thousand dollars",
+          "matches_filter": false
+        },
+        {
+          "text": "All HF spills must be reported to supervisor and safety office within one hour",
+          "matches_filter": true
+        },
+        {
+          "text": "HF containers must be stored in secondary containment at 110% of largest container volume",
+          "matches_filter": true
+        }
+      ],
+      "gold_claims": "Workers must complete site-specific HF training and pass written exam before independent use||Full-face shields, splash goggles, HF-rated gloves, and acid-resistant aprons must be worn||Calcium gluconate gel must be stored at every workstation and applied immediately to any contact area||HF waste must never be collected in glass; only HDPE or polypropylene containers may be used||A buddy system requires that no individual works alone when handling HF||All HF spills must be reported to supervisor and safety office within one hour||HF containers must be stored in secondary containment at 110% of largest container volume",
+      "gold_count": 7
+    },
+    {
+      "id": "AS-SAF-005",
+      "category": "safety_procedures",
+      "filter_criterion": "Extract ONLY claims that describe specific safety procedures, PPE requirements, emergency protocols, decontamination steps, or equipment operation instructions. Do not include general risk descriptions or regulatory references.",
+      "document": "The Millbrook Pharmaceutical Research Facility released updated compressed gas cylinder handling and storage procedures following an internal safety audit. Facilities manager Robert Kim worked with the company's safety committee to address three audit findings related to gas cylinder management. All compressed gas cylinders must be secured in an upright position using chains, straps, or purpose-built cylinder stands to prevent falling. Cylinders must be capped with protective valve caps when not in use and during all transport. The facility maintains an inventory of approximately 85 compressed gas cylinders at any given time. Incompatible gases such as oxygen and flammable gases must be stored at least 20 feet apart or separated by a fire-resistant barrier with a minimum fire rating of 30 minutes. Cylinder regulators must be inspected for damage before installation and leak-tested using an approved leak detection solution after connection. The annual compressed gas budget for the facility is approximately forty-five thousand dollars. Empty cylinders must be marked with a tag labeled EMPTY or MT and stored separately from full cylinders. All cylinder handling and transport within the facility must use purpose-built cylinder carts with securing mechanisms. Gas detection monitors must be installed in enclosed areas where toxic or asphyxiant gases are stored. Cylinder storage areas must be well-ventilated and located away from heat sources, electrical circuits, and emergency exits.",
+      "all_claims": [
+        {
+          "text": "Cylinders must be secured upright using chains, straps, or cylinder stands",
+          "matches_filter": true
+        },
+        {
+          "text": "Valve caps must be in place when cylinders are not in use and during transport",
+          "matches_filter": true
+        },
+        {
+          "text": "The facility maintains approximately 85 cylinders at any time",
+          "matches_filter": false
+        },
+        {
+          "text": "Incompatible gases must be stored at least 20 feet apart or behind a 30-minute fire barrier",
+          "matches_filter": true
+        },
+        {
+          "text": "Regulators must be inspected before installation and leak-tested after connection",
+          "matches_filter": true
+        },
+        {
+          "text": "Annual compressed gas budget is approximately forty-five thousand dollars",
+          "matches_filter": false
+        },
+        {
+          "text": "Empty cylinders must be marked EMPTY or MT and stored separately from full ones",
+          "matches_filter": true
+        },
+        {
+          "text": "Transport within facility must use cylinder carts with securing mechanisms",
+          "matches_filter": true
+        },
+        {
+          "text": "Gas detection monitors must be installed in enclosed storage areas",
+          "matches_filter": true
+        },
+        {
+          "text": "Storage areas must be well-ventilated and away from heat sources and emergency exits",
+          "matches_filter": true
+        }
+      ],
+      "gold_claims": "Cylinders must be secured upright using chains, straps, or cylinder stands||Valve caps must be in place when cylinders are not in use and during transport||Incompatible gases must be stored at least 20 feet apart or behind a 30-minute fire barrier||Regulators must be inspected before installation and leak-tested after connection||Empty cylinders must be marked EMPTY or MT and stored separately from full ones||Transport within facility must use cylinder carts with securing mechanisms||Gas detection monitors must be installed in enclosed storage areas||Storage areas must be well-ventilated and away from heat sources and emergency exits",
+      "gold_count": 8
+    },
+    {
+      "id": "AS-TMP-001",
+      "category": "temporal_claims",
+      "filter_criterion": "Extract ONLY claims that mention specific dates, years, time periods, deadlines, or temporal milestones. Do not include claims about procedures, requirements, or facts that do not contain a specific temporal reference.",
+      "document": "The Cornerstone Institute of Chemical History published a retrospective analysis of major chemical safety regulatory milestones in the United States. Historian Dr. Arthur Mendez compiled the timeline from legislative records and regulatory archives. The Occupational Safety and Health Act was signed into law on December 29, 1970, establishing OSHA as the federal agency responsible for workplace safety. The original OSHA Hazard Communication Standard was promulgated in 1983, initially covering only manufacturing sector employers. TSCA was enacted in 1976 to regulate the manufacturing, processing, and distribution of chemical substances. The GHS was adopted by the United Nations in 2003 following twelve years of development by international experts. The EPA's Risk Management Program rule was finalized in 1996 under Section 112(r) of the Clean Air Act. The Chemical Weapons Convention entered into force on April 29, 1997, establishing a global prohibition on chemical weapons. The OSHA Laboratory Standard (29 CFR 1910.1450) was published in 1990 to address the unique hazards of laboratory chemical use. The institute has published over three hundred articles on chemical regulation history. The Frank R. Lautenberg Chemical Safety for the 21st Century Act amended TSCA on June 22, 2016, marking the first major update to the law in forty years. The European REACH regulation entered into force on June 1, 2007, transforming chemical management across the European Union. The institute's archive contains documents dating back to the earliest federal chemical regulations.",
+      "all_claims": [
+        {
+          "text": "The Occupational Safety and Health Act was signed on December 29, 1970",
+          "matches_filter": true
+        },
+        {
+          "text": "The Hazard Communication Standard was promulgated in 1983",
+          "matches_filter": true
+        },
+        {
+          "text": "TSCA was enacted in 1976",
+          "matches_filter": true
+        },
+        {
+          "text": "GHS was adopted by the UN in 2003 following twelve years of development",
+          "matches_filter": true
+        },
+        {
+          "text": "EPA RMP rule was finalized in 1996",
+          "matches_filter": true
+        },
+        {
+          "text": "CWC entered into force on April 29, 1997",
+          "matches_filter": true
+        },
+        {
+          "text": "OSHA Laboratory Standard was published in 1990",
+          "matches_filter": true
+        },
+        {
+          "text": "The institute has published over three hundred articles",
+          "matches_filter": false
+        },
+        {
+          "text": "The Lautenberg Act amended TSCA on June 22, 2016",
+          "matches_filter": true
+        },
+        {
+          "text": "REACH entered into force on June 1, 2007",
+          "matches_filter": true
+        }
+      ],
+      "gold_claims": "The Occupational Safety and Health Act was signed on December 29, 1970||The Hazard Communication Standard was promulgated in 1983||TSCA was enacted in 1976||GHS was adopted by the UN in 2003 following twelve years of development||EPA RMP rule was finalized in 1996||CWC entered into force on April 29, 1997||OSHA Laboratory Standard was published in 1990||The Lautenberg Act amended TSCA on June 22, 2016||REACH entered into force on June 1, 2007",
+      "gold_count": 9
+    },
+    {
+      "id": "AS-TMP-002",
+      "category": "temporal_claims",
+      "filter_criterion": "Extract ONLY claims that mention specific dates, years, time periods, deadlines, or temporal milestones. Do not include claims about procedures, requirements, or facts that do not contain a specific temporal reference.",
+      "document": "The Northgate Chemical Distributors Association released its annual safety performance report covering incident trends and regulatory compliance metrics. Safety director Margaret O'Brien compiled data from seventeen member companies operating across the southeastern distribution region. Total reportable incidents declined by fourteen percent compared to the previous reporting period, continuing a five-year downward trend. The association implemented a voluntary chemical distribution safety certification program in March 2019 that has been credited with improving safety outcomes. Chemical container labeling compliance audits conducted during the first quarter identified 234 labeling deficiencies across member companies, a reduction from 312 deficiencies found during the same period the previous year. The association represents companies that collectively handle over 4,800 chemical products. Driver training requirements were expanded in January 2024 to include hands-on hazmat spill response exercises in addition to classroom instruction. The regional distribution network covers approximately 35,000 square miles across four states. Fleet telematics data showed that average delivery times decreased by eight percent following route optimization implemented in September 2023. Annual member dues were increased by five percent for the current fiscal year. The association's safety recognition awards ceremony will be held at the annual conference in October 2026. The institute's chemical hygiene officer, Dr. Yusuf Okafor, emphasized that compliance with updated timelines is essential for maintaining accreditation with regional safety bodies. Failure to meet inspection deadlines has historically resulted in temporary suspension of laboratory operations, which can cost institutions an average of $45,000 per week in delayed research output. The institute maintains a comprehensive database of over 2,300 chemical safety incidents reported across member facilities, which informs its risk assessment methodologies and training curriculum development. All chemical storage areas must be equipped with secondary containment capable of holding 110 percent of the largest container's volume. Temperature monitoring in chemical storage rooms requires calibrated sensors checked against NIST-traceable standards. The institute also maintains mutual aid agreements with seven regional hazardous materials response teams, ensuring rapid professional response capability within a forty-minute radius of any member facility. Annual membership dues are structured on a sliding scale based on institutional size and chemical inventory volume, ranging from $2,500 for small facilities to $15,000 for large research universities.",
+      "all_claims": [
+        {
+          "text": "Reportable incidents declined by fourteen percent from the previous period",
+          "matches_filter": false
+        },
+        {
+          "text": "Safety certification program was implemented in March 2019",
+          "matches_filter": true
+        },
+        {
+          "text": "234 labeling deficiencies were found during the first quarter",
+          "matches_filter": false
+        },
+        {
+          "text": "Member companies handle over 4,800 chemical products",
+          "matches_filter": false
+        },
+        {
+          "text": "Driver training was expanded in January 2024 to include hands-on exercises",
+          "matches_filter": true
+        },
+        {
+          "text": "The distribution network covers approximately 35,000 square miles",
+          "matches_filter": false
+        },
+        {
+          "text": "Route optimization was implemented in September 2023",
+          "matches_filter": true
+        },
+        {
+          "text": "Annual member dues were increased by five percent",
+          "matches_filter": false
+        },
+        {
+          "text": "Safety recognition awards will be held in October 2026",
+          "matches_filter": true
+        },
+        {
+          "text": "Suspension of operations costs an average of $45,000 per week",
+          "matches_filter": false
+        },
+        {
+          "text": "The database contains over 2,300 reported chemical safety incidents",
+          "matches_filter": false
+        },
+        {
+          "text": "Secondary containment must hold 110 percent of the largest container's volume",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Safety certification program was implemented in March 2019||Driver training was expanded in January 2024 to include hands-on exercises||Route optimization was implemented in September 2023||Safety recognition awards will be held in October 2026",
+      "gold_count": 4
+    },
+    {
+      "id": "AS-TMP-003",
+      "category": "temporal_claims",
+      "filter_criterion": "Extract ONLY claims that mention specific dates, years, time periods, deadlines, or temporal milestones. Do not include claims about procedures, requirements, or facts that do not contain a specific temporal reference.",
+      "document": "The Sunridge Pesticide Research Center prepared a historical review of organophosphate regulation for an academic symposium on chemical safety. Director of toxicology studies Dr. Nina Petrov compiled the document from published regulatory records and scientific literature. The first organophosphate insecticide, tetraethyl pyrophosphate, was introduced commercially in 1944 as an alternative to arsenic-based compounds. Parathion was developed in 1947 by Gerhard Schrader at IG Farben and became one of the most widely used agricultural insecticides worldwide. The EPA banned most residential uses of chlorpyrifos in 2000 following concerns about children's neurodevelopmental health. The center operates twelve research greenhouses and four analytical laboratories. Diazinon was phased out for indoor and lawn use in 2004 under a voluntary agreement between EPA and manufacturers. The Food Quality Protection Act of 1996 required EPA to reassess all existing pesticide tolerances using a unified health-based standard. The European Union withdrew approval for chlorpyrifos under Regulation 2020/18, effective on February 16, 2020. The center employs forty-two scientists and support staff. WHO published its revised classification of pesticides by hazard in 2019, updating the criteria for acute toxicity categories. The Stockholm Convention added several organophosphate pesticides to its list of persistent organic pollutants between 2009 and 2017. Professor Keiko Watanabe, the network's lead analytical chemist, developed a novel spectroscopic method for detecting trace contamination in recycled solvent streams that has been adopted by fourteen member laboratories. The network's quality assurance protocols require that all analytical instruments used for environmental monitoring undergo calibration verification at least quarterly, with full recalibration performed whenever results fall outside acceptable tolerance bands. Participating facilities collectively process approximately 85,000 liters of chemical waste annually, with an average recycling rate of 34 percent for common organic solvents. The network's emergency communication system uses a tiered alert structure, with Level 1 notifications distributed within fifteen minutes of any confirmed chemical release exceeding reportable quantities. Training requirements for network personnel include a minimum of forty hours of initial hazardous materials training followed by eight hours of annual refresher courses. The network has also established partnerships with three analytical testing laboratories that provide rapid turnaround toxicological screening services, typically delivering results within 72 hours of sample receipt for priority analyses.",
+      "all_claims": [
+        {
+          "text": "Tetraethyl pyrophosphate was introduced commercially in 1944",
+          "matches_filter": true
+        },
+        {
+          "text": "Parathion was developed in 1947 by Gerhard Schrader",
+          "matches_filter": true
+        },
+        {
+          "text": "EPA banned most residential uses of chlorpyrifos in 2000",
+          "matches_filter": true
+        },
+        {
+          "text": "The center operates twelve research greenhouses",
+          "matches_filter": false
+        },
+        {
+          "text": "Diazinon was phased out for indoor and lawn use in 2004",
+          "matches_filter": true
+        },
+        {
+          "text": "Food Quality Protection Act was enacted in 1996",
+          "matches_filter": true
+        },
+        {
+          "text": "EU withdrew chlorpyrifos approval effective February 16, 2020",
+          "matches_filter": true
+        },
+        {
+          "text": "The center employs forty-two scientists and support staff",
+          "matches_filter": false
+        },
+        {
+          "text": "WHO published revised pesticide hazard classification in 2019",
+          "matches_filter": true
+        },
+        {
+          "text": "Stockholm Convention added organophosphates between 2009 and 2017",
+          "matches_filter": true
+        },
+        {
+          "text": "Facilities collectively process approximately 85,000 liters of chemical waste annually",
+          "matches_filter": false
+        },
+        {
+          "text": "The recycling rate for common organic solvents averages 34 percent",
+          "matches_filter": false
+        },
+        {
+          "text": "Initial hazardous materials training requires a minimum of forty hours",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Tetraethyl pyrophosphate was introduced commercially in 1944||Parathion was developed in 1947 by Gerhard Schrader||EPA banned most residential uses of chlorpyrifos in 2000||Diazinon was phased out for indoor and lawn use in 2004||Food Quality Protection Act was enacted in 1996||EU withdrew chlorpyrifos approval effective February 16, 2020||WHO published revised pesticide hazard classification in 2019||Stockholm Convention added organophosphates between 2009 and 2017",
+      "gold_count": 8
+    },
+    {
+      "id": "AS-TMP-004",
+      "category": "temporal_claims",
+      "filter_criterion": "Extract ONLY claims that mention specific dates, years, time periods, deadlines, or temporal milestones. Do not include claims about procedures, requirements, or facts that do not contain a specific temporal reference.",
+      "document": "The Mountainview Chemical Safety Consortium published an assessment of chemical incident response capabilities across its member jurisdictions. Emergency management coordinator Captain David Torres compiled response time data and resource inventories from fourteen county emergency management agencies. The consortium was established in 2008 following a series of chemical transportation accidents that revealed gaps in regional coordination. Average initial response time to reported chemical incidents was 23 minutes, with rural jurisdictions averaging 35 minutes compared to 14 minutes for urban areas. The consortium's mutual aid agreement was last updated in July 2022 to include provisions for drone-based reconnaissance of chemical release sites. Sixty-seven percent of firefighters across member jurisdictions hold current HAZMAT technician certification. Regional decontamination equipment was standardized in 2015 through a federal homeland security grant totaling 1.2 million dollars. The consortium conducts two full-scale chemical incident exercises annually, with the most recent held in November 2025 simulating a chlorine rail car derailment. Mass decontamination capacity was expanded in 2021 to handle 500 persons per hour through the acquisition of portable decontamination systems. The consortium's communication interoperability project, completed in March 2023, linked all fourteen county dispatch centers on a shared digital radio network. Annual operating costs for the consortium are approximately 850 thousand dollars funded through member assessments.",
+      "all_claims": [
+        {
+          "text": "The consortium was established in 2008",
+          "matches_filter": true
+        },
+        {
+          "text": "Average response time was 23 minutes overall",
+          "matches_filter": false
+        },
+        {
+          "text": "Mutual aid agreement was last updated in July 2022",
+          "matches_filter": true
+        },
+        {
+          "text": "Sixty-seven percent of firefighters hold HAZMAT technician certification",
+          "matches_filter": false
+        },
+        {
+          "text": "Decontamination equipment was standardized in 2015 through a federal grant",
+          "matches_filter": true
+        },
+        {
+          "text": "Most recent full-scale exercise was held in November 2025",
+          "matches_filter": true
+        },
+        {
+          "text": "Mass decontamination capacity was expanded in 2021 to handle 500 persons per hour",
+          "matches_filter": true
+        },
+        {
+          "text": "Communication interoperability project was completed in March 2023",
+          "matches_filter": true
+        },
+        {
+          "text": "Annual operating costs are approximately 850 thousand dollars",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "The consortium was established in 2008||Mutual aid agreement was last updated in July 2022||Decontamination equipment was standardized in 2015 through a federal grant||Most recent full-scale exercise was held in November 2025||Mass decontamination capacity was expanded in 2021 to handle 500 persons per hour||Communication interoperability project was completed in March 2023",
+      "gold_count": 6
+    },
+    {
+      "id": "AS-TMP-005",
+      "category": "temporal_claims",
+      "filter_criterion": "Extract ONLY claims that mention specific dates, years, time periods, deadlines, or temporal milestones. Do not include claims about procedures, requirements, or facts that do not contain a specific temporal reference.",
+      "document": "The Bayshore Institute of Chemical Engineering documented the evolution of chemical process safety standards in the petroleum refining industry. Research fellow Dr. Caroline Wu traced the development of safety practices from early refinery operations to modern process safety management frameworks. The Flixborough disaster of June 1, 1974, in which a cyclohexane vapor cloud explosion killed 28 workers, was a watershed moment that led to the UK Health and Safety at Work Act later that same year. The Bhopal disaster of December 3, 1984, killed thousands of residents when methyl isocyanate leaked from a Union Carbide pesticide plant, catalyzing global chemical safety reform. OSHA promulgated the Process Safety Management standard (29 CFR 1910.119) in 1992 in direct response to a series of catastrophic chemical incidents. The institute's refinery safety archive contains over 5,000 incident investigation reports. The EPA's Risk Management Program rule followed in 1996, extending chemical accident prevention requirements beyond the workplace to surrounding communities. The BP Texas City refinery explosion on March 23, 2005, killed 15 workers and injured 180 others, leading to the establishment of the Chemical Safety Board's investigation program. The Deepwater Horizon oil rig explosion on April 20, 2010, resulted in 11 deaths and the largest marine oil spill in US history. The West Fertilizer Company explosion in West, Texas on April 17, 2013, killed 15 people and damaged or destroyed more than 150 buildings. The institute hosts an annual process safety symposium attended by over 400 professionals.",
+      "all_claims": [
+        {
+          "text": "The Flixborough disaster occurred on June 1, 1974, killing 28 workers",
+          "matches_filter": true
+        },
+        {
+          "text": "UK Health and Safety at Work Act was enacted in 1974",
+          "matches_filter": true
+        },
+        {
+          "text": "The Bhopal disaster occurred on December 3, 1984",
+          "matches_filter": true
+        },
+        {
+          "text": "OSHA promulgated the PSM standard in 1992",
+          "matches_filter": true
+        },
+        {
+          "text": "The archive contains over 5,000 incident reports",
+          "matches_filter": false
+        },
+        {
+          "text": "EPA RMP rule followed in 1996",
+          "matches_filter": true
+        },
+        {
+          "text": "BP Texas City explosion occurred on March 23, 2005, killing 15 and injuring 180",
+          "matches_filter": true
+        },
+        {
+          "text": "Deepwater Horizon explosion occurred on April 20, 2010, with 11 deaths",
+          "matches_filter": true
+        },
+        {
+          "text": "West Fertilizer explosion occurred on April 17, 2013, killing 15 people",
+          "matches_filter": true
+        },
+        {
+          "text": "The annual symposium is attended by over 400 professionals",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "The Flixborough disaster occurred on June 1, 1974, killing 28 workers||UK Health and Safety at Work Act was enacted in 1974||The Bhopal disaster occurred on December 3, 1984||OSHA promulgated the PSM standard in 1992||EPA RMP rule followed in 1996||BP Texas City explosion occurred on March 23, 2005, killing 15 and injuring 180||Deepwater Horizon explosion occurred on April 20, 2010, with 11 deaths||West Fertilizer explosion occurred on April 17, 2013, killing 15 people",
+      "gold_count": 8
+    },
+    {
+      "id": "AS-ATT-001",
+      "category": "attribution",
+      "filter_criterion": "Extract ONLY claims that are explicitly attributed to a specific organization, agency, researcher, or expert source. Do not include unattributed factual claims even if they relate to an organization's domain.",
+      "document": "The Fieldstone Center for Chemical Policy published a synthesis of expert opinions on emerging chemical safety challenges for the next decade. The report compiled perspectives from twenty-three distinguished scientists, regulators, and industry leaders. Dr. Helena Sorensen of the Nordic Institute of Toxicology argued that current exposure limit methodologies are inadequate for assessing the cumulative effects of chemical mixtures encountered in real-world environments. The American Chemical Society published a position statement calling for increased federal funding for chemical safety research and the development of computational toxicology tools to replace animal testing. According to ECHA Executive Director Dr. Stefan Weber, REACH has fundamentally transformed chemical safety assessment in Europe but significant data gaps remain for legacy chemicals produced below the 10-tonne threshold. The Fieldstone Center was established with an endowment from the Fieldstone Foundation. Professor Kenji Watanabe of Tokyo Institute of Technology identified microplastics as a vector for chemical exposure that existing regulatory frameworks are not designed to address. The International Council of Chemical Associations stated that voluntary industry stewardship programs such as Responsible Care have achieved measurable improvements in environmental and safety performance. Dr. Lisa Fernandez of the WHO Division of Chemical Safety emphasized that developing countries bear a disproportionate burden of chemical-related disease and lack the regulatory infrastructure to implement GHS effectively. The report was released at the annual Chemical Safety Forum attended by 280 delegates from 42 countries.",
+      "all_claims": [
+        {
+          "text": "Dr. Helena Sorensen argued that exposure limit methodologies are inadequate for chemical mixtures",
+          "matches_filter": true
+        },
+        {
+          "text": "The American Chemical Society called for increased federal funding for chemical safety research",
+          "matches_filter": true
+        },
+        {
+          "text": "ECHA Director Dr. Stefan Weber stated REACH has transformed assessment but data gaps remain",
+          "matches_filter": true
+        },
+        {
+          "text": "The Fieldstone Center was established with a Fieldstone Foundation endowment",
+          "matches_filter": false
+        },
+        {
+          "text": "Professor Kenji Watanabe identified microplastics as a chemical exposure vector",
+          "matches_filter": true
+        },
+        {
+          "text": "The International Council of Chemical Associations stated that Responsible Care has achieved measurable improvements",
+          "matches_filter": true
+        },
+        {
+          "text": "Dr. Lisa Fernandez of WHO emphasized developing countries bear disproportionate chemical disease burden",
+          "matches_filter": true
+        },
+        {
+          "text": "The report was released at a forum with 280 delegates from 42 countries",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Dr. Helena Sorensen argued that exposure limit methodologies are inadequate for chemical mixtures||The American Chemical Society called for increased federal funding for chemical safety research||ECHA Director Dr. Stefan Weber stated REACH has transformed assessment but data gaps remain||Professor Kenji Watanabe identified microplastics as a chemical exposure vector||The International Council of Chemical Associations stated that Responsible Care has achieved measurable improvements||Dr. Lisa Fernandez of WHO emphasized developing countries bear disproportionate chemical disease burden",
+      "gold_count": 6
+    },
+    {
+      "id": "AS-ATT-002",
+      "category": "attribution",
+      "filter_criterion": "Extract ONLY claims that are explicitly attributed to a specific organization, agency, researcher, or expert source. Do not include unattributed factual claims even if they relate to an organization's domain.",
+      "document": "The Riverside Chemical Analytics Center published a review of analytical method development for chemical warfare agent detection in environmental samples. Senior analyst Dr. Paul Okafor led the review team that evaluated detection technologies across military, civilian, and environmental monitoring applications. The OPCW Scientific Advisory Board recommended in its latest report that member states invest in next-generation detection technologies capable of identifying novel chemical agents not explicitly listed in the CWC schedules. Dr. Catherine Blake of the Defence Science and Technology Laboratory (DSTL) demonstrated that portable surface-enhanced Raman spectroscopy can detect nerve agent hydrolysis products at concentrations below 1 part per billion. The center maintains a reference library of over 4,200 chemical spectra for forensic analysis. According to the US Army Edgewood Chemical Biological Center, the Joint Chemical Agent Detector (JCAD) provides rapid field detection of nerve, blister, and blood agents with a response time under 30 seconds. The National Institute of Standards and Technology developed certified reference materials for eight CWC-scheduled chemicals to support laboratory proficiency testing programs. Dr. Yun-Fei Zhang of Beijing Institute of Chemical Defence published findings that machine learning algorithms trained on mass spectral databases can identify unknown agents with 94 percent accuracy. The International Laboratory Accreditation Cooperation established specific competency requirements for laboratories participating in OPCW proficiency testing. The review was funded through a three-year research grant totaling 1.8 million dollars.",
+      "all_claims": [
+        {
+          "text": "OPCW Scientific Advisory Board recommended investment in next-generation detection technologies",
+          "matches_filter": true
+        },
+        {
+          "text": "Dr. Catherine Blake of DSTL demonstrated portable SERS can detect nerve agent hydrolysis products below 1 ppb",
+          "matches_filter": true
+        },
+        {
+          "text": "The center maintains over 4,200 chemical spectra",
+          "matches_filter": false
+        },
+        {
+          "text": "US Army ECBC stated JCAD provides detection of nerve, blister, and blood agents under 30 seconds",
+          "matches_filter": true
+        },
+        {
+          "text": "NIST developed certified reference materials for eight CWC-scheduled chemicals",
+          "matches_filter": true
+        },
+        {
+          "text": "Dr. Yun-Fei Zhang published that ML algorithms identify unknown agents with 94% accuracy",
+          "matches_filter": true
+        },
+        {
+          "text": "ILAC established competency requirements for OPCW proficiency testing laboratories",
+          "matches_filter": true
+        },
+        {
+          "text": "The review was funded by a 1.8 million dollar grant",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "OPCW Scientific Advisory Board recommended investment in next-generation detection technologies||Dr. Catherine Blake of DSTL demonstrated portable SERS can detect nerve agent hydrolysis products below 1 ppb||US Army ECBC stated JCAD provides detection of nerve, blister, and blood agents under 30 seconds||NIST developed certified reference materials for eight CWC-scheduled chemicals||Dr. Yun-Fei Zhang published that ML algorithms identify unknown agents with 94% accuracy||ILAC established competency requirements for OPCW proficiency testing laboratories",
+      "gold_count": 6
+    },
+    {
+      "id": "AS-ATT-003",
+      "category": "attribution",
+      "filter_criterion": "Extract ONLY claims that are explicitly attributed to a specific organization, agency, researcher, or expert source. Do not include unattributed factual claims even if they relate to an organization's domain.",
+      "document": "The Willowbrook Center for Sustainable Chemistry hosted a symposium on green chemistry principles and their application to industrial chemical manufacturing. The symposium brought together researchers and industry representatives to discuss practical implementation of waste reduction and safer chemical design strategies. Attendees discussed the twelve principles of green chemistry and their relevance to modern manufacturing processes. The keynote speaker presented an overview of recent advances in catalytic processes that reduce energy consumption. Several poster presentations covered topics ranging from solvent-free synthesis to biodegradable surfactant development. The symposium lunch featured locally sourced catering from three regional vendors. Workshop sessions provided hands-on training in life cycle assessment tools and green chemistry metrics calculation. The facility's conference center can accommodate up to 350 attendees across its three presentation halls. Registration fees covered all meals, materials, and access to the center's library resources. The next symposium is tentatively scheduled for the spring of next year. Follow-up surveys indicated that 89 percent of attendees rated the event as excellent or good. The organizing committee consisted of seven faculty members from four different universities. Continuing education credits were offered to attendees who completed the full two-day program. The symposium's keynote presentation explored the twelve principles of green chemistry and their application to industrial-scale manufacturing processes. Discussion panels addressed the economic feasibility of transitioning from traditional petrochemical feedstocks to bio-based alternatives, noting that raw material costs for bio-derived solvents remain approximately 2.3 times higher than conventional equivalents. Workshop sessions covered practical topics including solvent selection guides, waste minimization strategies, and life cycle assessment methodologies for comparing environmental impacts of different synthetic routes. The symposium attracted 487 registered participants from twenty-three countries, representing academia, industry, and government regulatory agencies. Poster sessions featured 156 research presentations, with topics ranging from catalytic process optimization to biodegradable polymer development. The organizing committee announced plans to publish selected proceedings in a special issue of the Greenfield Journal of Sustainable Chemistry, with manuscript submissions open through a peer review process. Exhibitor booths showcased analytical instruments, green solvent product lines, and waste treatment technologies from thirty-two commercial vendors. Continuing education credits were available for professional chemists maintaining certification through recognized professional organizations.",
+      "all_claims": [
+        {
+          "text": "Attendees discussed the twelve principles of green chemistry",
+          "matches_filter": false
+        },
+        {
+          "text": "The keynote speaker presented on catalytic processes reducing energy consumption",
+          "matches_filter": false
+        },
+        {
+          "text": "Poster presentations covered solvent-free synthesis and biodegradable surfactants",
+          "matches_filter": false
+        },
+        {
+          "text": "The symposium lunch featured locally sourced catering",
+          "matches_filter": false
+        },
+        {
+          "text": "The conference center accommodates up to 350 attendees",
+          "matches_filter": false
+        },
+        {
+          "text": "89 percent of attendees rated the event as excellent or good",
+          "matches_filter": false
+        },
+        {
+          "text": "The organizing committee had seven faculty from four universities",
+          "matches_filter": false
+        },
+        {
+          "text": "Continuing education credits were offered for the full program",
+          "matches_filter": false
+        },
+        {
+          "text": "Bio-derived solvent costs remain approximately 2.3 times higher than conventional equivalents",
+          "matches_filter": false
+        },
+        {
+          "text": "The symposium attracted 487 registered participants from twenty-three countries",
+          "matches_filter": false
+        },
+        {
+          "text": "Poster sessions featured 156 research presentations",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "",
+      "gold_count": 0
+    },
+    {
+      "id": "AS-ATT-004",
+      "category": "attribution",
+      "filter_criterion": "Extract ONLY claims that are explicitly attributed to a specific organization, agency, researcher, or expert source. Do not include unattributed factual claims even if they relate to an organization's domain.",
+      "document": "The Summitview Chemical Policy Institute compiled a briefing on artificial intelligence applications in chemical safety assessment for policymakers. Policy analyst Dr. Rachel Steinberg authored the briefing based on interviews with fourteen experts in computational toxicology and chemical regulation. NIOSH Director Dr. John Howard stated that AI-powered exposure assessment tools could help identify previously unrecognized chemical hazard patterns in large-scale occupational health databases. The European Commission's Joint Research Centre published a validation study confirming that QSAR models can predict acute fish toxicity with 82 percent accuracy for untested industrial chemicals. According to Professor Maria Santos of MIT's Department of Chemical Engineering, deep learning models trained on molecular structure data are approaching human expert accuracy in predicting GHS hazard classifications. The OECD's Chemicals and Biotechnology Committee recommended in its 2025 guidelines that regulatory agencies incorporate AI tools as supplements to, not replacements for, traditional toxicological testing methods. Dr. Robert Chen of Stanford University cautioned that AI models for chemical toxicity prediction exhibit systematic bias toward chemicals structurally similar to their training data, potentially missing novel hazards. The American Industrial Hygiene Association published a position paper endorsing the use of AI-assisted exposure modeling while emphasizing the continued need for validated personal monitoring data. The briefing was distributed to 85 congressional offices and twelve federal agency contacts.",
+      "all_claims": [
+        {
+          "text": "NIOSH Director Dr. John Howard stated AI tools could identify unrecognized hazard patterns",
+          "matches_filter": true
+        },
+        {
+          "text": "European Commission JRC published validation confirming QSAR models predict fish toxicity at 82% accuracy",
+          "matches_filter": true
+        },
+        {
+          "text": "Professor Maria Santos of MIT stated deep learning models approach human accuracy for GHS classification",
+          "matches_filter": true
+        },
+        {
+          "text": "OECD Chemicals Committee recommended AI tools as supplements to not replacements for traditional testing",
+          "matches_filter": true
+        },
+        {
+          "text": "Dr. Robert Chen of Stanford cautioned that AI models exhibit bias toward structurally similar chemicals",
+          "matches_filter": true
+        },
+        {
+          "text": "AIHA endorsed AI-assisted exposure modeling while emphasizing need for personal monitoring data",
+          "matches_filter": true
+        },
+        {
+          "text": "The briefing was distributed to 85 congressional offices",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "NIOSH Director Dr. John Howard stated AI tools could identify unrecognized hazard patterns||European Commission JRC published validation confirming QSAR models predict fish toxicity at 82% accuracy||Professor Maria Santos of MIT stated deep learning models approach human accuracy for GHS classification||OECD Chemicals Committee recommended AI tools as supplements to not replacements for traditional testing||Dr. Robert Chen of Stanford cautioned that AI models exhibit bias toward structurally similar chemicals||AIHA endorsed AI-assisted exposure modeling while emphasizing need for personal monitoring data",
+      "gold_count": 6
+    },
+    {
+      "id": "AS-ATT-005",
+      "category": "attribution",
+      "filter_criterion": "Extract ONLY claims that are explicitly attributed to a specific organization, agency, researcher, or expert source. Do not include unattributed factual claims even if they relate to an organization's domain.",
+      "document": "The Edgewater Environmental Monitoring Network published its annual assessment of chemical contamination in regional waterways. Network coordinator Dr. Sandra Reyes compiled data from monitoring stations at thirty-two locations across the watershed. The US Geological Survey reported elevated concentrations of PFAS compounds in three tributary streams, with total PFAS levels exceeding 70 parts per trillion in downstream samples. The EPA established a Maximum Contaminant Level of 4 parts per trillion for PFOA and PFOS in drinking water under its 2024 PFAS National Primary Drinking Water Regulation. According to the State Department of Environmental Quality, industrial discharge permits for two facilities are under review following detection of unauthorized PFAS releases. The monitoring network operates on an annual budget of approximately 2.1 million dollars. Dr. James Park of the Edgewater University School of Public Health published findings linking elevated PFAS exposure in the watershed to increased thyroid disease incidence among residents in downstream communities. The International Joint Commission on the Great Lakes recommended enhanced monitoring protocols for emerging contaminants of concern including PFAS, pharmaceutical residues, and microplastics. The American Water Works Association stated that conventional water treatment technologies are largely ineffective at removing PFAS compounds, necessitating investment in granular activated carbon and ion exchange treatment systems. Three community water systems have already installed GAC treatment units at a combined cost of 12 million dollars.",
+      "all_claims": [
+        {
+          "text": "USGS reported elevated PFAS concentrations exceeding 70 ppt in tributary streams",
+          "matches_filter": true
+        },
+        {
+          "text": "EPA established MCL of 4 ppt for PFOA and PFOS under 2024 PFAS regulation",
+          "matches_filter": true
+        },
+        {
+          "text": "State DEQ stated two industrial discharge permits are under review for unauthorized PFAS releases",
+          "matches_filter": true
+        },
+        {
+          "text": "The network operates on approximately 2.1 million dollar annual budget",
+          "matches_filter": false
+        },
+        {
+          "text": "Dr. James Park linked elevated PFAS exposure to increased thyroid disease incidence",
+          "matches_filter": true
+        },
+        {
+          "text": "International Joint Commission recommended enhanced monitoring for PFAS, pharmaceuticals, and microplastics",
+          "matches_filter": true
+        },
+        {
+          "text": "AWWA stated conventional treatment is largely ineffective at removing PFAS",
+          "matches_filter": true
+        },
+        {
+          "text": "Three community water systems installed GAC treatment at 12 million dollar combined cost",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "USGS reported elevated PFAS concentrations exceeding 70 ppt in tributary streams||EPA established MCL of 4 ppt for PFOA and PFOS under 2024 PFAS regulation||State DEQ stated two industrial discharge permits are under review for unauthorized PFAS releases||Dr. James Park linked elevated PFAS exposure to increased thyroid disease incidence||International Joint Commission recommended enhanced monitoring for PFAS, pharmaceuticals, and microplastics||AWWA stated conventional treatment is largely ineffective at removing PFAS",
+      "gold_count": 6
+    }
+  ]
+}

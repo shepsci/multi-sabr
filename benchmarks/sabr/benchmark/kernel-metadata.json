@@ -1,0 +1,14 @@
+{
+  "id": "shepscientific/new-benchmark-task-0adb6",
+  "title": "SABR Benchmark",
+  "code_file": "sabr_notebook.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": ["shepscientific/sabr-selective-attention-data"],
+  "competition_sources": [],
+  "kernel_sources": []
+}

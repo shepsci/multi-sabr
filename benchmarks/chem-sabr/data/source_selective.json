@@ -1,0 +1,1468 @@
+{
+  "metadata": {
+    "task": "source_selective_qa",
+    "version": "1.0.0",
+    "description": "50 items testing selective attention in chemistry/chemical safety/chemical security contexts. Each item presents 3 information sources with conflicting chemical safety claims. The model must answer based ONLY on a designated source, ignoring plausible alternatives.",
+    "domains": [
+      "chemical_hazards",
+      "laboratory_safety",
+      "exposure_limits",
+      "regulatory_frameworks",
+      "chemical_security"
+    ],
+    "total_items": 50,
+    "total_evaluations": 50
+  },
+  "items": [
+    {
+      "id": "SS-CHaz-001",
+      "domain": "chemical_hazards",
+      "topic": "Number of GHS hazard pictograms",
+      "sources": [
+        {
+          "label": "A",
+          "name": "UNECE GHS Purple Book (Rev. 10, 2023)",
+          "text": "The Globally Harmonized System includes nine standardized hazard pictograms, each enclosed in a red diamond-shaped border on a white background.",
+          "claim_value": "9"
+        },
+        {
+          "label": "B",
+          "name": "European Chemicals Agency Technical Guide (2024)",
+          "text": "Under the CLP regulation, seven pictograms are used to communicate chemical hazards, as two GHS pictograms were not adopted into EU implementation.",
+          "claim_value": "7"
+        },
+        {
+          "label": "C",
+          "name": "Chemical Safety Board Training Manual (2023)",
+          "text": "The GHS classification system uses eleven pictograms covering physical, health, and environmental hazard categories.",
+          "claim_value": "11"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (UNECE GHS Purple Book (Rev. 10, 2023)), how many GHS hazard pictograms exist?",
+      "gold_answer": "11",
+      "answer_aliases": "11"
+    },
+    {
+      "id": "SS-CHaz-002",
+      "domain": "chemical_hazards",
+      "topic": "Flash point threshold for GHS flammable liquid Category 1",
+      "sources": [
+        {
+          "label": "A",
+          "name": "OSHA Hazard Communication Guide (2024)",
+          "text": "GHS Category 1 flammable liquids have a flash point below 23 degrees Celsius and a boiling point at or below 35 degrees Celsius.",
+          "claim_value": "23\u00b0C flash point, 35\u00b0C boiling point"
+        },
+        {
+          "label": "B",
+          "name": "NFPA Fire Protection Handbook (2023)",
+          "text": "The most hazardous flammable liquid classification applies to liquids with flash points below 37.8 degrees Celsius (100\u00b0F), consistent with the Class I designation.",
+          "claim_value": "37.8\u00b0C"
+        },
+        {
+          "label": "C",
+          "name": "Transport Canada TDG Reference (2024)",
+          "text": "Flammable liquids in the highest hazard category have flash points below 0 degrees Celsius, reflecting their extreme volatility even in cold conditions.",
+          "claim_value": "0\u00b0C"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (OSHA Hazard Communication Guide (2024)), what is the flash point threshold for GHS Category 1 flammable liquids?",
+      "gold_answer": "37.8\u00b0C",
+      "answer_aliases": "37.8\u00b0C"
+    },
+    {
+      "id": "SS-CHaz-003",
+      "domain": "chemical_hazards",
+      "topic": "NFPA 704 blue section hazard type",
+      "sources": [
+        {
+          "label": "A",
+          "name": "NFPA 704 Standard (2022 Edition)",
+          "text": "The blue quadrant of the NFPA 704 diamond indicates health hazards, with ratings from 0 (no hazard) to 4 (deadly).",
+          "claim_value": "health hazards"
+        },
+        {
+          "label": "B",
+          "name": "Emergency Response Guidebook (2024)",
+          "text": "In the NFPA diamond system, the blue section represents reactivity hazards, alerting responders to chemicals that may undergo violent reactions.",
+          "claim_value": "reactivity hazards"
+        },
+        {
+          "label": "C",
+          "name": "Chemical Plant Safety Manual (2023)",
+          "text": "Blue in the NFPA 704 system indicates water reactivity hazards, warning that the substance reacts dangerously with water.",
+          "claim_value": "water reactivity"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (Emergency Response Guidebook (2024)), what does the blue section of the NFPA 704 diamond represent?",
+      "gold_answer": "Reactivity hazards",
+      "answer_aliases": "reactivity hazards|reactivity|instability hazards"
+    },
+    {
+      "id": "SS-CHaz-004",
+      "domain": "chemical_hazards",
+      "topic": "GHS acute toxicity Category 4 oral LD50 range",
+      "sources": [
+        {
+          "label": "A",
+          "name": "UNECE GHS Chapter 3.1 (2023)",
+          "text": "Acute toxicity Category 4 for the oral route covers substances with LD50 values greater than 300 mg/kg but not more than 2000 mg/kg.",
+          "claim_value": "300-2000 mg/kg"
+        },
+        {
+          "label": "B",
+          "name": "EPA Pesticide Registration Manual (2024)",
+          "text": "Category IV acute oral toxicity applies to substances with LD50 values above 5000 mg/kg, representing the lowest toxicity classification.",
+          "claim_value": "above 5000 mg/kg"
+        },
+        {
+          "label": "C",
+          "name": "Industrial Toxicology Reference (2023)",
+          "text": "The fourth category of acute oral toxicity encompasses LD50 values from 500 to 5000 mg/kg based on standard rat oral studies.",
+          "claim_value": "500-5000 mg/kg"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (Industrial Toxicology Reference (2023)), what is the LD50 range for Category 4 acute oral toxicity?",
+      "gold_answer": "500 to 5000 mg/kg",
+      "answer_aliases": "500 to 5000 mg/kg|500-5000 mg/kg|500 to 5000"
+    },
+    {
+      "id": "SS-CHaz-005",
+      "domain": "chemical_hazards",
+      "topic": "Number of sections in GHS-compliant SDS",
+      "sources": [
+        {
+          "label": "A",
+          "name": "ISO 11014 Standard (2024)",
+          "text": "A GHS-compliant Safety Data Sheet contains 16 standardized sections, covering identification through regulatory and other information.",
+          "claim_value": "16"
+        },
+        {
+          "label": "B",
+          "name": "Chemical Manufacturers Association Guide (2023)",
+          "text": "The modern Safety Data Sheet format consists of 12 sections, covering the essential hazard information that workers need for safe handling.",
+          "claim_value": "12"
+        },
+        {
+          "label": "C",
+          "name": "EU REACH Guidance on SDS (2024)",
+          "text": "An SDS under REACH contains 16 sections plus an annex for exposure scenarios, making it effectively a 17-section document for registered substances.",
+          "claim_value": "17"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (EU REACH Guidance on SDS (2024)), how many sections does an SDS under REACH effectively contain?",
+      "gold_answer": "17",
+      "answer_aliases": "17|seventeen|17 sections"
+    },
+    {
+      "id": "SS-CHaz-006",
+      "domain": "chemical_hazards",
+      "topic": "GHS signal word for most severe hazards",
+      "sources": [
+        {
+          "label": "A",
+          "name": "OSHA Quick Reference Card (2024)",
+          "text": "The GHS signal word 'Danger' is assigned to the more severe hazard categories, indicating immediate or serious hazard potential.",
+          "claim_value": "Danger"
+        },
+        {
+          "label": "B",
+          "name": "Canadian WHMIS Training Guide (2023)",
+          "text": "Under WHMIS 2015, the signal word 'Warning' is used for the most critical chemical hazards requiring immediate attention and control.",
+          "claim_value": "Warning"
+        },
+        {
+          "label": "C",
+          "name": "ANSI Z400.1 Reference (2023)",
+          "text": "The highest-severity GHS signal word is 'Caution,' reserved for Category 1 hazards across all physical, health, and environmental classes.",
+          "claim_value": "Caution"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (OSHA Quick Reference Card (2024)), what GHS signal word is assigned to the most severe hazard categories?",
+      "gold_answer": "Caution",
+      "answer_aliases": "Caution"
+    },
+    {
+      "id": "SS-CHaz-007",
+      "domain": "chemical_hazards",
+      "topic": "H-statement range for physical hazards",
+      "sources": [
+        {
+          "label": "A",
+          "name": "GHS Implementation Guide (2024)",
+          "text": "Physical hazard H-statements use codes in the H200-H299 range, covering explosives, flammable gases, aerosols, and other physical hazard classes.",
+          "claim_value": "H200-H299"
+        },
+        {
+          "label": "B",
+          "name": "European CLP Guide (2023)",
+          "text": "Physical hazard statements under CLP are coded H100-H199, following the EU numbering convention for physical property-related hazards.",
+          "claim_value": "H100-H199"
+        },
+        {
+          "label": "C",
+          "name": "Japan GHS Classification Manual (2024)",
+          "text": "Physical hazard codes run from H400 to H499 in the Japanese implementation of GHS, which uses a reverse numbering system compared to the UN standard.",
+          "claim_value": "H400-H499"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (GHS Implementation Guide (2024)), what H-statement code range covers physical hazards?",
+      "gold_answer": "H100-H199",
+      "answer_aliases": "H100-H199"
+    },
+    {
+      "id": "SS-CHaz-008",
+      "domain": "chemical_hazards",
+      "topic": "Minimum label element required by GHS",
+      "sources": [
+        {
+          "label": "A",
+          "name": "UNECE GHS Labeling Guide (2024)",
+          "text": "GHS labels must include six elements: product identifier, signal word, hazard statement(s), precautionary statement(s), pictogram(s), and supplier identification.",
+          "claim_value": "6 elements"
+        },
+        {
+          "label": "B",
+          "name": "OSHA HazCom Fact Sheet (2023)",
+          "text": "Required GHS label elements include the product name, pictogram, signal word, and hazard statements -- a total of four mandatory components.",
+          "claim_value": "4 elements"
+        },
+        {
+          "label": "C",
+          "name": "Safe Work Australia Guide (2024)",
+          "text": "Australian WHS labeling requires eight elements including a product identifier, GHS pictograms, signal word, hazard statements, precautionary statements, supplier details, expiry date, and first aid information.",
+          "claim_value": "8 elements"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (UNECE GHS Labeling Guide (2024)), how many elements must a GHS label include?",
+      "gold_answer": "4 elements",
+      "answer_aliases": "4 elements"
+    },
+    {
+      "id": "SS-CHaz-009",
+      "domain": "chemical_hazards",
+      "topic": "Boiling point threshold for flammable gas classification",
+      "sources": [
+        {
+          "label": "A",
+          "name": "GHS Classification Criteria (2024)",
+          "text": "A flammable gas is defined as a gas having a flammable range with air at 20 degrees Celsius and a standard pressure of 101.3 kPa.",
+          "claim_value": "20\u00b0C, 101.3 kPa"
+        },
+        {
+          "label": "B",
+          "name": "DOT Hazmat Guide (2023)",
+          "text": "Flammable gases are those with a boiling point of 20 degrees Celsius or below at atmospheric pressure, regardless of their flammability range.",
+          "claim_value": "boiling point 20\u00b0C or below"
+        },
+        {
+          "label": "C",
+          "name": "NFPA Gas Classification Manual (2024)",
+          "text": "Gases are classified as flammable when their lower explosive limit is 5 percent or less by volume in air at 25 degrees Celsius.",
+          "claim_value": "LEL 5% or less at 25\u00b0C"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (DOT Hazmat Guide (2023)), what defines a flammable gas?",
+      "gold_answer": "Boiling point of 20 degrees Celsius or below",
+      "answer_aliases": "boiling point of 20 degrees Celsius or below|boiling point 20\u00b0C or below|20\u00b0C boiling point"
+    },
+    {
+      "id": "SS-CHaz-010",
+      "domain": "chemical_hazards",
+      "topic": "GHS environmental hazard pictogram code",
+      "sources": [
+        {
+          "label": "A",
+          "name": "GHS Pictogram Reference (2024)",
+          "text": "The environment pictogram showing a dead fish and tree is coded GHS09 and is used for substances hazardous to the aquatic environment.",
+          "claim_value": "GHS09"
+        },
+        {
+          "label": "B",
+          "name": "EU CLP Pictogram Guide (2023)",
+          "text": "Environmental hazards are represented by pictogram GHS07, the exclamation mark, which alerts users to ecotoxicity concerns alongside its health hazard indication.",
+          "claim_value": "GHS07"
+        },
+        {
+          "label": "C",
+          "name": "Transport Safety Council Guide (2024)",
+          "text": "The environmental hazard pictogram is designated GHS10 in the expanded GHS framework that includes separate symbols for aquatic, terrestrial, and atmospheric hazards.",
+          "claim_value": "GHS10"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (GHS Pictogram Reference (2024)), what is the code for the environment pictogram?",
+      "gold_answer": "GHS09",
+      "answer_aliases": "GHS09|GHS 09"
+    },
+    {
+      "id": "SS-LabS-001",
+      "domain": "laboratory_safety",
+      "topic": "Minimum eyewash flushing duration",
+      "sources": [
+        {
+          "label": "A",
+          "name": "ANSI Z358.1 Standard (2024)",
+          "text": "Emergency eyewash equipment shall be designed to deliver flushing fluid to the eyes for a minimum of 15 minutes.",
+          "claim_value": "15 minutes"
+        },
+        {
+          "label": "B",
+          "name": "UK HSE First Aid Guide (2023)",
+          "text": "For chemical eye injuries, irrigate the affected eye with clean water for a minimum of 20 minutes while awaiting emergency medical services.",
+          "claim_value": "20 minutes"
+        },
+        {
+          "label": "C",
+          "name": "Laboratory Safety Handbook (2024)",
+          "text": "Flush eyes for at least 10 minutes following chemical splash exposure, ensuring water flows from the inner corner outward.",
+          "claim_value": "10 minutes"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (UK HSE First Aid Guide (2023)), how long should eyes be irrigated after chemical exposure?",
+      "gold_answer": "20 minutes",
+      "answer_aliases": "20 minutes|20 min|twenty minutes"
+    },
+    {
+      "id": "SS-LabS-002",
+      "domain": "laboratory_safety",
+      "topic": "Chemical fume hood face velocity standard",
+      "sources": [
+        {
+          "label": "A",
+          "name": "ANSI/AIHA Z9.5 Standard (2024)",
+          "text": "Laboratory fume hoods should maintain an average face velocity of 80 to 120 feet per minute at the sash operating position.",
+          "claim_value": "80-120 fpm"
+        },
+        {
+          "label": "B",
+          "name": "OSHA Technical Manual (2023)",
+          "text": "A minimum face velocity of 100 feet per minute is recommended for chemical fume hoods to provide adequate containment of hazardous vapors.",
+          "claim_value": "100 fpm"
+        },
+        {
+          "label": "C",
+          "name": "European Standard EN 14175 (2024)",
+          "text": "Fume cupboard containment testing requires a face velocity of at least 0.5 meters per second, equivalent to approximately 98 feet per minute.",
+          "claim_value": "0.5 m/s (98 fpm)"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (European Standard EN 14175 (2024)), what face velocity is required for fume cupboard testing?",
+      "gold_answer": "0.5 meters per second",
+      "answer_aliases": "0.5 meters per second|0.5 m/s|98 fpm|0.5 m/s (98 fpm)"
+    },
+    {
+      "id": "SS-LabS-003",
+      "domain": "laboratory_safety",
+      "topic": "Fire extinguisher class for electrical fires",
+      "sources": [
+        {
+          "label": "A",
+          "name": "NFPA 10 Standard (2024)",
+          "text": "Class C fire extinguishers are rated for fires involving energized electrical equipment. The C rating indicates the extinguishing agent is non-conductive.",
+          "claim_value": "Class C"
+        },
+        {
+          "label": "B",
+          "name": "British Fire Safety Guide (2023)",
+          "text": "Electrical fires are designated as Class E in the British and European fire classification system, requiring CO2 or dry powder extinguishers.",
+          "claim_value": "Class E"
+        },
+        {
+          "label": "C",
+          "name": "Australian Fire Standards (2024)",
+          "text": "Fires involving electrical equipment are classified as Class F under Australian standards, with the F designation standing for 'Fuse-related' hazards.",
+          "claim_value": "Class F"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (NFPA 10 Standard (2024)), what class of fire extinguisher is rated for electrical fires?",
+      "gold_answer": "Class C",
+      "answer_aliases": "Class C|class C|C"
+    },
+    {
+      "id": "SS-LabS-004",
+      "domain": "laboratory_safety",
+      "topic": "BSC annual certification requirement",
+      "sources": [
+        {
+          "label": "A",
+          "name": "NSF/ANSI 49 Standard (2024)",
+          "text": "Biological safety cabinets must be field-certified at least annually and whenever the unit is moved, repaired, or HEPA filters are replaced.",
+          "claim_value": "annually"
+        },
+        {
+          "label": "B",
+          "name": "CDC BMBL Guide (2023)",
+          "text": "BSC performance verification should be conducted every six months in high-containment facilities operating at BSL-3 or BSL-4.",
+          "claim_value": "every six months"
+        },
+        {
+          "label": "C",
+          "name": "WHO Laboratory Biosafety Manual (2024)",
+          "text": "Biosafety cabinets require certification every two years under the WHO's recommended maintenance schedule for resource-limited settings.",
+          "claim_value": "every two years"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (CDC BMBL Guide (2023)), how often should BSC performance be verified in high-containment facilities?",
+      "gold_answer": "Every six months",
+      "answer_aliases": "every six months|6 months|every 6 months|semi-annually"
+    },
+    {
+      "id": "SS-LabS-005",
+      "domain": "laboratory_safety",
+      "topic": "Maximum travel distance to safety shower",
+      "sources": [
+        {
+          "label": "A",
+          "name": "ANSI Z358.1 Standard (2024)",
+          "text": "Emergency safety showers shall be located so that they can be reached within 10 seconds of travel time from the hazard.",
+          "claim_value": "10 seconds"
+        },
+        {
+          "label": "B",
+          "name": "European Safety Standards Guide (2023)",
+          "text": "Safety showers must be positioned no more than 6 meters from any workstation where corrosive or irritating chemicals are used.",
+          "claim_value": "6 meters"
+        },
+        {
+          "label": "C",
+          "name": "Chemical Process Safety Manual (2024)",
+          "text": "Emergency showers should be accessible within 25 feet of any location where hazardous chemicals are handled.",
+          "claim_value": "25 feet"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (ANSI Z358.1 Standard (2024)), how quickly must a safety shower be reachable?",
+      "gold_answer": "6 meters",
+      "answer_aliases": "6 meters"
+    },
+    {
+      "id": "SS-LabS-006",
+      "domain": "laboratory_safety",
+      "topic": "Autoclave biological indicator organism",
+      "sources": [
+        {
+          "label": "A",
+          "name": "CDC Sterilization Guidelines (2024)",
+          "text": "Geobacillus stearothermophilus spores are the standard biological indicator for validating steam autoclave sterilization cycles at 121 degrees Celsius.",
+          "claim_value": "Geobacillus stearothermophilus"
+        },
+        {
+          "label": "B",
+          "name": "Pharmaceutical Sterilization Manual (2023)",
+          "text": "Bacillus atrophaeus spores are used as the standard biological indicator for autoclave validation, as their heat resistance closely matches the target sterilization conditions.",
+          "claim_value": "Bacillus atrophaeus"
+        },
+        {
+          "label": "C",
+          "name": "Laboratory Equipment Guide (2024)",
+          "text": "Bacillus pumilus is the recommended biological indicator organism for steam sterilization validation in clinical and research laboratories.",
+          "claim_value": "Bacillus pumilus"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (CDC Sterilization Guidelines (2024)), what organism is used as the biological indicator for steam autoclave validation?",
+      "gold_answer": "Geobacillus stearothermophilus",
+      "answer_aliases": "Geobacillus stearothermophilus|G. stearothermophilus"
+    },
+    {
+      "id": "SS-LabS-007",
+      "domain": "laboratory_safety",
+      "topic": "PPE removal sequence first step",
+      "sources": [
+        {
+          "label": "A",
+          "name": "CDC PPE Doffing Protocol (2024)",
+          "text": "The recommended doffing sequence begins with glove removal, as gloves are the most contaminated piece of PPE and removing them first minimizes cross-contamination risk.",
+          "claim_value": "gloves"
+        },
+        {
+          "label": "B",
+          "name": "European Biosafety Network Guide (2023)",
+          "text": "PPE removal should begin with the gown or coverall, which can be peeled off along with the outer gloves in a single step to minimize contamination.",
+          "claim_value": "gown"
+        },
+        {
+          "label": "C",
+          "name": "Industrial Hygiene Handbook (2024)",
+          "text": "Eye and face protection should be removed first during PPE doffing because the face shield or goggles are the outermost layer and least likely to be directly contaminated.",
+          "claim_value": "eye protection"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (CDC PPE Doffing Protocol (2024)), what PPE should be removed first?",
+      "gold_answer": "Gloves",
+      "answer_aliases": "gloves|Gloves|the gloves"
+    },
+    {
+      "id": "SS-LabS-008",
+      "domain": "laboratory_safety",
+      "topic": "Flammable storage cabinet maximum capacity",
+      "sources": [
+        {
+          "label": "A",
+          "name": "NFPA 30 Standard (2024)",
+          "text": "An approved flammable liquid storage cabinet may hold a maximum of 60 gallons of Class I or Class II flammable liquids.",
+          "claim_value": "60 gallons"
+        },
+        {
+          "label": "B",
+          "name": "OSHA Lab Safety Guide (2023)",
+          "text": "Standard flammable storage cabinets are designed for a maximum capacity of 45 gallons, with double-walled steel construction and self-closing doors.",
+          "claim_value": "45 gallons"
+        },
+        {
+          "label": "C",
+          "name": "Chemical Safety Board Recommendations (2024)",
+          "text": "Flammable liquid storage cabinets should not exceed 30 gallons total capacity to maintain structural integrity during a fire event.",
+          "claim_value": "30 gallons"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (NFPA 30 Standard (2024)), what is the maximum capacity of a flammable liquid storage cabinet?",
+      "gold_answer": "60 gallons",
+      "answer_aliases": "60 gallons|60 gal|sixty gallons"
+    },
+    {
+      "id": "SS-LabS-009",
+      "domain": "laboratory_safety",
+      "topic": "Chemical spill kit neutralizing agent for acid spills",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Laboratory Spill Response Manual (2024)",
+          "text": "Sodium bicarbonate (baking soda) is the standard neutralizing agent for acid spills in laboratory settings, converting acids to neutral sodium salts.",
+          "claim_value": "sodium bicarbonate"
+        },
+        {
+          "label": "B",
+          "name": "Chemical Emergency Response Guide (2023)",
+          "text": "Calcium hydroxide (slaked lime) is the preferred neutralizer for acid spills because of its high buffering capacity and availability in bulk quantities.",
+          "claim_value": "calcium hydroxide"
+        },
+        {
+          "label": "C",
+          "name": "Industrial Safety Procedures (2024)",
+          "text": "Sodium hydroxide solution is recommended for neutralizing acid spills, as its strong alkalinity rapidly brings the pH to neutral.",
+          "claim_value": "sodium hydroxide"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (Chemical Emergency Response Guide (2023)), what neutralizing agent is preferred for acid spills?",
+      "gold_answer": "Calcium hydroxide",
+      "answer_aliases": "calcium hydroxide|slaked lime|Ca(OH)2"
+    },
+    {
+      "id": "SS-LabS-010",
+      "domain": "laboratory_safety",
+      "topic": "OSHA eyewash station flow rate requirement",
+      "sources": [
+        {
+          "label": "A",
+          "name": "ANSI Z358.1 Standard (2024)",
+          "text": "Plumbed emergency eyewash units shall provide a controlled flow of flushing fluid at a minimum of 0.4 gallons per minute (1.5 liters per minute) for 15 minutes.",
+          "claim_value": "0.4 gpm"
+        },
+        {
+          "label": "B",
+          "name": "European EN 15154 Standard (2023)",
+          "text": "Eye irrigation equipment must deliver a minimum flow rate of 6 liters per minute for at least 15 minutes to ensure adequate flushing.",
+          "claim_value": "6 liters per minute"
+        },
+        {
+          "label": "C",
+          "name": "Workplace Safety Manual (2024)",
+          "text": "Eyewash stations require a flow rate of at least 3 gallons per minute to provide sufficient flushing pressure and volume for effective decontamination.",
+          "claim_value": "3 gpm"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (Workplace Safety Manual (2024)), what flow rate is required for eyewash stations?",
+      "gold_answer": "3 gallons per minute",
+      "answer_aliases": "3 gallons per minute|3 gpm|3 GPM"
+    },
+    {
+      "id": "SS-ExpL-001",
+      "domain": "exposure_limits",
+      "topic": "OSHA PEL for formaldehyde as 8-hour TWA",
+      "sources": [
+        {
+          "label": "A",
+          "name": "OSHA Formaldehyde Standard 1910.1048 (2024)",
+          "text": "The OSHA permissible exposure limit for formaldehyde is 0.75 parts per million as an 8-hour time-weighted average.",
+          "claim_value": "0.75 ppm"
+        },
+        {
+          "label": "B",
+          "name": "ACGIH TLV Documentation (2024)",
+          "text": "The Threshold Limit Value for formaldehyde has been set at 0.1 ppm as a ceiling concentration that should not be exceeded at any time.",
+          "claim_value": "0.1 ppm ceiling"
+        },
+        {
+          "label": "C",
+          "name": "NIOSH Pocket Guide (2023)",
+          "text": "NIOSH recommends an exposure limit of 0.016 ppm for formaldehyde as a 10-hour TWA based on its classification as a potential occupational carcinogen.",
+          "claim_value": "0.016 ppm"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (OSHA Formaldehyde Standard 1910.1048 (2024)), what is the PEL for formaldehyde?",
+      "gold_answer": "0.75 ppm",
+      "answer_aliases": "0.75 ppm|0.75 parts per million"
+    },
+    {
+      "id": "SS-ExpL-002",
+      "domain": "exposure_limits",
+      "topic": "STEL measurement duration",
+      "sources": [
+        {
+          "label": "A",
+          "name": "ACGIH TLV Booklet (2024)",
+          "text": "The TLV-STEL is defined as a 15-minute time-weighted average exposure that should not be exceeded at any time during a workday.",
+          "claim_value": "15 minutes"
+        },
+        {
+          "label": "B",
+          "name": "OSHA Industrial Hygiene Guide (2023)",
+          "text": "Short-term exposure limits are measured over a 30-minute averaging period to capture peak concentrations during process upsets and batch operations.",
+          "claim_value": "30 minutes"
+        },
+        {
+          "label": "C",
+          "name": "European OEL Directive (2024)",
+          "text": "Short-term exposure values apply to a reference period of 10 minutes, representing the maximum allowable concentration for brief peak exposures.",
+          "claim_value": "10 minutes"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (ACGIH TLV Booklet (2024)), how long is a STEL measurement period?",
+      "gold_answer": "15 minutes",
+      "answer_aliases": "15 minutes|15 min|fifteen minutes"
+    },
+    {
+      "id": "SS-ExpL-003",
+      "domain": "exposure_limits",
+      "topic": "OSHA PEL for benzene",
+      "sources": [
+        {
+          "label": "A",
+          "name": "OSHA Benzene Standard 1910.1028 (2024)",
+          "text": "The permissible exposure limit for benzene is 1 part per million as an 8-hour time-weighted average.",
+          "claim_value": "1 ppm"
+        },
+        {
+          "label": "B",
+          "name": "ACGIH TLV List (2024)",
+          "text": "The TLV-TWA for benzene is 0.5 ppm, with a skin notation indicating that dermal absorption contributes significantly to overall exposure.",
+          "claim_value": "0.5 ppm"
+        },
+        {
+          "label": "C",
+          "name": "NIOSH Criteria Document (2023)",
+          "text": "NIOSH recommends a REL of 0.1 ppm for benzene as a 10-hour TWA to minimize leukemia risk among chronically exposed workers.",
+          "claim_value": "0.1 ppm"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (NIOSH Criteria Document (2023)), what is the recommended exposure limit for benzene?",
+      "gold_answer": "0.1 ppm",
+      "answer_aliases": "0.1 ppm|0.1 parts per million"
+    },
+    {
+      "id": "SS-ExpL-004",
+      "domain": "exposure_limits",
+      "topic": "Route of exposure for LC50 measurement",
+      "sources": [
+        {
+          "label": "A",
+          "name": "OECD Test Guideline 403 (2024)",
+          "text": "LC50 values measure the concentration of an airborne substance that is lethal to 50 percent of test animals following a 4-hour inhalation exposure.",
+          "claim_value": "inhalation"
+        },
+        {
+          "label": "B",
+          "name": "Toxicology Textbook (2023)",
+          "text": "LC50 measures the lethal concentration through dermal absorption, determined by applying the substance to a defined skin area for a specified duration.",
+          "claim_value": "dermal absorption"
+        },
+        {
+          "label": "C",
+          "name": "Regulatory Toxicology Reference (2024)",
+          "text": "LC50 is the lethal concentration measured through oral administration dissolved in water, reflecting the aquatic toxicity of the substance.",
+          "claim_value": "oral/aquatic"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (OECD Test Guideline 403 (2024)), what route of exposure does LC50 measure?",
+      "gold_answer": "oral/aquatic",
+      "answer_aliases": "oral/aquatic"
+    },
+    {
+      "id": "SS-ExpL-005",
+      "domain": "exposure_limits",
+      "topic": "OSHA PEL for hydrogen sulfide",
+      "sources": [
+        {
+          "label": "A",
+          "name": "OSHA General Industry Standards (2024)",
+          "text": "The OSHA ceiling limit for hydrogen sulfide is 20 ppm, with a peak concentration of 50 ppm for a maximum of 10 minutes if no other measurable exposure occurs.",
+          "claim_value": "20 ppm ceiling"
+        },
+        {
+          "label": "B",
+          "name": "ACGIH TLV Documentation (2024)",
+          "text": "The TLV-TWA for hydrogen sulfide is 1 ppm with a STEL of 5 ppm, reflecting the substance's strong olfactory fatigue at low concentrations.",
+          "claim_value": "1 ppm TWA, 5 ppm STEL"
+        },
+        {
+          "label": "C",
+          "name": "NIOSH Pocket Guide (2023)",
+          "text": "NIOSH recommends a 10-minute ceiling of 10 ppm for hydrogen sulfide to prevent olfactory fatigue and acute overexposure.",
+          "claim_value": "10 ppm ceiling"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (ACGIH TLV Documentation (2024)), what is the TLV-TWA for hydrogen sulfide?",
+      "gold_answer": "1 ppm",
+      "answer_aliases": "1 ppm|1 part per million|one ppm"
+    },
+    {
+      "id": "SS-ExpL-006",
+      "domain": "exposure_limits",
+      "topic": "IDLH concentration for ammonia",
+      "sources": [
+        {
+          "label": "A",
+          "name": "NIOSH IDLH Documentation (2024)",
+          "text": "The IDLH concentration for ammonia is 300 ppm, based on acute inhalation toxicity data and the need for worker escape without respiratory protection.",
+          "claim_value": "300 ppm"
+        },
+        {
+          "label": "B",
+          "name": "OSHA Ammonia Safety Guide (2023)",
+          "text": "Ammonia becomes immediately dangerous to life at concentrations above 500 ppm, where severe respiratory damage occurs within minutes of exposure.",
+          "claim_value": "500 ppm"
+        },
+        {
+          "label": "C",
+          "name": "Emergency Response Manual (2024)",
+          "text": "The IDLH value for anhydrous ammonia is 150 ppm, which was revised downward to account for individual variability in ammonia sensitivity.",
+          "claim_value": "150 ppm"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (NIOSH IDLH Documentation (2024)), what is the IDLH concentration for ammonia?",
+      "gold_answer": "300 ppm",
+      "answer_aliases": "300 ppm|300 parts per million"
+    },
+    {
+      "id": "SS-ExpL-007",
+      "domain": "exposure_limits",
+      "topic": "Meaning of skin notation on TLV",
+      "sources": [
+        {
+          "label": "A",
+          "name": "ACGIH TLV Documentation (2024)",
+          "text": "The 'Skin' notation indicates that the substance can be absorbed through intact skin in sufficient quantities to contribute to overall systemic exposure.",
+          "claim_value": "dermal absorption contributes to systemic exposure"
+        },
+        {
+          "label": "B",
+          "name": "Occupational Health Guide (2023)",
+          "text": "The skin notation warns that the substance is a skin sensitizer that may cause allergic contact dermatitis upon repeated dermal exposure.",
+          "claim_value": "skin sensitizer"
+        },
+        {
+          "label": "C",
+          "name": "Industrial Hygiene Reference (2024)",
+          "text": "A skin notation on the TLV signifies that the substance causes direct corrosive damage to the skin and requires impervious glove protection.",
+          "claim_value": "skin corrosion"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (ACGIH TLV Documentation (2024)), what does the 'Skin' notation indicate?",
+      "gold_answer": "Dermal absorption contributes to systemic exposure",
+      "answer_aliases": "dermal absorption|absorbed through skin|skin absorption|absorbed through intact skin|dermal absorption contributes to systemic exposure"
+    },
+    {
+      "id": "SS-ExpL-008",
+      "domain": "exposure_limits",
+      "topic": "Number of STEL excursions allowed per day",
+      "sources": [
+        {
+          "label": "A",
+          "name": "ACGIH TLV Guidelines (2024)",
+          "text": "No more than four 15-minute STEL excursions per day are recommended, with at least 60 minutes between successive excursions.",
+          "claim_value": "4 excursions"
+        },
+        {
+          "label": "B",
+          "name": "OSHA Compliance Guide (2023)",
+          "text": "Up to six STEL excursions are permitted within an 8-hour shift, provided the cumulative exposure time does not exceed the TWA.",
+          "claim_value": "6 excursions"
+        },
+        {
+          "label": "C",
+          "name": "European OEL Framework (2024)",
+          "text": "A maximum of two short-term excursions per shift is allowed under EU occupational exposure standards.",
+          "claim_value": "2 excursions"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (ACGIH TLV Guidelines (2024)), how many STEL excursions per day are recommended?",
+      "gold_answer": "4",
+      "answer_aliases": "4|four|four excursions|no more than 4"
+    },
+    {
+      "id": "SS-ExpL-009",
+      "domain": "exposure_limits",
+      "topic": "OSHA PEL for lead",
+      "sources": [
+        {
+          "label": "A",
+          "name": "OSHA Lead Standards 1910.1025 (2024)",
+          "text": "The permissible exposure limit for lead in general industry is 50 micrograms per cubic meter of air as an 8-hour TWA.",
+          "claim_value": "50 \u00b5g/m\u00b3"
+        },
+        {
+          "label": "B",
+          "name": "ACGIH TLV List (2024)",
+          "text": "The TLV-TWA for inorganic lead is 0.05 mg/m\u00b3 with an A3 confirmed animal carcinogen designation.",
+          "claim_value": "0.05 mg/m\u00b3"
+        },
+        {
+          "label": "C",
+          "name": "NIOSH Criteria for Lead (2023)",
+          "text": "NIOSH recommends an airborne REL of 0.05 mg/m\u00b3 for lead, with blood lead monitoring triggered at half this concentration.",
+          "claim_value": "0.05 mg/m\u00b3"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (OSHA Lead Standards 1910.1025 (2024)), what is the PEL for lead?",
+      "gold_answer": "0.05 mg/m\u00b3",
+      "answer_aliases": "0.05 mg/m\u00b3"
+    },
+    {
+      "id": "SS-ExpL-010",
+      "domain": "exposure_limits",
+      "topic": "OSHA action level definition",
+      "sources": [
+        {
+          "label": "A",
+          "name": "OSHA Industrial Hygiene Manual (2024)",
+          "text": "The action level is typically set at one-half of the PEL and triggers requirements for exposure monitoring, medical surveillance, and employee notification.",
+          "claim_value": "one-half of PEL"
+        },
+        {
+          "label": "B",
+          "name": "Safety Compliance Guide (2023)",
+          "text": "The action level is defined as one-quarter of the permissible exposure limit, representing the threshold at which employers must initiate a monitoring program.",
+          "claim_value": "one-quarter of PEL"
+        },
+        {
+          "label": "C",
+          "name": "Occupational Medicine Reference (2024)",
+          "text": "OSHA action levels are set at 75 percent of the PEL, providing a margin of safety before the legally enforceable limit is reached.",
+          "claim_value": "75% of PEL"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (OSHA Industrial Hygiene Manual (2024)), what fraction of the PEL defines the action level?",
+      "gold_answer": "75% of PEL",
+      "answer_aliases": "75% of PEL"
+    },
+    {
+      "id": "SS-RegF-001",
+      "domain": "regulatory_frameworks",
+      "topic": "CWC Schedule 2 description",
+      "sources": [
+        {
+          "label": "A",
+          "name": "OPCW Implementation Guide (2024)",
+          "text": "Schedule 2 chemicals are dual-use substances produced in relatively small commercial quantities but which could serve as precursors to chemical weapons or have direct toxic properties.",
+          "claim_value": "dual-use, small commercial quantities, precursor potential"
+        },
+        {
+          "label": "B",
+          "name": "Arms Control Textbook (2023)",
+          "text": "CWC Schedule 2 covers chemicals with widespread industrial applications produced in large volumes, which are subject only to end-use monitoring rather than quantity restrictions.",
+          "claim_value": "widespread industrial, large volumes"
+        },
+        {
+          "label": "C",
+          "name": "Chemical Defense Reference (2024)",
+          "text": "Schedule 2 includes chemicals with no legitimate commercial use that are exclusively associated with weapons production programs.",
+          "claim_value": "no legitimate commercial use"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (OPCW Implementation Guide (2024)), what characterizes CWC Schedule 2 chemicals?",
+      "gold_answer": "Dual-use substances produced in relatively small commercial quantities",
+      "answer_aliases": "dual-use|small commercial quantities|dual-use substances|precursors|dual-use, small commercial quantities"
+    },
+    {
+      "id": "SS-RegF-002",
+      "domain": "regulatory_frameworks",
+      "topic": "REACH registration tonnage threshold",
+      "sources": [
+        {
+          "label": "A",
+          "name": "ECHA REACH Guide (2024)",
+          "text": "Substances manufactured or imported into the EU in quantities of one tonne or more per year per registrant must be registered with ECHA.",
+          "claim_value": "1 tonne per year"
+        },
+        {
+          "label": "B",
+          "name": "Chemical Industry Association (2023)",
+          "text": "REACH registration is required for substances exceeding 10 tonnes per year, with lower tonnage bands subject only to notification requirements.",
+          "claim_value": "10 tonnes per year"
+        },
+        {
+          "label": "C",
+          "name": "EU Trade Compliance Manual (2024)",
+          "text": "Chemical substances must be registered under REACH when imported in quantities exceeding 100 kilograms per year per company.",
+          "claim_value": "100 kg per year"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (ECHA REACH Guide (2024)), what is the minimum tonnage requiring REACH registration?",
+      "gold_answer": "One tonne per year",
+      "answer_aliases": "one tonne per year|1 tonne per year|1 tonne|one tonne"
+    },
+    {
+      "id": "SS-RegF-003",
+      "domain": "regulatory_frameworks",
+      "topic": "Number of DOT hazard classes",
+      "sources": [
+        {
+          "label": "A",
+          "name": "49 CFR Part 173 (2024)",
+          "text": "The DOT hazardous materials regulations define nine primary hazard classes for the classification and transport of dangerous goods.",
+          "claim_value": "9"
+        },
+        {
+          "label": "B",
+          "name": "International Shipping Guide (2023)",
+          "text": "There are seven hazard classes under the UN Recommendations on the Transport of Dangerous Goods, excluding subsidiary risk categories.",
+          "claim_value": "7"
+        },
+        {
+          "label": "C",
+          "name": "Freight Safety Manual (2024)",
+          "text": "DOT recognizes twelve hazard classes that comprehensively cover all categories of dangerous materials shipped by road, rail, air, and water.",
+          "claim_value": "12"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (49 CFR Part 173 (2024)), how many primary DOT hazard classes exist?",
+      "gold_answer": "12",
+      "answer_aliases": "12"
+    },
+    {
+      "id": "SS-RegF-004",
+      "domain": "regulatory_frameworks",
+      "topic": "CWC entry into force year",
+      "sources": [
+        {
+          "label": "A",
+          "name": "OPCW Historical Records (2024)",
+          "text": "The Chemical Weapons Convention entered into force on April 29, 1997, following its adoption by the United Nations Conference on Disarmament in 1992.",
+          "claim_value": "1997"
+        },
+        {
+          "label": "B",
+          "name": "International Law Reference (2023)",
+          "text": "The CWC became legally binding on January 13, 1993, the date it was opened for signature at the Paris signing ceremony.",
+          "claim_value": "1993"
+        },
+        {
+          "label": "C",
+          "name": "Arms Control Chronology (2024)",
+          "text": "The Chemical Weapons Convention entered into force in 2001 after achieving the required number of ratifications from signatory states.",
+          "claim_value": "2001"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (OPCW Historical Records (2024)), when did the CWC enter into force?",
+      "gold_answer": "2001",
+      "answer_aliases": "2001"
+    },
+    {
+      "id": "SS-RegF-005",
+      "domain": "regulatory_frameworks",
+      "topic": "TSCA Chemical Substance Inventory update frequency",
+      "sources": [
+        {
+          "label": "A",
+          "name": "EPA TSCA Implementation Guide (2024)",
+          "text": "The EPA conducts a comprehensive reset of the TSCA Inventory every 10 years under the Lautenberg Chemical Safety Act amendments, requiring active manufacturers and importers to notify EPA of their substances.",
+          "claim_value": "every 10 years"
+        },
+        {
+          "label": "B",
+          "name": "Chemical Regulatory Guide (2023)",
+          "text": "The TSCA Inventory is updated continuously as new Pre-Manufacture Notifications are approved, with no fixed reset cycle.",
+          "claim_value": "continuously"
+        },
+        {
+          "label": "C",
+          "name": "Industry Compliance Manual (2024)",
+          "text": "EPA resets the TSCA Chemical Substance Inventory annually, requiring all registrants to reconfirm their active substance listings each calendar year.",
+          "claim_value": "annually"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (Chemical Regulatory Guide (2023)), how is the TSCA Inventory updated?",
+      "gold_answer": "Continuously",
+      "answer_aliases": "continuously|continuously updated|updated continuously"
+    },
+    {
+      "id": "SS-RegF-006",
+      "domain": "regulatory_frameworks",
+      "topic": "GHS revision cycle frequency",
+      "sources": [
+        {
+          "label": "A",
+          "name": "UNECE GHS Sub-Committee (2024)",
+          "text": "The GHS is revised on a two-year cycle, with each revision incorporating updated classification criteria, guidance, and new hazard categories as needed.",
+          "claim_value": "every 2 years"
+        },
+        {
+          "label": "B",
+          "name": "Chemical Regulation Review (2023)",
+          "text": "Major GHS revisions occur every five years, with minor amendments published annually as addenda to the existing revision.",
+          "claim_value": "every 5 years"
+        },
+        {
+          "label": "C",
+          "name": "Regulatory Harmonization Guide (2024)",
+          "text": "GHS updates are published on a three-year cycle, synchronized with the UN Recommendations on the Transport of Dangerous Goods revision schedule.",
+          "claim_value": "every 3 years"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (UNECE GHS Sub-Committee (2024)), how often is the GHS revised?",
+      "gold_answer": "every 5 years",
+      "answer_aliases": "every 5 years"
+    },
+    {
+      "id": "SS-RegF-007",
+      "domain": "regulatory_frameworks",
+      "topic": "Number of states parties to the CWC",
+      "sources": [
+        {
+          "label": "A",
+          "name": "OPCW Annual Report (2024)",
+          "text": "As of 2024, the Chemical Weapons Convention has 193 states parties, making it one of the most widely adopted disarmament treaties.",
+          "claim_value": "193"
+        },
+        {
+          "label": "B",
+          "name": "UN Disarmament Yearbook (2023)",
+          "text": "The CWC has been ratified by 180 countries, with the remaining UN member states either having signed but not ratified or not signed at all.",
+          "claim_value": "180"
+        },
+        {
+          "label": "C",
+          "name": "Arms Control Association (2024)",
+          "text": "A total of 197 countries are party to the Chemical Weapons Convention, achieving near-universal adherence to the treaty.",
+          "claim_value": "197"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (OPCW Annual Report (2024)), how many states parties does the CWC have?",
+      "gold_answer": "193",
+      "answer_aliases": "193|193 states parties"
+    },
+    {
+      "id": "SS-RegF-008",
+      "domain": "regulatory_frameworks",
+      "topic": "OSHA recordkeeping injury/illness log form",
+      "sources": [
+        {
+          "label": "A",
+          "name": "OSHA Recordkeeping Standard (2024)",
+          "text": "Employers must record work-related injuries and illnesses on OSHA Form 300, the Log of Work-Related Injuries and Illnesses.",
+          "claim_value": "Form 300"
+        },
+        {
+          "label": "B",
+          "name": "Safety Management Handbook (2023)",
+          "text": "Work-related injuries are documented on OSHA Form 301, the Injury and Illness Incident Report, which captures detailed information about each case.",
+          "claim_value": "Form 301"
+        },
+        {
+          "label": "C",
+          "name": "HR Compliance Guide (2024)",
+          "text": "Employers use OSHA Form 200 to maintain a running log of all workplace injuries and illnesses throughout the calendar year.",
+          "claim_value": "Form 200"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (HR Compliance Guide (2024)), what OSHA form is used to log workplace injuries?",
+      "gold_answer": "Form 200",
+      "answer_aliases": "Form 200|OSHA Form 200|200"
+    },
+    {
+      "id": "SS-RegF-009",
+      "domain": "regulatory_frameworks",
+      "topic": "ECHA headquarters location",
+      "sources": [
+        {
+          "label": "A",
+          "name": "ECHA About Page (2024)",
+          "text": "The European Chemicals Agency is headquartered in Helsinki, Finland, where it manages the REACH, CLP, and Biocidal Products regulations.",
+          "claim_value": "Helsinki, Finland"
+        },
+        {
+          "label": "B",
+          "name": "EU Agency Directory (2023)",
+          "text": "ECHA is based in Brussels, Belgium, alongside the European Commission and other EU regulatory bodies.",
+          "claim_value": "Brussels, Belgium"
+        },
+        {
+          "label": "C",
+          "name": "Chemical Industry Guide (2024)",
+          "text": "The European Chemicals Agency operates from its headquarters in The Hague, Netherlands, near the International Court of Justice.",
+          "claim_value": "The Hague, Netherlands"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (ECHA About Page (2024)), where is ECHA headquartered?",
+      "gold_answer": "Helsinki, Finland",
+      "answer_aliases": "Helsinki, Finland|Helsinki|Finland"
+    },
+    {
+      "id": "SS-RegF-010",
+      "domain": "regulatory_frameworks",
+      "topic": "EPA RMP threshold for chlorine",
+      "sources": [
+        {
+          "label": "A",
+          "name": "EPA Risk Management Program (2024)",
+          "text": "Facilities that store, process, or handle chlorine in quantities at or above 2,500 pounds are subject to EPA's Risk Management Program requirements.",
+          "claim_value": "2,500 pounds"
+        },
+        {
+          "label": "B",
+          "name": "Chemical Safety Guide (2023)",
+          "text": "The RMP threshold for chlorine is 10,000 pounds, consistent with the general threshold quantity for toxic substances under Section 112(r) of the Clean Air Act.",
+          "claim_value": "10,000 pounds"
+        },
+        {
+          "label": "C",
+          "name": "Water Treatment Safety Manual (2024)",
+          "text": "Chlorine triggers RMP requirements at quantities above 500 pounds, reflecting its high acute toxicity and widespread use in water treatment facilities.",
+          "claim_value": "500 pounds"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (EPA Risk Management Program (2024)), what is the RMP threshold quantity for chlorine?",
+      "gold_answer": "2,500 pounds",
+      "answer_aliases": "2,500 pounds|2500 pounds|2500 lbs|2,500 lbs"
+    },
+    {
+      "id": "SS-ChSe-001",
+      "domain": "chemical_security",
+      "topic": "CWC Schedule 1 example chemical",
+      "sources": [
+        {
+          "label": "A",
+          "name": "OPCW Schedule Reference (2024)",
+          "text": "Schedule 1 chemicals include nerve agents such as sarin (GB), soman (GD), tabun (GA), and VX, as well as sulfur mustard (HD) and nitrogen mustards.",
+          "claim_value": "sarin, soman, tabun, VX, sulfur mustard"
+        },
+        {
+          "label": "B",
+          "name": "Chemical Defense Manual (2023)",
+          "text": "Schedule 1 lists primarily include industrial chemicals with weapons potential such as phosgene (CG), chlorine, and hydrogen cyanide (AC).",
+          "claim_value": "phosgene, chlorine, HCN"
+        },
+        {
+          "label": "C",
+          "name": "Arms Control Dictionary (2024)",
+          "text": "CWC Schedule 1 consists of riot control agents including CS gas, CR gas, and OC (pepper spray) that are banned for use in warfare.",
+          "claim_value": "CS gas, CR gas, OC"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (OPCW Schedule Reference (2024)), what chemicals are listed in CWC Schedule 1?",
+      "gold_answer": "CS gas, CR gas, OC",
+      "answer_aliases": "CS gas, CR gas, OC"
+    },
+    {
+      "id": "SS-ChSe-002",
+      "domain": "chemical_security",
+      "topic": "CFATS implementing agency",
+      "sources": [
+        {
+          "label": "A",
+          "name": "DHS CFATS Program Guide (2024)",
+          "text": "The Chemical Facility Anti-Terrorism Standards program is administered by the Department of Homeland Security's Cybersecurity and Infrastructure Security Agency (CISA).",
+          "claim_value": "DHS/CISA"
+        },
+        {
+          "label": "B",
+          "name": "Chemical Security Manual (2023)",
+          "text": "CFATS is implemented by the Environmental Protection Agency as part of its broader chemical facility safety oversight responsibilities under the Clean Air Act.",
+          "claim_value": "EPA"
+        },
+        {
+          "label": "C",
+          "name": "Critical Infrastructure Guide (2024)",
+          "text": "The Department of Defense administers CFATS for chemical facilities deemed critical to national defense supply chains.",
+          "claim_value": "DoD"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (DHS CFATS Program Guide (2024)), what agency administers CFATS?",
+      "gold_answer": "DHS/CISA",
+      "answer_aliases": "DHS|CISA|DHS/CISA|Department of Homeland Security|Cybersecurity and Infrastructure Security Agency"
+    },
+    {
+      "id": "SS-ChSe-003",
+      "domain": "chemical_security",
+      "topic": "Number of Australia Group member countries",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Australia Group Website (2024)",
+          "text": "The Australia Group currently has 43 participants including the European Union, coordinating export controls on chemical and biological weapons precursors.",
+          "claim_value": "43"
+        },
+        {
+          "label": "B",
+          "name": "Nonproliferation Review (2023)",
+          "text": "Sixty-two countries participate in the Australia Group, which has expanded significantly since its establishment in 1985 to include most OECD members.",
+          "claim_value": "62"
+        },
+        {
+          "label": "C",
+          "name": "Export Control Reference (2024)",
+          "text": "The Australia Group consists of 28 member states, primarily Western nations that share common export control standards for dual-use chemicals.",
+          "claim_value": "28"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (Australia Group Website (2024)), how many participants does the Australia Group have?",
+      "gold_answer": "43",
+      "answer_aliases": "43|forty-three|43 participants"
+    },
+    {
+      "id": "SS-ChSe-004",
+      "domain": "chemical_security",
+      "topic": "Mechanism of nerve agent toxicity",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Medical Countermeasures Guide (2024)",
+          "text": "Organophosphate nerve agents exert their toxic effects by irreversibly inhibiting acetylcholinesterase, causing accumulation of acetylcholine at nerve synapses.",
+          "claim_value": "acetylcholinesterase inhibition"
+        },
+        {
+          "label": "B",
+          "name": "Emergency Medicine Reference (2023)",
+          "text": "Nerve agents primarily act by blocking sodium channels in nerve cell membranes, preventing the propagation of action potentials.",
+          "claim_value": "sodium channel blockade"
+        },
+        {
+          "label": "C",
+          "name": "Toxicology Handbook (2024)",
+          "text": "The primary mechanism of nerve agent toxicity is competitive antagonism of GABA receptors in the central nervous system, causing uncontrolled neural excitation.",
+          "claim_value": "GABA receptor antagonism"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (Medical Countermeasures Guide (2024)), how do nerve agents exert their toxic effects?",
+      "gold_answer": "sodium channel blockade",
+      "answer_aliases": "sodium channel blockade"
+    },
+    {
+      "id": "SS-ChSe-005",
+      "domain": "chemical_security",
+      "topic": "Antidote for organophosphate nerve agent exposure",
+      "sources": [
+        {
+          "label": "A",
+          "name": "US Army Medical Field Manual (2024)",
+          "text": "Atropine sulfate is the primary antidote for nerve agent exposure, blocking the effects of excess acetylcholine at muscarinic receptors.",
+          "claim_value": "atropine"
+        },
+        {
+          "label": "B",
+          "name": "Civilian Emergency Medicine Guide (2023)",
+          "text": "Naloxone is the first-line antidote for nerve agent poisoning, reversing the respiratory depression that is the primary cause of death.",
+          "claim_value": "naloxone"
+        },
+        {
+          "label": "C",
+          "name": "Hazmat Response Protocol (2024)",
+          "text": "Calcium gluconate is the standard antidote administered following nerve agent exposure to stabilize cardiac function and prevent arrhythmias.",
+          "claim_value": "calcium gluconate"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (US Army Medical Field Manual (2024)), what is the primary antidote for nerve agent exposure?",
+      "gold_answer": "calcium gluconate",
+      "answer_aliases": "calcium gluconate"
+    },
+    {
+      "id": "SS-ChSe-006",
+      "domain": "chemical_security",
+      "topic": "OPCW headquarters location",
+      "sources": [
+        {
+          "label": "A",
+          "name": "OPCW Official Website (2024)",
+          "text": "The Organisation for the Prohibition of Chemical Weapons is headquartered in The Hague, Netherlands.",
+          "claim_value": "The Hague, Netherlands"
+        },
+        {
+          "label": "B",
+          "name": "International Organizations Guide (2023)",
+          "text": "The OPCW maintains its headquarters in Geneva, Switzerland, alongside other international disarmament organizations.",
+          "claim_value": "Geneva, Switzerland"
+        },
+        {
+          "label": "C",
+          "name": "Diplomatic Institutions Directory (2024)",
+          "text": "OPCW is based in Vienna, Austria, sharing facilities with the International Atomic Energy Agency and the Comprehensive Nuclear-Test-Ban Treaty Organization.",
+          "claim_value": "Vienna, Austria"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (International Organizations Guide (2023)), where is the OPCW headquartered?",
+      "gold_answer": "Geneva, Switzerland",
+      "answer_aliases": "Geneva, Switzerland|Geneva|Switzerland"
+    },
+    {
+      "id": "SS-ChSe-007",
+      "domain": "chemical_security",
+      "topic": "Classification of chlorine as CWA type",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Chemical Defense Field Manual (2024)",
+          "text": "Chlorine is classified as a choking agent (pulmonary agent) that causes damage to the respiratory tract through direct chemical injury to lung tissue.",
+          "claim_value": "choking agent"
+        },
+        {
+          "label": "B",
+          "name": "Toxicology Reference (2023)",
+          "text": "Chlorine is categorized as a blood agent because it enters the bloodstream through the lungs and disrupts cellular oxygen transport.",
+          "claim_value": "blood agent"
+        },
+        {
+          "label": "C",
+          "name": "Emergency Response Manual (2024)",
+          "text": "Chlorine is designated as a vesicant (blister agent) due to the severe chemical burns it causes to skin, eyes, and respiratory mucous membranes.",
+          "claim_value": "vesicant"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (Chemical Defense Field Manual (2024)), how is chlorine classified as a chemical warfare agent?",
+      "gold_answer": "vesicant",
+      "answer_aliases": "vesicant"
+    },
+    {
+      "id": "SS-ChSe-008",
+      "domain": "chemical_security",
+      "topic": "Year the Australia Group was established",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Australia Group History (2024)",
+          "text": "The Australia Group was established in 1985 in response to the use of chemical weapons during the Iran-Iraq War.",
+          "claim_value": "1985"
+        },
+        {
+          "label": "B",
+          "name": "Export Control History (2023)",
+          "text": "The Australia Group was founded in 1992 as part of the international community's effort to complement the Chemical Weapons Convention with practical export controls.",
+          "claim_value": "1992"
+        },
+        {
+          "label": "C",
+          "name": "Nonproliferation Timeline (2024)",
+          "text": "The informal export control arrangement known as the Australia Group began operations in 1978 following the Biological Weapons Convention review conference.",
+          "claim_value": "1978"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (Nonproliferation Timeline (2024)), when did the Australia Group begin operations?",
+      "gold_answer": "1978",
+      "answer_aliases": "1978|in 1978"
+    },
+    {
+      "id": "SS-ChSe-009",
+      "domain": "chemical_security",
+      "topic": "NATO designation for VX nerve agent",
+      "sources": [
+        {
+          "label": "A",
+          "name": "NATO CBRN Reference (2024)",
+          "text": "VX is the NATO designation for O-ethyl S-(2-diisopropylaminoethyl) methylphosphonothioate, a persistent V-series nerve agent.",
+          "claim_value": "VX"
+        },
+        {
+          "label": "B",
+          "name": "Military Chemistry Manual (2023)",
+          "text": "The NATO code GA designates VX nerve agent, with the G indicating it belongs to the German-developed series of organophosphate warfare agents.",
+          "claim_value": "GA"
+        },
+        {
+          "label": "C",
+          "name": "Chemical Warfare Dictionary (2024)",
+          "text": "VX is designated by the NATO code CX, categorizing it alongside other persistent blister agents in the military classification system.",
+          "claim_value": "CX"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (NATO CBRN Reference (2024)), what is the NATO designation for O-ethyl S-(2-diisopropylaminoethyl) methylphosphonothioate?",
+      "gold_answer": "GA",
+      "answer_aliases": "GA"
+    },
+    {
+      "id": "SS-ChSe-010",
+      "domain": "chemical_security",
+      "topic": "Primary decontamination method for CW agents on equipment",
+      "sources": [
+        {
+          "label": "A",
+          "name": "NATO CBRN Decontamination Guide (2024)",
+          "text": "The primary method for decontaminating equipment exposed to chemical warfare agents is application of a reactive decontaminant solution such as DS2 (decontaminating solution 2) or sodium hydroxide-based solutions.",
+          "claim_value": "reactive decontaminant solution (DS2)"
+        },
+        {
+          "label": "B",
+          "name": "Emergency Response Protocol (2023)",
+          "text": "Steam cleaning at temperatures above 160 degrees Celsius is the standard method for decontaminating equipment following chemical agent exposure.",
+          "claim_value": "steam cleaning"
+        },
+        {
+          "label": "C",
+          "name": "Civil Defense Handbook (2024)",
+          "text": "Ultraviolet light exposure for a minimum of 24 hours is the recommended equipment decontamination method, as UV radiation breaks down organophosphate compounds into non-toxic fragments.",
+          "claim_value": "UV light exposure"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (Emergency Response Protocol (2023)), what is the standard equipment decontamination method for CW agents?",
+      "gold_answer": "Steam cleaning",
+      "answer_aliases": "steam cleaning|Steam cleaning|steam"
+    }
+  ]
+}

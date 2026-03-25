@@ -1,0 +1,16 @@
+{
+  "id": "shepscientific/cyber-sabr-benchmark",
+  "title": "Cyber-SABR Benchmark",
+  "code_file": "cyber_sabr_notebook.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": [
+    "shepscientific/cyber-sabr-cybersecurity-attention-data"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

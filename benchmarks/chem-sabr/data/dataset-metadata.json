@@ -1,0 +1,32 @@
+{
+  "title": "Chem-SABR Chemical Safety Attention Data",
+  "id": "shepscientific/chem-sabr-chemical-safety-attention-data",
+  "licenses": [
+    {
+      "name": "CC-BY-4.0"
+    }
+  ],
+  "keywords": [
+    "chemical safety",
+    "chemistry",
+    "attention",
+    "benchmark",
+    "LLM evaluation",
+    "selective attention",
+    "AGI measurement"
+  ],
+  "resources": [
+    {
+      "path": "distractor_robustness.json",
+      "description": "50 chemical safety questions x 4 distractor conditions (clean/low/medium/high) = 200 evaluations testing resistance to domain-specific noise"
+    },
+    {
+      "path": "source_selective.json",
+      "description": "50 items x 3 conflicting chemical safety sources = 50 evaluations testing selective source adherence"
+    },
+    {
+      "path": "attentional_spotlight.json",
+      "description": "30 chemical safety documents with embedded claims across 6 filter categories = 30 evaluations testing precise claim extraction"
+    }
+  ]
+}

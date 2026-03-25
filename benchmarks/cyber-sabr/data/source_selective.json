@@ -1,0 +1,1469 @@
+{
+  "metadata": {
+    "task": "source_selective",
+    "version": "1.0.0",
+    "description": "50 cybersecurity items testing selective attention to designated information sources. Each item presents 3 sources with conflicting claims. The model must answer using ONLY the designated source.",
+    "domains": [
+      "threat_intelligence",
+      "vulnerability_management",
+      "network_security",
+      "application_security",
+      "security_operations",
+      "ai_model_security"
+    ],
+    "total_items": 50,
+    "total_evaluations": 50
+  },
+  "items": [
+    {
+      "id": "SS-ThrI-001",
+      "domain": "threat_intelligence",
+      "topic": "APT group attribution",
+      "sources": [
+        {
+          "label": "A",
+          "name": "CrowdStrike Threat Intelligence Report",
+          "text": "APT29, also known as Cozy Bear, is attributed to Russia's Foreign Intelligence Service (SVR). The group has been active since at least 2008 and primarily targets government networks, think tanks, and diplomatic organizations in Western nations.",
+          "claim_value": "Russia's Foreign Intelligence Service (SVR)"
+        },
+        {
+          "label": "B",
+          "name": "FireEye Mandiant Analysis",
+          "text": "APT29, tracked as Cozy Bear, is linked to Russia's Federal Security Service (FSB). The group emerged around 2014 and focuses primarily on defense contractors and military installations across NATO member states.",
+          "claim_value": "Russia's Federal Security Service (FSB)"
+        },
+        {
+          "label": "C",
+          "name": "Kaspersky GReAT Research",
+          "text": "APT29, known as Cozy Bear, operates under Russia's Main Intelligence Directorate (GRU). The group has been operational since 2010 and conducts espionage operations targeting energy sector companies and critical infrastructure.",
+          "claim_value": "Russia's Main Intelligence Directorate (GRU)"
+        }
+      ],
+      "designated_source": "A",
+      "question": "According to Source A, what Russian intelligence agency is APT29 attributed to?",
+      "gold_answer": "Russia's Foreign Intelligence Service (SVR)",
+      "answer_aliases": "Russia's Foreign Intelligence Service (SVR)|SVR|Foreign Intelligence Service|the SVR"
+    },
+    {
+      "id": "SS-ThrI-002",
+      "domain": "threat_intelligence",
+      "topic": "MITRE ATT&CK technique classification",
+      "sources": [
+        {
+          "label": "A",
+          "name": "MITRE ATT&CK Navigator Guide",
+          "text": "Spear phishing attachments (T1566.001) is classified under the Initial Access tactic. This technique involves sending targeted emails with malicious file attachments to specific individuals within an organization.",
+          "claim_value": "Initial Access"
+        },
+        {
+          "label": "B",
+          "name": "SANS Cyber Threat Framework",
+          "text": "Spear phishing attachments (T1566.001) is classified under the Execution tactic. The technique requires the target to open the malicious attachment, which then executes code on the victim's system.",
+          "claim_value": "Execution"
+        },
+        {
+          "label": "C",
+          "name": "Palo Alto Unit 42 Analysis",
+          "text": "Spear phishing attachments (T1566.001) is classified under the Delivery tactic, following the Cyber Kill Chain model. This maps to the third phase of a typical intrusion operation.",
+          "claim_value": "Delivery"
+        }
+      ],
+      "designated_source": "B",
+      "question": "According to Source B, under which tactic is spear phishing attachments (T1566.001) classified?",
+      "gold_answer": "Execution",
+      "answer_aliases": "Execution|the Execution tactic|execution"
+    },
+    {
+      "id": "SS-ThrI-003",
+      "domain": "threat_intelligence",
+      "topic": "Threat intelligence sharing frequency",
+      "sources": [
+        {
+          "label": "A",
+          "name": "ISACs Best Practice Guide",
+          "text": "Critical threat indicators should be shared within 15 minutes of validation to enable effective defensive response across the sector. Delayed sharing significantly reduces the protective value of threat intelligence.",
+          "claim_value": "15 minutes"
+        },
+        {
+          "label": "B",
+          "name": "CISA Sharing Guidelines",
+          "text": "Critical threat indicators should be shared within 1 hour of validation. This timeframe balances the need for rapid sharing with the requirement for thorough validation to prevent false positive dissemination.",
+          "claim_value": "1 hour"
+        },
+        {
+          "label": "C",
+          "name": "EU ENISA Recommendations",
+          "text": "Critical threat indicators should be shared within 4 hours of validation. This allows sufficient time for contextual enrichment and cross-referencing with existing intelligence holdings before dissemination.",
+          "claim_value": "4 hours"
+        }
+      ],
+      "designated_source": "C",
+      "question": "According to Source C, within what timeframe should critical threat indicators be shared after validation?",
+      "gold_answer": "4 hours",
+      "answer_aliases": "4 hours|four hours|within 4 hours"
+    },
+    {
+      "id": "SS-ThrI-004",
+      "domain": "threat_intelligence",
+      "topic": "Threat actor motivation classification",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Recorded Future Intelligence Report",
+          "text": "The Lazarus Group's primary motivation is classified as financial gain, with the group conducting cryptocurrency heists and SWIFT banking attacks to generate revenue for the North Korean regime.",
+          "claim_value": "financial gain"
+        },
+        {
+          "label": "B",
+          "name": "Microsoft Threat Intelligence Center",
+          "text": "The Lazarus Group's primary motivation is classified as espionage, with the group targeting defense contractors and government agencies to steal classified information and intellectual property.",
+          "claim_value": "espionage"
+        },
+        {
+          "label": "C",
+          "name": "Symantec Threat Hunter Team",
+          "text": "The Lazarus Group's primary motivation is classified as disruption, with the group conducting destructive wiper attacks and sabotage operations against critical infrastructure in adversary nations.",
+          "claim_value": "disruption"
+        }
+      ],
+      "designated_source": "B",
+      "question": "According to Source B, what is the Lazarus Group's primary motivation classification?",
+      "gold_answer": "espionage",
+      "answer_aliases": "espionage"
+    },
+    {
+      "id": "SS-ThrI-005",
+      "domain": "threat_intelligence",
+      "topic": "IoC confidence scoring",
+      "sources": [
+        {
+          "label": "A",
+          "name": "ThreatConnect Platform Documentation",
+          "text": "Indicators of compromise with a confidence score below 50% should be treated as informational only and not used for automated blocking. Automated response should require a minimum confidence of 70%.",
+          "claim_value": "70%"
+        },
+        {
+          "label": "B",
+          "name": "Anomali ThreatStream Guide",
+          "text": "Indicators of compromise with a confidence score below 50% should be treated as informational only. Automated blocking requires a minimum confidence of 85% to minimize false positive impact on operations.",
+          "claim_value": "85%"
+        },
+        {
+          "label": "C",
+          "name": "MISP Platform Standards",
+          "text": "Indicators of compromise with a confidence score below 50% should be treated as informational only. Automated blocking requires a minimum confidence of 60%, with additional manual review for scores between 60% and 80%.",
+          "claim_value": "60%"
+        }
+      ],
+      "designated_source": "B",
+      "question": "According to Source B, what minimum confidence score is required for automated blocking of IoCs?",
+      "gold_answer": "85%",
+      "answer_aliases": "85%|85 percent|eighty-five percent"
+    },
+    {
+      "id": "SS-ThrI-006",
+      "domain": "threat_intelligence",
+      "topic": "Kill chain model phases",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Lockheed Martin Whitepaper",
+          "text": "The Cyber Kill Chain consists of seven phases: Reconnaissance, Weaponization, Delivery, Exploitation, Installation, Command and Control, and Actions on Objectives.",
+          "claim_value": "seven phases"
+        },
+        {
+          "label": "B",
+          "name": "SANS Institute Course Material",
+          "text": "The Cyber Kill Chain consists of five phases: Reconnaissance, Intrusion, Exploitation, Privilege Escalation, and Lateral Movement. This streamlined model focuses on the most actionable phases for defenders.",
+          "claim_value": "five phases"
+        },
+        {
+          "label": "C",
+          "name": "Dragos Industrial Threat Report",
+          "text": "The Cyber Kill Chain consists of nine phases, extending the original model with two additional pre-attack phases: Target Selection and Information Gathering, which precede Reconnaissance.",
+          "claim_value": "nine phases"
+        }
+      ],
+      "designated_source": "C",
+      "question": "According to Source C, how many phases does the Cyber Kill Chain consist of?",
+      "gold_answer": "nine phases",
+      "answer_aliases": "nine phases|9 phases|nine|9"
+    },
+    {
+      "id": "SS-ThrI-007",
+      "domain": "threat_intelligence",
+      "topic": "Threat intelligence platform data retention",
+      "sources": [
+        {
+          "label": "A",
+          "name": "IBM X-Force Exchange Policy",
+          "text": "Threat intelligence indicators should be retained for a minimum of 2 years to support historical analysis and long-term trend identification. Older indicators are archived but remain searchable.",
+          "claim_value": "2 years"
+        },
+        {
+          "label": "B",
+          "name": "AlienVault OTX Standards",
+          "text": "Threat intelligence indicators should be retained for a minimum of 5 years. This extended retention period enables detection of advanced persistent threats that may operate with long dwell times.",
+          "claim_value": "5 years"
+        },
+        {
+          "label": "C",
+          "name": "VirusTotal Intelligence Requirements",
+          "text": "Threat intelligence indicators should be retained for a minimum of 90 days. Beyond this period, most indicators lose their detection value as threat actors rotate infrastructure and update malware.",
+          "claim_value": "90 days"
+        }
+      ],
+      "designated_source": "B",
+      "question": "According to Source B, what is the minimum retention period for threat intelligence indicators?",
+      "gold_answer": "5 years",
+      "answer_aliases": "5 years"
+    },
+    {
+      "id": "SS-ThrI-008",
+      "domain": "threat_intelligence",
+      "topic": "Threat report classification level",
+      "sources": [
+        {
+          "label": "A",
+          "name": "NSA Cybersecurity Advisory",
+          "text": "Threat intelligence reports containing specific TTPs used by nation-state actors should be classified at the SECRET level by default, with sanitized versions released at UNCLASSIFIED//FOUO for broader distribution.",
+          "claim_value": "SECRET"
+        },
+        {
+          "label": "B",
+          "name": "FBI Cyber Division Bulletin",
+          "text": "Threat intelligence reports containing specific TTPs should be classified at TLP:AMBER, allowing sharing within the recipient's organization and its clients on a need-to-know basis.",
+          "claim_value": "TLP:AMBER"
+        },
+        {
+          "label": "C",
+          "name": "CERT-EU Advisory Framework",
+          "text": "Threat intelligence reports containing specific TTPs should be classified at TLP:GREEN, enabling sharing within the broader cybersecurity community but not publicly on the internet.",
+          "claim_value": "TLP:GREEN"
+        }
+      ],
+      "designated_source": "B",
+      "question": "According to Source B, at what classification level should threat intelligence reports containing specific TTPs be shared?",
+      "gold_answer": "TLP:AMBER",
+      "answer_aliases": "TLP:AMBER|TLP AMBER|amber|Traffic Light Protocol Amber"
+    },
+    {
+      "id": "SS-ThrI-009",
+      "domain": "threat_intelligence",
+      "topic": "Dwell time statistics",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Mandiant M-Trends Report 2024",
+          "text": "The global median dwell time for cyber intrusions decreased to 10 days in 2023, reflecting improvements in detection capabilities and increased use of automated threat hunting.",
+          "claim_value": "10 days"
+        },
+        {
+          "label": "B",
+          "name": "CrowdStrike Global Threat Report",
+          "text": "The global median dwell time for cyber intrusions was 26 days in 2023. Organizations with mature SOC operations achieved significantly shorter dwell times averaging 5 days.",
+          "claim_value": "26 days"
+        },
+        {
+          "label": "C",
+          "name": "IBM X-Force Threat Intelligence Index",
+          "text": "The global median dwell time for cyber intrusions was 45 days in 2023. This represents a slight improvement from 49 days in 2022, driven primarily by increased ransomware attacks that are detected more quickly.",
+          "claim_value": "45 days"
+        }
+      ],
+      "designated_source": "C",
+      "question": "According to Source C, what was the global median dwell time for cyber intrusions in 2023?",
+      "gold_answer": "45 days",
+      "answer_aliases": "45 days|forty-five days"
+    },
+    {
+      "id": "SS-VulM-001",
+      "domain": "vulnerability_management",
+      "topic": "CVSS temporal score decay",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Qualys Vulnerability Management Guide",
+          "text": "CVSS temporal scores should be reassessed every 30 days after initial publication. Exploit code maturity and remediation level changes typically stabilize within the first month.",
+          "claim_value": "30 days"
+        },
+        {
+          "label": "B",
+          "name": "Tenable Best Practices",
+          "text": "CVSS temporal scores should be reassessed every 90 days after initial publication. This quarterly cadence aligns with standard patch management cycles and provides sufficient time to assess exploit development.",
+          "claim_value": "90 days"
+        },
+        {
+          "label": "C",
+          "name": "Rapid7 InsightVM Documentation",
+          "text": "CVSS temporal scores should be reassessed every 7 days after initial publication for the first month, then monthly thereafter. Critical vulnerabilities warrant more frequent reassessment during the initial exploitation window.",
+          "claim_value": "7 days initially, then monthly"
+        }
+      ],
+      "designated_source": "A",
+      "question": "According to Source A, how often should CVSS temporal scores be reassessed after initial publication?",
+      "gold_answer": "every 30 days",
+      "answer_aliases": "every 30 days|30 days|monthly|every month"
+    },
+    {
+      "id": "SS-VulM-002",
+      "domain": "vulnerability_management",
+      "topic": "Critical vulnerability patching SLA",
+      "sources": [
+        {
+          "label": "A",
+          "name": "PCI DSS v4.0 Requirements",
+          "text": "Critical vulnerabilities (CVSS 9.0+) in cardholder data environments must be patched within 30 days of discovery. High vulnerabilities (CVSS 7.0-8.9) must be patched within 90 days.",
+          "claim_value": "30 days"
+        },
+        {
+          "label": "B",
+          "name": "CISA BOD 22-01",
+          "text": "Known exploited vulnerabilities listed in the KEV catalog must be remediated within 14 days for internet-facing systems and 25 days for internal systems, regardless of CVSS score.",
+          "claim_value": "14 days for internet-facing"
+        },
+        {
+          "label": "C",
+          "name": "CIS Controls v8 Benchmark",
+          "text": "Critical vulnerabilities should be patched within 48 hours of patch availability. High vulnerabilities should be patched within 7 days. Medium and low vulnerabilities within 30 days.",
+          "claim_value": "48 hours"
+        }
+      ],
+      "designated_source": "C",
+      "question": "According to Source C, within what timeframe should critical vulnerabilities be patched?",
+      "gold_answer": "48 hours",
+      "answer_aliases": "48 hours|2 days|forty-eight hours|within 48 hours"
+    },
+    {
+      "id": "SS-VulM-003",
+      "domain": "vulnerability_management",
+      "topic": "Vulnerability scan frequency",
+      "sources": [
+        {
+          "label": "A",
+          "name": "NIST SP 800-53 Rev 5",
+          "text": "Organizations should conduct vulnerability scans at least monthly for all systems in scope. Critical and internet-facing systems should be scanned weekly or after any significant changes.",
+          "claim_value": "monthly, weekly for critical"
+        },
+        {
+          "label": "B",
+          "name": "ISO 27001:2022 Annex A",
+          "text": "Vulnerability assessments should be performed quarterly at minimum, with continuous automated scanning recommended for organizations with mature security programs.",
+          "claim_value": "quarterly"
+        },
+        {
+          "label": "C",
+          "name": "DISA STIG Requirements",
+          "text": "All DoD information systems must undergo vulnerability scanning at least every 72 hours. Systems processing classified information require daily scanning with results reported to the authorizing official.",
+          "claim_value": "every 72 hours"
+        }
+      ],
+      "designated_source": "B",
+      "question": "According to Source B, what is the minimum frequency for vulnerability assessments?",
+      "gold_answer": "quarterly",
+      "answer_aliases": "quarterly|every quarter|four times per year|every 3 months"
+    },
+    {
+      "id": "SS-VulM-004",
+      "domain": "vulnerability_management",
+      "topic": "CVE assignment turnaround",
+      "sources": [
+        {
+          "label": "A",
+          "name": "MITRE CVE Program Rules",
+          "text": "CVE Numbering Authorities should assign CVE IDs within 48 hours of receiving a valid vulnerability report. Complex cases may take up to 7 business days for initial triage.",
+          "claim_value": "48 hours"
+        },
+        {
+          "label": "B",
+          "name": "NVD Processing Timeline",
+          "text": "CVE entries are typically enriched with CVSS scores and CWE mappings within 14 days of initial publication. High-profile vulnerabilities may receive expedited analysis within 24 hours.",
+          "claim_value": "14 days for enrichment"
+        },
+        {
+          "label": "C",
+          "name": "FIRST CVSS SIG Guidelines",
+          "text": "CVE IDs should be reserved within 24 hours and fully published with CVSS scores within 72 hours of disclosure. This rapid timeline ensures defenders have actionable intelligence.",
+          "claim_value": "24 hours reservation, 72 hours full publication"
+        }
+      ],
+      "designated_source": "A",
+      "question": "According to Source A, within what timeframe should CVE IDs be assigned after receiving a valid report?",
+      "gold_answer": "48 hours",
+      "answer_aliases": "48 hours|within 48 hours|2 days"
+    },
+    {
+      "id": "SS-VulM-005",
+      "domain": "vulnerability_management",
+      "topic": "Vulnerability risk scoring methodology",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Gartner Risk-Based VM Report",
+          "text": "The Stakeholder-Specific Vulnerability Categorization (SSVC) framework should replace CVSS for vulnerability prioritization. SSVC uses a decision-tree approach based on exploitation status, technical impact, and mission prevalence.",
+          "claim_value": "SSVC decision-tree approach"
+        },
+        {
+          "label": "B",
+          "name": "Carnegie Mellon SEI Analysis",
+          "text": "The Exploit Prediction Scoring System (EPSS) should supplement CVSS scores for prioritization. EPSS uses machine learning to predict the probability of exploitation within 30 days, providing a more actionable risk metric.",
+          "claim_value": "EPSS machine learning prediction"
+        },
+        {
+          "label": "C",
+          "name": "Kenna Security Research",
+          "text": "Risk-based vulnerability management should combine CVSS base scores with asset criticality ratings and threat intelligence context. The resulting risk score better reflects organizational impact than CVSS alone.",
+          "claim_value": "CVSS plus asset criticality plus threat intelligence"
+        }
+      ],
+      "designated_source": "B",
+      "question": "According to Source B, what system should supplement CVSS for vulnerability prioritization?",
+      "gold_answer": "EPSS",
+      "answer_aliases": "EPSS|Exploit Prediction Scoring System|the EPSS"
+    },
+    {
+      "id": "SS-VulM-006",
+      "domain": "vulnerability_management",
+      "topic": "Software composition analysis coverage",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Snyk Security Report 2024",
+          "text": "Software composition analysis should cover all direct dependencies and at least three levels of transitive dependencies. Deeper analysis is recommended for security-critical applications.",
+          "claim_value": "three levels of transitive dependencies"
+        },
+        {
+          "label": "B",
+          "name": "Sonatype State of Software Supply Chain",
+          "text": "SCA must analyze the complete dependency tree including all transitive dependencies regardless of depth. Vulnerabilities in deeply nested dependencies account for 40% of exploitable supply chain risks.",
+          "claim_value": "complete dependency tree, all depths"
+        },
+        {
+          "label": "C",
+          "name": "OWASP Dependency-Check Documentation",
+          "text": "SCA should analyze direct dependencies and first-level transitive dependencies. Deeper analysis typically yields diminishing returns as transitive dependencies beyond the first level rarely introduce exploitable attack paths.",
+          "claim_value": "direct and first-level transitive only"
+        }
+      ],
+      "designated_source": "C",
+      "question": "According to Source C, what depth of dependency analysis should SCA tools perform?",
+      "gold_answer": "direct and first-level transitive only",
+      "answer_aliases": "direct and first-level transitive only|direct and first-level transitive|first-level transitive dependencies"
+    },
+    {
+      "id": "SS-VulM-007",
+      "domain": "vulnerability_management",
+      "topic": "Vulnerability disclosure timeline",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Google Project Zero Policy",
+          "text": "Vendors are given 90 days to patch a vulnerability before public disclosure. A 14-day grace period may be granted if a patch is in active development and near completion.",
+          "claim_value": "90 days with 14-day grace period"
+        },
+        {
+          "label": "B",
+          "name": "CERT/CC Vulnerability Disclosure Policy",
+          "text": "Vendors are given 45 days to respond and develop a patch before coordinated disclosure. Extensions may be granted for complex vulnerabilities requiring multi-vendor coordination.",
+          "claim_value": "45 days"
+        },
+        {
+          "label": "C",
+          "name": "ZDI Disclosure Timeline",
+          "text": "Vendors receive 120 days to release a patch after notification. If no patch is available after 120 days, a limited advisory is published without technical details to incentivize remediation.",
+          "claim_value": "120 days"
+        }
+      ],
+      "designated_source": "A",
+      "question": "According to Source A, how many days are vendors given to patch a vulnerability before public disclosure?",
+      "gold_answer": "90 days",
+      "answer_aliases": "90 days|ninety days|90"
+    },
+    {
+      "id": "SS-VulM-008",
+      "domain": "vulnerability_management",
+      "topic": "CVSS environmental score customization",
+      "sources": [
+        {
+          "label": "A",
+          "name": "FIRST CVSS v3.1 Specification",
+          "text": "The environmental score modifier allows organizations to adjust the base score based on Modified Attack Vector, Modified Scope, and security requirements (Confidentiality, Integrity, Availability). Environmental scores can range from 0.0 to 10.0.",
+          "claim_value": "Modified Attack Vector, Modified Scope, security requirements"
+        },
+        {
+          "label": "B",
+          "name": "NVD Scoring Calculator Guide",
+          "text": "Environmental scores are calculated by multiplying the base score by an asset criticality factor ranging from 0.5 (low criticality) to 2.0 (mission critical). This simple multiplication provides a quick risk-adjusted score.",
+          "claim_value": "asset criticality factor 0.5 to 2.0"
+        },
+        {
+          "label": "C",
+          "name": "Qualys VMDR Environmental Scoring",
+          "text": "Environmental scores adjust the temporal score using three security requirement metrics: Confidentiality, Integrity, and Availability, each set to Low, Medium, or High. No other environmental modifiers are available in CVSS v3.1.",
+          "claim_value": "three security requirement metrics only"
+        }
+      ],
+      "designated_source": "C",
+      "question": "According to Source C, what metrics are used for CVSS environmental score adjustment?",
+      "gold_answer": "three security requirement metrics only",
+      "answer_aliases": "three security requirement metrics only|Confidentiality, Integrity, and Availability|security requirement metrics|CIA requirements"
+    },
+    {
+      "id": "SS-VulM-009",
+      "domain": "vulnerability_management",
+      "topic": "Bug bounty payout thresholds",
+      "sources": [
+        {
+          "label": "A",
+          "name": "HackerOne Industry Report",
+          "text": "The average critical severity bug bounty payout across all industries was $3,000 in 2023. Technology companies paid an average of $5,000 for critical findings, while financial services averaged $8,000.",
+          "claim_value": "$3,000 average, $5,000 tech, $8,000 financial"
+        },
+        {
+          "label": "B",
+          "name": "Bugcrowd State of Bug Bounty",
+          "text": "The average critical severity payout was $7,500 in 2023, with the top 10% of programs paying over $25,000 for critical findings. Government programs averaged $2,500 for critical vulnerabilities.",
+          "claim_value": "$7,500 average"
+        },
+        {
+          "label": "C",
+          "name": "Intigriti European Bug Bounty Report",
+          "text": "The average critical severity payout in Europe was $5,200 in 2023. European programs typically pay 30% less than their U.S. counterparts for equivalent vulnerability severity.",
+          "claim_value": "$5,200 European average"
+        }
+      ],
+      "designated_source": "B",
+      "question": "According to Source B, what was the average critical severity bug bounty payout in 2023?",
+      "gold_answer": "$7,500",
+      "answer_aliases": "$7,500|7500|$7,500 average|seven thousand five hundred dollars"
+    },
+    {
+      "id": "SS-NetS-001",
+      "domain": "network_security",
+      "topic": "TLS certificate validity period",
+      "sources": [
+        {
+          "label": "A",
+          "name": "CA/Browser Forum Baseline Requirements",
+          "text": "The maximum validity period for publicly trusted TLS certificates is 398 days (approximately 13 months). Certificates issued with longer validity periods will not be trusted by major browsers.",
+          "claim_value": "398 days"
+        },
+        {
+          "label": "B",
+          "name": "Google Chrome Security Team Proposal",
+          "text": "The recommended maximum validity period for TLS certificates should be reduced to 90 days to minimize the window of exposure from compromised certificates. Google plans to enforce this in Chrome by 2025.",
+          "claim_value": "90 days"
+        },
+        {
+          "label": "C",
+          "name": "Let's Encrypt Documentation",
+          "text": "Certificates issued by Let's Encrypt have a validity period of 90 days by design. This short lifetime encourages automation and reduces the impact of key compromise. Most other CAs issue certificates valid for 365 days.",
+          "claim_value": "90 days Let's Encrypt, 365 days most others"
+        }
+      ],
+      "designated_source": "A",
+      "question": "According to Source A, what is the maximum validity period for publicly trusted TLS certificates?",
+      "gold_answer": "398 days",
+      "answer_aliases": "398 days|approximately 13 months|398"
+    },
+    {
+      "id": "SS-NetS-002",
+      "domain": "network_security",
+      "topic": "Firewall rule review frequency",
+      "sources": [
+        {
+          "label": "A",
+          "name": "NIST SP 800-41 Rev 1",
+          "text": "Firewall rule sets should be reviewed at least annually to identify and remove unused, redundant, or overly permissive rules. Critical-path firewalls should be reviewed semi-annually.",
+          "claim_value": "annually, semi-annually for critical"
+        },
+        {
+          "label": "B",
+          "name": "PCI DSS v4.0 Requirement 1.2.7",
+          "text": "Firewall and router rule sets must be reviewed at least every six months to ensure they remain necessary and appropriate. Each rule must be justified with a documented business reason.",
+          "claim_value": "every six months"
+        },
+        {
+          "label": "C",
+          "name": "CIS Controls v8 Safeguard 4.5",
+          "text": "Firewall rules should be reviewed quarterly. Automated rule analysis tools should be used to identify shadow rules, redundancies, and overly broad permissions that accumulate over time.",
+          "claim_value": "quarterly"
+        }
+      ],
+      "designated_source": "C",
+      "question": "According to Source C, how often should firewall rules be reviewed?",
+      "gold_answer": "quarterly",
+      "answer_aliases": "quarterly|every quarter|every 3 months"
+    },
+    {
+      "id": "SS-NetS-003",
+      "domain": "network_security",
+      "topic": "DNS TTL for security records",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Cloudflare DNS Security Guide",
+          "text": "DMARC, SPF, and DKIM DNS records should use a TTL of 3600 seconds (1 hour). This provides a balance between propagation speed for updates and reduction of DNS query volume.",
+          "claim_value": "3600 seconds (1 hour)"
+        },
+        {
+          "label": "B",
+          "name": "Google Workspace Admin Help",
+          "text": "Email authentication DNS records (SPF, DKIM, DMARC) should be configured with a TTL of 300 seconds (5 minutes) to allow rapid updates when investigating email spoofing incidents.",
+          "claim_value": "300 seconds (5 minutes)"
+        },
+        {
+          "label": "C",
+          "name": "Microsoft 365 Security Documentation",
+          "text": "Security-related DNS records should use a TTL of 86400 seconds (24 hours) to maximize caching efficiency and reduce the load on authoritative DNS servers.",
+          "claim_value": "86400 seconds (24 hours)"
+        }
+      ],
+      "designated_source": "A",
+      "question": "According to Source A, what TTL should be used for DMARC, SPF, and DKIM DNS records?",
+      "gold_answer": "3600 seconds",
+      "answer_aliases": "3600 seconds|1 hour|3600|one hour|3600 seconds (1 hour)"
+    },
+    {
+      "id": "SS-NetS-004",
+      "domain": "network_security",
+      "topic": "VPN protocol selection",
+      "sources": [
+        {
+          "label": "A",
+          "name": "NSA Cybersecurity Information Sheet",
+          "text": "IPsec IKEv2 is the recommended VPN protocol for enterprise environments due to its strong security properties, support for modern cipher suites, and native integration with network equipment.",
+          "claim_value": "IPsec IKEv2"
+        },
+        {
+          "label": "B",
+          "name": "NIST SP 800-77 Rev 1",
+          "text": "WireGuard is the recommended VPN protocol for enterprise use due to its minimal attack surface, modern cryptographic design, and superior performance compared to legacy protocols.",
+          "claim_value": "WireGuard"
+        },
+        {
+          "label": "C",
+          "name": "CISA VPN Security Guidance",
+          "text": "OpenVPN with TLS 1.3 is the recommended VPN protocol, offering a proven security track record, extensive audit history, and broad platform compatibility across enterprise environments.",
+          "claim_value": "OpenVPN with TLS 1.3"
+        }
+      ],
+      "designated_source": "B",
+      "question": "According to Source B, what VPN protocol is recommended for enterprise use?",
+      "gold_answer": "WireGuard",
+      "answer_aliases": "WireGuard|wireguard"
+    },
+    {
+      "id": "SS-NetS-005",
+      "domain": "network_security",
+      "topic": "Network segmentation minimum zones",
+      "sources": [
+        {
+          "label": "A",
+          "name": "NIST SP 800-125B",
+          "text": "Enterprise networks should implement at least five security zones: external/DMZ, internal production, development/test, management, and restricted/high-security. Each zone requires independent access controls.",
+          "claim_value": "five zones"
+        },
+        {
+          "label": "B",
+          "name": "Forrester Zero Trust Architecture Guide",
+          "text": "Modern networks should implement micro-segmentation with at least three primary zones: untrusted (external), semi-trusted (DMZ/services), and trusted (internal). Additional sub-zones are created dynamically based on workload identity.",
+          "claim_value": "three primary zones"
+        },
+        {
+          "label": "C",
+          "name": "Cisco SAFE Architecture",
+          "text": "Enterprise networks require at minimum seven security zones: internet edge, DMZ, campus core, data center, WAN edge, cloud, and management. Each zone has distinct threat models and control requirements.",
+          "claim_value": "seven zones"
+        }
+      ],
+      "designated_source": "C",
+      "question": "According to Source C, how many minimum security zones should an enterprise network implement?",
+      "gold_answer": "seven zones",
+      "answer_aliases": "seven zones|7 zones|seven|7"
+    },
+    {
+      "id": "SS-NetS-006",
+      "domain": "network_security",
+      "topic": "SIEM log retention period",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Splunk Security Best Practices",
+          "text": "Security event logs should be retained in hot/warm storage for 90 days and in cold/archive storage for a minimum of 1 year. Compliance-driven environments may require 7-year retention.",
+          "claim_value": "90 days hot, 1 year archive"
+        },
+        {
+          "label": "B",
+          "name": "Elastic Security Operations Guide",
+          "text": "Security logs should be retained for 30 days in searchable storage and 6 months in compressed archive. This balances investigative needs with storage costs for most organizations.",
+          "claim_value": "30 days searchable, 6 months archive"
+        },
+        {
+          "label": "C",
+          "name": "QRadar SIEM Administration Guide",
+          "text": "Security event data should be retained in online storage for 180 days and archived for 3 years. This supports incident investigation timelines and meets most regulatory requirements.",
+          "claim_value": "180 days online, 3 years archive"
+        }
+      ],
+      "designated_source": "B",
+      "question": "According to Source B, how long should security event logs be retained in hot/warm storage?",
+      "gold_answer": "30 days searchable, 6 months archive",
+      "answer_aliases": "30 days searchable, 6 months archive"
+    },
+    {
+      "id": "SS-NetS-007",
+      "domain": "network_security",
+      "topic": "Wi-Fi security protocol",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Wi-Fi Alliance Certification Program",
+          "text": "WPA3-Enterprise with 192-bit security mode is the strongest currently available Wi-Fi security protocol, using CNSA suite cryptography. It requires 802.1X authentication with EAP-TLS.",
+          "claim_value": "WPA3-Enterprise 192-bit"
+        },
+        {
+          "label": "B",
+          "name": "NSA Wi-Fi Security Guidance",
+          "text": "WPA3-Personal (SAE) is sufficient for most enterprise environments. The Simultaneous Authentication of Equals protocol provides strong protection against offline dictionary attacks.",
+          "claim_value": "WPA3-Personal (SAE)"
+        },
+        {
+          "label": "C",
+          "name": "Aruba Networks Security Whitepaper",
+          "text": "Enhanced Open (OWE) combined with WPA2-Enterprise provides the strongest security posture for enterprise Wi-Fi. WPA3 adoption remains limited due to compatibility issues with legacy devices.",
+          "claim_value": "Enhanced Open (OWE) with WPA2-Enterprise"
+        }
+      ],
+      "designated_source": "A",
+      "question": "According to Source A, what is the strongest currently available Wi-Fi security protocol?",
+      "gold_answer": "WPA3-Enterprise with 192-bit security mode",
+      "answer_aliases": "WPA3-Enterprise with 192-bit security mode|WPA3-Enterprise 192-bit|WPA3 Enterprise 192-bit"
+    },
+    {
+      "id": "SS-NetS-008",
+      "domain": "network_security",
+      "topic": "DDoS mitigation threshold",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Cloudflare DDoS Protection Guide",
+          "text": "Volumetric DDoS attacks exceeding 100 Gbps should trigger automatic upstream scrubbing center activation. Attacks below this threshold can typically be mitigated by on-premise appliances.",
+          "claim_value": "100 Gbps"
+        },
+        {
+          "label": "B",
+          "name": "Akamai Prolexic Recommendations",
+          "text": "Organizations should activate cloud-based DDoS scrubbing for any attack exceeding 10 Gbps or 10 million packets per second. This threshold accounts for the limited capacity of most on-premise DDoS appliances.",
+          "claim_value": "10 Gbps"
+        },
+        {
+          "label": "C",
+          "name": "AWS Shield Advanced Documentation",
+          "text": "Automatic DDoS mitigation activates for attacks exceeding 5 Gbps against protected resources. Attacks below this threshold are handled by standard network ACLs and rate limiting.",
+          "claim_value": "5 Gbps"
+        }
+      ],
+      "designated_source": "C",
+      "question": "According to Source C, at what threshold does automatic DDoS mitigation activate?",
+      "gold_answer": "5 Gbps",
+      "answer_aliases": "5 Gbps|5 gigabits per second|five Gbps"
+    },
+    {
+      "id": "SS-NetS-009",
+      "domain": "network_security",
+      "topic": "Network access control timeout",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Cisco ISE Configuration Guide",
+          "text": "802.1X authentication sessions should timeout after 8 hours, requiring re-authentication. This prevents stale sessions from persisting after a device has been moved or compromised.",
+          "claim_value": "8 hours"
+        },
+        {
+          "label": "B",
+          "name": "Juniper NAC Best Practices",
+          "text": "NAC session timeout should be set to 24 hours for wired connections and 4 hours for wireless connections. Shorter timeouts for wireless reflect the higher risk of mobile device compromise.",
+          "claim_value": "24 hours wired, 4 hours wireless"
+        },
+        {
+          "label": "C",
+          "name": "Microsoft NAP Documentation",
+          "text": "Network access sessions should be reauthenticated every 2 hours. Continuous posture assessment should supplement periodic reauthentication for comprehensive endpoint compliance.",
+          "claim_value": "2 hours"
+        }
+      ],
+      "designated_source": "B",
+      "question": "According to Source B, what should the NAC session timeout be for wired connections?",
+      "gold_answer": "24 hours",
+      "answer_aliases": "24 hours|twenty-four hours|1 day"
+    },
+    {
+      "id": "SS-AppS-001",
+      "domain": "application_security",
+      "topic": "SAST scan integration point",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Checkmarx SAST Implementation Guide",
+          "text": "Static application security testing should be integrated at the pull request stage, blocking merges for critical and high findings. This shift-left approach catches vulnerabilities before they reach the main branch.",
+          "claim_value": "pull request stage"
+        },
+        {
+          "label": "B",
+          "name": "SonarQube Enterprise Documentation",
+          "text": "SAST should run nightly on the main branch with results reviewed during morning standup. PR-level scanning creates too much friction and developer pushback in fast-moving development teams.",
+          "claim_value": "nightly on main branch"
+        },
+        {
+          "label": "C",
+          "name": "Veracode DevSecOps Guide",
+          "text": "SAST should be integrated at three stages: IDE plugin for developer feedback, CI pipeline for automated checks, and weekly deep scans for comprehensive coverage. Each stage serves a different purpose.",
+          "claim_value": "three stages: IDE, CI, and weekly deep scan"
+        }
+      ],
+      "designated_source": "A",
+      "question": "According to Source A, at what stage should SAST be integrated?",
+      "gold_answer": "pull request stage",
+      "answer_aliases": "pull request stage|at the pull request stage|PR stage|during pull requests"
+    },
+    {
+      "id": "SS-AppS-002",
+      "domain": "application_security",
+      "topic": "API rate limiting threshold",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Akamai API Security Best Practices",
+          "text": "Public APIs should implement rate limiting at 100 requests per minute per API key for standard tiers. Authenticated premium tiers may allow up to 1,000 requests per minute.",
+          "claim_value": "100 requests per minute"
+        },
+        {
+          "label": "B",
+          "name": "AWS API Gateway Documentation",
+          "text": "The default throttling limit for API Gateway is 10,000 requests per second per region. Individual API stage-level throttling should be configured based on backend capacity and business requirements.",
+          "claim_value": "10,000 requests per second per region"
+        },
+        {
+          "label": "C",
+          "name": "OWASP API Security Project",
+          "text": "Rate limiting should be set based on business logic analysis, but a general guideline is 60 requests per minute for unauthenticated endpoints and 300 per minute for authenticated endpoints.",
+          "claim_value": "60 per minute unauthenticated, 300 per minute authenticated"
+        }
+      ],
+      "designated_source": "C",
+      "question": "According to Source C, what is the recommended rate limit for unauthenticated API endpoints?",
+      "gold_answer": "60 requests per minute",
+      "answer_aliases": "60 requests per minute|60 per minute|60 rpm"
+    },
+    {
+      "id": "SS-AppS-003",
+      "domain": "application_security",
+      "topic": "Content Security Policy directive",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Mozilla Developer Network (MDN)",
+          "text": "The recommended baseline Content-Security-Policy header should include: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-ancestors 'none'.",
+          "claim_value": "default-src 'self'; frame-ancestors 'none'"
+        },
+        {
+          "label": "B",
+          "name": "Google CSP Evaluator",
+          "text": "A strict CSP should use nonce-based script loading: script-src 'nonce-{random}' 'strict-dynamic'; object-src 'none'; base-uri 'self'. This provides strong XSS protection while maintaining compatibility.",
+          "claim_value": "nonce-based with strict-dynamic"
+        },
+        {
+          "label": "C",
+          "name": "Cloudflare CSP Guide",
+          "text": "Start with a report-only CSP using default-src 'none' and gradually whitelist required sources. Use 'unsafe-inline' and 'unsafe-eval' only as temporary measures during migration.",
+          "claim_value": "report-only with default-src 'none'"
+        }
+      ],
+      "designated_source": "B",
+      "question": "According to Source B, what approach does a strict CSP use for script loading?",
+      "gold_answer": "nonce-based with strict-dynamic",
+      "answer_aliases": "nonce-based with strict-dynamic|nonce-based script loading|nonce-based|script-src 'nonce-{random}' 'strict-dynamic'"
+    },
+    {
+      "id": "SS-AppS-004",
+      "domain": "application_security",
+      "topic": "Password hashing algorithm selection",
+      "sources": [
+        {
+          "label": "A",
+          "name": "OWASP Password Storage Cheat Sheet",
+          "text": "Argon2id is the recommended password hashing algorithm, using a minimum of 19 MiB memory, 2 iterations, and 1 degree of parallelism. Bcrypt with a work factor of 10+ is an acceptable alternative.",
+          "claim_value": "Argon2id"
+        },
+        {
+          "label": "B",
+          "name": "NIST SP 800-63B Digital Identity Guidelines",
+          "text": "PBKDF2 with HMAC-SHA-256 is the approved password hashing algorithm, using a minimum of 10,000 iterations (600,000 recommended). Other algorithms may be used if they provide equivalent security.",
+          "claim_value": "PBKDF2 with HMAC-SHA-256"
+        },
+        {
+          "label": "C",
+          "name": "Auth0 Identity Security Guide",
+          "text": "bcrypt with a cost factor of 12 is the recommended password hashing algorithm for production applications. Its built-in salt generation and predictable computation time make it ideal for authentication workflows.",
+          "claim_value": "bcrypt with cost factor 12"
+        }
+      ],
+      "designated_source": "A",
+      "question": "According to Source A, what is the recommended password hashing algorithm?",
+      "gold_answer": "Argon2id",
+      "answer_aliases": "Argon2id|argon2id|Argon2"
+    },
+    {
+      "id": "SS-AppS-005",
+      "domain": "application_security",
+      "topic": "JWT token expiration",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Auth0 JWT Best Practices",
+          "text": "Access tokens should expire after 15 minutes. Refresh tokens should have a maximum lifetime of 30 days with rotation on each use. Absolute session timeout should be 24 hours.",
+          "claim_value": "15 minutes access, 30 days refresh"
+        },
+        {
+          "label": "B",
+          "name": "Okta Developer Documentation",
+          "text": "Access tokens should be configured with a 1-hour expiration. Refresh tokens can persist for up to 90 days. Short-lived access tokens reduce the window of exploitation if tokens are compromised.",
+          "claim_value": "1 hour access, 90 days refresh"
+        },
+        {
+          "label": "C",
+          "name": "OWASP Session Management Cheat Sheet",
+          "text": "JWT access tokens should expire within 5 minutes for high-security applications. Refresh tokens should not exceed 8 hours. Session fixation protection requires token regeneration after authentication.",
+          "claim_value": "5 minutes access, 8 hours refresh"
+        }
+      ],
+      "designated_source": "C",
+      "question": "According to Source C, what should the maximum JWT access token expiration be for high-security applications?",
+      "gold_answer": "5 minutes",
+      "answer_aliases": "5 minutes|five minutes|within 5 minutes"
+    },
+    {
+      "id": "SS-AppS-006",
+      "domain": "application_security",
+      "topic": "DAST scan scope",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Invicti DAST Configuration Guide",
+          "text": "Dynamic application security testing should cover all authenticated and unauthenticated endpoints, including API routes. Scan scope should include at minimum the top 500 most-accessed URLs.",
+          "claim_value": "all endpoints, minimum top 500 URLs"
+        },
+        {
+          "label": "B",
+          "name": "OWASP ZAP User Guide",
+          "text": "DAST scans should focus on the application's attack surface as defined by the API specification (OpenAPI/Swagger). Crawling-based discovery should supplement spec-based scanning to find undocumented endpoints.",
+          "claim_value": "API specification plus crawling"
+        },
+        {
+          "label": "C",
+          "name": "Burp Suite Enterprise Documentation",
+          "text": "DAST scope should be limited to new and modified code paths identified through change analysis. Full application scans should be performed monthly, with incremental scans on each deployment.",
+          "claim_value": "incremental on deploy, full monthly"
+        }
+      ],
+      "designated_source": "B",
+      "question": "According to Source B, how should DAST scan scope be defined?",
+      "gold_answer": "API specification plus crawling",
+      "answer_aliases": "API specification plus crawling|API spec plus crawling|OpenAPI/Swagger spec plus crawling"
+    },
+    {
+      "id": "SS-AppS-007",
+      "domain": "application_security",
+      "topic": "Secure coding training frequency",
+      "sources": [
+        {
+          "label": "A",
+          "name": "SAFECode Training Guidelines",
+          "text": "Developers should complete secure coding training annually, with role-specific modules for frontend, backend, and DevOps engineers. New hires must complete training within 30 days of joining.",
+          "claim_value": "annually"
+        },
+        {
+          "label": "B",
+          "name": "BSIMM Software Security Framework",
+          "text": "Secure coding training should be delivered continuously through integrated learning platforms. Micro-lessons of 10-15 minutes should be delivered bi-weekly, replacing annual training events.",
+          "claim_value": "bi-weekly micro-lessons"
+        },
+        {
+          "label": "C",
+          "name": "PCI DSS v4.0 Requirement 6.2.2",
+          "text": "Software development personnel must receive secure coding training at least every 12 months. Training must cover common vulnerabilities relevant to the organization's technology stack.",
+          "claim_value": "every 12 months"
+        }
+      ],
+      "designated_source": "B",
+      "question": "According to Source B, how should secure coding training be delivered?",
+      "gold_answer": "bi-weekly micro-lessons",
+      "answer_aliases": "bi-weekly micro-lessons|bi-weekly|every two weeks|biweekly micro-lessons"
+    },
+    {
+      "id": "SS-AppS-008",
+      "domain": "application_security",
+      "topic": "Container image scanning policy",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Aqua Security Container Hardening Guide",
+          "text": "Container images must be scanned for vulnerabilities before deployment and re-scanned daily in registries. Images with critical vulnerabilities must be blocked from deployment automatically.",
+          "claim_value": "before deployment and daily re-scan"
+        },
+        {
+          "label": "B",
+          "name": "Sysdig Container Security Report",
+          "text": "Container images should be scanned at build time and weekly in production registries. Monthly full-image rebuilds should be performed to incorporate base image security patches.",
+          "claim_value": "build time and weekly, monthly rebuilds"
+        },
+        {
+          "label": "C",
+          "name": "Docker Security Best Practices",
+          "text": "Scan images at build time only. Runtime scanning creates performance overhead and false positives. Focus scanning resources on the CI/CD pipeline where remediation is most effective.",
+          "claim_value": "build time only"
+        }
+      ],
+      "designated_source": "A",
+      "question": "According to Source A, when should container images be scanned?",
+      "gold_answer": "before deployment and daily re-scan",
+      "answer_aliases": "before deployment and daily re-scan|before deployment and daily|pre-deployment and daily"
+    },
+    {
+      "id": "SS-AppS-009",
+      "domain": "application_security",
+      "topic": "Secret rotation period",
+      "sources": [
+        {
+          "label": "A",
+          "name": "HashiCorp Vault Best Practices",
+          "text": "API keys and service account credentials should be rotated every 90 days. Database credentials should be rotated every 24 hours using dynamic secrets. Encryption keys should be rotated annually.",
+          "claim_value": "90 days API keys, 24 hours database, annually encryption"
+        },
+        {
+          "label": "B",
+          "name": "AWS Secrets Manager Documentation",
+          "text": "All secrets should be rotated every 30 days. Automatic rotation eliminates the operational burden and ensures consistent security posture across all credential types.",
+          "claim_value": "every 30 days for all secrets"
+        },
+        {
+          "label": "C",
+          "name": "Google Cloud Secret Management",
+          "text": "High-privilege secrets should be rotated every 7 days. Standard service credentials every 30 days. Encryption keys every 365 days with a 72-hour overlap period for graceful key transition.",
+          "claim_value": "7 days high-privilege, 30 days standard, 365 days encryption"
+        }
+      ],
+      "designated_source": "C",
+      "question": "According to Source C, how often should high-privilege secrets be rotated?",
+      "gold_answer": "every 7 days",
+      "answer_aliases": "every 7 days|7 days|weekly|every seven days"
+    },
+    {
+      "id": "SS-SecO-001",
+      "domain": "security_operations",
+      "topic": "SOC analyst tier structure",
+      "sources": [
+        {
+          "label": "A",
+          "name": "SANS SOC Operations Guide",
+          "text": "A mature SOC should have three tiers: Tier 1 (Alert Triage, 60% of staff), Tier 2 (Incident Investigation, 30% of staff), and Tier 3 (Threat Hunting and Advanced Analysis, 10% of staff).",
+          "claim_value": "three tiers: 60/30/10 ratio"
+        },
+        {
+          "label": "B",
+          "name": "Gartner SOC Modernization Report",
+          "text": "Modern SOCs should adopt a two-tier model: Tier 1 (Automated Triage, staffed by SOAR platforms) and Tier 2 (Human Analysts for investigation and response). This reduces alert fatigue and staffing costs.",
+          "claim_value": "two tiers with automated Tier 1"
+        },
+        {
+          "label": "C",
+          "name": "MITRE SOC Assessment Framework",
+          "text": "SOCs should implement four tiers: Tier 0 (Automation), Tier 1 (Monitoring), Tier 2 (Analysis), and Tier 3 (Expert/Hunt). The Tier 0 automation layer handles 80% of alerts without human intervention.",
+          "claim_value": "four tiers including Tier 0 automation"
+        }
+      ],
+      "designated_source": "C",
+      "question": "According to Source C, how many tiers should a SOC implement?",
+      "gold_answer": "four tiers",
+      "answer_aliases": "four tiers|4 tiers|four|4"
+    },
+    {
+      "id": "SS-SecO-002",
+      "domain": "security_operations",
+      "topic": "Incident severity classification",
+      "sources": [
+        {
+          "label": "A",
+          "name": "NIST SP 800-61 Rev 2",
+          "text": "Security incidents should be classified into four severity levels: Emergency (Severity 1), Critical (Severity 2), Warning (Severity 3), and Informational (Severity 4). Response time SLAs should correspond to severity.",
+          "claim_value": "four levels: Emergency, Critical, Warning, Informational"
+        },
+        {
+          "label": "B",
+          "name": "ITIL 4 Incident Management",
+          "text": "Incidents should be classified as P1 (Critical, 15-minute response), P2 (High, 1-hour response), P3 (Medium, 4-hour response), or P4 (Low, 8-hour response). Classification drives escalation and communication procedures.",
+          "claim_value": "P1-P4 with defined response times"
+        },
+        {
+          "label": "C",
+          "name": "US-CERT Federal Incident Categories",
+          "text": "Federal agencies classify incidents into six categories: CAT 1 (Unauthorized Access), CAT 2 (Denial of Service), CAT 3 (Malicious Code), CAT 4 (Improper Usage), CAT 5 (Scans/Probes), and CAT 6 (Investigation).",
+          "claim_value": "six categories CAT 1-6"
+        }
+      ],
+      "designated_source": "B",
+      "question": "According to Source B, what is the response time for a P1 (Critical) incident?",
+      "gold_answer": "15 minutes",
+      "answer_aliases": "15 minutes|15-minute response|fifteen minutes|15 min"
+    },
+    {
+      "id": "SS-SecO-003",
+      "domain": "security_operations",
+      "topic": "Malware analysis sandbox timeout",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Joe Sandbox Configuration Guide",
+          "text": "Automated malware analysis should run for a minimum of 5 minutes per sample to capture delayed execution behaviors. Samples showing signs of sandbox evasion should be extended to 15 minutes.",
+          "claim_value": "5 minutes minimum, 15 minutes for evasive samples"
+        },
+        {
+          "label": "B",
+          "name": "Cuckoo Sandbox Documentation",
+          "text": "Default analysis timeout should be set to 2 minutes for initial triage. Suspicious samples should be re-analyzed with a 10-minute timeout and additional monitoring instrumentation.",
+          "claim_value": "2 minutes initial, 10 minutes re-analysis"
+        },
+        {
+          "label": "C",
+          "name": "ANY.RUN Interactive Analysis Guide",
+          "text": "Interactive malware analysis sessions should run for 60 seconds minimum with a maximum of 300 seconds (5 minutes). This window captures most initial behaviors while maintaining analysis throughput.",
+          "claim_value": "60-300 seconds"
+        }
+      ],
+      "designated_source": "A",
+      "question": "According to Source A, what is the minimum analysis time for automated malware analysis?",
+      "gold_answer": "5 minutes",
+      "answer_aliases": "5 minutes|five minutes|5 min"
+    },
+    {
+      "id": "SS-SecO-004",
+      "domain": "security_operations",
+      "topic": "Mean time to detect (MTTD) benchmark",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Ponemon Institute Cost of Data Breach 2024",
+          "text": "The average mean time to detect a data breach across all industries was 204 days in 2023. Organizations with AI-powered security analytics achieved MTTD of 168 days on average.",
+          "claim_value": "204 days average"
+        },
+        {
+          "label": "B",
+          "name": "Verizon DBIR 2024",
+          "text": "The median time to discover a breach was 49 days in 2023. However, 32% of breaches were discovered within the first week, while 20% took over a year to detect.",
+          "claim_value": "49 days median"
+        },
+        {
+          "label": "C",
+          "name": "SANS SOC Metrics Report",
+          "text": "Mature SOC operations should target an MTTD of under 1 hour for known attack patterns. Novel attacks may take 24-72 hours to detect through behavioral analysis and threat hunting.",
+          "claim_value": "under 1 hour for known patterns"
+        }
+      ],
+      "designated_source": "A",
+      "question": "According to Source A, what was the average MTTD for data breaches in 2023?",
+      "gold_answer": "204 days",
+      "answer_aliases": "204 days|two hundred four days|204"
+    },
+    {
+      "id": "SS-SecO-005",
+      "domain": "security_operations",
+      "topic": "Evidence preservation order of volatility",
+      "sources": [
+        {
+          "label": "A",
+          "name": "NIST SP 800-86 Digital Forensics Guide",
+          "text": "Digital evidence should be collected in order of volatility: CPU registers, cache, RAM, disk, remote logs, physical media. This order ensures the most ephemeral evidence is preserved first.",
+          "claim_value": "registers, cache, RAM, disk, remote logs, physical media"
+        },
+        {
+          "label": "B",
+          "name": "SANS DFIR Poster",
+          "text": "The order of volatility for evidence collection is: network connections, running processes, RAM contents, temporary files, disk, removable media, archive/backup. Network state changes most rapidly.",
+          "claim_value": "network connections first"
+        },
+        {
+          "label": "C",
+          "name": "EC-Council CHFI Textbook",
+          "text": "Evidence collection should prioritize: RAM (including encryption keys), swap files, network connections, running processes, then disk. RAM preservation is the single most important step in modern forensics.",
+          "claim_value": "RAM first"
+        }
+      ],
+      "designated_source": "A",
+      "question": "According to Source A, what is the correct order of volatility for digital evidence collection?",
+      "gold_answer": "CPU registers, cache, RAM, disk, remote logs, physical media",
+      "answer_aliases": "CPU registers, cache, RAM, disk, remote logs, physical media|registers, cache, RAM, disk, remote logs, physical media|registers first"
+    },
+    {
+      "id": "SS-SecO-006",
+      "domain": "security_operations",
+      "topic": "SOAR playbook trigger threshold",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Palo Alto XSOAR Guide",
+          "text": "SOAR automated playbooks should trigger when alert confidence exceeds 80%. Alerts between 50-80% confidence should queue for analyst review. Below 50% should be logged but not investigated.",
+          "claim_value": "80% confidence for automation"
+        },
+        {
+          "label": "B",
+          "name": "Splunk SOAR Best Practices",
+          "text": "Automated response playbooks should trigger at 95% confidence to minimize false positive impact. Lower confidence alerts should be enriched automatically but require human approval before response actions.",
+          "claim_value": "95% confidence for automation"
+        },
+        {
+          "label": "C",
+          "name": "IBM QRadar SOAR Documentation",
+          "text": "SOAR playbooks should trigger immediately for any alert with medium or higher severity, regardless of confidence level. Confidence scoring should influence response actions within the playbook, not whether the playbook runs.",
+          "claim_value": "trigger on medium+ severity regardless of confidence"
+        }
+      ],
+      "designated_source": "A",
+      "question": "According to Source A, at what confidence level should SOAR automated playbooks trigger?",
+      "gold_answer": "80%",
+      "answer_aliases": "80%|80 percent|eighty percent"
+    },
+    {
+      "id": "SS-SecO-007",
+      "domain": "security_operations",
+      "topic": "Tabletop exercise frequency",
+      "sources": [
+        {
+          "label": "A",
+          "name": "CISA Tabletop Exercise Package",
+          "text": "Organizations should conduct cybersecurity tabletop exercises at least annually. Exercises should cover the most relevant threat scenarios based on the organization's risk profile and industry vertical.",
+          "claim_value": "annually"
+        },
+        {
+          "label": "B",
+          "name": "NIST SP 800-84 Testing Guide",
+          "text": "Tabletop exercises should be conducted quarterly, with each exercise focusing on a different incident type: ransomware, data breach, insider threat, and supply chain compromise.",
+          "claim_value": "quarterly"
+        },
+        {
+          "label": "C",
+          "name": "SANS Incident Response Planning",
+          "text": "Tabletop exercises should be conducted monthly for SOC teams and quarterly for executive leadership. Regular practice maintains muscle memory and reveals process gaps before real incidents occur.",
+          "claim_value": "monthly for SOC, quarterly for executives"
+        }
+      ],
+      "designated_source": "B",
+      "question": "According to Source B, how often should SOC teams conduct tabletop exercises?",
+      "gold_answer": "quarterly",
+      "answer_aliases": "quarterly"
+    },
+    {
+      "id": "SS-AiMS-001",
+      "domain": "ai_model_security",
+      "topic": "Prompt injection defense priority",
+      "sources": [
+        {
+          "label": "A",
+          "name": "OWASP LLM Top 10 Mitigation Guide",
+          "text": "The primary defense against prompt injection is input/output filtering using specialized classifiers that detect adversarial patterns. This should be combined with strict output validation before action execution.",
+          "claim_value": "input/output filtering with classifiers"
+        },
+        {
+          "label": "B",
+          "name": "Anthropic Constitutional AI Research",
+          "text": "The primary defense against prompt injection is robust training through RLHF and constitutional AI methods that teach the model to resist instruction override attempts at the model level.",
+          "claim_value": "robust training via RLHF/constitutional AI"
+        },
+        {
+          "label": "C",
+          "name": "Google DeepMind AI Security Report",
+          "text": "The primary defense against prompt injection is architectural separation: using separate models for instruction parsing and content generation, with a trusted orchestration layer that validates all inter-model communication.",
+          "claim_value": "architectural separation with trusted orchestration"
+        }
+      ],
+      "designated_source": "C",
+      "question": "According to Source C, what is the primary defense against prompt injection?",
+      "gold_answer": "architectural separation with trusted orchestration",
+      "answer_aliases": "architectural separation with trusted orchestration|architectural separation|separate models with trusted orchestration"
+    },
+    {
+      "id": "SS-AiMS-002",
+      "domain": "ai_model_security",
+      "topic": "LLM output token safety threshold",
+      "sources": [
+        {
+          "label": "A",
+          "name": "OpenAI Safety Systems Paper",
+          "text": "LLM safety classifiers should flag outputs exceeding a toxicity score of 0.7 on a 0-1 scale. Outputs scoring above 0.9 should be automatically blocked without user review.",
+          "claim_value": "0.7 flag, 0.9 block"
+        },
+        {
+          "label": "B",
+          "name": "Meta Llama Guard Documentation",
+          "text": "Content safety classifiers should use a binary threshold: outputs are either safe or unsafe. Multi-level toxicity scores create inconsistent enforcement and allow edge cases to pass through.",
+          "claim_value": "binary safe/unsafe threshold"
+        },
+        {
+          "label": "C",
+          "name": "Anthropic Responsible Scaling Policy",
+          "text": "Safety classifiers should use three tiers: green (safe, score below 0.3), yellow (review required, 0.3-0.6), and red (blocked, above 0.6). The yellow tier enables human-in-the-loop oversight for ambiguous cases.",
+          "claim_value": "three tiers with 0.6 block threshold"
+        }
+      ],
+      "designated_source": "A",
+      "question": "According to Source A, at what toxicity score should LLM outputs be automatically blocked?",
+      "gold_answer": "0.9",
+      "answer_aliases": "0.9|above 0.9|0.9 on a 0-1 scale"
+    },
+    {
+      "id": "SS-AiMS-003",
+      "domain": "ai_model_security",
+      "topic": "Red team evaluation frequency",
+      "sources": [
+        {
+          "label": "A",
+          "name": "NIST AI 600-1 Risk Framework",
+          "text": "AI models deployed in high-risk applications should undergo red team evaluation at least quarterly, with continuous automated adversarial testing supplementing periodic human evaluation.",
+          "claim_value": "quarterly with continuous automated testing"
+        },
+        {
+          "label": "B",
+          "name": "EU AI Act Technical Guidance",
+          "text": "High-risk AI systems require annual red team evaluation as part of conformity assessment. Additional evaluations are required after significant model updates or changes in deployment context.",
+          "claim_value": "annually plus after significant updates"
+        },
+        {
+          "label": "C",
+          "name": "Anthropic RSP Internal Policy",
+          "text": "Frontier AI models should undergo continuous red teaming throughout development and deployment. Formal red team reports should be published bi-annually with findings and mitigations.",
+          "claim_value": "continuous with bi-annual reports"
+        }
+      ],
+      "designated_source": "A",
+      "question": "According to Source A, how often should high-risk AI models undergo red team evaluation?",
+      "gold_answer": "quarterly",
+      "answer_aliases": "quarterly|at least quarterly|every quarter"
+    },
+    {
+      "id": "SS-AiMS-004",
+      "domain": "ai_model_security",
+      "topic": "Data poisoning detection method",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Stanford HAI Research Paper",
+          "text": "Data poisoning is best detected through spectral signature analysis of the training dataset. Poisoned samples create detectable anomalies in the spectral decomposition of the feature space.",
+          "claim_value": "spectral signature analysis"
+        },
+        {
+          "label": "B",
+          "name": "Microsoft AI Red Team Report",
+          "text": "Data poisoning detection should rely on influence function analysis, which traces model predictions back to specific training examples. Samples with disproportionate influence are flagged for manual review.",
+          "claim_value": "influence function analysis"
+        },
+        {
+          "label": "C",
+          "name": "Google Brain Adversarial ML Team",
+          "text": "Certified defenses using randomized smoothing provide the most robust detection of data poisoning. Unlike heuristic methods, certified defenses offer provable guarantees about model behavior on clean data.",
+          "claim_value": "certified defenses with randomized smoothing"
+        }
+      ],
+      "designated_source": "B",
+      "question": "According to Source B, what method should be used to detect data poisoning?",
+      "gold_answer": "influence function analysis",
+      "answer_aliases": "influence function analysis|influence functions|influence function"
+    },
+    {
+      "id": "SS-AiMS-005",
+      "domain": "ai_model_security",
+      "topic": "LLM guardrail architecture",
+      "sources": [
+        {
+          "label": "A",
+          "name": "NVIDIA NeMo Guardrails Documentation",
+          "text": "LLM guardrails should be implemented as a separate runtime layer that intercepts all inputs and outputs. This architectural approach allows guardrails to be updated independently of the underlying model.",
+          "claim_value": "separate runtime layer"
+        },
+        {
+          "label": "B",
+          "name": "Hugging Face Safeguards Framework",
+          "text": "Guardrails should be embedded directly into the model through fine-tuning and constitutional AI training. External guardrails create latency overhead and can be bypassed through prompt engineering.",
+          "claim_value": "embedded through fine-tuning"
+        },
+        {
+          "label": "C",
+          "name": "LangChain Safety Toolkit",
+          "text": "A hybrid approach combining embedded model-level guardrails with external validation layers provides the strongest defense. Neither approach alone is sufficient against sophisticated adversarial attacks.",
+          "claim_value": "hybrid embedded plus external"
+        }
+      ],
+      "designated_source": "A",
+      "question": "According to Source A, how should LLM guardrails be implemented?",
+      "gold_answer": "as a separate runtime layer",
+      "answer_aliases": "as a separate runtime layer|separate runtime layer|external runtime layer"
+    },
+    {
+      "id": "SS-AiMS-006",
+      "domain": "ai_model_security",
+      "topic": "Adversarial suffix detection rate",
+      "sources": [
+        {
+          "label": "A",
+          "name": "CMU Adversarial ML Lab Research",
+          "text": "Current perplexity-based filters detect approximately 85% of GCG-generated adversarial suffixes. However, low-perplexity adversarial attacks evade these filters at rates exceeding 60%.",
+          "claim_value": "85% detection for GCG, 40% for low-perplexity attacks"
+        },
+        {
+          "label": "B",
+          "name": "Robust Intelligence Security Report",
+          "text": "Production adversarial suffix detectors achieve 95% detection rates against known attack patterns. Zero-day adversarial suffixes generated by novel optimization methods are detected at only 30% rates.",
+          "claim_value": "95% known, 30% novel"
+        },
+        {
+          "label": "C",
+          "name": "Trail of Bits AI Audit Findings",
+          "text": "Adversarial suffix detection in production LLM deployments averages 72% across all attack types. The detection rate drops to 45% when attackers use human-readable adversarial suffixes that blend with natural language.",
+          "claim_value": "72% average, 45% for human-readable"
+        }
+      ],
+      "designated_source": "C",
+      "question": "According to Source C, what is the average adversarial suffix detection rate in production LLM deployments?",
+      "gold_answer": "72%",
+      "answer_aliases": "72%|72 percent|seventy-two percent"
+    },
+    {
+      "id": "SS-AiMS-007",
+      "domain": "ai_model_security",
+      "topic": "Model extraction attack mitigation",
+      "sources": [
+        {
+          "label": "A",
+          "name": "MITRE ATLAS Framework",
+          "text": "Model extraction attacks are best mitigated by limiting API query rates to 100 queries per minute and adding calibrated noise to confidence scores returned in API responses.",
+          "claim_value": "rate limiting to 100/min plus confidence score noise"
+        },
+        {
+          "label": "B",
+          "name": "AWS SageMaker Security Guide",
+          "text": "Model extraction mitigation should focus on watermarking model outputs to enable detection of stolen models. Query rate limiting alone is insufficient as attackers can distribute queries across multiple accounts.",
+          "claim_value": "output watermarking"
+        },
+        {
+          "label": "C",
+          "name": "Google Cloud AI Platform Security",
+          "text": "Differential privacy applied to model predictions provides the strongest defense against model extraction. Adding Laplacian noise with epsilon=1.0 to output logits prevents meaningful model reconstruction.",
+          "claim_value": "differential privacy with epsilon=1.0"
+        }
+      ],
+      "designated_source": "C",
+      "question": "According to Source C, what defense provides the strongest protection against model extraction?",
+      "gold_answer": "differential privacy with epsilon=1.0",
+      "answer_aliases": "differential privacy with epsilon=1.0|differential privacy|DP with epsilon=1.0"
+    }
+  ]
+}

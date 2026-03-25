@@ -1,0 +1,14 @@
+{
+  "id": "shepscientific/chem-sabr-benchmark",
+  "title": "Chem-SABR Benchmark",
+  "code_file": "chem_sabr_notebook.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": ["shepscientific/chem-sabr-chemical-safety-attention-data"],
+  "competition_sources": [],
+  "kernel_sources": []
+}

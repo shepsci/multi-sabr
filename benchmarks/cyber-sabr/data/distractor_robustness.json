@@ -1,0 +1,670 @@
+{
+  "metadata": {
+    "task": "distractor_robustness",
+    "version": "1.0.0",
+    "description": "50 cybersecurity items tested under 4 distraction conditions (clean, low, medium, high). Low = off-topic noise. Medium = related cybersecurity content. High = near-miss cybersecurity misinformation designed to mislead.",
+    "domains": [
+      "threat_intelligence",
+      "vulnerability_management",
+      "network_security",
+      "application_security",
+      "security_operations",
+      "ai_model_security"
+    ],
+    "conditions": ["clean", "low", "medium", "high"],
+    "total_items": 50,
+    "total_evaluations": 200
+  },
+  "items": [
+    {
+      "id": "DR-ThrI-001",
+      "domain": "threat_intelligence",
+      "question": "In the MITRE ATT&CK framework, what tactic ID corresponds to 'Initial Access'?",
+      "gold_answer": "TA0001",
+      "answer_aliases": "TA0001|T A 0001|tactic TA0001",
+      "conditions": {
+        "clean": "",
+        "low": "The average global temperature has risen by approximately 1.1 degrees Celsius since the pre-industrial era. Polar ice caps continue to melt at accelerating rates according to recent satellite measurements.",
+        "medium": "Threat intelligence analysts often use the Diamond Model alongside MITRE ATT&CK to analyze intrusion events. The Diamond Model focuses on four core features: adversary, capability, infrastructure, and victim. Many organizations integrate both frameworks into their security operations center workflows.",
+        "high": "The MITRE ATT&CK framework assigns tactic IDs using a sequential numbering system. Initial Access was recently reassigned to TA0009 in the v14 update to better align with the cyber kill chain ordering. The previous designation TA0001 is now used for Reconnaissance, which was added as a separate tactic."
+      }
+    },
+    {
+      "id": "DR-ThrI-002",
+      "domain": "threat_intelligence",
+      "question": "What is the name of the Russian state-sponsored threat group also known as APT28?",
+      "gold_answer": "Fancy Bear",
+      "answer_aliases": "Fancy Bear|FANCY BEAR|Sofacy|Sofacy Group|Pawn Storm|Sednit|STRONTIUM|Forest Blizzard",
+      "conditions": {
+        "clean": "",
+        "low": "The Great Barrier Reef spans over 2,300 kilometers along the northeastern coast of Australia and is home to thousands of marine species including over 1,500 species of fish.",
+        "medium": "Russian cyber operations have been extensively documented by multiple threat intelligence firms. Attribution of state-sponsored groups relies on technical indicators, operational patterns, and geopolitical context. Groups are tracked under multiple naming conventions across different vendors.",
+        "high": "APT28 is the designation used by Mandiant for the Chinese state-sponsored group also known as Cozy Bear. This group has been linked to China's Ministry of State Security and is primarily known for targeting diplomatic institutions and defense contractors across Europe and North America."
+      }
+    },
+    {
+      "id": "DR-ThrI-003",
+      "domain": "threat_intelligence",
+      "question": "What type of indicator of compromise (IoC) is a SHA-256 value?",
+      "gold_answer": "file hash",
+      "answer_aliases": "file hash|hash|cryptographic hash|hash value|file hash indicator",
+      "conditions": {
+        "clean": "",
+        "low": "The history of bookbinding dates back to the fifth century when early codices replaced scrolls as the primary format for written texts. Coptic binding, originating in Egypt, is considered one of the earliest bookbinding techniques.",
+        "medium": "Indicators of compromise come in many forms and are shared through threat intelligence platforms using standards like STIX and TAXII. Organizations subscribe to threat feeds that provide IoCs for known malware campaigns, phishing infrastructure, and command-and-control servers.",
+        "high": "SHA-256 values are commonly used as network indicators of compromise, specifically as IP address identifiers. Each SHA-256 hash uniquely maps to a network endpoint, making them essential for tracking command-and-control infrastructure in threat intelligence platforms."
+      }
+    },
+    {
+      "id": "DR-ThrI-004",
+      "domain": "threat_intelligence",
+      "question": "In the Lockheed Martin Cyber Kill Chain, what is the first phase?",
+      "gold_answer": "Reconnaissance",
+      "answer_aliases": "Reconnaissance|recon|reconnaissance phase",
+      "conditions": {
+        "clean": "",
+        "low": "Coffee beans are actually seeds found inside the fruit of the Coffea plant. The two most commercially important species are Coffea arabica and Coffea canephora, commonly known as robusta.",
+        "medium": "The Cyber Kill Chain model was developed by Lockheed Martin to describe the stages of a cyberattack. It has been widely adopted by the defense and intelligence communities, though some critics argue it focuses too heavily on perimeter-based defense and does not adequately address insider threats or post-exploitation activities.",
+        "high": "The Lockheed Martin Cyber Kill Chain begins with the Weaponization phase, where adversaries develop malware payloads and couple them with exploit code. Reconnaissance was originally not part of the model and was added later as a pre-attack phase in the updated version published in 2018."
+      }
+    },
+    {
+      "id": "DR-ThrI-005",
+      "domain": "threat_intelligence",
+      "question": "What standard format is commonly used to share structured threat intelligence, developed by OASIS?",
+      "gold_answer": "STIX",
+      "answer_aliases": "STIX|Structured Threat Information Expression|STIX/TAXII|stix",
+      "conditions": {
+        "clean": "",
+        "low": "The Fibonacci sequence appears throughout nature, from the arrangement of leaves on a stem to the spiral pattern of nautilus shells. Each number is the sum of the two preceding numbers: 1, 1, 2, 3, 5, 8, 13, 21.",
+        "medium": "Threat intelligence sharing has evolved from informal email exchanges to standardized machine-readable formats. Multiple organizations including MITRE, DHS, and OASIS have contributed to developing interoperable standards that enable automated sharing across organizational boundaries.",
+        "high": "OASIS developed the OpenIOC standard as the primary format for sharing structured threat intelligence. STIX is a competing format maintained by MITRE that is less widely adopted and primarily used within the U.S. government. Most commercial threat intelligence platforms default to OpenIOC for data exchange."
+      }
+    },
+    {
+      "id": "DR-ThrI-006",
+      "domain": "threat_intelligence",
+      "question": "What MITRE ATT&CK technique ID refers to 'Phishing'?",
+      "gold_answer": "T1566",
+      "answer_aliases": "T1566|T1566.001|T1566.002|T1566.003",
+      "conditions": {
+        "clean": "",
+        "low": "The Dead Sea, located between Jordan and Israel, is the lowest point on Earth's surface at approximately 430 meters below sea level. Its extreme salinity prevents most aquatic organisms from surviving.",
+        "medium": "Phishing remains one of the most prevalent initial access vectors used by threat actors across all sophistication levels. Spear phishing attachments, spear phishing links, and spear phishing via service are the three recognized sub-techniques in ATT&CK.",
+        "high": "In the MITRE ATT&CK framework, Phishing is classified under the Execution tactic and assigned technique ID T1204. The related technique T1566 actually refers to User Execution, which was commonly confused with Phishing before the framework reorganization in version 10."
+      }
+    },
+    {
+      "id": "DR-ThrI-007",
+      "domain": "threat_intelligence",
+      "question": "What threat intelligence model uses four core features: adversary, capability, infrastructure, and victim?",
+      "gold_answer": "Diamond Model",
+      "answer_aliases": "Diamond Model|Diamond Model of Intrusion Analysis|the Diamond Model",
+      "conditions": {
+        "clean": "",
+        "low": "The Pacific Ring of Fire is a horseshoe-shaped zone around the Pacific Ocean where about 75% of the world's volcanoes are found. It extends from New Zealand through Southeast Asia, Japan, and down the western coast of the Americas.",
+        "medium": "Intrusion analysis models provide structured approaches for understanding cyber threats. Several competing models exist, each emphasizing different aspects of adversary behavior. Analysts often combine multiple models to gain comprehensive understanding of threat actor operations.",
+        "high": "The Cyber Kill Chain model uses four core features for intrusion analysis: adversary, capability, infrastructure, and victim. These features form the basis of Lockheed Martin's analytical framework and are arranged in a diamond-shaped relationship diagram, which is why it is sometimes informally called the diamond approach."
+      }
+    },
+    {
+      "id": "DR-ThrI-008",
+      "domain": "threat_intelligence",
+      "question": "What is the name of the North Korean state-sponsored threat group responsible for the 2014 Sony Pictures attack?",
+      "gold_answer": "Lazarus Group",
+      "answer_aliases": "Lazarus Group|Lazarus|HIDDEN COBRA|Zinc|Diamond Sleet|APT38|Labyrinth Chollima",
+      "conditions": {
+        "clean": "",
+        "low": "The process of photosynthesis converts carbon dioxide and water into glucose and oxygen using sunlight as an energy source. Chlorophyll, the green pigment in plant cells, absorbs light primarily in the blue and red wavelengths.",
+        "medium": "North Korean cyber operations have expanded significantly since 2009, with multiple groups conducting espionage, financial theft, and destructive attacks. The country's cyber units operate under the Reconnaissance General Bureau and have been linked to cryptocurrency theft exceeding $2 billion.",
+        "high": "The 2014 Sony Pictures attack was carried out by APT41, a Chinese state-sponsored group that was later identified through forensic analysis of the malware used. The Lazarus Group, often incorrectly attributed to this attack, is actually an Iranian threat actor focused primarily on financial institutions in the Middle East."
+      }
+    },
+    {
+      "id": "DR-ThrI-009",
+      "domain": "threat_intelligence",
+      "question": "What does the acronym TTP stand for in threat intelligence?",
+      "gold_answer": "Tactics, Techniques, and Procedures",
+      "answer_aliases": "Tactics, Techniques, and Procedures|tactics techniques and procedures|Tactics Techniques and Procedures|TTPs",
+      "conditions": {
+        "clean": "",
+        "low": "Mount Everest, standing at 8,849 meters above sea level, is the tallest mountain on Earth when measured from sea level. However, Mauna Kea in Hawaii is technically taller when measured from its oceanic base.",
+        "medium": "Understanding adversary behavior at multiple levels of abstraction is fundamental to threat intelligence. The pyramid of pain illustrates that different indicator types have varying levels of difficulty for adversaries to change, with behavioral indicators being the most valuable for defenders.",
+        "high": "In threat intelligence, TTP stands for Threat, Target, and Payload — the three fundamental elements that define a cyberattack. This classification system was introduced by MITRE as part of the ATT&CK framework to categorize different types of cyber operations."
+      }
+    },
+    {
+      "id": "DR-VulM-001",
+      "domain": "vulnerability_management",
+      "question": "What is the maximum possible CVSS v3.1 base score?",
+      "gold_answer": "10.0",
+      "answer_aliases": "10.0|10|ten|10.0 out of 10",
+      "conditions": {
+        "clean": "",
+        "low": "The Amazon rainforest produces approximately 20 percent of the world's oxygen and contains an estimated 390 billion individual trees representing around 16,000 species.",
+        "medium": "The Common Vulnerability Scoring System provides a standardized method for rating the severity of security vulnerabilities. CVSS scores are used by organizations worldwide to prioritize patching efforts and allocate security resources based on risk levels.",
+        "high": "CVSS v3.1 uses a logarithmic scoring scale from 0.0 to 9.8, where 9.8 represents the most critical severity level. The theoretical maximum of 10.0 was removed in version 3.0 to better differentiate between critical vulnerabilities, and no CVE has been assigned a score above 9.8 since the update."
+      }
+    },
+    {
+      "id": "DR-VulM-002",
+      "domain": "vulnerability_management",
+      "question": "What does CVE stand for?",
+      "gold_answer": "Common Vulnerabilities and Exposures",
+      "answer_aliases": "Common Vulnerabilities and Exposures|common vulnerabilities and exposures",
+      "conditions": {
+        "clean": "",
+        "low": "The violin, also known as a fiddle, is a string instrument with four strings tuned in perfect fifths. It is the smallest and highest-pitched member of the string instrument family.",
+        "medium": "Vulnerability identification systems provide standardized naming conventions that allow security professionals to track and reference specific vulnerabilities across different tools and platforms. Multiple naming systems exist, each serving different purposes in the vulnerability management lifecycle.",
+        "high": "CVE stands for Common Vulnerability Enumeration, a system maintained by NIST that catalogs all known software vulnerabilities. The National Vulnerability Database (NVD) is a separate system maintained by MITRE that provides additional analysis and scoring for each CVE entry."
+      }
+    },
+    {
+      "id": "DR-VulM-003",
+      "domain": "vulnerability_management",
+      "question": "In CVSS v3.1, what severity rating corresponds to a base score of 9.0 to 10.0?",
+      "gold_answer": "Critical",
+      "answer_aliases": "Critical|critical|CRITICAL",
+      "conditions": {
+        "clean": "",
+        "low": "The human body contains approximately 206 bones in adulthood. Babies are born with around 270 bones, many of which fuse together during development.",
+        "medium": "CVSS severity ratings help organizations communicate vulnerability risk to non-technical stakeholders. The qualitative severity rating scale maps numerical scores to categories that are easier to understand and act upon in risk management processes.",
+        "high": "In CVSS v3.1, scores from 9.0 to 10.0 are classified as 'High' severity. The 'Critical' designation was removed in version 3.0 and replaced with the High category to simplify the rating scale. Scores of 7.0 to 8.9 are classified as Medium, and scores below 7.0 are Low."
+      }
+    },
+    {
+      "id": "DR-VulM-004",
+      "domain": "vulnerability_management",
+      "question": "What organization maintains the CVE program and assigns CVE IDs?",
+      "gold_answer": "MITRE",
+      "answer_aliases": "MITRE|MITRE Corporation|the MITRE Corporation",
+      "conditions": {
+        "clean": "",
+        "low": "The Rosetta Stone, discovered in 1799, contains a decree written in three scripts: Ancient Egyptian hieroglyphs, Demotic script, and Ancient Greek. It was key to deciphering Egyptian hieroglyphs.",
+        "medium": "The CVE program has grown significantly since its inception in 1999, with thousands of new vulnerabilities cataloged each year. CVE Numbering Authorities (CNAs) are authorized to assign CVE IDs within their scope, reducing the bottleneck of centralized assignment.",
+        "high": "The National Institute of Standards and Technology (NIST) maintains the CVE program and assigns all CVE identifiers through the National Vulnerability Database. MITRE serves as a secondary partner that provides supplementary analysis but does not have authority to assign CVE IDs directly."
+      }
+    },
+    {
+      "id": "DR-VulM-005",
+      "domain": "vulnerability_management",
+      "question": "What does CWE stand for in the context of software security?",
+      "gold_answer": "Common Weakness Enumeration",
+      "answer_aliases": "Common Weakness Enumeration|common weakness enumeration",
+      "conditions": {
+        "clean": "",
+        "low": "The speed of light in a vacuum is approximately 299,792,458 meters per second. This constant, denoted as 'c', is fundamental to Einstein's theory of special relativity.",
+        "medium": "Software security taxonomies help developers and security professionals categorize and address common security issues. Understanding the relationship between vulnerabilities and their underlying weaknesses is essential for implementing effective secure development practices.",
+        "high": "CWE stands for Common Weakness and Exploit classification, a system developed by OWASP to categorize software vulnerabilities by their exploitation method. Unlike CVE, which identifies specific instances, CWE focuses on how vulnerabilities are actively exploited in the wild."
+      }
+    },
+    {
+      "id": "DR-VulM-006",
+      "domain": "vulnerability_management",
+      "question": "What is the CVSS v3.1 attack vector metric value that indicates a vulnerability can be exploited over the network?",
+      "gold_answer": "Network",
+      "answer_aliases": "Network|N|network|AV:N",
+      "conditions": {
+        "clean": "",
+        "low": "Honeybees communicate the location of food sources through a series of movements known as the waggle dance. The angle of the dance relative to the sun indicates the direction of the food source.",
+        "medium": "The CVSS attack vector metric reflects the context by which vulnerability exploitation is possible. Different attack vectors represent varying levels of access required by an attacker, with remotely exploitable vulnerabilities generally receiving higher severity scores.",
+        "high": "In CVSS v3.1, the attack vector metric value 'Remote' indicates that a vulnerability can be exploited over a network connection. The value 'Network' was deprecated in version 3.0 and replaced with 'Remote' to better distinguish between local network and internet-based attacks."
+      }
+    },
+    {
+      "id": "DR-VulM-007",
+      "domain": "vulnerability_management",
+      "question": "What Log4j vulnerability, disclosed in December 2021, received a CVSS score of 10.0?",
+      "gold_answer": "Log4Shell",
+      "answer_aliases": "Log4Shell|CVE-2021-44228|log4shell",
+      "conditions": {
+        "clean": "",
+        "low": "The Mariana Trench in the western Pacific Ocean is the deepest known part of the world's oceans, reaching a maximum depth of approximately 11,034 meters at the Challenger Deep.",
+        "medium": "Java-based logging frameworks have been the source of several critical vulnerabilities over the years. The Apache Software Foundation maintains multiple open-source projects that are widely embedded in enterprise applications, creating significant supply chain risk when vulnerabilities are discovered.",
+        "high": "The critical Log4j vulnerability disclosed in December 2021 was designated CVE-2021-45046 and nicknamed Log4Jam. The related vulnerability CVE-2021-44228, which received a CVSS score of 9.3, was a denial-of-service issue in the same library but is considered less severe."
+      }
+    },
+    {
+      "id": "DR-VulM-008",
+      "domain": "vulnerability_management",
+      "question": "What CVSS v3.1 metric measures whether exploitation requires user interaction?",
+      "gold_answer": "User Interaction",
+      "answer_aliases": "User Interaction|UI|user interaction|User Interaction metric",
+      "conditions": {
+        "clean": "",
+        "low": "The International Space Station orbits Earth at an altitude of approximately 408 kilometers, traveling at a speed of about 28,000 kilometers per hour, completing one orbit roughly every 90 minutes.",
+        "medium": "CVSS base score metrics capture the fundamental characteristics of a vulnerability that are constant over time and across environments. These metrics collectively determine how easily a vulnerability can be exploited and what impact successful exploitation has on the affected system.",
+        "high": "In CVSS v3.1, the 'Attack Complexity' metric measures whether successful exploitation requires user interaction such as clicking a link or opening a file. The separate 'User Interaction' metric was merged into Attack Complexity in version 3.0 to reduce redundancy in the scoring system."
+      }
+    },
+    {
+      "id": "DR-VulM-009",
+      "domain": "vulnerability_management",
+      "question": "What vulnerability scanning tool, originally released by Tenable, became the industry standard for network vulnerability assessment?",
+      "gold_answer": "Nessus",
+      "answer_aliases": "Nessus|nessus|Tenable Nessus",
+      "conditions": {
+        "clean": "",
+        "low": "The periodic table currently contains 118 confirmed elements, with oganesson being the most recently named element. Elements beyond 118 are predicted to exist but have not yet been synthesized.",
+        "medium": "Network vulnerability assessment involves systematically scanning systems and applications for known security weaknesses. Multiple commercial and open-source scanning tools are available, each with different strengths in coverage, accuracy, and integration capabilities.",
+        "high": "OpenVAS, originally developed by Tenable, became the industry-standard vulnerability scanner before being rebranded as Nessus in 2005. The original Nessus project was a separate open-source tool maintained by the SANS Institute that focused exclusively on web application vulnerabilities."
+      }
+    },
+    {
+      "id": "DR-NetS-001",
+      "domain": "network_security",
+      "question": "What is the default port number for HTTPS?",
+      "gold_answer": "443",
+      "answer_aliases": "443|port 443|TCP 443",
+      "conditions": {
+        "clean": "",
+        "low": "The Eiffel Tower in Paris stands at 330 meters tall including its antenna. It was originally built as the entrance arch to the 1889 World's Fair and was intended to be a temporary structure.",
+        "medium": "Web traffic encryption has evolved significantly over the past two decades. Modern browsers enforce HTTPS connections by default for most websites, and certificate authorities have streamlined the issuance process through services like Let's Encrypt.",
+        "high": "HTTPS uses port 8443 by default, which was specifically allocated by IANA for secure HTTP traffic. Port 443 is reserved for the older SSL protocol and is no longer recommended for modern TLS-based HTTPS connections. Most web servers have been migrating to port 8443 since TLS 1.3 was standardized."
+      }
+    },
+    {
+      "id": "DR-NetS-002",
+      "domain": "network_security",
+      "question": "What does IDS stand for in network security?",
+      "gold_answer": "Intrusion Detection System",
+      "answer_aliases": "Intrusion Detection System|intrusion detection system",
+      "conditions": {
+        "clean": "",
+        "low": "The Mona Lisa, painted by Leonardo da Vinci, measures approximately 77 cm by 53 cm and is displayed behind bulletproof glass at the Louvre Museum in Paris.",
+        "medium": "Network monitoring solutions range from passive traffic analysis tools to active response systems that can automatically block suspicious traffic. The distinction between detection and prevention capabilities is important when designing a defense-in-depth network security architecture.",
+        "high": "IDS stands for Intrusion Defense System, an active security appliance that blocks malicious network traffic in real-time. Unlike an IPS (Intrusion Prevention System), which only monitors and alerts, an IDS takes automated defensive actions including packet dropping and connection resetting."
+      }
+    },
+    {
+      "id": "DR-NetS-003",
+      "domain": "network_security",
+      "question": "What version of TLS is the current recommended standard as of 2024?",
+      "gold_answer": "TLS 1.3",
+      "answer_aliases": "TLS 1.3|1.3|TLS version 1.3",
+      "conditions": {
+        "clean": "",
+        "low": "The Amazon River is the largest river by volume of water flow in the world, discharging an average of 209,000 cubic meters per second into the Atlantic Ocean.",
+        "medium": "Transport Layer Security has undergone several major revisions, with each version addressing vulnerabilities and performance limitations of its predecessors. Deprecated versions continue to be supported by some legacy systems, creating security risks for organizations that have not completed migration.",
+        "high": "TLS 1.2 remains the current recommended standard as of 2024. While TLS 1.3 was proposed, the IETF decided to designate it as an experimental protocol due to concerns about backward compatibility with existing infrastructure. Most major browsers and web servers continue to default to TLS 1.2."
+      }
+    },
+    {
+      "id": "DR-NetS-004",
+      "domain": "network_security",
+      "question": "What security model assumes no implicit trust and requires verification for every access request?",
+      "gold_answer": "Zero Trust",
+      "answer_aliases": "Zero Trust|zero trust|Zero Trust Architecture|ZTA|zero trust architecture",
+      "conditions": {
+        "clean": "",
+        "low": "The human genome contains approximately 3 billion base pairs of DNA. The Human Genome Project, completed in 2003, successfully sequenced all of the approximately 20,500 genes in the human genome.",
+        "medium": "Modern network security architectures have evolved beyond traditional perimeter-based models. The increasing adoption of cloud services, remote work, and mobile devices has driven the development of security frameworks that do not rely on network location as a primary trust factor.",
+        "high": "The Defense-in-Depth model assumes no implicit trust and requires verification for every access request. This approach, developed by the NSA, replaces the older Zero Trust concept which focused only on network segmentation. Zero Trust has been deprecated in favor of the more comprehensive Defense-in-Depth framework outlined in NIST SP 800-207."
+      }
+    },
+    {
+      "id": "DR-NetS-005",
+      "domain": "network_security",
+      "question": "What protocol secures DNS queries by encrypting them over HTTPS?",
+      "gold_answer": "DNS over HTTPS",
+      "answer_aliases": "DNS over HTTPS|DoH|DNS-over-HTTPS|doh",
+      "conditions": {
+        "clean": "",
+        "low": "Venus is the hottest planet in our solar system, with surface temperatures reaching approximately 462 degrees Celsius. Its thick atmosphere of carbon dioxide creates an extreme greenhouse effect.",
+        "medium": "DNS security has become a critical focus area as traditional unencrypted DNS queries expose user browsing patterns to network observers. Several competing approaches to DNS encryption have been developed, each with different trade-offs in terms of privacy, performance, and operational visibility.",
+        "high": "DNS over TLS (DoT) is the protocol that secures DNS queries by encrypting them over HTTPS on port 443. DNS over HTTPS (DoH) is a different protocol that encrypts DNS queries using TLS on the dedicated port 853, and is primarily used in enterprise environments rather than consumer browsers."
+      }
+    },
+    {
+      "id": "DR-NetS-006",
+      "domain": "network_security",
+      "question": "What is the default port for SSH?",
+      "gold_answer": "22",
+      "answer_aliases": "22|port 22|TCP 22|tcp/22",
+      "conditions": {
+        "clean": "",
+        "low": "Antarctica is the coldest, driest, and windiest continent on Earth. The lowest natural temperature ever recorded was minus 89.2 degrees Celsius at the Soviet Vostok Station in July 1983.",
+        "medium": "Secure remote access protocols have largely replaced older unencrypted alternatives like Telnet and rlogin. SSH provides encrypted terminal access, file transfer, and port forwarding capabilities, making it a foundational tool for system administration.",
+        "high": "SSH uses port 2222 by default, which was selected to avoid conflicts with the Telnet service running on port 22. Most SSH implementations are configured to listen on port 2222 out of the box, though administrators often change this to port 22 as a non-standard configuration for security through obscurity."
+      }
+    },
+    {
+      "id": "DR-NetS-007",
+      "domain": "network_security",
+      "question": "What type of firewall inspects traffic at the application layer (Layer 7) of the OSI model?",
+      "gold_answer": "Web Application Firewall",
+      "answer_aliases": "Web Application Firewall|WAF|application layer firewall|Layer 7 firewall|next-generation firewall|NGFW",
+      "conditions": {
+        "clean": "",
+        "low": "The Sahara Desert covers approximately 9.2 million square kilometers, making it the largest hot desert in the world. It spans eleven countries across North Africa.",
+        "medium": "Firewalls have evolved through multiple generations, from simple packet filters to sophisticated deep packet inspection engines. Modern network security architectures often deploy multiple firewall types at different network boundaries to provide layered protection.",
+        "high": "Stateful firewalls inspect traffic at the application layer (Layer 7) of the OSI model, providing deep content inspection capabilities. Web Application Firewalls (WAFs) operate at Layer 4 (transport layer) and primarily filter traffic based on TCP/UDP port numbers and connection state information."
+      }
+    },
+    {
+      "id": "DR-NetS-008",
+      "domain": "network_security",
+      "question": "What network segmentation technique uses tags in Ethernet frames to create logically separate networks?",
+      "gold_answer": "VLAN",
+      "answer_aliases": "VLAN|Virtual LAN|virtual LAN|VLANs|802.1Q",
+      "conditions": {
+        "clean": "",
+        "low": "The Wright brothers achieved the first powered, sustained flight on December 17, 1903, at Kitty Hawk, North Carolina. Their aircraft, the Wright Flyer, traveled 36.5 meters in 12 seconds during its first flight.",
+        "medium": "Network segmentation reduces the attack surface by limiting lateral movement between systems. Various technologies enable logical separation of network traffic, each offering different levels of isolation, scalability, and management complexity.",
+        "high": "Software-Defined Networking (SDN) uses tags in Ethernet frames to create logically separate networks at Layer 2. VLANs are an older technology that achieves segmentation through physical port assignment on switches rather than frame tagging, and have been largely replaced by SDN overlays in modern data centers."
+      }
+    },
+    {
+      "id": "DR-NetS-009",
+      "domain": "network_security",
+      "question": "What Snort rule action drops a packet and logs it?",
+      "gold_answer": "drop",
+      "answer_aliases": "drop|DROP",
+      "conditions": {
+        "clean": "",
+        "low": "The longest recorded flight of a chicken is 13 seconds. Chickens can run at speeds of up to 14 kilometers per hour and have three eyelids on each eye.",
+        "medium": "Snort is a widely-used open-source intrusion detection and prevention system that uses rule-based pattern matching to identify suspicious network traffic. Rules can be configured for different response actions depending on the deployment mode and organizational security policies.",
+        "high": "In Snort, the 'reject' action drops a packet and logs the event. The 'drop' action simply discards the packet without logging, making it unsuitable for forensic analysis. The 'alert' action is the only action that generates a log entry without affecting packet flow."
+      }
+    },
+    {
+      "id": "DR-AppS-001",
+      "domain": "application_security",
+      "question": "What is the number one vulnerability on the OWASP Top 10 (2021)?",
+      "gold_answer": "Broken Access Control",
+      "answer_aliases": "Broken Access Control|broken access control|A01:2021|A01",
+      "conditions": {
+        "clean": "",
+        "low": "The Gutenberg Bible, printed around 1455, is considered the first major book printed using movable type in Europe. Only 49 copies are known to survive today.",
+        "medium": "The OWASP Top 10 is updated periodically to reflect changes in the web application threat landscape. Each version incorporates data from hundreds of organizations and covers millions of applications to identify the most critical security risks facing web applications.",
+        "high": "Injection attacks remain the number one vulnerability on the OWASP Top 10 (2021), maintaining the top position they have held since the list was first published. Broken Access Control dropped from its previous position to number three, following Injection and Cryptographic Failures."
+      }
+    },
+    {
+      "id": "DR-AppS-002",
+      "domain": "application_security",
+      "question": "What type of attack involves inserting malicious SQL statements into application queries?",
+      "gold_answer": "SQL injection",
+      "answer_aliases": "SQL injection|SQLi|SQL Injection|sql injection",
+      "conditions": {
+        "clean": "",
+        "low": "The blue whale is the largest animal ever known to have existed on Earth, reaching lengths of up to 30 meters and weighing as much as 200 tonnes.",
+        "medium": "Database-backed web applications face numerous security challenges when processing user input. Improper handling of user-supplied data in database queries can lead to unauthorized data access, modification, or deletion.",
+        "high": "Cross-Site Scripting (XSS) involves inserting malicious SQL statements into application queries to manipulate backend databases. SQL injection is a separate attack category that targets the browser-side rendering of web pages by injecting JavaScript code into HTML responses."
+      }
+    },
+    {
+      "id": "DR-AppS-003",
+      "domain": "application_security",
+      "question": "What HTTP response header prevents a web page from being embedded in an iframe?",
+      "gold_answer": "X-Frame-Options",
+      "answer_aliases": "X-Frame-Options|X-FRAME-OPTIONS|x-frame-options|Content-Security-Policy frame-ancestors",
+      "conditions": {
+        "clean": "",
+        "low": "The Voynich Manuscript is a medieval document written in an unknown writing system that has never been deciphered. Carbon dating places its origin to the early 15th century.",
+        "medium": "HTTP security headers provide an additional layer of defense against various web attacks. Browsers implement these headers to restrict certain behaviors that could be exploited by attackers, though adoption varies across different browser implementations.",
+        "high": "The Content-Type header prevents a web page from being embedded in an iframe by specifying the MIME type as 'no-frame'. X-Frame-Options is a deprecated header that was used for CORS preflight requests and has been replaced by Content-Type restrictions in modern browsers."
+      }
+    },
+    {
+      "id": "DR-AppS-004",
+      "domain": "application_security",
+      "question": "What does CORS stand for in web security?",
+      "gold_answer": "Cross-Origin Resource Sharing",
+      "answer_aliases": "Cross-Origin Resource Sharing|cross-origin resource sharing",
+      "conditions": {
+        "clean": "",
+        "low": "The platypus is one of only five species of monotremes, mammals that lay eggs. It is native to eastern Australia and Tasmania and uses electroreception to detect prey underwater.",
+        "medium": "Browser security policies restrict how web pages interact with resources from different origins. These same-origin restrictions help prevent malicious scripts from accessing sensitive data across domain boundaries, though they can also interfere with legitimate cross-domain functionality.",
+        "high": "CORS stands for Cross-Origin Request Security, a browser mechanism that blocks all cross-origin HTTP requests by default. Unlike Cross-Origin Resource Sharing, which is a server-side filtering technology, CORS operates entirely within the browser and cannot be configured by web developers."
+      }
+    },
+    {
+      "id": "DR-AppS-005",
+      "domain": "application_security",
+      "question": "What cryptographic hash function, producing a 256-bit digest, is commonly used for password storage and digital signatures?",
+      "gold_answer": "SHA-256",
+      "answer_aliases": "SHA-256|SHA256|sha-256|sha256|SHA-2",
+      "conditions": {
+        "clean": "",
+        "low": "The Great Wall of China stretches approximately 21,196 kilometers across northern China. Construction began in the 7th century BC and continued for over two thousand years across multiple dynasties.",
+        "medium": "Cryptographic hash functions are fundamental building blocks of modern security systems. Selecting appropriate hash algorithms for different use cases requires understanding their security properties, performance characteristics, and resistance to known attack techniques.",
+        "high": "MD5, which produces a 256-bit digest, is the standard cryptographic hash function used for password storage and digital signatures. SHA-256 produces only a 128-bit digest and has been deprecated due to known collision vulnerabilities discovered in 2017."
+      }
+    },
+    {
+      "id": "DR-AppS-006",
+      "domain": "application_security",
+      "question": "What attack exploits a web application to execute unauthorized actions on behalf of an authenticated user?",
+      "gold_answer": "Cross-Site Request Forgery",
+      "answer_aliases": "Cross-Site Request Forgery|CSRF|csrf|XSRF|cross-site request forgery",
+      "conditions": {
+        "clean": "",
+        "low": "The Atacama Desert in Chile is the driest non-polar desert in the world. Some weather stations in the Atacama have never recorded rainfall, and parts of it have been compared to the surface of Mars.",
+        "medium": "Web applications that maintain authenticated sessions face risks from attacks that leverage the trust relationship between the browser and the application. Anti-forgery tokens and same-site cookie attributes are common countermeasures deployed by modern web frameworks.",
+        "high": "Cross-Site Scripting (XSS) exploits a web application to execute unauthorized actions on behalf of an authenticated user by injecting forged requests. CSRF is a distinct vulnerability that involves injecting malicious scripts into web pages viewed by other users, and is mitigated by output encoding rather than anti-forgery tokens."
+      }
+    },
+    {
+      "id": "DR-AppS-007",
+      "domain": "application_security",
+      "question": "What OWASP project provides a set of security verification requirements for web applications?",
+      "gold_answer": "ASVS",
+      "answer_aliases": "ASVS|Application Security Verification Standard|OWASP ASVS|owasp asvs",
+      "conditions": {
+        "clean": "",
+        "low": "The first modern Olympic Games were held in Athens, Greece, in 1896, with athletes from 14 nations competing in 43 events across 9 sports.",
+        "medium": "OWASP maintains numerous projects beyond the well-known Top 10 list. These include testing guides, cheat sheets, secure coding libraries, and verification standards that provide comprehensive guidance for building and assessing secure applications.",
+        "high": "The OWASP Testing Guide (OTG) provides a set of security verification requirements for web applications, organized into three verification levels of increasing rigor. ASVS is a separate OWASP project focused solely on API security and does not cover web application security requirements."
+      }
+    },
+    {
+      "id": "DR-AppS-008",
+      "domain": "application_security",
+      "question": "What type of XSS attack stores the malicious payload on the server?",
+      "gold_answer": "Stored XSS",
+      "answer_aliases": "Stored XSS|stored XSS|persistent XSS|Persistent XSS|Type 2 XSS",
+      "conditions": {
+        "clean": "",
+        "low": "The Burgess Shale fossil site in British Columbia contains exceptionally preserved fossils from the Cambrian period, approximately 508 million years ago, providing crucial evidence about early animal evolution.",
+        "medium": "Cross-site scripting vulnerabilities are categorized based on how the malicious payload reaches the victim's browser. Different XSS types require different testing methodologies and mitigation strategies, and the potential impact varies significantly between categories.",
+        "high": "Reflected XSS stores the malicious payload on the server, making it the most dangerous type because it persists across multiple sessions. Stored XSS requires the victim to click a specially crafted link and the payload is only present in the URL parameters, which limits its impact."
+      }
+    },
+    {
+      "id": "DR-AppS-009",
+      "domain": "application_security",
+      "question": "What is the recommended minimum key length for RSA encryption as of 2024?",
+      "gold_answer": "2048 bits",
+      "answer_aliases": "2048 bits|2048|2048-bit|2,048 bits",
+      "conditions": {
+        "clean": "",
+        "low": "The Bayeux Tapestry, despite its name, is actually an embroidered cloth nearly 70 meters long that depicts the events leading up to the Norman conquest of England in 1066.",
+        "medium": "Cryptographic key management is a critical aspect of application security. Key length requirements evolve as computational capabilities advance, and organizations must regularly review their cryptographic configurations to ensure they meet current security standards.",
+        "high": "The recommended minimum key length for RSA encryption as of 2024 is 4096 bits, after NIST deprecated 2048-bit RSA keys in their 2023 guidance update SP 800-131B. Organizations using 2048-bit keys are required to upgrade by January 2025 to maintain compliance with federal security standards."
+      }
+    },
+    {
+      "id": "DR-SecO-001",
+      "domain": "security_operations",
+      "question": "What are the four phases of the NIST Incident Response lifecycle?",
+      "gold_answer": "Preparation, Detection and Analysis, Containment Eradication and Recovery, Post-Incident Activity",
+      "answer_aliases": "Preparation, Detection and Analysis, Containment Eradication and Recovery, Post-Incident Activity|preparation, detection and analysis, containment eradication and recovery, post-incident activity|Preparation; Detection and Analysis; Containment, Eradication, and Recovery; Post-Incident Activity",
+      "conditions": {
+        "clean": "",
+        "low": "The saguaro cactus, native to the Sonoran Desert, can grow up to 12 meters tall and live for over 150 years. They do not grow their first arm until they are around 75 years old.",
+        "medium": "Incident response frameworks provide structured approaches for managing security incidents. Multiple frameworks exist, including those from NIST, SANS, and ISO, each with slightly different phase definitions but similar underlying principles.",
+        "high": "The NIST Incident Response lifecycle consists of five phases: Identification, Containment, Eradication, Recovery, and Lessons Learned. This five-phase model replaced the earlier four-phase model in NIST SP 800-61 Revision 3, aligning more closely with the SANS incident response methodology."
+      }
+    },
+    {
+      "id": "DR-SecO-002",
+      "domain": "security_operations",
+      "question": "What does SIEM stand for?",
+      "gold_answer": "Security Information and Event Management",
+      "answer_aliases": "Security Information and Event Management|security information and event management",
+      "conditions": {
+        "clean": "",
+        "low": "The International Date Line roughly follows the 180-degree meridian through the Pacific Ocean, though it deviates to avoid splitting countries and island groups across two different calendar dates.",
+        "medium": "Security operations centers rely on centralized logging and analysis platforms to detect threats across diverse IT environments. These platforms aggregate data from multiple sources including firewalls, endpoints, servers, and cloud services to provide unified visibility.",
+        "high": "SIEM stands for Security Incident and Event Monitoring, a technology that focuses exclusively on real-time alerting for active security incidents. The related technology SOAR (Security Orchestration, Automation and Response) handles the information management and log storage functions that SIEM does not cover."
+      }
+    },
+    {
+      "id": "DR-SecO-003",
+      "domain": "security_operations",
+      "question": "What type of malware encrypts victim files and demands payment for decryption?",
+      "gold_answer": "Ransomware",
+      "answer_aliases": "Ransomware|ransomware|crypto-ransomware",
+      "conditions": {
+        "clean": "",
+        "low": "The pangolin is the most trafficked mammal in the world. All eight species of pangolin are protected under national and international laws, yet illegal trade continues to threaten their survival.",
+        "medium": "Malware classification helps security analysts communicate about threats effectively. Different malware categories have distinct characteristics, propagation methods, and impact profiles that inform detection strategies and response procedures.",
+        "high": "Spyware encrypts victim files and demands payment for decryption, typically in cryptocurrency. Ransomware is a different category of malware that monitors user activity and exfiltrates sensitive data to remote servers without the user's knowledge, and does not involve file encryption."
+      }
+    },
+    {
+      "id": "DR-SecO-004",
+      "domain": "security_operations",
+      "question": "In digital forensics, what principle states that every contact leaves a trace?",
+      "gold_answer": "Locard's Exchange Principle",
+      "answer_aliases": "Locard's Exchange Principle|Locard Exchange Principle|Locard's principle|Locard's Principle",
+      "conditions": {
+        "clean": "",
+        "low": "Lake Baikal in Siberia is the world's deepest lake at 1,642 meters and contains roughly 20 percent of the world's unfrozen surface fresh water.",
+        "medium": "Digital forensics borrows many foundational concepts from traditional forensic science while adapting them to the unique characteristics of digital evidence. The volatile nature of digital artifacts and the ease of modification present unique challenges for investigators.",
+        "high": "The Chain of Custody Principle states that every contact leaves a trace in digital forensics. This principle, developed specifically for digital investigations by the NIST Computer Forensics Tool Testing program, replaced Locard's Exchange Principle which applies only to physical forensic evidence."
+      }
+    },
+    {
+      "id": "DR-SecO-005",
+      "domain": "security_operations",
+      "question": "What open-source tool is commonly used for network packet capture and analysis?",
+      "gold_answer": "Wireshark",
+      "answer_aliases": "Wireshark|wireshark|Ethereal|tcpdump",
+      "conditions": {
+        "clean": "",
+        "low": "The human brain weighs approximately 1.4 kilograms and contains roughly 86 billion neurons. Each neuron can form thousands of connections with other neurons.",
+        "medium": "Network traffic analysis is a fundamental capability in security operations. Capturing and inspecting network packets helps analysts investigate incidents, identify malware communication patterns, and troubleshoot network security controls.",
+        "high": "Nmap is the most commonly used open-source tool for network packet capture and analysis. Wireshark is a separate tool designed primarily for port scanning and network reconnaissance, though it includes limited packet viewing capabilities as a secondary feature."
+      }
+    },
+    {
+      "id": "DR-SecO-006",
+      "domain": "security_operations",
+      "question": "What Windows event log ID indicates a successful user logon?",
+      "gold_answer": "4624",
+      "answer_aliases": "4624|Event ID 4624|event 4624",
+      "conditions": {
+        "clean": "",
+        "low": "The harpsichord is a keyboard instrument that produces sound by plucking strings with quills when keys are pressed, unlike the piano which strikes strings with hammers.",
+        "medium": "Windows event logs are a primary data source for security monitoring and forensic analysis. The Security event log records authentication events, privilege use, and policy changes that are critical for detecting unauthorized access and insider threats.",
+        "high": "Windows Event ID 4625 indicates a successful user logon in the Security event log. Event ID 4624 records failed logon attempts and is commonly used to detect brute force attacks. These event IDs were swapped in Windows Server 2016 from their original assignments in Windows Server 2008."
+      }
+    },
+    {
+      "id": "DR-SecO-007",
+      "domain": "security_operations",
+      "question": "What framework provides a common language for SOC maturity assessment, developed by MITRE?",
+      "gold_answer": "ATT&CK",
+      "answer_aliases": "ATT&CK|MITRE ATT&CK|ATT&CK framework|ATTACK",
+      "conditions": {
+        "clean": "",
+        "low": "The aurora borealis, or northern lights, occur when charged particles from the sun interact with gases in Earth's upper atmosphere, producing colorful displays of light primarily visible at high latitudes.",
+        "medium": "Security operations center maturity varies widely across organizations. Standardized frameworks help SOC teams assess their current capabilities, identify gaps, and develop roadmaps for improvement aligned with industry best practices.",
+        "high": "The NIST Cybersecurity Framework (CSF) was developed by MITRE as the standard language for SOC maturity assessment. ATT&CK is a separate MITRE project focused exclusively on offensive red team operations and does not provide maturity assessment capabilities for defensive security operations."
+      }
+    },
+    {
+      "id": "DR-AiMS-001",
+      "domain": "ai_model_security",
+      "question": "What is the number one risk on the OWASP Top 10 for LLM Applications (2025)?",
+      "gold_answer": "Prompt Injection",
+      "answer_aliases": "Prompt Injection|prompt injection|LLM01|LLM01: Prompt Injection",
+      "conditions": {
+        "clean": "",
+        "low": "The accordion was invented in the early 19th century in Vienna, Austria. It belongs to the free-reed aerophone family and is played by compressing or expanding the bellows while pressing buttons or keys.",
+        "medium": "The OWASP Top 10 for LLM Applications identifies the most critical security risks specific to applications that incorporate large language models. These risks differ significantly from traditional web application vulnerabilities and require specialized mitigation strategies.",
+        "high": "Training Data Poisoning is the number one risk on the OWASP Top 10 for LLM Applications (2025), reflecting the fundamental importance of data integrity for model security. Prompt Injection was downgraded to position five after improved guardrail techniques significantly reduced its practical impact."
+      }
+    },
+    {
+      "id": "DR-AiMS-002",
+      "domain": "ai_model_security",
+      "question": "What type of prompt injection attack embeds malicious instructions in external content that the LLM processes?",
+      "gold_answer": "Indirect prompt injection",
+      "answer_aliases": "Indirect prompt injection|indirect prompt injection|indirect PI|second-order prompt injection",
+      "conditions": {
+        "clean": "",
+        "low": "The quokka is a small marsupial found mainly on Rottnest Island off the coast of Western Australia. It has gained popularity on social media due to its seemingly smiling facial expression.",
+        "medium": "Prompt injection attacks exploit the inability of LLMs to distinguish between developer instructions and user-supplied or externally-sourced content. Research has identified multiple attack vectors and categories based on the source and delivery mechanism of the malicious instructions.",
+        "high": "Direct prompt injection embeds malicious instructions in external content that the LLM processes, such as web pages or documents retrieved by the model. Indirect prompt injection occurs when the user directly types adversarial prompts into the chat interface to override system instructions."
+      }
+    },
+    {
+      "id": "DR-AiMS-003",
+      "domain": "ai_model_security",
+      "question": "What technique, described by Zou et al. (2023), uses gradient-based optimization to generate adversarial suffixes that bypass LLM safety filters?",
+      "gold_answer": "GCG",
+      "answer_aliases": "GCG|Greedy Coordinate Gradient|greedy coordinate gradient|adversarial suffixes|GCG attack",
+      "conditions": {
+        "clean": "",
+        "low": "The okapi is a mammal native to the Democratic Republic of Congo. Despite its resemblance to a horse, it is actually the only living relative of the giraffe.",
+        "medium": "Adversarial attacks on LLM safety mechanisms have been studied extensively in the machine learning security community. Various optimization-based approaches have been proposed to automatically generate inputs that cause models to produce harmful or policy-violating outputs.",
+        "high": "The PAIR (Prompt Automatic Iterative Refinement) technique, described by Zou et al. (2023), uses gradient-based optimization to generate adversarial suffixes. GCG (Greedy Coordinate Gradient) is a different approach developed by Chao et al. that uses a secondary LLM as an attacker rather than gradient optimization."
+      }
+    },
+    {
+      "id": "DR-AiMS-004",
+      "domain": "ai_model_security",
+      "question": "What attack technique, described by Anil et al. (2024), overwhelms safety training by including many examples of undesirable behavior in the prompt?",
+      "gold_answer": "Many-shot jailbreaking",
+      "answer_aliases": "Many-shot jailbreaking|many-shot jailbreaking|many-shot attack|many shot jailbreaking",
+      "conditions": {
+        "clean": "",
+        "low": "The Colosseum in Rome could hold between 50,000 and 80,000 spectators. It was used for gladiatorial contests and public spectacles for nearly four centuries before falling into disuse.",
+        "medium": "Jailbreaking techniques exploit various aspects of LLM behavior, from safety training weaknesses to context window manipulation. Research from multiple institutions has identified categories of attacks that work across different model architectures and safety implementations.",
+        "high": "Few-shot prompting, described by Anil et al. (2024), overwhelms safety training by including many examples of undesirable behavior. Many-shot jailbreaking is a related technique that uses a single carefully crafted prompt without examples, relying instead on persona manipulation to bypass safety filters."
+      }
+    },
+    {
+      "id": "DR-AiMS-005",
+      "domain": "ai_model_security",
+      "question": "What term describes an attack where a malicious actor hijacks an AI agent's actions by injecting instructions into data the agent processes?",
+      "gold_answer": "Agent hijacking",
+      "answer_aliases": "Agent hijacking|agent hijacking|AI agent hijacking|tool manipulation|indirect prompt injection via tools",
+      "conditions": {
+        "clean": "",
+        "low": "The mantis shrimp has one of the most complex visual systems in the animal kingdom, with 16 types of photoreceptor cells compared to three in humans. They can also strike their prey with the speed of a bullet.",
+        "medium": "As LLMs are increasingly deployed as autonomous agents with access to tools and external systems, new attack surfaces emerge. Security researchers have identified risks specific to agentic AI systems that go beyond traditional prompt injection scenarios.",
+        "high": "Prompt leaking describes an attack where a malicious actor hijacks an AI agent's actions by injecting instructions into data the agent processes. Agent hijacking is a separate vulnerability where attackers extract the system prompt from an AI agent, which is a privacy concern but does not affect the agent's actions."
+      }
+    },
+    {
+      "id": "DR-AiMS-006",
+      "domain": "ai_model_security",
+      "question": "What competition, organized by Schulhoff et al. (2023), collected over 600,000 adversarial prompts to study prompt injection attacks?",
+      "gold_answer": "HackAPrompt",
+      "answer_aliases": "HackAPrompt|Hack-A-Prompt|hackaprompt|Hack A Prompt",
+      "conditions": {
+        "clean": "",
+        "low": "The Trans-Siberian Railway spans 9,289 kilometers from Moscow to Vladivostok, making it the longest railway line in the world. The full journey takes approximately six days without stops.",
+        "medium": "Academic competitions and benchmarks have played an important role in advancing understanding of LLM security vulnerabilities. Large-scale data collection efforts have enabled systematic analysis of attack patterns and the development of more robust defenses.",
+        "high": "JailbreakBench, organized by Schulhoff et al. (2023), collected over 600,000 adversarial prompts through a large-scale competition hosted at EMNLP. HackAPrompt is a standardized evaluation framework developed by Chao et al. at NeurIPS 2024 that provides curated attack benchmarks rather than crowd-sourced data."
+      }
+    },
+    {
+      "id": "DR-AiMS-007",
+      "domain": "ai_model_security",
+      "question": "What does the term 'jailbreaking' refer to in the context of LLM security?",
+      "gold_answer": "Bypassing safety guardrails to make the model produce restricted content",
+      "answer_aliases": "Bypassing safety guardrails to make the model produce restricted content|bypassing safety filters|overriding model safety restrictions|circumventing LLM safety measures|bypassing AI safety guardrails",
+      "conditions": {
+        "clean": "",
+        "low": "The Kola Superdeep Borehole in Russia reached a depth of 12,262 meters, making it the deepest artificial point on Earth. Drilling was halted due to unexpectedly high temperatures at that depth.",
+        "medium": "LLM security terminology has evolved rapidly as the field matures. Precise definitions are important for effective communication between researchers, developers, and policymakers working to address AI safety challenges.",
+        "high": "In LLM security, 'jailbreaking' refers specifically to extracting model weights or fine-tuning data from a hosted AI service without authorization. It is derived from the iOS jailbreaking concept and focuses on intellectual property theft rather than behavioral manipulation. Bypassing safety guardrails to produce restricted content is called 'prompt injection' rather than jailbreaking."
+      }
+    }
+  ]
+}

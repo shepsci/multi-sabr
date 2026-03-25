@@ -1,0 +1,1808 @@
+{
+  "metadata": {
+    "task": "attentional_spotlight",
+    "version": "1.0.0",
+    "description": "30 items testing sustained attention and attention shifting. Each item presents a document with 8-15 embedded claims. The model must extract ONLY claims matching a specific filter criterion, testing precision and recall of selective fact extraction.",
+    "cognitive_mapping": "Sustained Attention + Attention Shifting (Section 7.3.2 of DeepMind framework) \u2014 maintaining focus on a filtering criterion while scanning a document, analogous to visual search paradigms (Treisman, 1980)",
+    "filter_categories": [
+      "dates",
+      "attributed",
+      "numerical",
+      "entity",
+      "contradictions",
+      "causal"
+    ],
+    "total_items": 30,
+    "total_evaluations": 30
+  },
+  "items": [
+    {
+      "id": "AS-DAT-001",
+      "category": "dates",
+      "filter_criterion": "Extract ONLY claims that mention specific dates, years, or time periods. Do not include claims that mention numbers in other contexts (such as quantities, measurements, or rankings).",
+      "document": "The Meridian Valley Agricultural Cooperative has emerged as a model for sustainable farming in the region, drawing attention from agricultural policy experts and environmental organizations alike. Nestled in the fertile lowlands between two mountain ranges, the cooperative benefits from rich alluvial soil and a temperate climate that supports a wide variety of crops. The cooperative was established in 1987 by a group of twelve founding members who pooled their resources to purchase shared equipment, including tractors, combines, and grain dryers that individual small farms could not afford on their own. Annual revenue now exceeds $4.2 million across all member farms, a figure that reflects steady growth driven by diversified crop offerings and direct-to-consumer sales channels. The cooperative's organizational structure relies on a democratic governance model where each member farm receives one vote regardless of acreage or revenue contribution, a principle that the founders insisted upon to prevent larger operations from dominating decision-making. In 2019, the cooperative introduced a crop rotation program that reduced pesticide use by 35 percent, an initiative that earned recognition from the state department of agriculture and attracted visits from farming delegations in neighboring states eager to replicate the approach. The organization operates three grain elevators with a combined capacity of 50,000 metric tons, strategically located along the county's main rail corridor for efficient distribution to regional markets. Staff members at the central office handle logistics, marketing, and regulatory compliance on behalf of all member farms, freeing individual farmers to focus on cultivation and harvest. A drought during the summer of 2022 severely impacted yields, prompting the cooperative to invest in drip irrigation systems that would buffer against future water shortages and reduce the vulnerability that comes with dependence on rainfall alone. Membership grew from 12 to 147 farms over the past three decades, making it one of the largest cooperatives in the state and a significant economic force in the county. The board of directors meets quarterly to review financial performance and plan seasonal operations, with meeting minutes published to all members for transparency and accountability. The cooperative maintains a revolving loan fund that provides low-interest financing to members for capital improvements such as barn construction, equipment upgrades, and soil conservation projects. Beginning in spring 2024, the cooperative partnered with a regional university to pilot precision agriculture techniques using drone technology, equipping fields with sensors that monitor soil moisture, nutrient levels, and pest activity in real time. Water usage dropped by 22 percent compared to traditional irrigation methods, a result that surprised even the researchers involved in the pilot program. The cooperative's products are distributed to markets within a 300-kilometer radius, and the fleet of refrigerated trucks makes deliveries to wholesale buyers three times per week. Member satisfaction surveys consistently show approval ratings above 90 percent for cooperative services, reflecting the tangible benefits that shared resources and collective bargaining provide to small-scale farming operations in an increasingly competitive agricultural landscape.",
+      "all_claims": [
+        {
+          "text": "The cooperative was established in 1987",
+          "matches_filter": true
+        },
+        {
+          "text": "Annual revenue now exceeds $4.2 million",
+          "matches_filter": false
+        },
+        {
+          "text": "In 2019, the cooperative introduced a crop rotation program",
+          "matches_filter": true
+        },
+        {
+          "text": "Reduced pesticide use by 35 percent",
+          "matches_filter": false
+        },
+        {
+          "text": "Operates three grain elevators with a combined capacity of 50,000 metric tons",
+          "matches_filter": false
+        },
+        {
+          "text": "A drought during the summer of 2022 severely impacted yields",
+          "matches_filter": true
+        },
+        {
+          "text": "Membership grew from 12 to 147 farms",
+          "matches_filter": false
+        },
+        {
+          "text": "Beginning in spring 2024, the cooperative partnered with a regional university",
+          "matches_filter": true
+        },
+        {
+          "text": "Water usage dropped by 22 percent",
+          "matches_filter": false
+        },
+        {
+          "text": "Products are distributed within a 300-kilometer radius",
+          "matches_filter": false
+        },
+        {
+          "text": "Each member farm receives one vote regardless of acreage or revenue",
+          "matches_filter": false
+        },
+        {
+          "text": "Member satisfaction surveys show approval ratings above 90 percent",
+          "matches_filter": false
+        },
+        {
+          "text": "The fleet of refrigerated trucks makes deliveries three times per week",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "The cooperative was established in 1987||In 2019, the cooperative introduced a crop rotation program||A drought during the summer of 2022 severely impacted yields||Beginning in spring 2024, the cooperative partnered with a regional university",
+      "gold_count": 4
+    },
+    {
+      "id": "AS-DAT-002",
+      "category": "dates",
+      "filter_criterion": "Extract ONLY claims that mention specific dates, years, or time periods. Do not include claims that mention numbers in other contexts (such as quantities, measurements, or rankings).",
+      "document": "The Harborview Community Health Center has served as a cornerstone of primary care for underserved populations in the coastal region, providing a wide range of medical, dental, and behavioral health services to patients regardless of their ability to pay. The center occupies a three-story building on the corner of Pacific Avenue and Third Street, a location chosen decades ago for its accessibility by public transit and proximity to the neighborhoods it serves. Founded in 1974 as a free clinic staffed entirely by volunteers, the center has evolved into a comprehensive health facility employing 85 medical professionals, including physicians, nurse practitioners, physician assistants, and licensed clinical social workers who collectively speak nine languages. Patient visits reached 42,000 annually by the end of last year, reflecting the growing demand for accessible healthcare in an area where many residents face barriers including language, immigration status, and lack of transportation. The center's mission emphasizes preventive care and chronic disease management, with specialized programs targeting diabetes, hypertension, and maternal health that have been recognized by national health equity organizations. The center expanded its mental health services division in March 2021, adding six counselors and a psychiatrist to address growing demand driven by the pandemic's psychological toll on the community, particularly among adolescents and elderly patients living alone. Operating costs exceed $12 million per year, funded through a combination of government grants, private donations, and sliding-scale patient fees that ensure no one is turned away for inability to pay. A major renovation completed in 2018 doubled the facility's examination rooms from 15 to 30, allowing the center to significantly reduce appointment wait times and accommodate walk-in patients more effectively than the cramped quarters that staff had endured for years. The center participates in four clinical research trials focused on diabetes management, contributing data that helps shape national treatment guidelines and giving patients access to experimental therapies they would not otherwise be able to afford. In the fall of 2023, Harborview launched a mobile clinic unit that visits rural communities twice weekly, bringing primary care to areas where the nearest hospital is more than an hour's drive away and where chronic conditions often go untreated until they become emergencies. Approximately 60 percent of patients are uninsured or underinsured, underscoring the critical role the center plays in the regional safety net for populations who would otherwise rely on expensive emergency room visits for routine care. The board approved a strategic plan through 2030 that prioritizes telehealth expansion and pediatric specialty care, aiming to serve an additional 10,000 patients annually through virtual appointments that remove geographic and transportation barriers. Community health workers conduct outreach in neighborhoods with the highest rates of chronic illness, connecting residents with services they might not otherwise access and building trust through face-to-face relationships that bridge cultural and linguistic divides.",
+      "all_claims": [
+        {
+          "text": "Founded in 1974 as a free clinic",
+          "matches_filter": true
+        },
+        {
+          "text": "Employing 85 medical professionals",
+          "matches_filter": false
+        },
+        {
+          "text": "Patient visits reached 42,000 annually",
+          "matches_filter": false
+        },
+        {
+          "text": "Expanded its mental health services division in March 2021",
+          "matches_filter": true
+        },
+        {
+          "text": "Operating costs exceed $12 million per year",
+          "matches_filter": false
+        },
+        {
+          "text": "A major renovation completed in 2018 doubled the examination rooms",
+          "matches_filter": true
+        },
+        {
+          "text": "Participates in four clinical research trials",
+          "matches_filter": false
+        },
+        {
+          "text": "In the fall of 2023, Harborview launched a mobile clinic unit",
+          "matches_filter": true
+        },
+        {
+          "text": "Approximately 60 percent of patients are uninsured or underinsured",
+          "matches_filter": false
+        },
+        {
+          "text": "Strategic plan through 2030 prioritizes telehealth expansion",
+          "matches_filter": true
+        },
+        {
+          "text": "The renovation doubled examination rooms from 15 to 30",
+          "matches_filter": false
+        },
+        {
+          "text": "The mobile clinic visits rural communities twice weekly",
+          "matches_filter": false
+        },
+        {
+          "text": "Community health workers conduct outreach in neighborhoods with highest chronic illness rates",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Founded in 1974 as a free clinic||Expanded its mental health services division in March 2021||A major renovation completed in 2018 doubled the examination rooms||In the fall of 2023, Harborview launched a mobile clinic unit||Strategic plan through 2030 prioritizes telehealth expansion",
+      "gold_count": 5
+    },
+    {
+      "id": "AS-DAT-003",
+      "category": "dates",
+      "filter_criterion": "Extract ONLY claims that mention specific dates, years, or time periods. Do not include claims that mention numbers in other contexts (such as quantities, measurements, or rankings).",
+      "document": "The Blackstone River watershed restoration project represents one of the most ambitious environmental cleanup efforts in the northeastern United States, spanning multiple states and requiring coordination among federal, state, and local agencies as well as private landowners and conservation organizations. The river's history is deeply intertwined with American industrialization, and its degradation tells a story of environmental costs that were ignored for generations in pursuit of economic growth. Industrial pollution had degraded the river since the early 1800s, when textile mills began discharging waste directly into the waterway, turning stretches of the river into open sewers that supported virtually no aquatic life and made the water unsafe for any human contact. The cleanup initiative was formally launched in 2003 with $45 million in federal funding, supplemented by contributions from state environmental agencies and private conservation organizations that recognized the river's potential for ecological recovery. Fish populations have increased by approximately 300 percent in treated sections, a recovery that biologists describe as exceeding their most optimistic projections and demonstrating the resilience of aquatic ecosystems when pollution sources are removed. A key milestone was achieved in 2015 when dissolved oxygen levels met safe standards for the first time in over a century, enabling the return of oxygen-sensitive species such as brook trout and freshwater mussels that had been absent from the river for generations. The project employs 200 workers across 14 remediation sites along the 77-kilometer river corridor, with teams specializing in sediment removal, bank stabilization, and invasive species management that threaten to outcompete native plants. Water quality monitoring stations collect samples every six hours, feeding data into a centralized database that tracks chemical, biological, and physical parameters in real time, allowing managers to detect and respond to pollution events quickly. In 2020, American shad were documented spawning in the river for the first time since 1867, marking a significant ecological recovery that was celebrated by both scientists and local fishing communities who hope to eventually see a recreational fishery restored. Community volunteers contribute thousands of hours annually to tree planting and trash removal along the riverbanks, efforts that complement professional remediation work and foster a sense of public ownership over the river's future. The final phase of cleanup is scheduled for completion by December 2027, at which point all fourteen sites will have met their remediation targets and the project will transition to long-term monitoring. Sediment removal has extracted over 180,000 cubic meters of contaminated material from the riverbed, which is treated and disposed of at licensed hazardous waste facilities located outside the watershed. Educational programs bring local schoolchildren to the river for field trips focused on water ecology and environmental stewardship, cultivating the next generation of conservation advocates in communities that once turned their backs on the polluted waterway.",
+      "all_claims": [
+        {
+          "text": "Industrial pollution had degraded the river since the early 1800s",
+          "matches_filter": true
+        },
+        {
+          "text": "The cleanup initiative was formally launched in 2003",
+          "matches_filter": true
+        },
+        {
+          "text": "$45 million in federal funding",
+          "matches_filter": false
+        },
+        {
+          "text": "Fish populations have increased by approximately 300 percent",
+          "matches_filter": false
+        },
+        {
+          "text": "A key milestone was achieved in 2015 when dissolved oxygen levels met safe standards",
+          "matches_filter": true
+        },
+        {
+          "text": "Employs 200 workers across 14 remediation sites",
+          "matches_filter": false
+        },
+        {
+          "text": "In 2020, American shad were documented spawning for the first time since 1867",
+          "matches_filter": true
+        },
+        {
+          "text": "Final phase of cleanup is scheduled for completion by December 2027",
+          "matches_filter": true
+        },
+        {
+          "text": "Sediment removal has extracted over 180,000 cubic meters",
+          "matches_filter": false
+        },
+        {
+          "text": "Water quality monitoring stations collect samples every six hours",
+          "matches_filter": false
+        },
+        {
+          "text": "The river corridor extends 77 kilometers",
+          "matches_filter": false
+        },
+        {
+          "text": "Community volunteers contribute thousands of hours annually to tree planting and trash removal",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Industrial pollution had degraded the river since the early 1800s||The cleanup initiative was formally launched in 2003||A key milestone was achieved in 2015 when dissolved oxygen levels met safe standards||In 2020, American shad were documented spawning for the first time since 1867||Final phase of cleanup is scheduled for completion by December 2027",
+      "gold_count": 5
+    },
+    {
+      "id": "AS-DAT-004",
+      "category": "dates",
+      "filter_criterion": "Extract ONLY claims that mention specific dates, years, or time periods. Do not include claims that mention numbers in other contexts (such as quantities, measurements, or rankings).",
+      "document": "The Northshore Transit Authority has undergone significant transformation since its founding, evolving from a modest bus service into a multimodal transportation network serving the metropolitan area and connecting communities that were previously isolated from economic and cultural opportunities. The authority's history mirrors the broader growth of the region, from a sleepy suburban area into a bustling metropolitan center with diverse transportation needs. The agency began operations in 1962 with a fleet of just 40 diesel buses serving 12 routes, primarily connecting residential neighborhoods to the downtown commercial district where most employment was concentrated. Today it operates 380 vehicles across 52 routes, carrying approximately 75,000 passengers daily, making it the region's most heavily used public transit system and a critical piece of infrastructure for workers, students, and seniors who depend on it. The authority's leadership has prioritized modernization and sustainability in recent planning cycles, recognizing that outdated systems and aging equipment undermine ridership and public confidence. A major system redesign in 2017 consolidated underperforming routes and increased frequency on high-demand corridors, a change that initially drew criticism from riders on cancelled routes but ultimately boosted overall ridership by improving reliability and reducing wait times on the busiest lines. The agency's annual budget is $230 million, with 55 percent covered by fare revenue and the remainder funded through a mix of federal grants and local sales tax allocations that require periodic voter approval. In January 2023, the authority introduced contactless payment, eliminating the need for physical fare cards and allowing riders to tap credit cards, debit cards, or smartphones at boarding, a modernization that reduced boarding times and eliminated the frustration of lost or expired cards. The maintenance facility on Harbor Road employs 150 technicians who service vehicles on a 6,000-mile inspection cycle, ensuring safety compliance and minimizing breakdowns that disrupt service and erode rider trust. Ridership declined 40 percent during the pandemic but recovered to 90 percent of pre-pandemic levels by mid-2024, driven in part by the return of office workers and the addition of express routes to suburban employment centers that have grown rapidly. The board approved an electric bus transition plan requiring all new purchases after 2026 to be zero-emission vehicles, a commitment that aligns with the state's broader climate goals and positions the authority as a leader in sustainable transit. Average fleet age is 7.2 years, below the industry standard of 12 years, which keeps maintenance costs manageable and improves the passenger experience with newer, cleaner, and more comfortable vehicles. The authority also provides paratransit services for elderly and disabled riders, completing over 8,000 trips per month on demand-responsive vehicles that operate throughout the service area.",
+      "all_claims": [
+        {
+          "text": "The agency began operations in 1962",
+          "matches_filter": true
+        },
+        {
+          "text": "Operates 380 vehicles across 52 routes",
+          "matches_filter": false
+        },
+        {
+          "text": "Carrying approximately 75,000 passengers daily",
+          "matches_filter": false
+        },
+        {
+          "text": "A major system redesign in 2017 consolidated underperforming routes",
+          "matches_filter": true
+        },
+        {
+          "text": "Annual budget is $230 million",
+          "matches_filter": false
+        },
+        {
+          "text": "In January 2023, the authority introduced contactless payment",
+          "matches_filter": true
+        },
+        {
+          "text": "Employs 150 technicians",
+          "matches_filter": false
+        },
+        {
+          "text": "Ridership recovered to 90 percent of pre-pandemic levels by mid-2024",
+          "matches_filter": true
+        },
+        {
+          "text": "All new purchases after 2026 to be zero-emission vehicles",
+          "matches_filter": true
+        },
+        {
+          "text": "Average fleet age is 7.2 years",
+          "matches_filter": false
+        },
+        {
+          "text": "Paratransit services complete over 8,000 trips per month",
+          "matches_filter": false
+        },
+        {
+          "text": "55 percent of the budget is covered by fare revenue",
+          "matches_filter": false
+        },
+        {
+          "text": "Vehicles are serviced on a 6,000-mile inspection cycle",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "The agency began operations in 1962||A major system redesign in 2017 consolidated underperforming routes||In January 2023, the authority introduced contactless payment||Ridership recovered to 90 percent of pre-pandemic levels by mid-2024||All new purchases after 2026 to be zero-emission vehicles",
+      "gold_count": 5
+    },
+    {
+      "id": "AS-DAT-005",
+      "category": "dates",
+      "filter_criterion": "Extract ONLY claims that mention specific dates, years, or time periods. Do not include claims that mention numbers in other contexts (such as quantities, measurements, or rankings).",
+      "document": "Pinnacle Software Solutions grew from a small startup to one of the region's largest technology employers in just two decades, a trajectory that reflects both the founders' technical vision and their ability to adapt to shifting market demands in a rapidly evolving industry. The company's story is often cited in business school case studies as an example of how deep technical expertise combined with strategic thinking can create outsized success in enterprise technology markets. The company was incorporated in 2004 by two former university researchers who developed a novel approach to database optimization that dramatically reduced query processing times for large enterprise systems, solving a problem that major corporations were willing to pay significant premiums to address. First-year revenue was a modest $180,000, generated primarily from consulting engagements with local businesses that needed help managing growing data volumes but could not afford the enterprise solutions offered by larger vendors. The founders reinvested nearly all early profits back into research and product development rather than personal compensation, a discipline that laid the groundwork for future growth. The company secured Series A funding of $3.5 million in 2008 from a prominent venture capital firm, enabling Pinnacle to hire its first dedicated sales team and begin marketing its flagship product nationally through conferences, online campaigns, and strategic partnerships with system integrators. Pinnacle's workforce expanded to 1,200 employees across four offices, with the majority based at the headquarters campus and satellite teams in three other cities handling regional sales and client support. A landmark contract with the federal government in 2014 boosted annual revenue past $100 million for the first time, establishing Pinnacle as a credible player in the competitive government technology space where security requirements and compliance demands create high barriers to entry. The company maintains a culture of continuous learning, offering every employee an annual stipend for professional development courses and certifications that keep skills current. The company relocated its headquarters to a purpose-built campus in 2019, featuring 25,000 square meters of office space along with recreational facilities, a cafeteria, and an on-site childcare center designed to support employee retention. Research and development spending accounts for 18 percent of revenue, well above the industry average of 12 percent, reflecting management's conviction that sustained innovation is the key to long-term competitiveness. In 2022, Pinnacle acquired a cybersecurity startup for $28 million, diversifying into the security market and adding threat detection capabilities to its product portfolio that customers increasingly demanded as cyberattacks grew more sophisticated. The company holds 47 active patents covering innovations in data compression, query optimization, and distributed computing, an intellectual property portfolio that provides both competitive advantage and licensing revenue. A planned IPO is expected in the second quarter of 2026, with an estimated valuation of $1.2 billion, which would make it the largest technology offering in the state's history and reward the early investors and employees who believed in the company's potential.",
+      "all_claims": [
+        {
+          "text": "The company was incorporated in 2004",
+          "matches_filter": true
+        },
+        {
+          "text": "First-year revenue was $180,000",
+          "matches_filter": false
+        },
+        {
+          "text": "Secured Series A funding of $3.5 million in 2008",
+          "matches_filter": true
+        },
+        {
+          "text": "Workforce expanded to 1,200 employees",
+          "matches_filter": false
+        },
+        {
+          "text": "A landmark contract with the federal government in 2014",
+          "matches_filter": true
+        },
+        {
+          "text": "Relocated its headquarters in 2019",
+          "matches_filter": true
+        },
+        {
+          "text": "R&D spending accounts for 18 percent of revenue",
+          "matches_filter": false
+        },
+        {
+          "text": "In 2022, Pinnacle acquired a cybersecurity startup",
+          "matches_filter": true
+        },
+        {
+          "text": "Holds 47 active patents",
+          "matches_filter": false
+        },
+        {
+          "text": "A planned IPO is expected in the second quarter of 2026",
+          "matches_filter": true
+        },
+        {
+          "text": "The headquarters campus features 25,000 square meters of office space",
+          "matches_filter": false
+        },
+        {
+          "text": "The acquisition cost $28 million",
+          "matches_filter": false
+        },
+        {
+          "text": "Industry average R&D spending is 12 percent of revenue",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "The company was incorporated in 2004||Secured Series A funding in 2008||A landmark contract with the federal government in 2014||Relocated its headquarters in 2019||In 2022, Pinnacle acquired a cybersecurity startup||A planned IPO is expected in the second quarter of 2026",
+      "gold_count": 6
+    },
+    {
+      "id": "AS-ATT-001",
+      "category": "attributed",
+      "filter_criterion": "Extract ONLY claims that are directly attributed to a specific named person (e.g., 'Dr. Smith said...' or 'According to Mayor Jones...'). Do not include unattributed facts or organizational statements.",
+      "document": "A proposal to convert a former industrial site into a mixed-use development has sparked debate in the town of Crestwood, dividing residents, business owners, and elected officials along lines that reflect deeper tensions about the community's future direction and identity. The project has generated more public comment than any land use proposal in the town's recent history, with packed meeting rooms and a steady stream of letters to the local newspaper reflecting the intensity of feelings on both sides. The 15-acre site on River Street housed a textile factory for over 80 years before closing in 2018, leaving behind both contaminated soil and a sense of economic loss that still lingers in the neighborhood where generations of families earned their livelihoods. Developer Marcus Webb described the project as 'a once-in-a-generation opportunity to revitalize the waterfront,' emphasizing that the development would bring new jobs and tax revenue to a town that has struggled economically since the factory closure and seen its commercial district decline as businesses relocate to neighboring communities. The proposed development would include 200 residential units and 15,000 square feet of retail space, with a mix of market-rate and affordable housing intended to appeal to a broad cross-section of the community and meet the town's obligation under state affordable housing mandates. Environmental consultant Dr. Patricia Hale cautioned that soil contamination levels at the site exceed state safety thresholds by a factor of three, raising serious questions about the feasibility and cost of making the land safe for residential use, particularly for families with young children who are more vulnerable to toxic exposures. The town planning board will vote on the proposal next month after completing its review of the environmental impact assessment and traffic study, a timeline that opponents have criticized as rushed given the complexity of the issues involved. Neighborhood resident and activist Linda Torres stated that current residents fear displacement due to rising property values, noting that several longtime renters have already received notices of lease termination in anticipation of the project and that similar developments in other towns have led to dramatic rent increases. Traffic studies project an increase of 1,400 vehicle trips per day on roads that already experience congestion during peak hours, straining intersections that the town's public works department has identified as needing upgrades. Mayor Robert Chen expressed support, calling the project 'essential for our economic future and tax base,' and arguing that the town cannot afford to let the site remain vacant indefinitely while neighboring communities attract investment and grow their tax bases. The estimated cost of environmental remediation is $8.5 million, a figure that the developer has pledged to cover but that skeptics worry could escalate significantly once excavation reveals the full extent of contamination. Council member James Okafor warned that the town's infrastructure, particularly its aging sewer system, cannot handle the additional load without significant upgrades costing taxpayers millions of dollars. The project timeline envisions construction beginning within eighteen months if all approvals are secured, with the first residents moving in approximately three years from now.",
+      "all_claims": [
+        {
+          "text": "The 15-acre site housed a textile factory for over 80 years",
+          "matches_filter": false
+        },
+        {
+          "text": "Developer Marcus Webb described the project as 'a once-in-a-generation opportunity to revitalize the waterfront'",
+          "matches_filter": true
+        },
+        {
+          "text": "The proposed development would include 200 residential units and 15,000 square feet of retail space",
+          "matches_filter": false
+        },
+        {
+          "text": "Dr. Patricia Hale cautioned that soil contamination levels exceed state safety thresholds by a factor of three",
+          "matches_filter": true
+        },
+        {
+          "text": "The town planning board will vote on the proposal next month",
+          "matches_filter": false
+        },
+        {
+          "text": "Linda Torres stated that current residents fear displacement due to rising property values",
+          "matches_filter": true
+        },
+        {
+          "text": "Traffic studies project an increase of 1,400 vehicle trips per day",
+          "matches_filter": false
+        },
+        {
+          "text": "Mayor Robert Chen called the project 'essential for our economic future and tax base'",
+          "matches_filter": true
+        },
+        {
+          "text": "The estimated cost of environmental remediation is $8.5 million",
+          "matches_filter": false
+        },
+        {
+          "text": "Council member James Okafor warned that the town's infrastructure cannot handle the additional load",
+          "matches_filter": true
+        },
+        {
+          "text": "The factory closed in 2018",
+          "matches_filter": false
+        },
+        {
+          "text": "Construction is envisioned to begin within eighteen months",
+          "matches_filter": false
+        },
+        {
+          "text": "Several longtime renters have already received lease termination notices",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Developer Marcus Webb described the project as 'a once-in-a-generation opportunity to revitalize the waterfront'||Dr. Patricia Hale cautioned that soil contamination levels exceed state safety thresholds by a factor of three||Linda Torres stated that current residents fear displacement due to rising property values||Mayor Robert Chen called the project 'essential for our economic future and tax base'||Council member James Okafor warned that the town's infrastructure cannot handle the additional load",
+      "gold_count": 5
+    },
+    {
+      "id": "AS-ATT-002",
+      "category": "attributed",
+      "filter_criterion": "Extract ONLY claims that are directly attributed to a specific named person (e.g., 'Dr. Smith said...' or 'According to Mayor Jones...'). Do not include unattributed facts or organizational statements.",
+      "document": "The annual report on regional air quality revealed mixed results for the Valleyfield metropolitan area, highlighting both incremental progress and persistent challenges that public health officials say require urgent attention before the region's air quality problems cause irreversible health damage to vulnerable populations. The report, compiled by a team of atmospheric scientists and epidemiologists over an eight-month period, drew on data from monitoring stations positioned across the metropolitan area as well as satellite observations and hospital records. Ozone levels remained above federal standards for the third consecutive year, continuing a troubling pattern that has placed the region on a list of areas requiring additional regulatory oversight and potentially triggering mandatory emission reduction measures. Dr. Susan Patel, the lead researcher, noted that 'vehicle emissions continue to be the primary driver of ground-level ozone formation despite improvements in fuel efficiency,' pointing to the region's heavy reliance on personal automobiles and relatively limited public transit options that leave residents with few alternatives to driving. The region recorded 28 days exceeding the ozone threshold, compared to 35 the previous year, a modest improvement that researchers attributed partly to cooler-than-average summer temperatures rather than any fundamental change in emission patterns. Industrial emissions decreased by 12 percent following the closure of the Kendall refinery, which had been one of the largest single-point sources of volatile organic compounds in the region and the subject of numerous regulatory enforcement actions over its decades of operation. EPA Regional Director Thomas Grant stated that Valleyfield 'must accelerate its transition to cleaner transportation or face potential sanctions,' warning that continued noncompliance could jeopardize federal highway funding that the region depends on for road maintenance and capacity improvements. Particulate matter concentrations averaged 22 micrograms per cubic meter, within acceptable limits but still elevated compared to rural areas outside the metropolitan zone and a source of concern for residents with respiratory conditions. Local activist Maria Chen argued that the report understates health risks to communities near the highway corridor, where truck traffic has increased substantially due to warehouse construction and where residents report persistent respiratory symptoms at rates far above those in other neighborhoods. Asthma hospitalization rates in the area are 40 percent above the state average, a disparity that disproportionately affects children and the elderly and that public health advocates attribute to chronic exposure to traffic-related pollutants. Meteorologist Dr. Alan Fischer pointed out that unusual wind patterns during the summer months may have temporarily improved readings, cautioning against interpreting the data as evidence of lasting improvement when meteorological variability can mask underlying emission trends. The county health department recommends outdoor activity restrictions when air quality index values exceed 150, a threshold that was crossed on multiple occasions during the study period and that affects school recess schedules, outdoor workers, and athletic events. Air quality monitoring stations in the region operate continuously, collecting data at fifteen-minute intervals that are available to the public through an online dashboard.",
+      "all_claims": [
+        {
+          "text": "Ozone levels remained above federal standards for the third consecutive year",
+          "matches_filter": false
+        },
+        {
+          "text": "Dr. Susan Patel noted that 'vehicle emissions continue to be the primary driver of ground-level ozone formation'",
+          "matches_filter": true
+        },
+        {
+          "text": "The region recorded 28 days exceeding the ozone threshold",
+          "matches_filter": false
+        },
+        {
+          "text": "Industrial emissions decreased by 12 percent",
+          "matches_filter": false
+        },
+        {
+          "text": "EPA Regional Director Thomas Grant stated that Valleyfield 'must accelerate its transition to cleaner transportation'",
+          "matches_filter": true
+        },
+        {
+          "text": "Particulate matter concentrations averaged 22 micrograms per cubic meter",
+          "matches_filter": false
+        },
+        {
+          "text": "Maria Chen argued that the report understates health risks to communities near the highway corridor",
+          "matches_filter": true
+        },
+        {
+          "text": "Asthma hospitalization rates are 40 percent above the state average",
+          "matches_filter": false
+        },
+        {
+          "text": "Dr. Alan Fischer pointed out that unusual wind patterns may have temporarily improved readings",
+          "matches_filter": true
+        },
+        {
+          "text": "The county health department recommends outdoor activity restrictions",
+          "matches_filter": false
+        },
+        {
+          "text": "Air quality monitoring stations collect data at fifteen-minute intervals",
+          "matches_filter": false
+        },
+        {
+          "text": "Truck traffic near the highway corridor has increased due to warehouse construction",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Dr. Susan Patel noted that vehicle emissions continue to be the primary driver of ground-level ozone formation||EPA Regional Director Thomas Grant stated that Valleyfield must accelerate its transition to cleaner transportation||Maria Chen argued that the report understates health risks to communities near the highway corridor||Dr. Alan Fischer pointed out that unusual wind patterns may have temporarily improved readings",
+      "gold_count": 4
+    },
+    {
+      "id": "AS-ATT-003",
+      "category": "attributed",
+      "filter_criterion": "Extract ONLY claims that are directly attributed to a specific named person (e.g., 'Dr. Smith said...' or 'According to Mayor Jones...'). Do not include unattributed facts or organizational statements.",
+      "document": "A new study on remote work productivity has produced findings that challenge conventional assumptions about where and how knowledge workers perform best, injecting empirical evidence into a debate that has largely been driven by anecdotes and competing corporate philosophies. The research has attracted attention from human resources professionals, executives, and labor economists who are seeking data-driven guidance as companies finalize their long-term work arrangement policies. The research surveyed 5,200 employees across 14 companies over a two-year period, using a combination of self-reported productivity metrics, manager evaluations, and objective output measures such as code commits, sales figures, and project completion rates. Lead author Professor David Kim concluded that 'fully remote workers showed 7 percent higher productivity on individual tasks but 15 percent lower productivity on collaborative projects,' a finding that underscores the nuanced reality behind the binary debate over office versus remote work and suggests that the optimal approach depends on the nature of the work being performed. The study controlled for industry, role type, and experience level to isolate the effect of work location from other confounding variables that might otherwise distort the results. Company executives had mixed reactions to the findings, often interpreting them through the lens of their own organizational experiences. CEO of TechForward Sarah Mitchell said remote work has 'fundamentally improved our ability to attract top talent from across the country,' noting that her company's applicant pool expanded by a factor of five after adopting a remote-first policy and that new hires report higher job satisfaction than those recruited under the previous in-office model. In contrast, COO of BuildRight Industries Mark Petrov argued that 'nothing replaces the spontaneous problem-solving that happens in a shared physical space,' citing multiple examples of breakthrough product ideas that originated from unplanned hallway conversations and whiteboard sessions that could not have occurred in a virtual environment. Employee satisfaction scores were 18 points higher among remote workers on a standardized workplace wellbeing index, a gap that was consistent across age groups, genders, and job functions. Dr. Rachel Simmons, an organizational psychologist not involved in the study, called the findings 'an important corrective to the oversimplified narrative that remote work is universally superior,' emphasizing that the optimal arrangement depends heavily on the nature of the work being performed and the organizational culture of the company. Hybrid arrangements with three in-office days per week showed the strongest combined productivity and satisfaction scores across all metrics, suggesting a middle path that captures benefits of both approaches while mitigating their respective drawbacks. The study's methodology has been accepted for peer review by the Journal of Organizational Behavior, lending additional credibility to findings that are likely to influence workplace policy for years to come. Companies participating in the study represented sectors including technology, finance, healthcare administration, and professional services, providing a broad sample that strengthens the generalizability of the results.",
+      "all_claims": [
+        {
+          "text": "The research surveyed 5,200 employees across 14 companies",
+          "matches_filter": false
+        },
+        {
+          "text": "Professor David Kim concluded that fully remote workers showed 7 percent higher productivity on individual tasks but 15 percent lower on collaborative projects",
+          "matches_filter": true
+        },
+        {
+          "text": "The study controlled for industry, role type, and experience level",
+          "matches_filter": false
+        },
+        {
+          "text": "CEO Sarah Mitchell said remote work has fundamentally improved their ability to attract top talent",
+          "matches_filter": true
+        },
+        {
+          "text": "COO Mark Petrov argued that nothing replaces spontaneous problem-solving in a shared physical space",
+          "matches_filter": true
+        },
+        {
+          "text": "Employee satisfaction scores were 18 points higher among remote workers",
+          "matches_filter": false
+        },
+        {
+          "text": "Dr. Rachel Simmons called the findings an important corrective to the oversimplified narrative",
+          "matches_filter": true
+        },
+        {
+          "text": "Hybrid arrangements with three in-office days showed the strongest combined scores",
+          "matches_filter": false
+        },
+        {
+          "text": "The study's methodology has been accepted for peer review",
+          "matches_filter": false
+        },
+        {
+          "text": "Companies represented technology, finance, healthcare administration, and professional services",
+          "matches_filter": false
+        },
+        {
+          "text": "The study used self-reported metrics, manager evaluations, and objective output measures",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Professor David Kim concluded that fully remote workers showed higher productivity on individual tasks but lower on collaborative projects||CEO Sarah Mitchell said remote work has fundamentally improved their ability to attract top talent||COO Mark Petrov argued that nothing replaces spontaneous problem-solving in a shared physical space||Dr. Rachel Simmons called the findings an important corrective to the oversimplified narrative",
+      "gold_count": 4
+    },
+    {
+      "id": "AS-ATT-004",
+      "category": "attributed",
+      "filter_criterion": "Extract ONLY claims that are directly attributed to a specific named person (e.g., 'Dr. Smith said...' or 'According to Mayor Jones...'). Do not include unattributed facts or organizational statements.",
+      "document": "The regional hospital system announced plans to open a new emergency department to address growing patient volumes that have strained the existing facility beyond its operational limits, creating conditions that staff describe as unsafe and unsustainable. The announcement came after months of internal deliberation and public pressure from physicians, nurses, and community advocates who warned that the status quo puts lives at risk. The existing facility handles approximately 65,000 emergency visits per year, well above its designed capacity of 45,000, resulting in overcrowding that compromises patient care and staff morale as clinicians struggle to provide adequate attention in hallways and waiting areas. Chief Medical Officer Dr. Angela Reeves stated that 'wait times have become unacceptable, with some patients waiting over six hours for evaluation,' describing situations where patients in non-critical condition are routinely sent home and asked to return the following day because there is simply no space to treat them. The new facility will add 48 treatment bays and a dedicated pediatric emergency area equipped with child-friendly diagnostic equipment and specially trained nursing staff who can address the unique needs of young patients and their anxious families. Construction costs are estimated at $120 million, to be financed through a combination of municipal bonds and a capital campaign targeting major donors in the community who have been approached individually by hospital leadership. Hospital board chair William Nakamura emphasized that 'this investment is essential to meeting our community's growing healthcare needs,' noting that the region's population has increased by 15 percent over the past decade without a corresponding expansion in emergency medical infrastructure, creating a gap that only continues to widen. Critics have questioned the project's financial viability given the hospital's existing $340 million in long-term debt, a burden that already consumes a significant portion of annual operating revenue and limits the institution's ability to invest in other priorities such as outpatient services and physician recruitment. Nurse practitioner coordinator Jennifer Walsh expressed concern that 'expanding physical space without addressing staffing shortages will not solve the underlying problem,' pointing to recruitment challenges that have left dozens of positions unfilled for months as competing hospitals offer signing bonuses and flexible schedules. The hospital currently has 47 unfilled nursing positions, a vacancy rate that exceeds the national average for comparable institutions and forces existing staff to work overtime shifts that contribute to burnout and turnover. According to health economist Dr. Raymond Torres, 'the real solution lies in expanding primary care access to reduce preventable emergency visits,' arguing that investments in community health centers and urgent care clinics would yield better long-term outcomes at lower cost by addressing health problems before they become emergencies. The new department is expected to open in early 2028 following an 18-month construction period that will require careful phasing to avoid disrupting current emergency operations. The architectural design incorporates separate entrances for ambulance arrivals and walk-in patients to improve workflow efficiency and reduce the confusion that currently results from all patients entering through a single congested entrance.",
+      "all_claims": [
+        {
+          "text": "The existing facility handles approximately 65,000 emergency visits per year",
+          "matches_filter": false
+        },
+        {
+          "text": "Dr. Angela Reeves stated that wait times have become unacceptable, with some patients waiting over six hours",
+          "matches_filter": true
+        },
+        {
+          "text": "The new facility will add 48 treatment bays",
+          "matches_filter": false
+        },
+        {
+          "text": "Construction costs are estimated at $120 million",
+          "matches_filter": false
+        },
+        {
+          "text": "William Nakamura emphasized that this investment is essential to meeting community healthcare needs",
+          "matches_filter": true
+        },
+        {
+          "text": "The hospital has $340 million in long-term debt",
+          "matches_filter": false
+        },
+        {
+          "text": "Jennifer Walsh expressed concern that expanding physical space without addressing staffing shortages will not solve the problem",
+          "matches_filter": true
+        },
+        {
+          "text": "The hospital has 47 unfilled nursing positions",
+          "matches_filter": false
+        },
+        {
+          "text": "Dr. Raymond Torres said the real solution lies in expanding primary care access",
+          "matches_filter": true
+        },
+        {
+          "text": "The new department is expected to open in early 2028",
+          "matches_filter": false
+        },
+        {
+          "text": "The region's population has increased by 15 percent over the past decade",
+          "matches_filter": false
+        },
+        {
+          "text": "The architectural design includes separate entrances for ambulance and walk-in patients",
+          "matches_filter": false
+        },
+        {
+          "text": "The existing facility's designed capacity is 45,000 visits per year",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Dr. Angela Reeves stated that wait times have become unacceptable||William Nakamura emphasized that this investment is essential to meeting community healthcare needs||Jennifer Walsh expressed concern that expanding physical space without addressing staffing shortages will not solve the problem||Dr. Raymond Torres said the real solution lies in expanding primary care access",
+      "gold_count": 4
+    },
+    {
+      "id": "AS-ATT-005",
+      "category": "attributed",
+      "filter_criterion": "Extract ONLY claims that are directly attributed to a specific named person (e.g., 'Dr. Smith said...' or 'According to Mayor Jones...'). Do not include unattributed facts or organizational statements.",
+      "document": "The city's public library system is facing a critical funding shortfall that may force branch closures, threatening access to educational resources in communities that depend on libraries as essential public institutions serving far more functions than simply lending books. The debate over library funding has become one of the most contentious issues in local politics, reflecting broader disagreements about the role of government, the value of public services, and how to balance competing demands on limited tax revenue. The current operating budget of $18 million represents a 15 percent decrease in real terms over the past decade, as flat allocations from the city's general fund have failed to keep pace with inflation and rising costs for digital subscriptions, building maintenance, and employee benefits that consume an ever-larger share of the budget. Library Director Catherine Park warned that 'without additional funding, we will be forced to close at least three of our twelve branches by the end of the fiscal year,' a scenario she described as devastating for neighborhoods where the library serves as both a community gathering place and a vital resource for job seekers, students, and immigrants learning English. Circulation statistics show that book checkouts have declined by 30 percent, while digital resource usage has increased by 200 percent, reflecting a broader shift in how patrons access information and entertainment that requires the library to invest in electronic platforms even as physical lending declines. City Councilwoman Diane Foster proposed a dedicated library tax levy that would generate $5 million annually, arguing that the modest cost per household would be far outweighed by the educational and social benefits that libraries provide to every segment of the community. Opponents of the tax, including taxpayer advocate Robert Hernandez, countered that 'residents are already overtaxed, and the library must find efficiencies rather than asking for more money,' suggesting that consolidating branches and expanding digital offerings could reduce costs without eliminating service for those who rely on physical locations. The library system employs 220 full-time and 85 part-time staff members, many of whom have expressed anxiety about potential layoffs and the impact on services that already struggle to meet demand during peak hours. According to Professor Eleanor Watts, a public administration expert at the state university, 'libraries that successfully navigate funding challenges are those that redefine their role as community innovation hubs,' pointing to examples of library systems that have added maker spaces, small business incubators, and workforce development programs that generate both community value and political support. The American Library Association reports that 64 percent of public libraries nationwide face similar funding pressures, suggesting that the challenges confronting the city's system are part of a systemic pattern rather than a local anomaly. Branch closures would affect an estimated 45,000 registered users in underserved neighborhoods where residents have fewer alternatives for internet access, study space, and community programming. The library system's strategic plan includes potential revenue from room rentals, corporate sponsorships, and fee-based technology training workshops that could offset some of the funding gap without requiring new tax revenue.",
+      "all_claims": [
+        {
+          "text": "Current operating budget of $18 million, 15 percent decrease over the past decade",
+          "matches_filter": false
+        },
+        {
+          "text": "Library Director Catherine Park warned that without additional funding, at least three branches will close",
+          "matches_filter": true
+        },
+        {
+          "text": "Book checkouts have declined by 30 percent, digital resource usage increased by 200 percent",
+          "matches_filter": false
+        },
+        {
+          "text": "Councilwoman Diane Foster proposed a dedicated library tax levy generating $5 million annually",
+          "matches_filter": true
+        },
+        {
+          "text": "Robert Hernandez countered that residents are already overtaxed and the library must find efficiencies",
+          "matches_filter": true
+        },
+        {
+          "text": "The library system employs 220 full-time and 85 part-time staff members",
+          "matches_filter": false
+        },
+        {
+          "text": "Professor Eleanor Watts said libraries that successfully navigate funding challenges redefine their role as community innovation hubs",
+          "matches_filter": true
+        },
+        {
+          "text": "64 percent of public libraries nationwide face similar funding pressures",
+          "matches_filter": false
+        },
+        {
+          "text": "Branch closures would affect 45,000 registered users",
+          "matches_filter": false
+        },
+        {
+          "text": "The library system has twelve branches",
+          "matches_filter": false
+        },
+        {
+          "text": "The strategic plan includes potential revenue from room rentals and corporate sponsorships",
+          "matches_filter": false
+        },
+        {
+          "text": "The library serves as a resource for job seekers and students",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Library Director Catherine Park warned that without additional funding, at least three branches will close||Councilwoman Diane Foster proposed a dedicated library tax levy||Robert Hernandez countered that residents are already overtaxed and the library must find efficiencies||Professor Eleanor Watts said libraries that successfully navigate funding challenges redefine their role as community innovation hubs",
+      "gold_count": 4
+    },
+    {
+      "id": "AS-NUM-001",
+      "category": "numerical",
+      "filter_criterion": "Extract ONLY claims that contain specific numerical measurements, quantities, or statistics (e.g., percentages, dollar amounts, counts, distances). Do not include claims that are purely qualitative or temporal.",
+      "document": "The Silverbrook School District released its annual performance report, highlighting both achievements and areas of concern across its network of elementary, middle, and high schools that serve a diverse student population drawn from urban, suburban, and rural communities within the district's boundaries. The report, presented at a public board meeting attended by parents, teachers, and community members, provided a comprehensive overview of academic performance, staffing trends, facility conditions, and program developments. Graduation rates reached a record high, driven by the implementation of new mentoring programs and expanded tutoring services that provided struggling students with additional academic support during and after school hours. The district's average class size has remained stable, providing a consistent learning environment that teachers say allows them to give adequate individual attention to students without the overcrowding that plagues neighboring districts. A significant investment in technology has placed interactive displays in every classroom across the district, replacing outdated projectors and chalkboards with tools that support multimedia instruction and engage students who have grown up with digital interfaces. Teacher retention improved markedly, which administrators attribute to a revised compensation structure and improved working conditions including updated faculty lounges, reduced administrative paperwork, and greater input into curriculum decisions that affect daily classroom practice. Reading proficiency among third graders showed meaningful progress, though math scores in middle school continue to lag behind state benchmarks, a gap that has persisted for several years despite targeted interventions including additional professional development for math teachers and after-school tutoring programs. The district added several new extracurricular programs, including robotics and environmental science clubs that have become popular among students and have drawn praise from parents who see them as valuable preparation for future careers in science and technology. Community partnerships have strengthened, with local businesses providing internship opportunities for high school juniors and seniors, giving students real-world experience in fields such as healthcare, manufacturing, and information technology while building connections that sometimes lead to post-graduation employment. Special education services were expanded following feedback from parent advocacy groups who argued that existing resources were insufficient to meet the needs of students with learning disabilities and behavioral challenges who deserve the same attention and opportunity as their peers. The school board approved a long-term facilities plan that prioritizes seismic retrofitting and energy efficiency improvements across aging campuses, reflecting growing concerns about building safety and the district's environmental footprint in a region where earthquakes and rising energy costs are ongoing concerns. The superintendent expressed confidence that the district is moving in the right direction despite the challenges that remain, pointing to the overall trajectory of improvement across multiple indicators as evidence that the strategies being pursued are beginning to yield results.",
+      "all_claims": [
+        {
+          "text": "Graduation rates reached a record high",
+          "matches_filter": false
+        },
+        {
+          "text": "Implementation of new mentoring programs and expanded tutoring services",
+          "matches_filter": false
+        },
+        {
+          "text": "Average class size has remained stable",
+          "matches_filter": false
+        },
+        {
+          "text": "Interactive displays placed in every classroom",
+          "matches_filter": false
+        },
+        {
+          "text": "Teacher retention improved markedly",
+          "matches_filter": false
+        },
+        {
+          "text": "Reading proficiency among third graders showed meaningful progress",
+          "matches_filter": false
+        },
+        {
+          "text": "Math scores in middle school continue to lag behind state benchmarks",
+          "matches_filter": false
+        },
+        {
+          "text": "Added robotics and environmental science clubs",
+          "matches_filter": false
+        },
+        {
+          "text": "Local businesses providing internship opportunities for juniors and seniors",
+          "matches_filter": false
+        },
+        {
+          "text": "Special education services were expanded",
+          "matches_filter": false
+        },
+        {
+          "text": "Facilities plan prioritizes seismic retrofitting and energy efficiency",
+          "matches_filter": false
+        },
+        {
+          "text": "Community partnerships have strengthened with local businesses",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "",
+      "gold_count": 0
+    },
+    {
+      "id": "AS-NUM-002",
+      "category": "numerical",
+      "filter_criterion": "Extract ONLY claims that contain specific numerical measurements, quantities, or statistics (e.g., percentages, dollar amounts, counts, distances). Do not include claims that are purely qualitative or temporal.",
+      "document": "The Lakeside Convention Center has become a significant economic engine for the surrounding community, drawing visitors from across the region and generating substantial revenue for hotels, restaurants, and local retailers who depend on the steady flow of event attendees throughout the year. Located on a scenic waterfront site that was redeveloped from a former industrial area, the center combines modern event infrastructure with an attractive setting that gives it a competitive edge over inland alternatives. The facility hosts approximately 180 events per year, ranging from trade shows and corporate conferences to consumer expos and cultural festivals that attract diverse audiences and keep the venue in near-constant use. Total annual attendance across all events reaches 420,000 visitors, a figure that has grown steadily as the center has expanded its marketing efforts and improved its amenities to meet the evolving expectations of event organizers and attendees. The convention center generates an estimated $67 million in economic impact for the region, including hotel stays, dining, and transportation spending that ripples through the local economy and supports businesses far beyond the immediate vicinity of the facility. The facility employs 340 full-time staff and hires an additional 200 temporary workers during peak season to handle the increased demands of large-scale events that can require hundreds of setup and service personnel. Its main exhibition hall covers 28,000 square meters, making it the largest indoor event space in the tri-state area and capable of accommodating events that smaller venues simply cannot host, giving the center access to a market segment with limited competition. The center's hotel partnerships guarantee a block of 1,500 rooms at discounted rates for event organizers, a benefit that has proven to be a decisive factor for many conference planners choosing between competing venues in the region. Operating revenue last year was $42 million, with a net surplus of $3.8 million that was reinvested into capital improvements including upgraded audiovisual systems, modernized restroom facilities, and enhanced wireless internet infrastructure that attendees increasingly expect. Energy costs account for 22 percent of the operating budget, a figure that management is working to reduce through LED lighting retrofits and a rooftop solar installation currently under construction. A recent customer satisfaction survey showed that 87 percent of event organizers rated their experience as excellent or very good, placing the center above the national average for facilities of comparable size and validating the recent investments in service quality. The center's food service operation serves an average of 12,000 meals per week during busy months, prepared by an on-site culinary team that offers customizable menus for events of all sizes and dietary requirements. The convention center also features a landscaped outdoor terrace that is popular for receptions and networking events, offering views of the waterfront that have become a signature element of the venue's appeal.",
+      "all_claims": [
+        {
+          "text": "Hosts approximately 180 events per year",
+          "matches_filter": true
+        },
+        {
+          "text": "Total annual attendance reaches 420,000 visitors",
+          "matches_filter": true
+        },
+        {
+          "text": "Generates an estimated $67 million in economic impact",
+          "matches_filter": true
+        },
+        {
+          "text": "Employs 340 full-time staff and 200 temporary workers",
+          "matches_filter": true
+        },
+        {
+          "text": "Main exhibition hall covers 28,000 square meters",
+          "matches_filter": true
+        },
+        {
+          "text": "Guarantees a block of 1,500 rooms at discounted rates",
+          "matches_filter": true
+        },
+        {
+          "text": "Operating revenue was $42 million, with a net surplus of $3.8 million",
+          "matches_filter": true
+        },
+        {
+          "text": "Energy costs account for 22 percent of the operating budget",
+          "matches_filter": true
+        },
+        {
+          "text": "87 percent of event organizers rated their experience as excellent or very good",
+          "matches_filter": true
+        },
+        {
+          "text": "Food service serves an average of 12,000 meals per week",
+          "matches_filter": true
+        },
+        {
+          "text": "The center is the largest indoor event space in the tri-state area",
+          "matches_filter": false
+        },
+        {
+          "text": "The center features a landscaped outdoor terrace for receptions",
+          "matches_filter": false
+        },
+        {
+          "text": "Capital improvements included upgraded audiovisual systems",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Hosts approximately 180 events per year||Total annual attendance reaches 420,000 visitors||Generates an estimated $67 million in economic impact||Employs 340 full-time staff and 200 temporary workers||Main exhibition hall covers 28,000 square meters||Guarantees a block of 1,500 rooms||Operating revenue was $42 million, with a net surplus of $3.8 million||Energy costs account for 22 percent of the operating budget||87 percent of event organizers rated their experience as excellent or very good||Food service serves an average of 12,000 meals per week",
+      "gold_count": 10
+    },
+    {
+      "id": "AS-NUM-003",
+      "category": "numerical",
+      "filter_criterion": "Extract ONLY claims that contain specific numerical measurements, quantities, or statistics (e.g., percentages, dollar amounts, counts, distances). Do not include claims that are purely qualitative or temporal.",
+      "document": "The regional transportation authority published its annual safety report for the commuter rail network, providing a detailed assessment of operational performance, incident trends, and infrastructure investments aimed at improving the system's reliability and safety record for the thousands of daily riders who depend on it. The report represents the most comprehensive evaluation the authority has undertaken, incorporating data from every station, line, and maintenance facility in the system. Total ridership recovered strongly, with passenger trips reaching 34 million, a 12 percent increase over the previous year that officials attributed to the return of commuters and the launch of several promotional fare programs designed to attract new riders. The network recorded 7 reportable safety incidents, down from 11 the prior year, a decline that the authority's safety director called encouraging but cautioned against complacency given the serious consequences of any rail incident. Average on-time performance stood at 91.4 percent across all 8 lines, meeting the authority's internal benchmark but falling short of the aspirational target of 95 percent that the board had set as a long-term goal for the system. The authority spent $14.2 million on track maintenance and signal upgrades, with a particular focus on replacing aging switches and crossovers that have been a recurring source of delays and safety concerns. Customer complaints fell by 28 percent following the introduction of a real-time tracking app that allows riders to check train positions and estimated arrival times from their smartphones, reducing the frustration that comes from waiting without information. The fleet consists of 186 rail cars, of which 24 are scheduled for retirement within two years as new rolling stock is delivered from the manufacturer, featuring improved accessibility, better climate control, and modernized interiors. Platform gap measurements at 4 stations exceeded the 75-millimeter safety threshold, prompting the authority to install temporary gap fillers while permanent platform modifications are designed and funded through the capital improvement program. Employee injury rates declined to 3.1 per 100 workers, the lowest level since tracking began, a result attributed to enhanced safety training programs and improved equipment that reduces repetitive strain injuries among maintenance crews. Grade crossing incidents remained a concern, with 5 vehicle-train collisions reported, all of which involved motorists ignoring warning signals and gate arms that were functioning properly at the time of the collision. Revenue from fares totaled $89 million, covering approximately 45 percent of operating costs, with the remainder funded through state subsidies and federal grants that require the authority to meet specific performance standards. The authority is also exploring the feasibility of extending service to two additional suburban communities where rapid residential development has created demand for rail connections to the urban core.",
+      "all_claims": [
+        {
+          "text": "Passenger trips reaching 34 million, a 12 percent increase",
+          "matches_filter": true
+        },
+        {
+          "text": "The network recorded 7 reportable safety incidents, down from 11",
+          "matches_filter": true
+        },
+        {
+          "text": "Average on-time performance stood at 91.4 percent across 8 lines",
+          "matches_filter": true
+        },
+        {
+          "text": "Spent $14.2 million on track maintenance and signal upgrades",
+          "matches_filter": true
+        },
+        {
+          "text": "Customer complaints fell by 28 percent",
+          "matches_filter": true
+        },
+        {
+          "text": "Fleet consists of 186 rail cars, 24 scheduled for retirement",
+          "matches_filter": true
+        },
+        {
+          "text": "Platform gap measurements at 4 stations exceeded the 75-millimeter safety threshold",
+          "matches_filter": true
+        },
+        {
+          "text": "Employee injury rates declined to 3.1 per 100 workers",
+          "matches_filter": true
+        },
+        {
+          "text": "5 vehicle-train collisions reported",
+          "matches_filter": true
+        },
+        {
+          "text": "Revenue from fares totaled $89 million, covering 45 percent of operating costs",
+          "matches_filter": true
+        },
+        {
+          "text": "The authority is exploring extending service to two additional communities",
+          "matches_filter": false
+        },
+        {
+          "text": "All grade crossing collisions involved motorists ignoring warning signals",
+          "matches_filter": false
+        },
+        {
+          "text": "The aspirational on-time performance target is 95 percent",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Passenger trips reaching 34 million, a 12 percent increase||7 reportable safety incidents, down from 11||On-time performance at 91.4 percent across 8 lines||$14.2 million on track maintenance||Customer complaints fell by 28 percent||186 rail cars, 24 scheduled for retirement||Platform gap measurements at 4 stations exceeded 75-millimeter threshold||Employee injury rates at 3.1 per 100 workers||5 vehicle-train collisions||Revenue $89 million, covering 45 percent of operating costs",
+      "gold_count": 10
+    },
+    {
+      "id": "AS-NUM-004",
+      "category": "numerical",
+      "filter_criterion": "Extract ONLY claims that contain specific numerical measurements, quantities, or statistics (e.g., percentages, dollar amounts, counts, distances). Do not include claims that are purely qualitative or temporal.",
+      "document": "The community garden movement in Bridgeport has grown substantially over the past several years, transforming vacant urban lots into productive green spaces that serve both agricultural and social purposes in neighborhoods that have long been underserved by conventional grocery retail. The program has received attention from urban planners and public health researchers who see it as a replicable model for addressing food insecurity and social isolation simultaneously. What began as a grassroots initiative organized by a handful of neighbors has evolved into a well-organized program supported by the parks department, which provides land, water hookups, and administrative oversight for the growing network of gardens scattered across the city's residential neighborhoods. Community members of all ages participate, from schoolchildren learning about plant biology to retirees who find purpose and companionship in tending their plots, creating an intergenerational space for learning and collaboration that bridges demographic divides. The gardens provide fresh produce to families who might otherwise lack access to healthy food options, addressing food insecurity in neighborhoods where grocery stores are scarce and convenience stores offer limited fresh selections that are often priced beyond what low-income families can afford. Local restaurants have begun sourcing herbs and specialty vegetables from the community plots, creating a mutually beneficial relationship that gives gardeners additional income and gives chefs access to hyper-local ingredients that appeal to diners seeking authenticity. Volunteer master gardeners offer free workshops on composting, pest management, and seasonal planting throughout the growing season, sharing expertise that helps novice gardeners succeed and reduces the frustration that often leads new participants to abandon their plots before the first harvest. The program has strengthened neighborhood bonds and reduced vandalism in areas where gardens have been established, a correlation that community organizers attribute to increased foot traffic and a greater sense of shared ownership that discourages destructive behavior. Schools have incorporated garden visits into their science curricula, giving students hands-on experience with plant biology and ecology that reinforces classroom instruction and gives abstract concepts tangible, memorable form. The city has designated additional vacant lots for future garden expansion in underserved neighborhoods, prioritizing areas with the highest rates of food insecurity as identified by public health data. Donations from local businesses fund tools, seeds, and irrigation infrastructure for new garden sites, ensuring that startup costs do not prevent communities from launching gardens even when municipal budgets are tight. The program has also attracted academic interest, with university researchers studying its effects on nutrition, mental health, and neighborhood cohesion through longitudinal studies that track participants over multiple growing seasons.",
+      "all_claims": [
+        {
+          "text": "The community garden movement has grown substantially",
+          "matches_filter": false
+        },
+        {
+          "text": "Began as a grassroots initiative, now supported by parks department",
+          "matches_filter": false
+        },
+        {
+          "text": "Community members of all ages participate",
+          "matches_filter": false
+        },
+        {
+          "text": "Gardens provide fresh produce to families",
+          "matches_filter": false
+        },
+        {
+          "text": "Local restaurants source herbs and specialty vegetables from community plots",
+          "matches_filter": false
+        },
+        {
+          "text": "Volunteer master gardeners offer free workshops",
+          "matches_filter": false
+        },
+        {
+          "text": "Program has strengthened neighborhood bonds and reduced vandalism",
+          "matches_filter": false
+        },
+        {
+          "text": "Schools incorporated garden visits into science curricula",
+          "matches_filter": false
+        },
+        {
+          "text": "City designated additional vacant lots for future expansion",
+          "matches_filter": false
+        },
+        {
+          "text": "Donations from local businesses fund tools, seeds, and irrigation",
+          "matches_filter": false
+        },
+        {
+          "text": "University researchers are studying effects on nutrition and mental health",
+          "matches_filter": false
+        },
+        {
+          "text": "Gardens are prioritized in areas with highest food insecurity rates",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "",
+      "gold_count": 0
+    },
+    {
+      "id": "AS-NUM-005",
+      "category": "numerical",
+      "filter_criterion": "Extract ONLY claims that contain specific numerical measurements, quantities, or statistics (e.g., percentages, dollar amounts, counts, distances). Do not include claims that are purely qualitative or temporal.",
+      "document": "The Ashford Regional Airport published its master plan update, projecting significant growth over the next fifteen years and outlining the infrastructure investments needed to accommodate increasing demand for both passenger and cargo services in a region that has experienced rapid population and economic expansion. The plan was developed over a two-year period with input from airlines, community groups, environmental organizations, and regional economic development agencies. Current annual passenger volume stands at 3.2 million, with projections reaching 5.1 million by 2040 based on demographic trends, airline expansion plans, and the region's growing attractiveness as a business and tourism destination. The airport operates 2 runways, the longer of which is 3,050 meters and capable of handling wide-body aircraft that serve transatlantic and transcontinental routes connecting the region to major international destinations. A proposed terminal expansion would add 12 new gates at a cost of $285 million, funded through a combination of airport revenue bonds, federal aviation grants, and passenger facility charges collected on every departing ticket. The airport generates approximately 8,400 direct jobs and supports an additional 15,000 indirect jobs in the surrounding economy, including positions in hotels, rental car agencies, restaurants, and logistics companies that together make the airport one of the region's largest employment centers. Cargo operations handle 42,000 metric tons of freight annually, with pharmaceutical shipments representing the fastest-growing category due to the region's expanding biotech industry that requires temperature-controlled air transport for time-sensitive products. Noise complaints from residents within a 5-kilometer radius have increased by 34 percent over five years, prompting the airport to establish a community liaison office and fund sound insulation programs for affected homes to maintain positive relationships with neighboring communities. The airport's carbon footprint is estimated at 180,000 metric tons of CO2 equivalent per year, a figure that management aims to reduce through ground vehicle electrification, renewable energy procurement, and operational efficiency improvements. A new ground transportation center would include 2,500 parking spaces and a direct rail link to downtown, projected to reduce vehicle traffic on access roads by 20 percent and improve the passenger arrival and departure experience significantly. Average flight delays at Ashford are 18 minutes, above the national average of 14 minutes, a gap attributed to runway capacity constraints during peak travel periods when arrival and departure schedules create congestion that ripples through the system. The airport authority has also committed to achieving carbon-neutral ground operations within the next decade, aligning with broader industry sustainability commitments and setting an example for other regional airports facing similar environmental pressures.",
+      "all_claims": [
+        {
+          "text": "Current annual passenger volume stands at 3.2 million",
+          "matches_filter": true
+        },
+        {
+          "text": "Projections reaching 5.1 million by 2040",
+          "matches_filter": true
+        },
+        {
+          "text": "Operates 2 runways, the longer at 3,050 meters",
+          "matches_filter": true
+        },
+        {
+          "text": "Terminal expansion would add 12 new gates at $285 million",
+          "matches_filter": true
+        },
+        {
+          "text": "Generates 8,400 direct jobs and 15,000 indirect jobs",
+          "matches_filter": true
+        },
+        {
+          "text": "Cargo operations handle 42,000 metric tons of freight annually",
+          "matches_filter": true
+        },
+        {
+          "text": "Noise complaints increased by 34 percent over five years",
+          "matches_filter": true
+        },
+        {
+          "text": "Carbon footprint estimated at 180,000 metric tons CO2 equivalent",
+          "matches_filter": true
+        },
+        {
+          "text": "Ground transportation center with 2,500 parking spaces, reducing vehicle traffic by 20 percent",
+          "matches_filter": true
+        },
+        {
+          "text": "Average flight delays are 18 minutes vs national average of 14 minutes",
+          "matches_filter": true
+        },
+        {
+          "text": "Pharmaceutical shipments are the fastest-growing cargo category",
+          "matches_filter": false
+        },
+        {
+          "text": "The airport established a community liaison office for noise concerns",
+          "matches_filter": false
+        },
+        {
+          "text": "The airport aims to achieve carbon-neutral ground operations within the next decade",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Passenger volume at 3.2 million||Projections reaching 5.1 million by 2040||2 runways, longer at 3,050 meters||12 new gates at $285 million||8,400 direct jobs and 15,000 indirect jobs||42,000 metric tons of freight annually||Noise complaints increased 34 percent||Carbon footprint 180,000 metric tons CO2||2,500 parking spaces, reducing traffic by 20 percent||Average delays 18 minutes vs national average 14 minutes",
+      "gold_count": 10
+    },
+    {
+      "id": "AS-ENT-001",
+      "category": "entity",
+      "filter_criterion": "Extract ONLY claims that specifically mention or describe 'Greenleaf Technologies.' Do not include claims about other companies, organizations, or general industry trends.",
+      "document": "The annual technology conference featured presentations from several leading firms in the renewable energy sector, drawing industry analysts, investors, and media attention to the latest innovations in solar, wind, and energy storage technologies that are reshaping the global energy landscape. Held at the Central Exhibition Hall over three days, the conference included keynote addresses, panel discussions, product demonstrations, and networking sessions that brought together professionals from across the clean energy value chain. Greenleaf Technologies unveiled its next-generation solar panel, which achieves 28 percent conversion efficiency, a figure that represents a significant leap over the company's previous models and positions it among the top performers in the industry for crystalline silicon technology. SolarMax Corporation announced a $500 million investment in manufacturing capacity in Arizona, aiming to reduce its dependence on overseas supply chains and create thousands of domestic jobs in a state that has actively courted clean energy manufacturers. Greenleaf Technologies also reported that its revenue grew 45 percent year-over-year, reaching $320 million, a growth rate that outpaced most of its competitors and reflected strong demand for its residential and commercial solar products in markets where utility rates continue to rise. The conference keynote addressed industry-wide supply chain challenges affecting semiconductor availability, a bottleneck that has forced several manufacturers to delay product launches and accept higher component costs that squeeze profit margins. BrightWatt Industries demonstrated a new battery storage system capable of powering a home for 72 hours, targeting markets in regions prone to grid instability and extreme weather events where backup power has become a necessity rather than a luxury. Greenleaf Technologies' CEO announced plans to expand into the European market by opening offices in Munich and Amsterdam, citing growing demand driven by the European Union's aggressive renewable energy targets that require member states to dramatically increase their solar capacity. Industry analysts project the global solar market to reach $400 billion by 2030, fueled by declining manufacturing costs, supportive government policies, and increasing consumer awareness of the economic benefits of distributed solar generation. Solaris Energy Solutions signed a partnership agreement with a major utility company to develop large-scale solar farms across the southwestern United States, a deal valued at several hundred million dollars. Greenleaf Technologies received the conference's Innovation Award for its breakthrough in perovskite cell design, a technology that could eventually reduce manufacturing costs by half while maintaining high efficiency, potentially making solar power accessible to markets that currently find it uneconomical. The event attracted over 12,000 attendees from 40 countries, making it the largest edition in the conference's history and reflecting the sector's rapid global expansion. Panel discussions covered topics ranging from grid modernization to workforce training needs in the rapidly expanding clean energy sector.",
+      "all_claims": [
+        {
+          "text": "Greenleaf Technologies unveiled a next-generation solar panel with 28 percent conversion efficiency",
+          "matches_filter": true
+        },
+        {
+          "text": "SolarMax Corporation announced a $500 million investment in Arizona",
+          "matches_filter": false
+        },
+        {
+          "text": "Greenleaf Technologies reported revenue grew 45 percent year-over-year, reaching $320 million",
+          "matches_filter": true
+        },
+        {
+          "text": "Industry-wide supply chain challenges affecting semiconductor availability",
+          "matches_filter": false
+        },
+        {
+          "text": "BrightWatt Industries demonstrated a battery storage system",
+          "matches_filter": false
+        },
+        {
+          "text": "Greenleaf Technologies' CEO announced plans to expand into the European market with offices in Munich and Amsterdam",
+          "matches_filter": true
+        },
+        {
+          "text": "Global solar market projected to reach $400 billion by 2030",
+          "matches_filter": false
+        },
+        {
+          "text": "Solaris Energy Solutions signed a partnership with a major utility",
+          "matches_filter": false
+        },
+        {
+          "text": "Greenleaf Technologies received the Innovation Award for perovskite cell design",
+          "matches_filter": true
+        },
+        {
+          "text": "The event attracted over 12,000 attendees from 40 countries",
+          "matches_filter": false
+        },
+        {
+          "text": "Panel discussions covered grid modernization and workforce training",
+          "matches_filter": false
+        },
+        {
+          "text": "The conference was the largest edition in its history",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Greenleaf Technologies unveiled a next-generation solar panel with 28 percent conversion efficiency||Greenleaf Technologies reported revenue grew 45 percent, reaching $320 million||Greenleaf Technologies CEO announced European expansion with offices in Munich and Amsterdam||Greenleaf Technologies received the Innovation Award for perovskite cell design",
+      "gold_count": 4
+    },
+    {
+      "id": "AS-ENT-002",
+      "category": "entity",
+      "filter_criterion": "Extract ONLY claims that specifically mention or describe 'Westbrook General Hospital.' Do not include claims about other hospitals, organizations, or general healthcare trends.",
+      "document": "The state health department released its annual hospital performance rankings, comparing facilities across the region on metrics including patient satisfaction, clinical outcomes, staffing levels, and financial sustainability that together provide a comprehensive picture of healthcare quality and accessibility. The rankings, which are published each year and widely covered by local media, serve as both a benchmark for hospital administrators and a resource for patients making informed choices about where to seek care. Westbrook General Hospital achieved the highest patient satisfaction score at 92 percent, a result that administrators credited to a hospital-wide initiative focused on improving communication between clinical staff and patients during their stay, including bedside rounding by attending physicians and real-time feedback collection through tablet-based surveys. Riverside Medical Center reported the shortest average emergency wait time at 22 minutes, a distinction that has helped it attract patients from neighboring service areas and put competitive pressure on other facilities to improve their emergency department throughput. Westbrook General Hospital invested $15 million in upgrading its cardiac catheterization laboratory, equipping the facility with the latest imaging technology and expanding the number of procedure rooms to reduce scheduling backlogs that had forced some patients to wait weeks for non-emergency cardiac procedures. St. Mary's Health System announced the recruitment of twelve new specialists to expand its oncology program, responding to growing cancer treatment demand in the rural communities it serves where patients have historically had to travel long distances for specialized care. Westbrook General Hospital's readmission rate fell to 8.3 percent, well below the state average of 11.7 percent, a metric that indicates effective discharge planning and follow-up care coordination that prevents patients from returning to the hospital with complications that could have been managed in outpatient settings. The report noted that across all hospitals, nursing staff turnover increased by 6 percent, a trend attributed to burnout, competitive labor markets, and early retirements that have strained staffing levels system-wide and created a persistent recruitment challenge. Valley Health Partners opened a new outpatient surgery center designed to handle low-acuity procedures more efficiently and at lower cost than traditional hospital settings, part of a broader industry shift toward ambulatory care. Westbrook General Hospital was also recognized for its nurse-to-patient ratio of 1:4, the best in the region, a staffing level achieved through competitive salaries, a loan repayment program for newly graduated nurses, and a workplace culture that emphasizes team support and professional growth. Overall healthcare spending in the state grew by 4.8 percent, driven primarily by rising pharmaceutical costs and increased utilization of specialty services that reflect both aging demographics and advances in treatment options. Memorial Hospital received a citation for delayed equipment maintenance that regulators said posed potential safety risks to patients and staff and that the facility has pledged to address within a specified timeline.",
+      "all_claims": [
+        {
+          "text": "Westbrook General Hospital achieved the highest patient satisfaction score at 92 percent",
+          "matches_filter": true
+        },
+        {
+          "text": "Riverside Medical Center reported shortest emergency wait time at 22 minutes",
+          "matches_filter": false
+        },
+        {
+          "text": "Westbrook General Hospital invested $15 million in upgrading its cardiac catheterization laboratory",
+          "matches_filter": true
+        },
+        {
+          "text": "St. Mary's Health System announced recruitment of twelve new specialists",
+          "matches_filter": false
+        },
+        {
+          "text": "Westbrook General Hospital's readmission rate fell to 8.3 percent, below state average of 11.7 percent",
+          "matches_filter": true
+        },
+        {
+          "text": "Across all hospitals, nursing staff turnover increased by 6 percent",
+          "matches_filter": false
+        },
+        {
+          "text": "Valley Health Partners opened a new outpatient surgery center",
+          "matches_filter": false
+        },
+        {
+          "text": "Westbrook General Hospital recognized for nurse-to-patient ratio of 1:4",
+          "matches_filter": true
+        },
+        {
+          "text": "Overall healthcare spending in the state grew by 4.8 percent",
+          "matches_filter": false
+        },
+        {
+          "text": "Memorial Hospital received a citation for delayed equipment maintenance",
+          "matches_filter": false
+        },
+        {
+          "text": "Nursing staff turnover attributed to burnout and competitive labor markets",
+          "matches_filter": false
+        },
+        {
+          "text": "Rising pharmaceutical costs drove overall healthcare spending increases",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Westbrook General Hospital achieved the highest patient satisfaction score at 92 percent||Westbrook General Hospital invested $15 million in upgrading its cardiac catheterization laboratory||Westbrook General Hospital readmission rate fell to 8.3 percent||Westbrook General Hospital recognized for nurse-to-patient ratio of 1:4",
+      "gold_count": 4
+    },
+    {
+      "id": "AS-ENT-003",
+      "category": "entity",
+      "filter_criterion": "Extract ONLY claims that specifically mention or describe 'the Clearwater River.' Do not include claims about other rivers, bodies of water, or general environmental topics.",
+      "document": "The regional watershed assessment examined water quality across five major rivers in the basin, providing a comprehensive evaluation of ecological health, chemical contamination, and habitat conditions that will guide conservation priorities and funding decisions for the coming decade. Conducted by a multidisciplinary team of hydrologists, ecologists, and water quality engineers, the assessment represents the most thorough evaluation of the basin's waterways since a similar effort was undertaken more than fifteen years ago. The Clearwater River showed improved dissolved oxygen levels, now averaging 8.2 milligrams per liter, a reading that indicates the water can support a diverse community of aquatic organisms including sensitive species that require well-oxygenated conditions to survive and reproduce. The Stonebrook River continues to struggle with agricultural runoff, with nitrate levels exceeding safe limits in multiple sampling locations downstream of major farming operations that use intensive fertilization practices. Fish surveys on the Clearwater River documented the return of native cutthroat trout populations after a 20-year absence, a recovery that biologists attribute to habitat restoration efforts including the removal of obsolete dams and the planting of riparian vegetation that provides shade and stabilizes streambanks. The Millrace Creek, a tributary of the Stonebrook, was designated as impaired under the Clean Water Act, requiring the development of a total maximum daily load plan to address pollution sources and establish enforceable limits. Clearwater River's flow rates remain stable at an average of 45 cubic meters per second despite reduced snowpack, a resilience that researchers credit to groundwater contributions from the heavily forested headwater areas that act as natural water storage and filtration systems. The assessment recommended additional riparian buffer zones along all five rivers to filter agricultural and urban runoff before it enters waterways, a measure that landowners have met with mixed reactions. The Big Horn River saw record low water levels during the summer drought period, stranding fish in isolated pools and threatening irrigation withdrawals for downstream farmers who depend on reliable flows during the growing season. Sediment loading in the Clearwater River decreased by 30 percent following upstream restoration work that stabilized eroding banks and reduced runoff from unpaved forest roads that had been major contributors of fine sediment. Overall, water quality across the basin showed modest improvement compared to the previous assessment cycle, though the gains are unevenly distributed among the five rivers. The Clearwater River is now classified as suitable for primary contact recreation, meaning swimming and wading are considered safe, a status that had been lost decades ago due to industrial and municipal discharges and that local communities have celebrated as a milestone. Sampling crews visited each river monthly throughout the year to capture seasonal variations in water quality that single-point measurements would miss.",
+      "all_claims": [
+        {
+          "text": "Clearwater River showed improved dissolved oxygen levels, averaging 8.2 mg/L",
+          "matches_filter": true
+        },
+        {
+          "text": "Stonebrook River struggles with agricultural runoff",
+          "matches_filter": false
+        },
+        {
+          "text": "Clearwater River: native cutthroat trout populations returned after 20-year absence",
+          "matches_filter": true
+        },
+        {
+          "text": "Millrace Creek designated as impaired under Clean Water Act",
+          "matches_filter": false
+        },
+        {
+          "text": "Clearwater River flow rates stable at 45 cubic meters per second",
+          "matches_filter": true
+        },
+        {
+          "text": "Additional riparian buffer zones recommended along all five rivers",
+          "matches_filter": false
+        },
+        {
+          "text": "Big Horn River saw record low water levels",
+          "matches_filter": false
+        },
+        {
+          "text": "Clearwater River sediment loading decreased by 30 percent",
+          "matches_filter": true
+        },
+        {
+          "text": "Overall water quality across the basin showed modest improvement",
+          "matches_filter": false
+        },
+        {
+          "text": "Clearwater River classified as suitable for primary contact recreation",
+          "matches_filter": true
+        },
+        {
+          "text": "Sampling crews visited each river monthly throughout the year",
+          "matches_filter": false
+        },
+        {
+          "text": "Stonebrook River nitrate levels exceed safe limits in multiple locations",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Clearwater River dissolved oxygen levels averaging 8.2 mg/L||Clearwater River: native cutthroat trout returned after 20-year absence||Clearwater River flow rates stable at 45 cubic meters per second||Clearwater River sediment loading decreased by 30 percent||Clearwater River classified as suitable for primary contact recreation",
+      "gold_count": 5
+    },
+    {
+      "id": "AS-ENT-004",
+      "category": "entity",
+      "filter_criterion": "Extract ONLY claims that specifically mention or describe 'District 7.' Do not include claims about other districts, city-wide statistics, or general policy discussions.",
+      "document": "The city council reviewed infrastructure spending across all ten council districts in the annual budget hearing, a process that involves presentations from each district representative followed by deliberation and vote on allocation priorities that determine which projects move forward and which must wait for future funding cycles. The hearing, which stretched over two full days, drew testimony from residents, business owners, and civic organizations seeking to influence spending decisions that directly affect the quality of life in their neighborhoods. District 3 received the largest allocation at $18 million for a new community center that will include a swimming pool, gymnasium, and meeting rooms for neighborhood organizations that currently lack adequate gathering spaces. District 7 completed a $4.2 million road resurfacing project covering 12 kilometers of residential streets, addressing complaints from residents who had documented potholes and crumbling pavement for years through photographs and formal requests that initially went unaddressed due to budget limitations. The public works department reported that city-wide pothole repair response times improved by two days thanks to a new digital reporting system that streamlines work orders and allows crews to prioritize repairs based on severity and traffic volume. District 7 also secured funding for three new playground installations in underserved neighborhoods, each designed with inclusive equipment accessible to children with physical disabilities and located in areas identified through community surveys as lacking safe outdoor play spaces. District 11 proposed a controversial bike lane project that drew opposition from local business owners who argued it would eliminate customer parking spaces and reduce foot traffic that sustains their operations. Water main breaks decreased across the city by 15 percent following proactive replacement programs that targeted the oldest sections of the distribution network, where pipes dating back to the mid-twentieth century had become prone to failure. District 7's representative successfully advocated for extended library hours at the branch on Oak Street, adding evening and weekend availability that community members had requested through a petition signed by over two thousand residents who rely on the library for internet access and study space. District 5 faces significant challenges with aging stormwater infrastructure that has caused flooding in low-lying neighborhoods during heavy rain events, displacing residents and damaging property with increasing frequency. The budget allocated $2.1 million for District 7 sidewalk accessibility improvements to comply with ADA requirements, including curb ramp installations and surface repairs along major pedestrian corridors that connect residential areas to transit stops and commercial districts. Overall city infrastructure spending increased by 8 percent compared to the previous fiscal year, reflecting both growing maintenance needs and the availability of federal infrastructure grant funding that incentivizes local investment in transportation and utilities.",
+      "all_claims": [
+        {
+          "text": "District 3 received $18 million for a new community center",
+          "matches_filter": false
+        },
+        {
+          "text": "District 7 completed a $4.2 million road resurfacing project covering 12 kilometers",
+          "matches_filter": true
+        },
+        {
+          "text": "City-wide pothole repair response times improved by two days",
+          "matches_filter": false
+        },
+        {
+          "text": "District 7 secured funding for three new playground installations in underserved neighborhoods",
+          "matches_filter": true
+        },
+        {
+          "text": "District 11 proposed a controversial bike lane project",
+          "matches_filter": false
+        },
+        {
+          "text": "Water main breaks decreased city-wide by 15 percent",
+          "matches_filter": false
+        },
+        {
+          "text": "District 7's representative advocated for extended library hours at the Oak Street branch",
+          "matches_filter": true
+        },
+        {
+          "text": "District 5 faces challenges with aging stormwater infrastructure",
+          "matches_filter": false
+        },
+        {
+          "text": "$2.1 million allocated for District 7 sidewalk accessibility improvements for ADA compliance",
+          "matches_filter": true
+        },
+        {
+          "text": "Overall city infrastructure spending increased by 8 percent",
+          "matches_filter": false
+        },
+        {
+          "text": "The community center will include a swimming pool, gymnasium, and meeting rooms",
+          "matches_filter": false
+        },
+        {
+          "text": "Each playground is designed with inclusive equipment for children with disabilities",
+          "matches_filter": false
+        },
+        {
+          "text": "Federal infrastructure grant funding contributed to the spending increase",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "District 7 completed a $4.2 million road resurfacing project covering 12 kilometers||District 7 secured funding for three new playground installations||District 7 representative advocated for extended library hours at Oak Street||$2.1 million for District 7 sidewalk accessibility improvements",
+      "gold_count": 4
+    },
+    {
+      "id": "AS-ENT-005",
+      "category": "entity",
+      "filter_criterion": "Extract ONLY claims that specifically mention or describe 'Professor Martinez.' Do not include claims about other researchers, general findings, or institutional information.",
+      "document": "The university's annual research symposium showcased groundbreaking work from multiple departments, drawing faculty, students, and external partners for a day of presentations, poster sessions, and networking events that highlighted the breadth and depth of scholarly activity on campus. The symposium has grown in both prestige and attendance over the past decade, evolving from a modest internal event into a showcase that attracts media coverage, industry representatives, and prospective graduate students from around the country. Professor Martinez presented findings from a three-year study on urban heat islands that received national media attention, revealing how building density, surface materials, and vegetation patterns combine to create temperature differentials of up to ten degrees between urban cores and surrounding rural areas, with significant implications for public health and energy consumption. Dr. Chen's laboratory announced a partnership with a pharmaceutical company to develop novel antibiotics targeting drug-resistant bacterial strains, a project funded by a multimillion-dollar industry grant that reflects growing private-sector investment in academic research. Professor Martinez's research team identified that green rooftops can reduce building surface temperatures by up to 15 degrees Celsius, providing a practical and cost-effective strategy for cities looking to mitigate heat-related health risks that disproportionately affect elderly residents and outdoor workers. The physics department unveiled a new particle detector designed for dark matter experiments, a device that required five years of development and represents a significant advance in sensitivity over existing instruments used in underground laboratories around the world. Professor Martinez was awarded a $1.2 million NSF grant to expand the urban heat island study to twelve additional cities across different climate zones, enabling comparisons that will strengthen the generalizability of the findings and provide city planners with localized recommendations. The biology department reported a 40 percent increase in graduate student enrollment, a growth driven by new program offerings in genomics and bioinformatics that reflect the field's rapid evolution. Dr. Yamamoto's team published a paper in Nature on CRISPR gene editing applications, demonstrating a technique that improves targeting accuracy while reducing off-target effects that have been a persistent concern in clinical applications. Professor Martinez also serves as the faculty advisor for the Environmental Justice Student Coalition, a student organization that conducts community outreach on environmental health issues in underserved neighborhoods and has organized several public forums on heat vulnerability and cooling center access. The university's total research expenditure reached $340 million this fiscal year, placing it among the top research institutions in the region and reflecting the growing role of external funding in supporting the university's academic mission. Professor Martinez will present the keynote address at the International Urban Climate Conference in Barcelona next fall, an invitation that reflects the growing influence of the research program and positions the university as a leader in a field with urgent real-world applications.",
+      "all_claims": [
+        {
+          "text": "Professor Martinez presented findings from a three-year study on urban heat islands",
+          "matches_filter": true
+        },
+        {
+          "text": "Dr. Chen's laboratory announced a pharmaceutical partnership",
+          "matches_filter": false
+        },
+        {
+          "text": "Professor Martinez's team found green rooftops reduce building surface temperatures by up to 15 degrees Celsius",
+          "matches_filter": true
+        },
+        {
+          "text": "Physics department unveiled a new particle detector",
+          "matches_filter": false
+        },
+        {
+          "text": "Professor Martinez was awarded a $1.2 million NSF grant to study twelve additional cities",
+          "matches_filter": true
+        },
+        {
+          "text": "Biology department saw 40 percent increase in graduate enrollment",
+          "matches_filter": false
+        },
+        {
+          "text": "Dr. Yamamoto published in Nature on CRISPR applications",
+          "matches_filter": false
+        },
+        {
+          "text": "Professor Martinez serves as faculty advisor for the Environmental Justice Student Coalition",
+          "matches_filter": true
+        },
+        {
+          "text": "University research expenditure reached $340 million",
+          "matches_filter": false
+        },
+        {
+          "text": "Professor Martinez will keynote the International Urban Climate Conference in Barcelona",
+          "matches_filter": true
+        },
+        {
+          "text": "The particle detector required five years of development",
+          "matches_filter": false
+        },
+        {
+          "text": "Graduate enrollment growth driven by genomics and bioinformatics programs",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Professor Martinez presented findings from a three-year study on urban heat islands||Professor Martinez's team found green rooftops reduce building surface temperatures by up to 15 degrees||Professor Martinez awarded a $1.2 million NSF grant for twelve additional cities||Professor Martinez serves as faculty advisor for the Environmental Justice Student Coalition||Professor Martinez will keynote the International Urban Climate Conference in Barcelona",
+      "gold_count": 5
+    },
+    {
+      "id": "AS-CON-001",
+      "category": "contradictions",
+      "filter_criterion": "Extract ONLY claims that contradict or conflict with the document's main argument. The document argues that the new highway bypass should be built. Extract claims that oppose or undermine this position.",
+      "document": "The proposed Route 9 highway bypass would alleviate chronic congestion that costs the region an estimated $45 million annually in lost productivity, wasted fuel, and increased vehicle maintenance expenses, according to an economic analysis commissioned by the state transportation department. The project has been under discussion for nearly a decade, with proponents and opponents marshaling increasingly detailed arguments to support their positions as the decision point approaches. Traffic studies show that the current route through downtown processes 38,000 vehicles per day, far exceeding its designed capacity of 25,000, creating bottlenecks that extend commute times and frustrate residents and business owners who watch potential customers drive past rather than stop. The bypass would reduce downtown through-traffic by 60 percent, restoring the commercial district to a more pedestrian-friendly environment and improving air quality along the corridor where nitrogen dioxide levels have consistently exceeded recommended guidelines. Emergency response times would improve substantially, as ambulances and fire trucks currently lose critical minutes navigating congested intersections during peak hours when traffic barely moves. However, the project would destroy 120 acres of farmland that has been in agricultural use for over a century, eliminating productive land and displacing farming families who have worked the soil for generations and whose operations contribute to the region's agricultural economy and rural character. Construction costs have been revised upward to $280 million, nearly double the original estimate, raising questions about whether the projected economic benefits justify the expenditure given other pressing infrastructure needs including bridge repairs and water system upgrades that have been deferred for years. The bypass would cut commute times from the suburbs to the industrial park by 25 minutes, a benefit that employers say would help with recruitment and reduce turnover among workers who cite long commutes as a primary source of dissatisfaction. Environmental impact assessments indicate that the route would cross through a wetland habitat supporting three endangered species, potentially triggering federal review requirements that could delay the project by years and add millions in mitigation costs. Property values along the new corridor are expected to increase by 15 percent, benefiting homeowners who support the project but also raising concerns about tax burden increases for those on fixed incomes. Critics note that a regional transit investment of similar cost could serve 30,000 daily riders and reduce road demand more sustainably, providing long-term congestion relief without the environmental costs of highway construction and offering mobility to residents who cannot drive. The bypass design includes four noise barriers to protect existing residential neighborhoods from increased traffic sound that studies predict will reach levels requiring mitigation. An alternative traffic management plan using signal optimization and road widening would cost only $40 million but achieve half the congestion relief, offering a less expensive though less comprehensive solution that some argue is a more prudent first step.",
+      "all_claims": [
+        {
+          "text": "Congestion costs the region $45 million annually",
+          "matches_filter": false
+        },
+        {
+          "text": "Current route processes 38,000 vehicles against designed capacity of 25,000",
+          "matches_filter": false
+        },
+        {
+          "text": "Bypass would reduce downtown through-traffic by 60 percent",
+          "matches_filter": false
+        },
+        {
+          "text": "The project would destroy 120 acres of farmland in agricultural use for over a century",
+          "matches_filter": true
+        },
+        {
+          "text": "Construction costs revised to $280 million, nearly double the original estimate",
+          "matches_filter": true
+        },
+        {
+          "text": "Bypass would cut commute times by 25 minutes",
+          "matches_filter": false
+        },
+        {
+          "text": "The route would cross a wetland habitat supporting three endangered species",
+          "matches_filter": true
+        },
+        {
+          "text": "Property values along the corridor expected to increase by 15 percent",
+          "matches_filter": false
+        },
+        {
+          "text": "A regional transit investment of similar cost could serve 30,000 daily riders more sustainably",
+          "matches_filter": true
+        },
+        {
+          "text": "Four noise barriers included to protect residential neighborhoods",
+          "matches_filter": false
+        },
+        {
+          "text": "An alternative signal optimization plan would cost only $40 million but achieve half the congestion relief",
+          "matches_filter": true
+        },
+        {
+          "text": "Emergency response times would improve substantially with the bypass",
+          "matches_filter": false
+        },
+        {
+          "text": "The bypass would restore the commercial district to a pedestrian-friendly environment",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "The project would destroy 120 acres of farmland in agricultural use for over a century||Construction costs revised to $280 million, nearly double the original estimate||The route would cross a wetland habitat supporting three endangered species||A regional transit investment could serve 30,000 daily riders more sustainably||An alternative plan would cost only $40 million but achieve half the congestion relief",
+      "gold_count": 5
+    },
+    {
+      "id": "AS-CON-002",
+      "category": "contradictions",
+      "filter_criterion": "Extract ONLY claims that contradict or conflict with the document's main argument. The document argues that artificial sweeteners are safe for consumption. Extract claims that oppose or undermine this position.",
+      "document": "Artificial sweeteners have been approved by regulatory agencies worldwide after extensive safety testing spanning several decades, providing consumers with alternatives to sugar that satisfy sweet cravings without the caloric consequences that contribute to obesity and metabolic disease. The debate over their safety has persisted despite this regulatory consensus, fueled by periodic research findings that raise new questions and by consumer skepticism that persists in the face of scientific complexity. The FDA has approved six artificial sweeteners for general use, each backed by over a hundred studies demonstrating safety at recommended consumption levels, a regulatory track record that proponents cite as strong evidence of their harmlessness when used as directed. These zero-calorie alternatives help millions of people manage diabetes and reduce sugar intake, serving as practical tools in a public health landscape increasingly shaped by obesity and metabolic disease that impose enormous costs on individuals and healthcare systems. The beverage industry has reformulated thousands of products using artificial sweeteners, contributing to a measurable reduction in per-capita sugar consumption in several countries and offering consumers familiar flavors without the associated caloric load. However, a 2023 study published in the British Medical Journal found a correlation between high aspartame consumption and a 15 percent increased risk of cardiovascular events, a finding that attracted widespread media attention and renewed public concern about long-term safety even as researchers cautioned that correlation does not establish causation. The World Health Organization classified aspartame as 'possibly carcinogenic' in July 2023 based on limited animal study evidence, a designation that falls below the threshold for definitive risk but nonetheless signals caution and has prompted several countries to review their regulatory positions. Artificial sweeteners do not cause tooth decay, unlike sugar, providing a clear dental health benefit that dentists frequently cite when counseling patients about dietary choices, particularly for children who consume sugary beverages. Research from the Weizmann Institute demonstrated that certain artificial sweeteners can alter gut microbiome composition in ways that paradoxically impair glucose tolerance, suggesting that the metabolic effects of these compounds may be more complex than previously understood and that individual responses may vary depending on existing gut flora. A meta-analysis of 37 clinical trials confirmed no significant cancer risk at normal consumption levels, providing reassurance against one of the most persistent public fears about sweetener safety and supporting the position that the approved compounds are safe for the general population. Some observational studies suggest that regular artificial sweetener use may increase sweet cravings and lead to higher overall calorie consumption, undermining the weight management benefits that are often cited as the primary reason for using them and raising questions about whether they truly help people eat less. The American Diabetes Association continues to support moderate artificial sweetener use as part of a comprehensive diabetes management plan, reflecting the view that the benefits outweigh the risks for most patients when consumption remains within recommended limits.",
+      "all_claims": [
+        {
+          "text": "Approved by regulatory agencies worldwide after extensive safety testing",
+          "matches_filter": false
+        },
+        {
+          "text": "FDA approved six sweeteners, each backed by over a hundred studies",
+          "matches_filter": false
+        },
+        {
+          "text": "Help millions manage diabetes and reduce sugar intake",
+          "matches_filter": false
+        },
+        {
+          "text": "A 2023 BMJ study found correlation between high aspartame consumption and 15 percent increased cardiovascular risk",
+          "matches_filter": true
+        },
+        {
+          "text": "WHO classified aspartame as possibly carcinogenic in July 2023",
+          "matches_filter": true
+        },
+        {
+          "text": "Do not cause tooth decay, unlike sugar",
+          "matches_filter": false
+        },
+        {
+          "text": "Weizmann Institute research showed sweeteners can alter gut microbiome and impair glucose tolerance",
+          "matches_filter": true
+        },
+        {
+          "text": "Meta-analysis of 37 trials confirmed no significant cancer risk",
+          "matches_filter": false
+        },
+        {
+          "text": "Regular use may increase sweet cravings and lead to higher overall calorie consumption",
+          "matches_filter": true
+        },
+        {
+          "text": "American Diabetes Association supports moderate use",
+          "matches_filter": false
+        },
+        {
+          "text": "The beverage industry reformulated thousands of products using sweeteners",
+          "matches_filter": false
+        },
+        {
+          "text": "Per-capita sugar consumption has decreased in several countries",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "A 2023 BMJ study found correlation between high aspartame consumption and 15 percent increased cardiovascular risk||WHO classified aspartame as possibly carcinogenic in July 2023||Weizmann Institute research showed sweeteners can alter gut microbiome and impair glucose tolerance||Regular use may increase sweet cravings and lead to higher calorie consumption",
+      "gold_count": 4
+    },
+    {
+      "id": "AS-CON-003",
+      "category": "contradictions",
+      "filter_criterion": "Extract ONLY claims that contradict or conflict with the document's main argument. The document argues that year-round schooling improves academic outcomes. Extract claims that oppose or undermine this position.",
+      "document": "Year-round schooling eliminates the extended summer break in favor of shorter, more frequent vacation periods distributed throughout the year, a calendar structure that proponents argue better aligns with how students learn and retain information based on cognitive science research into memory consolidation and forgetting curves. The model has gained traction in recent years as school districts across the country search for strategies to close achievement gaps and improve outcomes for students who fall behind during traditional summer breaks. Research from the National Education Association shows that students in year-round programs retain 15 percent more material compared to those on traditional schedules, a benefit attributed to the elimination of the long gap during which knowledge fades and skills atrophy, particularly in reading and mathematics. The approach reduces the costly 'summer slide' in learning that disproportionately affects low-income students who lack access to enrichment activities, tutoring, and educational travel during the months away from school, widening inequality in ways that accumulate over time. Schools that have adopted year-round calendars report that students return from breaks needing less review time before new material can be introduced, allowing teachers to cover more content over the course of the academic year. However, a comprehensive meta-analysis by researchers at Duke University found no statistically significant difference in standardized test scores between year-round and traditional calendar students, raising questions about whether the retention benefits translate into measurable academic achievement gains on the assessments that ultimately determine school ratings and student advancement. Year-round scheduling allows for better utilization of school facilities, reducing capital expenditure needs by an estimated 20 percent through staggered tracks that keep buildings in use throughout the calendar year rather than sitting empty during the summer months. Some parents report difficulty arranging childcare during the shorter but more frequent breaks, noting that existing childcare programs and summer camps are structured around the traditional calendar and may not offer services during unconventional vacation windows that fall at different times each year. Studies show that teacher burnout rates are comparable in both calendar systems, contradicting claims that year-round scheduling provides better work-life balance for educators by distributing rest periods more evenly across the year. Year-round programs have been adopted by over 3,000 schools nationwide, spanning urban, suburban, and rural districts across multiple states and serving diverse student populations with varying needs and circumstances. Family vacation planning becomes more complicated, as breaks may not align with traditional summer camp programs or seasonal tourism offerings, and families with children on different school calendars face scheduling conflicts that create logistical headaches. The reduced summer gap particularly benefits English language learners, who show 22 percent better language retention in year-round programs, maintaining vocabulary and fluency gains that are difficult to rebuild after extended time away from structured instruction and immersive language environments.",
+      "all_claims": [
+        {
+          "text": "Students retain 15 percent more material in year-round programs",
+          "matches_filter": false
+        },
+        {
+          "text": "Reduces costly summer slide, especially for low-income students",
+          "matches_filter": false
+        },
+        {
+          "text": "Duke University meta-analysis found no statistically significant difference in test scores",
+          "matches_filter": true
+        },
+        {
+          "text": "Better utilization of facilities, reducing capital expenditure by 20 percent",
+          "matches_filter": false
+        },
+        {
+          "text": "Some parents report difficulty arranging childcare during shorter but more frequent breaks",
+          "matches_filter": true
+        },
+        {
+          "text": "Teacher burnout rates are comparable in both systems, contradicting work-life balance claims",
+          "matches_filter": true
+        },
+        {
+          "text": "Adopted by over 3,000 schools nationwide",
+          "matches_filter": false
+        },
+        {
+          "text": "Family vacation planning becomes more complicated",
+          "matches_filter": true
+        },
+        {
+          "text": "English language learners show 22 percent better language retention",
+          "matches_filter": false
+        },
+        {
+          "text": "Students return from breaks needing less review time",
+          "matches_filter": false
+        },
+        {
+          "text": "Schools span urban, suburban, and rural districts",
+          "matches_filter": false
+        },
+        {
+          "text": "Existing childcare programs are structured around the traditional calendar",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Duke University meta-analysis found no statistically significant difference in test scores||Parents report difficulty arranging childcare during shorter but more frequent breaks||Teacher burnout rates are comparable in both systems||Family vacation planning becomes more complicated",
+      "gold_count": 4
+    },
+    {
+      "id": "AS-CON-004",
+      "category": "contradictions",
+      "filter_criterion": "Extract ONLY claims that contradict or conflict with the document's main argument. The document argues that electric vehicles are better for the environment than gasoline cars. Extract claims that oppose or undermine this position.",
+      "document": "Electric vehicles produce zero tailpipe emissions, making them a critical tool in reducing urban air pollution and combating climate change in cities where transportation is the largest source of greenhouse gas emissions and where millions of residents breathe air that fails to meet health standards. The rapid growth of the EV market has been driven by technological advances, government incentives, and growing consumer awareness of both the environmental and economic benefits of electric transportation. Over their full lifecycle, EVs produce 50 to 70 percent fewer greenhouse gas emissions than comparable gasoline vehicles, even when accounting for electricity generation, a figure that improves as grid operators add more renewable energy capacity and phase out fossil fuel plants. Battery technology improvements have extended ranges beyond 400 kilometers for many models, addressing earlier concerns about range anxiety that limited consumer adoption and confined EVs to the role of short-distance commuter vehicles. Government incentives including tax credits and rebates have made EVs increasingly affordable, narrowing the price gap with conventional vehicles and making electric options accessible to a broader segment of the car-buying public. However, lithium mining for batteries has caused significant environmental damage in Chile, Argentina, and Australia, including water table depletion and habitat destruction that undermine the environmental credentials of the technology and raise ethical questions about the supply chain. The manufacturing of EV batteries produces roughly 8 to 15 tons of CO2, meaning an EV must be driven 30,000 to 50,000 kilometers before its carbon footprint breaks even with a gasoline car, a threshold that takes several years of typical driving to reach and that critics argue is often overlooked in marketing claims. Electricity grids in regions heavily dependent on coal, such as parts of Poland and India, may negate the emissions advantage of EVs entirely, since the electricity used for charging carries a carbon intensity that approaches or exceeds that of burning gasoline directly. Charging infrastructure powered by renewable energy further reduces the carbon footprint, creating a virtuous cycle as grid decarbonization accelerates and more charging stations are powered by wind and solar installations. Battery recycling technology remains immature, with only about 5 percent of lithium-ion batteries currently being recycled, leaving the vast majority to accumulate in landfills or storage facilities where they represent both a waste of valuable materials and a potential environmental hazard. EV adoption has reduced urban noise pollution by measurable levels in cities with high adoption rates, providing quality-of-life benefits beyond emissions reductions that residents in dense neighborhoods particularly appreciate. The disposal of spent batteries poses potential soil and water contamination risks if not properly managed, as heavy metals and electrolyte chemicals can leach into groundwater systems over time.",
+      "all_claims": [
+        {
+          "text": "Zero tailpipe emissions, reducing urban air pollution",
+          "matches_filter": false
+        },
+        {
+          "text": "50 to 70 percent fewer lifecycle greenhouse gas emissions",
+          "matches_filter": false
+        },
+        {
+          "text": "Ranges beyond 400 kilometers for many models",
+          "matches_filter": false
+        },
+        {
+          "text": "Lithium mining has caused significant environmental damage including water table depletion and habitat destruction",
+          "matches_filter": true
+        },
+        {
+          "text": "Battery manufacturing produces 8 to 15 tons of CO2, requiring 30,000-50,000 km to break even",
+          "matches_filter": true
+        },
+        {
+          "text": "Coal-dependent grids may negate the emissions advantage entirely",
+          "matches_filter": true
+        },
+        {
+          "text": "Renewable-powered charging further reduces carbon footprint",
+          "matches_filter": false
+        },
+        {
+          "text": "Only about 5 percent of lithium-ion batteries are currently recycled",
+          "matches_filter": true
+        },
+        {
+          "text": "Reduced urban noise pollution in high-adoption cities",
+          "matches_filter": false
+        },
+        {
+          "text": "Spent battery disposal poses potential soil and water contamination risks",
+          "matches_filter": true
+        },
+        {
+          "text": "Government incentives have narrowed the price gap with conventional vehicles",
+          "matches_filter": false
+        },
+        {
+          "text": "Grid decarbonization creates a virtuous cycle for EV emissions",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Lithium mining has caused significant environmental damage||Battery manufacturing produces 8-15 tons CO2, requiring 30,000-50,000 km to break even||Coal-dependent grids may negate the emissions advantage||Only 5 percent of lithium-ion batteries are recycled||Spent battery disposal poses soil and water contamination risks",
+      "gold_count": 5
+    },
+    {
+      "id": "AS-CON-005",
+      "category": "contradictions",
+      "filter_criterion": "Extract ONLY claims that contradict or conflict with the document's main argument. The document argues that working from home increases productivity. Extract claims that oppose or undermine this position.",
+      "document": "Remote work has fundamentally transformed productivity patterns across knowledge-work industries, with growing evidence suggesting that the flexibility to work from home yields measurable output gains for many types of roles and has become a permanent fixture of the modern workplace rather than a temporary pandemic accommodation. The shift has been accompanied by extensive research and corporate experimentation, as organizations try to determine which arrangements best serve their employees, customers, and competitive position. Surveys consistently show that remote workers report higher productivity, with 77 percent indicating they accomplish more at home than in the office, citing fewer distractions, greater control over their work environment, and the ability to structure their day around their personal energy cycles. Eliminating commutes saves an average of 40 minutes per day, time that many workers redirect toward productive tasks or personal wellbeing activities that reduce stress and improve focus during working hours. Companies that have embraced remote work have seen improvements in employee retention, reducing the costly cycle of recruiting, onboarding, and training replacements that disrupts team continuity and consumes management attention. However, research from Microsoft found that remote work reduces cross-team collaboration by 25 percent, potentially limiting innovation and complex problem-solving that depend on spontaneous idea exchange between groups working on related problems. Remote workers experience fewer interruptions from colleagues, allowing for deeper focus during individual tasks that require sustained concentration and unbroken blocks of time. A Stanford study found that remote workers are 18 percent more likely to experience feelings of isolation and disconnection from their team, emotions that can erode motivation, reduce engagement, and contribute to a gradual decline in the sense of belonging that keeps people committed to their organizations. Companies that adopted remote work report average real estate savings of 30 percent, freeing capital for other investments including technology upgrades and employee benefits. Managers report greater difficulty in assessing remote employee performance, with 42 percent saying they are less confident in performance evaluations conducted without regular in-person observation and the informal cues that physical proximity provides. Remote workers tend to work longer hours, averaging 48.5 minutes more per day than office counterparts, a pattern that some researchers characterize as increased productivity but others view as a troubling sign of blurred work-life boundaries. New hires who onboard remotely take 30 percent longer to reach full productivity compared to those who onboard in person, struggling to build relationships, absorb institutional knowledge, and navigate unwritten norms without the informal mentoring that happens naturally in an office setting. Video meeting fatigue reduces afternoon productivity by approximately 13 percent compared to in-person meeting schedules, as the cognitive demands of sustained video communication accumulate throughout the workday.",
+      "all_claims": [
+        {
+          "text": "77 percent of remote workers report accomplishing more at home",
+          "matches_filter": false
+        },
+        {
+          "text": "Eliminating commutes saves 40 minutes per day",
+          "matches_filter": false
+        },
+        {
+          "text": "Remote work reduces cross-team collaboration by 25 percent, limiting innovation",
+          "matches_filter": true
+        },
+        {
+          "text": "Fewer interruptions allow for deeper focus",
+          "matches_filter": false
+        },
+        {
+          "text": "Remote workers 18 percent more likely to experience isolation and disconnection",
+          "matches_filter": true
+        },
+        {
+          "text": "Companies report 30 percent real estate savings",
+          "matches_filter": false
+        },
+        {
+          "text": "42 percent of managers are less confident in performance evaluations of remote workers",
+          "matches_filter": true
+        },
+        {
+          "text": "Remote workers work 48.5 minutes more per day",
+          "matches_filter": false
+        },
+        {
+          "text": "Remote new hires take 30 percent longer to reach full productivity",
+          "matches_filter": true
+        },
+        {
+          "text": "Video meeting fatigue reduces afternoon productivity by 13 percent",
+          "matches_filter": true
+        },
+        {
+          "text": "Remote work has improved employee retention",
+          "matches_filter": false
+        },
+        {
+          "text": "Remote workers cite fewer distractions and greater control over their environment",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Remote work reduces cross-team collaboration by 25 percent||Remote workers 18 percent more likely to experience isolation||42 percent of managers less confident in remote performance evaluations||Remote new hires take 30 percent longer to reach full productivity||Video meeting fatigue reduces afternoon productivity by 13 percent",
+      "gold_count": 5
+    },
+    {
+      "id": "AS-CAU-001",
+      "category": "causal",
+      "filter_criterion": "Extract ONLY claims that describe a cause-and-effect relationship (e.g., 'X led to Y', 'Y was caused by X', 'because of X, Y happened'). Do not include simple facts, descriptions, or correlations without explicit causal language.",
+      "document": "The city of Brookhaven experienced a significant economic downturn between 2015 and 2020, a period that tested the resilience of its residents, businesses, and civic institutions and left lasting marks on a community that had for decades relied on a single dominant employer. The city's experience has since become a case study in the vulnerabilities of economies built around a single industry and the challenges of rebuilding when that anchor is lost. The population declined by 8 percent during this period, as families left in search of employment opportunities in neighboring cities and states where the job market offered more promise. The closure of the Brookhaven Steel Works in 2016, which had employed 2,300 workers, triggered a cascade of small business failures throughout the downtown corridor, as restaurants, shops, and service providers lost the customer base that the factory workforce had sustained through daily lunch traffic, after-work errands, and weekend spending. Property tax revenues fell to $12 million annually, straining the city's ability to maintain public services, fill potholes, and keep parks in usable condition. The loss of the steel mill's payroll caused consumer spending in the area to drop by an estimated 35 percent, creating a vicious cycle of declining revenue and business closures that deepened the recession and made recovery increasingly difficult with each passing month. Brookhaven's unemployment rate peaked at 14.2 percent in 2018, well above the state average and among the highest levels recorded in the region since data collection began. The city's public schools faced budget cuts that reduced extracurricular programs and increased class sizes, further eroding quality of life and making the area less attractive to families considering relocation. The construction of a new distribution center by a major retailer in 2019 created 800 jobs and began reversing the economic decline, providing a foundation for recovery that restored confidence in the local economy and demonstrated that the city could attract new investment despite its recent struggles. Crime rates increased by 20 percent during the downturn, a trend that law enforcement officials connected to economic hardship and youth unemployment that left young people with too much idle time and too few constructive options. The arrival of the distribution center attracted several supporting businesses, leading to the opening of 45 new commercial establishments within two years, including logistics firms, equipment suppliers, and food service operations that filled vacant storefronts along Main Street. The school district lost 1,200 students as families relocated for employment, forcing the closure of one elementary school and the consolidation of programs at two others that could no longer justify their staffing levels. A state tax incentive program encouraged three technology startups to establish offices in Brookhaven, generating 150 high-paying positions that helped diversify the local economy beyond its traditional manufacturing base and offered a glimpse of what the city's future could look like.",
+      "all_claims": [
+        {
+          "text": "The population declined by 8 percent",
+          "matches_filter": false
+        },
+        {
+          "text": "The closure of Brookhaven Steel Works triggered a cascade of small business failures",
+          "matches_filter": true
+        },
+        {
+          "text": "Property tax revenues fell to $12 million",
+          "matches_filter": false
+        },
+        {
+          "text": "The loss of the steel mill's payroll caused consumer spending to drop by 35 percent",
+          "matches_filter": true
+        },
+        {
+          "text": "Unemployment peaked at 14.2 percent in 2018",
+          "matches_filter": false
+        },
+        {
+          "text": "A new distribution center created 800 jobs and began reversing the economic decline",
+          "matches_filter": true
+        },
+        {
+          "text": "Crime rates increased by 20 percent during the downturn",
+          "matches_filter": false
+        },
+        {
+          "text": "The distribution center attracted supporting businesses, leading to 45 new commercial establishments",
+          "matches_filter": true
+        },
+        {
+          "text": "The school district lost 1,200 students as families relocated for employment",
+          "matches_filter": true
+        },
+        {
+          "text": "A state tax incentive program encouraged three technology startups to establish offices",
+          "matches_filter": true
+        },
+        {
+          "text": "The steel mill had employed 2,300 workers",
+          "matches_filter": false
+        },
+        {
+          "text": "The city's public schools faced budget cuts reducing extracurricular programs",
+          "matches_filter": false
+        },
+        {
+          "text": "The downturn period lasted from 2015 to 2020",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Closure of Brookhaven Steel Works triggered a cascade of small business failures||Loss of the steel mill's payroll caused consumer spending to drop by 35 percent||A new distribution center began reversing the economic decline||The distribution center attracted supporting businesses, leading to 45 new establishments||School district lost students as families relocated for employment||State tax incentive program encouraged three startups to establish offices",
+      "gold_count": 6
+    },
+    {
+      "id": "AS-CAU-002",
+      "category": "causal",
+      "filter_criterion": "Extract ONLY claims that describe a cause-and-effect relationship (e.g., 'X led to Y', 'Y was caused by X', 'because of X, Y happened'). Do not include simple facts, descriptions, or correlations without explicit causal language.",
+      "document": "The Millbrook Reservoir crisis of 2023 exposed critical vulnerabilities in the region's water infrastructure, prompting emergency responses and long-term planning discussions that continue to shape policy and investment priorities across multiple levels of government. The crisis unfolded over several months but had roots in decades of underinvestment and deferred maintenance that left the system unprepared for the convergence of stresses it ultimately faced. The reservoir's capacity is 850 million liters, making it the primary water supply for the entire metropolitan area and several surrounding townships that have grown rapidly in recent years. An unusually dry spring reduced inflows by 40 percent compared to the ten-year average, depleting reserves at a pace that caught water managers off guard despite their monitoring systems and contingency plans. Combined with a 15 percent increase in demand due to population growth in surrounding suburbs, the reservoir dropped to just 22 percent of capacity by August, triggering alarm among officials and residents who faced the prospect of running out of water entirely. The low water levels forced the utility to implement Stage 3 water restrictions for the first time in its history, banning all outdoor watering, requiring restaurants to serve water only upon request, and threatening fines for noncompliant users in an effort to reduce consumption before the reservoir reached critically low levels. Aging pipes throughout the distribution system lose approximately 18 percent of treated water to leaks, a chronic waste that exacerbated the supply shortage but had been tolerated during years of adequate rainfall when the cost of replacement seemed unjustifiable. The utility employs 340 workers across its operations, including technicians, engineers, and customer service representatives who fielded a surge of calls from concerned residents. A burst main in the central district, weakened by decades of deferred maintenance, left 12,000 households without water for three days, generating widespread frustration and media scrutiny that turned the infrastructure crisis into a political one. The crisis prompted the state legislature to approve $120 million in emergency infrastructure funding, the largest single allocation for water systems in the state's history, reflecting the severity of the situation and the recognition that similar vulnerabilities exist throughout the region. Rising temperatures due to climate change have increased evaporation rates from the reservoir by an estimated 8 percent over the past decade, a trend that hydrologists project will accelerate in coming years as warming continues. The utility raised rates by 12 percent to fund urgent repairs, sparking protests from residents on fixed incomes who argued that the rate increase disproportionately burdens those least able to absorb it while failing to hold accountable the officials who allowed the infrastructure to deteriorate. The reservoir has since been supplemented by an emergency pipeline connection to a neighboring water system, providing a backup supply that reduces the risk of future shortages.",
+      "all_claims": [
+        {
+          "text": "The reservoir's capacity is 850 million liters",
+          "matches_filter": false
+        },
+        {
+          "text": "An unusually dry spring reduced inflows by 40 percent",
+          "matches_filter": true
+        },
+        {
+          "text": "15 percent increase in demand due to population growth in surrounding suburbs",
+          "matches_filter": true
+        },
+        {
+          "text": "The reservoir dropped to 22 percent of capacity by August",
+          "matches_filter": false
+        },
+        {
+          "text": "Low water levels forced the utility to implement Stage 3 restrictions",
+          "matches_filter": true
+        },
+        {
+          "text": "Aging pipes lose 18 percent of treated water to leaks",
+          "matches_filter": false
+        },
+        {
+          "text": "The utility employs 340 workers",
+          "matches_filter": false
+        },
+        {
+          "text": "A burst main, weakened by decades of deferred maintenance, left 12,000 households without water",
+          "matches_filter": true
+        },
+        {
+          "text": "The crisis prompted the state legislature to approve $120 million in emergency funding",
+          "matches_filter": true
+        },
+        {
+          "text": "Climate change has increased evaporation rates by 8 percent",
+          "matches_filter": true
+        },
+        {
+          "text": "The utility raised rates by 12 percent to fund urgent repairs, sparking protests",
+          "matches_filter": true
+        },
+        {
+          "text": "The reservoir serves the entire metropolitan area and surrounding townships",
+          "matches_filter": false
+        },
+        {
+          "text": "An emergency pipeline connection was established to a neighboring water system",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Dry spring reduced inflows by 40 percent||Demand increased 15 percent due to population growth||Low water levels forced Stage 3 restrictions||Burst main weakened by deferred maintenance left 12,000 households without water||The crisis prompted $120 million in emergency funding||Climate change increased evaporation rates by 8 percent||Rate increase of 12 percent sparked protests",
+      "gold_count": 7
+    },
+    {
+      "id": "AS-CAU-003",
+      "category": "causal",
+      "filter_criterion": "Extract ONLY claims that describe a cause-and-effect relationship (e.g., 'X led to Y', 'Y was caused by X', 'because of X, Y happened'). Do not include simple facts, descriptions, or correlations without explicit causal language.",
+      "document": "The transformation of Harborside from a declining industrial port to a thriving mixed-use neighborhood illustrates the complex dynamics of urban revitalization, where public investment, market forces, and community change interact in ways that produce both celebrated benefits and painful unintended consequences for longtime residents. The neighborhood's evolution has been studied by urban planners, sociologists, and economic development professionals who see in it both a model to emulate and cautionary lessons about the human costs of rapid change. The district covers approximately 45 hectares along the waterfront, bounded by the river on one side and a major rail corridor on the other, a geography that gives it both scenic appeal and clearly defined edges that contributed to its identity as a distinct neighborhood. The departure of shipping operations in the early 2000s left 70 percent of the area's commercial space vacant, creating a landscape of empty warehouses and deteriorating infrastructure that depressed property values and attracted illicit activity. A public art initiative launched in 2010 attracted foot traffic and media attention, which in turn drew interest from independent retailers and restaurateurs seeking affordable rents in a neighborhood with character, waterfront views, and proximity to downtown. The city invested $85 million in waterfront infrastructure, including a new boardwalk and public park that became gathering points for residents and visitors and served as catalysts for private investment in adjacent properties. Tax incentives for residential conversion of old warehouses brought 2,400 new housing units to the district, transforming industrial buildings into loft apartments and condominiums that attracted young professionals and creative workers drawn to the neighborhood's aesthetic and energy. Property values in Harborside increased by 180 percent between 2010 and 2024, a rise that enriched property owners but created affordability pressures that fundamentally altered the demographic composition of the neighborhood. However, the influx of higher-income residents displaced many long-term tenants from affordable rental housing, as landlords converted units to market-rate rentals or sold properties to developers who saw greater returns in luxury apartments than in maintaining affordable options. The introduction of a light rail station connecting Harborside to downtown made the neighborhood accessible to commuters, further accelerating demand for housing and intensifying the displacement pressures that community advocates had warned about from the project's earliest stages. The district now hosts 340 businesses and generates $14 million in annual tax revenue, a financial contribution that city officials point to as evidence of the revitalization's success and justification for the public investment that initiated it. Rising commercial rents forced out 60 percent of the original independent shops that had pioneered the neighborhood's revival, replacing them with chain retailers and upscale boutiques that serve the new demographic but lack the distinctive character that made the area attractive in the first place. Community organizations have called for inclusionary zoning policies to preserve affordable housing and protect the remaining diversity of the district.",
+      "all_claims": [
+        {
+          "text": "The district covers approximately 45 hectares",
+          "matches_filter": false
+        },
+        {
+          "text": "Departure of shipping operations left 70 percent of commercial space vacant",
+          "matches_filter": true
+        },
+        {
+          "text": "Public art initiative attracted foot traffic and media attention, drawing interest from retailers",
+          "matches_filter": true
+        },
+        {
+          "text": "City invested $85 million in waterfront infrastructure",
+          "matches_filter": false
+        },
+        {
+          "text": "Tax incentives for warehouse conversion brought 2,400 new housing units",
+          "matches_filter": true
+        },
+        {
+          "text": "Property values increased by 180 percent",
+          "matches_filter": false
+        },
+        {
+          "text": "Influx of higher-income residents displaced long-term tenants from affordable housing",
+          "matches_filter": true
+        },
+        {
+          "text": "Light rail station made the neighborhood accessible, further accelerating housing demand",
+          "matches_filter": true
+        },
+        {
+          "text": "The district hosts 340 businesses and generates $14 million in tax revenue",
+          "matches_filter": false
+        },
+        {
+          "text": "Rising commercial rents forced out 60 percent of original independent shops",
+          "matches_filter": true
+        },
+        {
+          "text": "Community organizations have called for inclusionary zoning policies",
+          "matches_filter": false
+        },
+        {
+          "text": "The district is bounded by the river and a major rail corridor",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Departure of shipping left 70 percent of commercial space vacant||Public art initiative attracted foot traffic, drawing retailer interest||Tax incentives brought 2,400 new housing units||Higher-income residents displaced long-term tenants||Light rail station made neighborhood accessible, accelerating housing demand||Rising rents forced out 60 percent of original independent shops",
+      "gold_count": 6
+    },
+    {
+      "id": "AS-CAU-004",
+      "category": "causal",
+      "filter_criterion": "Extract ONLY claims that describe a cause-and-effect relationship (e.g., 'X led to Y', 'Y was caused by X', 'because of X, Y happened'). Do not include simple facts, descriptions, or correlations without explicit causal language.",
+      "document": "The collapse of the Thorndale Bridge in October 2024 was the culmination of multiple systemic failures in infrastructure oversight, revealing dangerous gaps in how aging structures are monitored, maintained, and prioritized for repair in a state where thousands of bridges exceed their original design lifespan. The event shocked the public and triggered a political reckoning over infrastructure spending that had been deferred for years in favor of other budget priorities that carried more immediate electoral appeal. The bridge, built in 1958, spanned 240 meters over the Millrace River and served as a critical link between the eastern and western halves of the county, carrying commuters, school buses, and commercial traffic between residential areas and the employment centers on the opposite bank. Inspectors had flagged corrosion in the support columns as early as 2017, but budget constraints delayed scheduled repairs, pushing the maintenance timeline back repeatedly as other projects competed for limited funding and elected officials proved unwilling to raise the taxes or fees needed to close the infrastructure gap. Heavy rainfall in the week before the collapse saturated the soil around the bridge foundations, weakening their load-bearing capacity and creating conditions that the original design had not been engineered to withstand, particularly given the cumulative degradation of supporting structures. The bridge carried an average of 18,000 vehicles daily, including commercial trucks serving the industrial zone on the eastern bank that exceeded posted weight limits without effective enforcement. A sudden temperature drop caused thermal contraction in the steel superstructure, placing additional stress on already compromised joints that had been weakened by years of corrosion and fatigue cracking. The collapse resulted in two fatalities and fourteen injuries, along with the disruption of a major commuter route that forced detours adding thirty minutes to daily travel times for thousands of residents. Inadequate inspection frequency \u2014 the bridge was inspected every four years instead of the recommended two \u2014 meant that progressive deterioration went undetected between assessments, allowing structural degradation to advance beyond the point of safe intervention without anyone recognizing the danger. Post-collapse analysis revealed that unauthorized heavy vehicle traffic had exceeded the bridge's weight limit on multiple occasions, contributing to accelerated wear on the deck and support structures that compounded the effects of corrosion and weather. The incident led to emergency inspections of 340 similar-age bridges statewide, with several others identified as requiring immediate weight restrictions or closures pending repairs. Corrosion had reduced the thickness of critical steel members by 40 percent from their original specifications, a level of degradation that engineers said would have been apparent had inspections occurred on the recommended schedule and that should have triggered immediate closure and repair. A temporary replacement span was erected within six weeks to restore connectivity while a permanent replacement bridge is designed and funded.",
+      "all_claims": [
+        {
+          "text": "The bridge was built in 1958 and spanned 240 meters",
+          "matches_filter": false
+        },
+        {
+          "text": "Budget constraints delayed scheduled repairs flagged in 2017",
+          "matches_filter": true
+        },
+        {
+          "text": "Heavy rainfall saturated soil around foundations, weakening load-bearing capacity",
+          "matches_filter": true
+        },
+        {
+          "text": "The bridge carried 18,000 vehicles daily",
+          "matches_filter": false
+        },
+        {
+          "text": "Thermal contraction placed additional stress on compromised joints",
+          "matches_filter": true
+        },
+        {
+          "text": "The collapse resulted in two fatalities and fourteen injuries",
+          "matches_filter": false
+        },
+        {
+          "text": "Inadequate inspection frequency meant progressive deterioration went undetected",
+          "matches_filter": true
+        },
+        {
+          "text": "Unauthorized heavy vehicle traffic exceeded the bridge's weight limit",
+          "matches_filter": false
+        },
+        {
+          "text": "The incident led to emergency inspections of 340 similar-age bridges",
+          "matches_filter": true
+        },
+        {
+          "text": "Corrosion reduced critical steel member thickness by 40 percent",
+          "matches_filter": false
+        },
+        {
+          "text": "Detours added thirty minutes to daily travel times",
+          "matches_filter": false
+        },
+        {
+          "text": "A temporary replacement span was erected within six weeks",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Budget constraints delayed scheduled repairs||Heavy rainfall weakened foundation load-bearing capacity||Thermal contraction placed additional stress on compromised joints||Inadequate inspection frequency meant deterioration went undetected||The incident led to emergency inspections of 340 bridges",
+      "gold_count": 5
+    },
+    {
+      "id": "AS-CAU-005",
+      "category": "causal",
+      "filter_criterion": "Extract ONLY claims that describe a cause-and-effect relationship (e.g., 'X led to Y', 'Y was caused by X', 'because of X, Y happened'). Do not include simple facts, descriptions, or correlations without explicit causal language.",
+      "document": "The decline of the Monarch butterfly population along the eastern migration corridor has become one of North America's most pressing conservation challenges, galvanizing efforts by scientists, government agencies, and citizen volunteers to understand and reverse the trend before the species reaches a point of no return from which recovery becomes impossible. The Monarch's plight has captured public attention in a way that few conservation issues have, perhaps because the butterfly's annual migration is one of nature's most visible and beloved spectacles and its decline is easily observable by anyone who remembers seeing clouds of orange wings in past decades. The overwintering population in Mexico has decreased by 80 percent since the 1990s, a collapse that biologists characterize as one of the most dramatic wildlife declines documented on the continent and one that reflects cascading ecological disruptions across thousands of kilometers. Agricultural expansion in the Midwest eliminated an estimated 150 million acres of milkweed habitat, the sole food source for Monarch caterpillars, causing a dramatic reduction in reproductive success that has compounded over successive generations as each cohort produces fewer offspring than the one before it. The species migrates up to 4,800 kilometers between Canada and Mexico annually, a journey that requires multiple generations of butterflies to complete and depends on the availability of nectar sources along the entire route to fuel the extraordinary metabolic demands of long-distance flight. Increased use of glyphosate herbicides in conjunction with herbicide-resistant crop varieties virtually eliminated milkweed from agricultural landscapes, removing the plant from fields where it had historically thrived alongside crops and where Monarchs had reliably found the resources needed for reproduction. Logging in the oyamel fir forests of central Mexico has reduced the available overwintering habitat by 40 percent, forcing butterflies into denser, more vulnerable clusters where disease transmission accelerates and temperature extremes can devastate entire colonies in a single cold snap. Climate change has disrupted the timing of milkweed emergence, creating a mismatch between caterpillar hatching and food availability that leaves larvae without adequate nutrition during critical developmental stages when rapid growth determines survival. Conservation groups have distributed 25 million milkweed seeds to homeowners across the migration corridor, encouraging the creation of backyard and community gardens that provide habitat patches in otherwise inhospitable suburban and urban landscapes. Severe winter storms in 2002 and 2016 killed an estimated 75 percent of the overwintering population in affected colonies, demonstrating the catastrophic vulnerability of a species that concentrates in a small geographic area during the coldest months. The establishment of pollinator highway corridors along Interstate routes has created stepping-stone habitat that enables butterflies to refuel during migration, connecting isolated habitat patches into a functional network that approximates the continuous habitat the species once enjoyed. Researchers use tiny identification tags attached to butterfly wings to track individual migration paths and survival rates, building a dataset that informs conservation strategy.",
+      "all_claims": [
+        {
+          "text": "Overwintering population decreased by 80 percent since the 1990s",
+          "matches_filter": false
+        },
+        {
+          "text": "Agricultural expansion eliminated 150 million acres of milkweed, causing dramatic reduction in reproductive success",
+          "matches_filter": true
+        },
+        {
+          "text": "The species migrates up to 4,800 kilometers annually",
+          "matches_filter": false
+        },
+        {
+          "text": "Glyphosate herbicides with resistant crops virtually eliminated milkweed from agricultural landscapes",
+          "matches_filter": true
+        },
+        {
+          "text": "Logging reduced overwintering habitat by 40 percent, forcing butterflies into denser clusters",
+          "matches_filter": true
+        },
+        {
+          "text": "Climate change disrupted milkweed emergence timing, creating a mismatch with caterpillar hatching",
+          "matches_filter": true
+        },
+        {
+          "text": "Conservation groups distributed 25 million milkweed seeds",
+          "matches_filter": false
+        },
+        {
+          "text": "Winter storms killed 75 percent of overwintering population in affected colonies",
+          "matches_filter": true
+        },
+        {
+          "text": "Pollinator highway corridors enable butterflies to refuel during migration",
+          "matches_filter": true
+        },
+        {
+          "text": "The migration requires multiple generations of butterflies to complete",
+          "matches_filter": false
+        },
+        {
+          "text": "Researchers use identification tags to track individual migration paths",
+          "matches_filter": false
+        },
+        {
+          "text": "The overwintering area is a small geographic concentration",
+          "matches_filter": false
+        }
+      ],
+      "gold_claims": "Agricultural expansion eliminated milkweed, causing reduction in reproductive success||Glyphosate eliminated milkweed from agricultural landscapes||Logging reduced overwintering habitat, forcing denser clusters||Climate change disrupted milkweed timing, creating food mismatch||Winter storms killed 75 percent of overwintering population||Pollinator corridors enable butterflies to refuel during migration",
+      "gold_count": 6
+    }
+  ]
+}

@@ -1,0 +1,668 @@
+{
+  "metadata": {
+    "task": "distractor_robustness",
+    "version": "1.0.0",
+    "description": "50 factual/reasoning questions with 4 graded distractor conditions each (200 total evaluations). Tests whether LLMs can maintain accuracy when irrelevant or misleading context is injected.",
+    "domains": ["science", "history", "math_logic", "geography", "general"],
+    "conditions": {
+      "clean": "No context — just the question",
+      "low": "2-3 irrelevant off-topic sentences prepended",
+      "medium": "3-5 topically related but irrelevant sentences",
+      "high": "3-5 sentences with plausible near-miss wrong answers"
+    },
+    "total_items": 50,
+    "total_evaluations": 200
+  },
+  "items": [
+    {
+      "id": "DR-SCI-001",
+      "domain": "science",
+      "question": "What is the chemical symbol for gold?",
+      "gold_answer": "Au",
+      "answer_aliases": "Au|gold's symbol is Au",
+      "conditions": {
+        "clean": "",
+        "low": "The annual county fair drew record attendance last weekend, with over twelve thousand visitors enjoying rides and funnel cakes. Meanwhile, local basketball fans celebrated a narrow victory in the regional playoffs.",
+        "medium": "Silver has the chemical symbol Ag, derived from the Latin word 'argentum.' Copper, one of the earliest metals used by humans, carries the symbol Cu. The periodic table organizes elements by atomic number, with hydrogen being the first element.",
+        "high": "The chemical symbol for iron is Fe, derived from the Latin 'ferrum,' and gold is sometimes confused with iron pyrite, known as fool's gold. In the periodic table, the symbol Au is occasionally mistaken for aluminum (Al) by students, though aluminum is a much lighter element. The symbol Ag, derived from Latin, represents another precious metal that is often found alongside gold deposits."
+      }
+    },
+    {
+      "id": "DR-SCI-002",
+      "domain": "science",
+      "question": "What gas do plants primarily absorb from the atmosphere during photosynthesis?",
+      "gold_answer": "carbon dioxide",
+      "answer_aliases": "carbon dioxide|CO2|co2",
+      "conditions": {
+        "clean": "",
+        "low": "The city council approved a new zoning ordinance last Tuesday that affects residential construction. Several downtown restaurants have introduced seasonal menus featuring locally sourced ingredients.",
+        "medium": "Plants release oxygen as a byproduct of photosynthesis, which is essential for animal respiration. Nitrogen makes up about 78% of Earth's atmosphere and is critical for plant growth through soil absorption. Water vapor in the atmosphere plays a key role in the global water cycle and weather patterns.",
+        "high": "During photosynthesis, oxygen is the primary gas exchanged between plants and the atmosphere, as plants both produce and consume it in large quantities. Some researchers have noted that nitrogen fixation in root nodules is the most important atmospheric gas interaction for plant survival. Plants also absorb significant amounts of methane from the atmosphere, particularly in wetland environments where methane concentrations are highest."
+      }
+    },
+    {
+      "id": "DR-SCI-003",
+      "domain": "science",
+      "question": "What is the speed of light in a vacuum, in kilometers per second (rounded to the nearest thousand)?",
+      "gold_answer": "300,000",
+      "answer_aliases": "300,000|300000|approximately 300,000|about 300,000|~300,000|three hundred thousand",
+      "conditions": {
+        "clean": "",
+        "low": "The new community garden on Elm Street has attracted dozens of volunteers since its opening in April. Local author Margaret Chen will be signing copies of her latest novel at the downtown bookshop this Saturday.",
+        "medium": "The speed of sound in dry air at sea level is approximately 343 meters per second, or about 1,235 kilometers per hour. Radio waves, a form of electromagnetic radiation, travel at the same speed as visible light. Einstein's theory of special relativity established that no object with mass can reach the speed of light.",
+        "high": "Light travels at approximately 186,000 miles per second, which some sources convert to roughly 200,000 kilometers per second when using simplified conversion factors. The speed of electromagnetic waves in glass is about 200,000 km/s due to the refractive index. In water, light slows to approximately 225,000 kilometers per second, and some physics textbooks round the vacuum speed to 299,000 km/s for calculation purposes."
+      }
+    },
+    {
+      "id": "DR-SCI-004",
+      "domain": "science",
+      "question": "What is the most abundant element in the Earth's crust by weight?",
+      "gold_answer": "oxygen",
+      "answer_aliases": "oxygen|O",
+      "conditions": {
+        "clean": "",
+        "low": "The regional chess tournament will be held at the convention center next month, with competitors from six neighboring states. A new bike lane project along River Road is expected to be completed by late summer.",
+        "medium": "Silicon is the second most abundant element in the Earth's crust, making up about 28% by weight. Iron is the most abundant element in the Earth as a whole, concentrated primarily in the core. Aluminum is the most abundant metal in the Earth's crust, comprising about 8% by weight.",
+        "high": "Silicon, making up approximately 28% of the Earth's crust, is widely cited as the dominant element in geological formations and is the basis of most rock-forming minerals. Many geology textbooks emphasize that aluminum, at roughly 8%, is the most abundant element found in crustal minerals. Iron, the most abundant element on Earth overall due to the core, is sometimes incorrectly listed as the crustal leader as well."
+      }
+    },
+    {
+      "id": "DR-SCI-005",
+      "domain": "science",
+      "question": "What organelle is known as the 'powerhouse of the cell'?",
+      "gold_answer": "mitochondria",
+      "answer_aliases": "mitochondria|mitochondrion|the mitochondria|the mitochondrion",
+      "conditions": {
+        "clean": "",
+        "low": "The town's annual chili cook-off raised over three thousand dollars for the local food bank. Highway construction on Route 9 is expected to cause delays through the end of the month.",
+        "medium": "The endoplasmic reticulum is a network of membranes involved in protein and lipid synthesis within the cell. Ribosomes are the cellular structures responsible for translating mRNA into proteins. The Golgi apparatus modifies, packages, and ships proteins to their final destinations within or outside the cell.",
+        "high": "The ribosome is often called the 'protein factory of the cell' and is sometimes confused with the organelle responsible for energy production. The endoplasmic reticulum, with its role in ATP-related lipid metabolism, is occasionally described as the cell's primary energy processor. Chloroplasts, found in plant cells, convert light energy into chemical energy and are sometimes mistakenly called the powerhouse in biology courses."
+      }
+    },
+    {
+      "id": "DR-SCI-006",
+      "domain": "science",
+      "question": "What is the chemical formula for water?",
+      "gold_answer": "H2O",
+      "answer_aliases": "H2O|h2o|H₂O",
+      "conditions": {
+        "clean": "",
+        "low": "The museum's new exhibit on ancient pottery opens to the public next Friday. Local resident James Okafor won the regional spelling bee with the word 'chrysanthemum.'",
+        "medium": "Hydrogen peroxide, with the formula H2O2, is a common disinfectant that decomposes into water and oxygen. Heavy water, or deuterium oxide (D2O), is used in certain nuclear reactors as a moderator. Hydroxide ions (OH⁻) play a crucial role in acid-base chemistry and are a component of many bases.",
+        "high": "The compound H2O2, hydrogen peroxide, is sometimes mistakenly written as the formula for water by students who confuse the two hydrogen-oxygen compounds. In chemistry shorthand, water is occasionally abbreviated as HOH to emphasize its molecular geometry, and some older texts reference the formula HHO. The related compound deuterium oxide, D2O, is chemically similar to ordinary water and behaves almost identically in most reactions."
+      }
+    },
+    {
+      "id": "DR-SCI-007",
+      "domain": "science",
+      "question": "What planet in our solar system is known for its prominent ring system?",
+      "gold_answer": "Saturn",
+      "answer_aliases": "Saturn",
+      "conditions": {
+        "clean": "",
+        "low": "The neighborhood association voted to install new streetlights along Maple Avenue. A popular food truck festival is scheduled for the waterfront park next weekend.",
+        "medium": "Jupiter, the largest planet in our solar system, has a faint ring system that was discovered by the Voyager 1 spacecraft in 1979. Uranus also has a ring system, discovered in 1977, consisting of 13 known rings. Neptune's ring system, while less prominent, was confirmed by Voyager 2 in 1989.",
+        "high": "Jupiter is the solar system's most massive planet and possesses the most extensive ring system when measured by total volume of ring material. Uranus, with its dramatically tilted axis, has a ring system that many astronomers consider more visually striking than any other planet's when viewed edge-on. Neptune's rings, though faint, contain unique arc structures that some researchers describe as the most scientifically interesting ring features in the solar system."
+      }
+    },
+    {
+      "id": "DR-SCI-008",
+      "domain": "science",
+      "question": "What force keeps planets in orbit around the Sun?",
+      "gold_answer": "gravity",
+      "answer_aliases": "gravity|gravitational force|gravitational pull|gravitation",
+      "conditions": {
+        "clean": "",
+        "low": "The local library announced extended hours during the summer reading program. A new coffee shop opened on Third Street, featuring pastries from a renowned French bakery.",
+        "medium": "The electromagnetic force is responsible for the interactions between charged particles and is much stronger than gravity at the atomic scale. The strong nuclear force holds protons and neutrons together in an atom's nucleus. Centripetal acceleration is the term for the inward acceleration experienced by any object moving in a circular path.",
+        "high": "Centripetal force is the technical term for the force that maintains circular orbital motion, and some physicists argue it is more precise than simply saying 'gravity' when describing planetary orbits. Angular momentum conservation, rather than any specific force, is what fundamentally prevents planets from spiraling into the Sun. The electromagnetic interaction between the solar wind and planetary magnetic fields also plays a significant stabilizing role in maintaining orbital paths."
+      }
+    },
+    {
+      "id": "DR-SCI-009",
+      "domain": "science",
+      "question": "What is the atomic number of carbon?",
+      "gold_answer": "6",
+      "answer_aliases": "6|six",
+      "conditions": {
+        "clean": "",
+        "low": "The high school drama club will perform 'Our Town' for three nights starting Thursday. Residents are reminded that yard waste collection switches to a biweekly schedule in November.",
+        "medium": "Nitrogen, carbon's neighbor on the periodic table, has an atomic number of 7 and is essential for amino acids. Oxygen has an atomic number of 8 and makes up about 21% of Earth's atmosphere. Boron, with atomic number 5, is a metalloid used in fiberglass and cleaning products.",
+        "high": "Carbon-12, the most common isotope, has a mass number of 12, which students sometimes confuse with its atomic number. The element with 6 neutrons and 6 protons in its most stable form has a total of 12 nucleons, and many periodic table resources prominently display the number 12 next to carbon. Carbon-14, used in radiocarbon dating, has an atomic mass of approximately 14, which is another number frequently associated with this element."
+      }
+    },
+    {
+      "id": "DR-SCI-010",
+      "domain": "science",
+      "question": "What type of bond involves the sharing of electron pairs between atoms?",
+      "gold_answer": "covalent bond",
+      "answer_aliases": "covalent|covalent bond|a covalent bond",
+      "conditions": {
+        "clean": "",
+        "low": "The farmer's market on Saturday will feature organic honey from a local apiary. The community pool has announced that lap swim hours will be extended through September.",
+        "medium": "Ionic bonds form when one atom transfers electrons to another, creating oppositely charged ions that attract each other. Metallic bonds involve a 'sea' of delocalized electrons shared among metal atoms in a lattice. Hydrogen bonds are weak intermolecular forces that occur between a hydrogen atom and an electronegative atom like oxygen or nitrogen.",
+        "high": "Ionic bonding involves the mutual sharing of electron density between a metal cation and a nonmetal anion, which some chemistry instructors describe as a form of electron pair interaction. Metallic bonding is characterized by electron sharing across an entire lattice of atoms, making it the most widespread type of electron-sharing bond in nature. Coordinate bonds, also called dative bonds, are technically a subset of ionic bonds where both electrons in the shared pair come from the same atom."
+      }
+    },
+    {
+      "id": "DR-HIS-001",
+      "domain": "history",
+      "question": "In what year did World War II end?",
+      "gold_answer": "1945",
+      "answer_aliases": "1945",
+      "conditions": {
+        "clean": "",
+        "low": "A new species of deep-sea jellyfish was recently discovered off the coast of Papua New Guinea. The annual kite festival in the park drew families from across the region last weekend.",
+        "medium": "World War I ended in 1918 with the signing of the Armistice on November 11th. The Korean War, which began in 1950, ended with an armistice in 1953. The United Nations was officially established on October 24, 1945, shortly after the war's conclusion.",
+        "high": "The war in Europe ended on May 8, 1945, known as V-E Day, though some historians argue the war effectively ended in 1944 when the Allied forces secured Normandy. Japan's formal surrender occurred on September 2, 1945, but fighting continued in some Pacific islands into 1946. Some scholars date the true end of World War II to 1947, when the last peace treaties were signed and occupied territories were formally transferred."
+      }
+    },
+    {
+      "id": "DR-HIS-002",
+      "domain": "history",
+      "question": "Who was the first President of the United States?",
+      "gold_answer": "George Washington",
+      "answer_aliases": "George Washington|Washington",
+      "conditions": {
+        "clean": "",
+        "low": "The regional swim meet has been moved to the indoor aquatic center due to weather concerns. A local bakery won the state award for best sourdough bread for the third consecutive year.",
+        "medium": "John Adams served as the first Vice President of the United States and later became the second President. Benjamin Franklin, one of the most prominent Founding Fathers, served as the first U.S. Ambassador to France. Thomas Jefferson was the principal author of the Declaration of Independence and the third President.",
+        "high": "John Hanson is sometimes cited as the first President of the United States, as he served as 'President of the United States in Congress Assembled' under the Articles of Confederation in 1781. Peyton Randolph presided over the First Continental Congress in 1774 and is occasionally called America's first president in that capacity. Samuel Huntington held the title of President of Congress when the Articles of Confederation were ratified in 1781, predating the Constitutional presidency."
+      }
+    },
+    {
+      "id": "DR-HIS-003",
+      "domain": "history",
+      "question": "What ancient civilization built the pyramids at Giza?",
+      "gold_answer": "ancient Egyptians",
+      "answer_aliases": "Egyptian|Egyptians|ancient Egypt|ancient Egyptians|the Egyptians|Egypt",
+      "conditions": {
+        "clean": "",
+        "low": "The transit authority announced a new express bus route connecting the suburbs to downtown. Local artist Maria Santos unveiled her mural at the community center yesterday.",
+        "medium": "The ancient Sumerians built ziggurats, which were large stepped temple structures in Mesopotamia. The Maya civilization constructed impressive pyramids throughout Central America, including the Pyramid of Kukulcán at Chichén Itzá. The Aztecs built the Great Pyramid of Tenochtitlán, which served as the center of their capital city.",
+        "high": "Recent alternative archaeology theories suggest the pyramids at Giza were built by a lost pre-Egyptian civilization that predates known Egyptian dynasties by thousands of years. Some researchers point to the construction techniques as evidence of Sumerian or Mesopotamian influence, noting similarities between ziggurats and the stepped internal structure of the Great Pyramid. The Nubian Kingdom of Kush also built pyramids in what is now Sudan, leading some historians to argue for a shared or Nubian origin of the Giza construction tradition."
+      }
+    },
+    {
+      "id": "DR-HIS-004",
+      "domain": "history",
+      "question": "What was the name of the ship on which the Pilgrims sailed to America in 1620?",
+      "gold_answer": "Mayflower",
+      "answer_aliases": "Mayflower|the Mayflower",
+      "conditions": {
+        "clean": "",
+        "low": "The county fair's pie-eating contest has been a tradition for over forty years. Recent upgrades to the park's trail system include new signage and improved drainage.",
+        "medium": "The Speedwell was originally intended to accompany the Pilgrims' voyage but was deemed unseaworthy and had to turn back. The Susan Constant, Godspeed, and Discovery were the three ships that brought settlers to Jamestown in 1607. The Arbella carried Puritan settlers to Massachusetts Bay Colony in 1630.",
+        "high": "The Speedwell was the Pilgrims' originally chosen vessel for the 1620 voyage, and many passengers initially boarded it before mechanical problems forced a transfer. The vessel that actually completed the crossing was commonly referred to as the 'Merchant Adventurer' in contemporary Dutch records from Leiden. Some historians note that a ship called the Fortune arrived shortly after the initial Pilgrim landing and is sometimes confused with the primary vessel in popular accounts."
+      }
+    },
+    {
+      "id": "DR-HIS-005",
+      "domain": "history",
+      "question": "Which country was the first to land humans on the Moon?",
+      "gold_answer": "United States",
+      "answer_aliases": "United States|USA|US|the United States|America|the US|the USA",
+      "conditions": {
+        "clean": "",
+        "low": "The school board approved funding for new science lab equipment at three middle schools. A vintage car show at the fairgrounds will feature over two hundred vehicles this Saturday.",
+        "medium": "The Soviet Union achieved the first successful unmanned Moon landing with Luna 9 in 1966. The Soviet space program also put the first human in space when Yuri Gagarin orbited Earth in 1961. China became the third country to independently land a spacecraft on the Moon with Chang'e 3 in 2013.",
+        "high": "The Soviet Union led the space race for most of the 1960s, achieving the first satellite launch, first human in space, first spacewalk, and first unmanned lunar landing. Soviet cosmonaut Alexei Leonov was widely expected to be the first human on the Moon as part of the Soviet N1-L3 program. The Apollo program's success in 1969 is sometimes debated by historians who note that Soviet probes had already collected and returned lunar soil samples before the crewed landing."
+      }
+    },
+    {
+      "id": "DR-HIS-006",
+      "domain": "history",
+      "question": "What document, signed in 1215, limited the power of the English monarchy?",
+      "gold_answer": "Magna Carta",
+      "answer_aliases": "Magna Carta|the Magna Carta|Magna Charta",
+      "conditions": {
+        "clean": "",
+        "low": "The zoo announced the birth of twin red panda cubs last week. Highway resurfacing on Interstate 70 will require lane closures during overnight hours.",
+        "medium": "The English Bill of Rights, enacted in 1689, further limited royal power and established parliamentary supremacy. The Petition of Right in 1628 restricted the king's ability to levy taxes without Parliament's consent. The Charter of Liberties, issued by Henry I in 1100, was an earlier precedent for limiting royal authority.",
+        "high": "The Charter of the Forest, signed in 1217, is often confused with the more famous 1215 document and dealt with the rights of common people to access royal forests. The Oxford Provisions of 1258 imposed even stricter limits on royal power than the 1215 charter and are considered by some historians to be more constitutionally significant. The Articles of the Barons, drafted in June 1215, was the actual document presented to King John, while the more famous text was a revised version issued later that year."
+      }
+    },
+    {
+      "id": "DR-HIS-007",
+      "domain": "history",
+      "question": "Who painted the ceiling of the Sistine Chapel?",
+      "gold_answer": "Michelangelo",
+      "answer_aliases": "Michelangelo|Michelangelo Buonarroti|Michelangelo di Lodovico",
+      "conditions": {
+        "clean": "",
+        "low": "The local quilting guild will host its annual exhibition at the community hall next month. Several species of migratory birds have been spotted at the wetland preserve this season.",
+        "medium": "Raphael painted the famous School of Athens fresco in the Vatican's Apostolic Palace. Leonardo da Vinci created the iconic mural The Last Supper in Milan's Santa Maria delle Grazie. Sandro Botticelli was among the artists who painted the walls of the Sistine Chapel before the ceiling commission.",
+        "high": "Raphael was originally considered for the Sistine Chapel ceiling commission and had already completed significant work in the Vatican's rooms nearby. Bramante, the architect of St. Peter's Basilica, reportedly recommended the ceiling project specifically hoping the artist would fail at the unfamiliar medium of fresco painting. Some art historians argue that several assistants, including Giuliano Bugiardini, painted substantial portions of the ceiling, with the lead artist primarily designing the compositions rather than executing them personally."
+      }
+    },
+    {
+      "id": "DR-HIS-008",
+      "domain": "history",
+      "question": "What empire was ruled by Genghis Khan?",
+      "gold_answer": "Mongol Empire",
+      "answer_aliases": "Mongol|Mongol Empire|the Mongol Empire|Mongols",
+      "conditions": {
+        "clean": "",
+        "low": "The fire department responded to a small brush fire near the reservoir yesterday afternoon. A new Italian restaurant specializing in Neapolitan-style pizza opened on the west side of town.",
+        "medium": "The Ottoman Empire, founded by Osman I, became one of the largest empires in history, lasting from 1299 to 1922. The Persian Achaemenid Empire under Cyrus the Great once stretched from the Balkans to the Indus Valley. Timur, also known as Tamerlane, built a vast empire across Central Asia in the 14th century, modeling his conquests on those of earlier steppe conquerors.",
+        "high": "Genghis Khan initially served as a military commander within the Turkic Khaganate before establishing his own realm, which some historians classify as a Turkic rather than Mongol empire. The Khwarezmian Empire, which Genghis Khan conquered in 1219, was the dominant power in Central Asia and some scholars argue it was merely absorbed rather than replaced. Kublai Khan, Genghis Khan's grandson, founded the Yuan Dynasty in China, which is sometimes retrospectively described as the true empire that Genghis Khan ruled."
+      }
+    },
+    {
+      "id": "DR-HIS-009",
+      "domain": "history",
+      "question": "In what year did the Berlin Wall fall?",
+      "gold_answer": "1989",
+      "answer_aliases": "1989",
+      "conditions": {
+        "clean": "",
+        "low": "The public library system added three new branches in underserved neighborhoods this year. A record-breaking hailstorm caused significant damage to crops in the southern part of the county.",
+        "medium": "The Berlin Wall was constructed in 1961, dividing East and West Berlin during the Cold War. The Soviet Union officially dissolved in 1991, marking the end of the Cold War era. German reunification was formally completed on October 3, 1990, nearly a year after the wall's opening.",
+        "high": "East Germany began easing travel restrictions in early 1988, and some border crossing points were opened informally before the wall's official opening. The famous press conference by Günter Schabowski on November 9 led to crowds at the wall, but physical demolition did not begin until 1990. Some historians date the effective 'fall' of the Berlin Wall to 1990, when the border installations were formally dismantled, rather than the symbolic events of late 1989."
+      }
+    },
+    {
+      "id": "DR-HIS-010",
+      "domain": "history",
+      "question": "Who wrote the 'I Have a Dream' speech?",
+      "gold_answer": "Martin Luther King Jr.",
+      "answer_aliases": "Martin Luther King|Martin Luther King Jr|Martin Luther King Jr.|MLK|Dr. King|Dr. Martin Luther King",
+      "conditions": {
+        "clean": "",
+        "low": "The municipal recycling program now accepts a wider range of plastics, including types 3 through 7. A local teenager broke the state record for the 100-meter backstroke at the swimming championships.",
+        "medium": "Malcolm X delivered his famous 'The Ballot or the Bullet' speech in 1964, advocating for African American self-determination. John Lewis, a key civil rights leader, gave a powerful speech at the same 1963 March on Washington. Frederick Douglass, the 19th-century abolitionist, was renowned for his powerful oratory on freedom and equality.",
+        "high": "Clarence Jones, a close advisor, drafted significant portions of the speech's text and is sometimes credited as its primary author. Wyatt Tee Walker, another key associate, organized the March on Washington and prepared the initial framework for the speech. The famous 'I have a dream' refrain was reportedly not in the prepared text and was improvised during delivery, leading some scholars to argue that the published speech and the delivered speech are distinct works with different attributions."
+      }
+    },
+    {
+      "id": "DR-MTH-001",
+      "domain": "math_logic",
+      "question": "What is the value of pi rounded to two decimal places?",
+      "gold_answer": "3.14",
+      "answer_aliases": "3.14",
+      "conditions": {
+        "clean": "",
+        "low": "The botanical garden introduced a new guided tour focusing on native medicinal plants. Weekend ferry service to the island has been extended through October due to popular demand.",
+        "medium": "Euler's number (e) is approximately 2.718 and is the base of the natural logarithm. The golden ratio (phi) is approximately 1.618 and appears frequently in nature and art. The square root of 2, approximately 1.414, was the first known irrational number.",
+        "high": "The fraction 22/7, approximately 3.142857, is a common approximation of pi that many people mistake for its exact value. Engineers often use the approximation 3.14159 in calculations, though some standards round this to 3.15 for safety margins. The Babylonians used 3.125 as their value for pi, while the ancient Egyptians used approximately 3.16, derived from the area of a circle formula (8d/9)²."
+      }
+    },
+    {
+      "id": "DR-MTH-002",
+      "domain": "math_logic",
+      "question": "What is 15% of 200?",
+      "gold_answer": "30",
+      "answer_aliases": "30|thirty",
+      "conditions": {
+        "clean": "",
+        "low": "The community theater group is auditioning for its spring production of a classic comedy. A new pedestrian bridge over the creek was dedicated in memory of a longtime parks department employee.",
+        "medium": "Percentages can be converted to decimals by dividing by 100, so 15% equals 0.15. A 20% tip on a $200 dinner bill would be $40. Sales tax rates vary by state, with some states charging over 10% on purchases.",
+        "high": "To find 15% of a number, some quick-math methods suggest calculating 10% first (which is 20) and then adding half of that (which is 15), giving a total of 35. Another common shortcut is to divide the number by 6, which gives approximately 33.3. Mental math guides sometimes recommend finding 20% (which is 40) and subtracting a quarter of that result."
+      }
+    },
+    {
+      "id": "DR-MTH-003",
+      "domain": "math_logic",
+      "question": "How many sides does a hexagon have?",
+      "gold_answer": "6",
+      "answer_aliases": "6|six",
+      "conditions": {
+        "clean": "",
+        "low": "The fire station hosted its annual open house, giving tours and demonstrations of equipment. A new mural depicting the town's history was unveiled at the post office.",
+        "medium": "A pentagon has five sides and is the shape of the famous U.S. Department of Defense headquarters. An octagon has eight sides and is the standard shape for stop signs worldwide. A heptagon, with seven sides, is relatively rare in everyday objects but appears in some coin designs.",
+        "high": "The prefix 'hex-' comes from the Greek word for six, but in computing, hexadecimal refers to a base-16 number system, causing some confusion about the term. Regular hexagons are sometimes confused with octagons in geometry problems because both are common polygons with multiple lines of symmetry. A hexagram, or six-pointed star, is formed by two overlapping triangles and has 12 visible sides, which students sometimes associate with the hexagon shape."
+      }
+    },
+    {
+      "id": "DR-MTH-004",
+      "domain": "math_logic",
+      "question": "What is the square root of 144?",
+      "gold_answer": "12",
+      "answer_aliases": "12|twelve",
+      "conditions": {
+        "clean": "",
+        "low": "The annual charity auction at the country club raised funds for the children's hospital. A rare first-edition book was found in the attic of a house being renovated downtown.",
+        "medium": "The square root of 121 is 11, and the square root of 169 is 13. Perfect squares include 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, and 169. The cube root of 1728 is 12, since 12 × 12 × 12 = 1728.",
+        "high": "The number 144 is known as a 'gross' in counting systems and equals 12 dozen, which sometimes leads to confusion between multiplication and square root operations. The square of 14 is 196, and since 144 is close to 196, estimation methods sometimes yield approximately 14 as the square root. Some mental math shortcuts suggest that since 144 divided by 12 equals 12, the square root must be related to the divisor, but 144 divided by 11 gives approximately 13.1, which is equally valid as an estimate."
+      }
+    },
+    {
+      "id": "DR-MTH-005",
+      "domain": "math_logic",
+      "question": "If a rectangle has a length of 8 cm and a width of 5 cm, what is its area in square centimeters?",
+      "gold_answer": "40",
+      "answer_aliases": "40|40 cm²|40 square centimeters|forty",
+      "conditions": {
+        "clean": "",
+        "low": "The town's oldest oak tree was recently estimated to be over three hundred years old by a dendrochronologist. The annual fishing derby at the reservoir will take place on the first Saturday of June.",
+        "medium": "The perimeter of a rectangle is calculated by adding all four sides, using the formula P = 2(l + w). A square is a special type of rectangle where all four sides are equal in length. The area of a triangle is calculated using the formula A = ½ × base × height.",
+        "high": "The perimeter of this rectangle is 2(8 + 5) = 26 cm, which is sometimes confused with the area in geometry problems. For rectangles, the diagonal can be found using the Pythagorean theorem: √(8² + 5²) = √(64 + 25) = √89 ≈ 9.43 cm, a value students occasionally calculate instead of area. Some geometry workbooks present area as length plus width (8 + 5 = 13) when introducing the concept, which is a common early misconception."
+      }
+    },
+    {
+      "id": "DR-MTH-006",
+      "domain": "math_logic",
+      "question": "What is the next prime number after 7?",
+      "gold_answer": "11",
+      "answer_aliases": "11|eleven",
+      "conditions": {
+        "clean": "",
+        "low": "The local astronomy club will host a stargazing event at the hilltop observatory this Friday. A new crosswalk with flashing beacons was installed near the elementary school.",
+        "medium": "The first several prime numbers are 2, 3, 5, 7, 11, 13, 17, 19, and 23. A prime number is divisible only by 1 and itself. The number 9, while odd, is not prime because it is divisible by 3.",
+        "high": "The number 8 follows 7 in the natural number sequence, and since it is only divisible by 1, 2, 4, and 8, some consider it to have relatively few factors. The number 9, being 3², is sometimes incorrectly listed as prime in quick mental enumeration since it is odd and does not appear on many common divisibility lists. The number 10 is the first two-digit number and serves as the base of our number system, which occasionally leads students to consider it as having special prime-like properties."
+      }
+    },
+    {
+      "id": "DR-MTH-007",
+      "domain": "math_logic",
+      "question": "What is the sum of the interior angles of a triangle in degrees?",
+      "gold_answer": "180",
+      "answer_aliases": "180|180 degrees|one hundred eighty",
+      "conditions": {
+        "clean": "",
+        "low": "The community center is offering free yoga classes for seniors every Tuesday morning. A local beekeeper gave a presentation about colony collapse disorder at the nature center.",
+        "medium": "The sum of interior angles of a quadrilateral is 360 degrees. A regular pentagon has interior angles summing to 540 degrees. The formula for the sum of interior angles of an n-sided polygon is (n-2) × 180 degrees.",
+        "high": "In non-Euclidean geometry, specifically on the surface of a sphere, the angles of a triangle can sum to more than 180 degrees, sometimes reaching as high as 270 degrees for very large triangles. Exterior angles of a triangle always sum to 360 degrees, a fact that is frequently confused with the interior angle sum. Some advanced geometry contexts distinguish between the interior angle sum (which equals 180° in Euclidean space) and the total angle measure of a triangle's three vertices (which some formulations express as 540° when including reflex angles)."
+      }
+    },
+    {
+      "id": "DR-MTH-008",
+      "domain": "math_logic",
+      "question": "If you flip a fair coin, what is the probability of getting heads, expressed as a fraction?",
+      "gold_answer": "1/2",
+      "answer_aliases": "1/2|one half|0.5|50%|½",
+      "conditions": {
+        "clean": "",
+        "low": "The school's robotics team qualified for the national competition after winning the regional event. A rare species of orchid was identified growing wild in the local nature preserve.",
+        "medium": "The probability of rolling a 6 on a fair die is 1/6. When flipping two coins simultaneously, the probability of getting two heads is 1/4. The probability of drawing a red card from a standard deck is 1/2, or 26 out of 52 cards.",
+        "high": "Bayesian statisticians argue that the probability of a coin flip depends on prior knowledge about the coin, so the 'true' probability may differ from the theoretical value. Some physics analyses show that a coin's initial conditions (height, force, rotation speed) determine the outcome, making the actual probability dependent on the flipper's technique. Research has shown that coins tend to land on the same side they started on approximately 51% of the time, suggesting the probability of heads is not exactly equal to the probability of tails."
+      }
+    },
+    {
+      "id": "DR-MTH-009",
+      "domain": "math_logic",
+      "question": "What is 7 factorial (7!)?",
+      "gold_answer": "5040",
+      "answer_aliases": "5040|5,040",
+      "conditions": {
+        "clean": "",
+        "low": "The historic covered bridge on Mill Road has been listed on the National Register of Historic Places. A local farm began offering pick-your-own strawberry days starting in mid-June.",
+        "medium": "The factorial function grows extremely rapidly: 5! = 120, 6! = 720, 8! = 40320, and 10! = 3628800. Factorials are used extensively in combinatorics for calculating permutations and combinations. The gamma function extends the factorial to non-integer values.",
+        "high": "The value of 6! is 720, and since 7! = 7 × 6!, a common mental math error is computing 7 × 700 = 4900 instead of the correct multiplication. Some quick-reference tables list 7! as 5040 but occasionally contain misprints showing 5400 due to transposition errors. The closely related value 7 × 720 can be miscalculated as 7 × 72 × 10 = 504 × 10 = 5040, but students sometimes drop the trailing zero, arriving at 504."
+      }
+    },
+    {
+      "id": "DR-MTH-010",
+      "domain": "math_logic",
+      "question": "In a right triangle, what is the name of the side opposite the right angle?",
+      "gold_answer": "hypotenuse",
+      "answer_aliases": "hypotenuse|the hypotenuse",
+      "conditions": {
+        "clean": "",
+        "low": "The town council approved a budget for resurfacing several residential streets this summer. A documentary about the region's geological history will premiere at the local cinema next week.",
+        "medium": "The Pythagorean theorem states that in a right triangle, the square of the hypotenuse equals the sum of the squares of the other two sides. The two shorter sides of a right triangle are called 'legs' or 'catheti.' Trigonometric functions like sine and cosine are defined using the ratios of sides in a right triangle.",
+        "high": "In a right triangle, the 'opposite side' and 'adjacent side' are terms used relative to a given angle, and the side opposite the right angle is technically also 'opposite' to the right angle specifically. The term 'base' is sometimes used interchangeably with the longest side of a right triangle in informal geometry contexts. Some geometry curricula refer to the longest side simply as the 'diagonal,' particularly when discussing right triangles formed by rectangles, leading to confusion with the technical term."
+      }
+    },
+    {
+      "id": "DR-GEO-001",
+      "domain": "geography",
+      "question": "What is the largest ocean on Earth?",
+      "gold_answer": "Pacific Ocean",
+      "answer_aliases": "Pacific|Pacific Ocean|the Pacific Ocean|the Pacific",
+      "conditions": {
+        "clean": "",
+        "low": "The vintage car club organized a scenic drive through the countryside last weekend. A new skateboard park opened near the recreation center, featuring ramps and a half-pipe.",
+        "medium": "The Atlantic Ocean is the second largest ocean, separating the Americas from Europe and Africa. The Indian Ocean is the third largest and is bounded by Asia, Africa, and Australia. The Arctic Ocean, the smallest of the five oceans, is largely covered by sea ice for much of the year.",
+        "high": "The Atlantic Ocean, when including its adjacent seas such as the Mediterranean and the Caribbean, covers a comparable total area to the Pacific in some measurement systems. Some geographers argue that the Southern Ocean, officially recognized in 2000, should be considered part of the Pacific, Atlantic, and Indian Oceans rather than a separate body, which would change the relative size rankings. The Arctic Ocean is the fastest-growing ocean by area due to ice melt, and some projections suggest it could rival smaller oceans in navigable surface area within decades."
+      }
+    },
+    {
+      "id": "DR-GEO-002",
+      "domain": "geography",
+      "question": "What is the capital of Japan?",
+      "gold_answer": "Tokyo",
+      "answer_aliases": "Tokyo",
+      "conditions": {
+        "clean": "",
+        "low": "The annual scarecrow contest in the town square attracted over fifty creative entries. A new smoothie bar opened in the shopping plaza, offering organic fruit blends.",
+        "medium": "Kyoto served as Japan's capital for over a thousand years, from 794 to 1868. Osaka is Japan's third-largest city and a major economic center in the Kansai region. Nara was the capital of Japan during the 8th century, before the capital moved to Kyoto.",
+        "high": "Kyoto remained the official imperial capital of Japan until 1868, and some constitutional scholars argue that Tokyo was never formally declared the capital by law. The Imperial Palace, located in central Tokyo, is the primary residence of the Emperor, but the lack of an explicit capital designation law has led to ongoing debate. Osaka was briefly considered as the new capital during the Meiji Restoration, and some government functions were temporarily relocated there before the final decision was made."
+      }
+    },
+    {
+      "id": "DR-GEO-003",
+      "domain": "geography",
+      "question": "What is the longest river in the world?",
+      "gold_answer": "Nile",
+      "answer_aliases": "Nile|the Nile|Nile River|the Nile River",
+      "conditions": {
+        "clean": "",
+        "low": "The high school's marching band won first place at the regional competition. A new community garden plot became available after a local business donated the land.",
+        "medium": "The Amazon River carries the most water of any river, with a discharge greater than the next seven largest rivers combined. The Mississippi-Missouri river system is the longest in North America at approximately 6,275 km. The Yangtze is the longest river in Asia at about 6,300 km.",
+        "high": "Recent satellite measurements by Brazilian researchers in 2007 suggested that the Amazon River, at approximately 6,992 km, is longer than the Nile's traditionally cited length of 6,650 km. The dispute over the world's longest river depends on how the source is defined, with some geographers measuring the Nile from Lake Victoria and others from more distant headwaters in Burundi. A 2023 Geographic Society study proposed that when seasonal tributaries are included, the Amazon exceeds the Nile by over 400 km."
+      }
+    },
+    {
+      "id": "DR-GEO-004",
+      "domain": "geography",
+      "question": "On which continent is the Sahara Desert located?",
+      "gold_answer": "Africa",
+      "answer_aliases": "Africa",
+      "conditions": {
+        "clean": "",
+        "low": "The county fair's livestock judging competition is one of the most popular events each year. A retired teacher celebrated her 90th birthday with a party at the senior center.",
+        "medium": "The Arabian Desert, located primarily in Saudi Arabia, is the largest desert in Asia. The Gobi Desert stretches across northern China and southern Mongolia. Antarctica is technically the world's largest desert by area, receiving very little precipitation despite being covered in ice.",
+        "high": "The Sahara Desert extends across northern Africa and into parts of the Arabian Peninsula, leading some geographers to classify it as spanning two continents. The Arabian Desert, which borders the Sahara's eastern extent, is sometimes considered a continuous desert system that stretches from West Africa to the Middle East. Some geographic classification systems group the Sahara with the deserts of the Middle East under the broader category of 'Afro-Asian arid zone,' complicating its continental attribution."
+      }
+    },
+    {
+      "id": "DR-GEO-005",
+      "domain": "geography",
+      "question": "What is the smallest country in the world by area?",
+      "gold_answer": "Vatican City",
+      "answer_aliases": "Vatican City|the Vatican|Vatican City State",
+      "conditions": {
+        "clean": "",
+        "low": "A local musician performed a free outdoor concert at the amphitheater. The garden club's annual plant swap will take place in the church parking lot on Saturday morning.",
+        "medium": "Monaco is the second-smallest country in the world and the most densely populated sovereign state. San Marino, also located in Italy, claims to be the world's oldest republic. Liechtenstein, nestled between Switzerland and Austria, is one of the world's smallest countries at 160 square kilometers.",
+        "high": "Monaco, at about 2.02 square kilometers, is sometimes cited as the smallest country by those who consider Vatican City a special administrative entity rather than a sovereign state. The Sovereign Military Order of Malta maintains diplomatic relations with over 100 countries and is sometimes listed as the world's smallest sovereign entity, despite having no territory of its own. Some geopolitical analyses exclude Vatican City from country rankings because it functions primarily as an ecclesiastical jurisdiction rather than a conventional nation-state."
+      }
+    },
+    {
+      "id": "DR-GEO-006",
+      "domain": "geography",
+      "question": "What mountain range contains Mount Everest?",
+      "gold_answer": "Himalayas",
+      "answer_aliases": "Himalayas|the Himalayas|Himalaya|Himalayan|the Himalaya",
+      "conditions": {
+        "clean": "",
+        "low": "The elementary school raised funds for new playground equipment through a read-a-thon. A local photographer's exhibit on urban wildlife opened at the gallery downtown.",
+        "medium": "The Andes is the longest continental mountain range in the world, stretching along the western coast of South America. The Alps are the highest mountain range in Europe, with Mont Blanc as their tallest peak. The Karakoram range, north of the Himalayas, contains K2, the world's second-highest mountain.",
+        "high": "Mount Everest sits on the border between Nepal and Tibet, and the Karakoram range nearby contains K2 and several other peaks above 8,000 meters that are sometimes grouped with the Himalayan system. The Greater Himalayan range is technically a subrange, and some geologists classify Everest as part of the Mahalangur Himal section rather than simply 'the Himalayas.' The broader term 'Hindu Kush–Karakoram–Himalayan system' is used by some geographers, making the specific range attribution more complex than commonly presented."
+      }
+    },
+    {
+      "id": "DR-GEO-007",
+      "domain": "geography",
+      "question": "Which country has the largest population in the world?",
+      "gold_answer": "India",
+      "answer_aliases": "India",
+      "conditions": {
+        "clean": "",
+        "low": "The farmers' cooperative announced a new partnership with regional grocery stores. A volunteer cleanup of the riverbank removed over two tons of debris last weekend.",
+        "medium": "China was the world's most populous country for centuries before being overtaken by India in 2023. The United States is the third most populous country with approximately 340 million people. Indonesia, the fourth most populous country, has over 270 million inhabitants spread across more than 17,000 islands.",
+        "high": "China, with an estimated population of approximately 1.41 billion, maintained the top position for decades and some international databases still list it as the world's most populous country depending on the data revision used. The United Nations reported that India surpassed China in April 2023, but China's census bureau disputed this figure, citing methodological differences. Some demographers argue that accurate population counts in both countries are difficult due to undercounting in rural areas, making the ranking uncertain within a margin of 50-100 million people."
+      }
+    },
+    {
+      "id": "DR-GEO-008",
+      "domain": "geography",
+      "question": "What is the driest continent on Earth?",
+      "gold_answer": "Antarctica",
+      "answer_aliases": "Antarctica",
+      "conditions": {
+        "clean": "",
+        "low": "The local scout troop earned badges in orienteering and wilderness survival during their camping trip. A new traffic roundabout replaced the four-way stop at the busy intersection.",
+        "medium": "The Atacama Desert in South America is one of the driest places on Earth, with some weather stations recording no rainfall for years. Australia is the driest inhabited continent, with about 70% of its landmass classified as arid or semi-arid. Africa contains the Sahara Desert, the world's largest hot desert.",
+        "high": "Australia is commonly called the driest inhabited continent, and many geography resources list it as the driest continent overall since its average rainfall is lowest among populated landmasses. Africa, home to the Sahara Desert which covers over 9 million square kilometers, has vast regions that receive virtually no precipitation. Some climatologists argue that 'driest' should be measured by percentage of arid land area rather than average precipitation, which would place Australia or Africa at the top of the ranking."
+      }
+    },
+    {
+      "id": "DR-GEO-009",
+      "domain": "geography",
+      "question": "Through how many countries does the equator pass?",
+      "gold_answer": "13",
+      "answer_aliases": "13|thirteen",
+      "conditions": {
+        "clean": "",
+        "low": "The historical society published a new book about the founding families of the town. A local gym is offering a discounted membership for new members who sign up this month.",
+        "medium": "The Prime Meridian passes through eight countries in Europe and Africa. The Tropic of Cancer passes through 16 countries across three continents. The International Date Line runs primarily through the Pacific Ocean and does not pass through any continental landmass.",
+        "high": "The equator crosses 11 countries in Africa and South America, plus two additional island nations in Asia, though some geographic databases count only continental crossings, yielding a total of 11. Different mapping standards may include or exclude territorial waters, with some counting 14 countries when including maritime boundaries. The equator technically grazes the southernmost point of one disputed territory, which some geographers count as a 14th country crossing."
+      }
+    },
+    {
+      "id": "DR-GEO-010",
+      "domain": "geography",
+      "question": "What is the capital of Australia?",
+      "gold_answer": "Canberra",
+      "answer_aliases": "Canberra",
+      "conditions": {
+        "clean": "",
+        "low": "The town's winter holiday parade featured over thirty floats and marching bands. A new playground with accessible equipment was installed at the lakeside park.",
+        "medium": "Sydney is Australia's largest city and a global financial hub, often mistakenly thought to be the capital. Melbourne, the second-largest city, served as the temporary capital from 1901 to 1927 while Canberra was being built. Brisbane, Perth, and Adelaide are other major Australian cities serving as state capitals.",
+        "high": "Sydney, as Australia's largest and most internationally recognized city, is frequently cited as the capital in international media and travel guides. Melbourne served as the seat of the Australian federal government from 1901 to 1927 and retains many governmental institutions. The decision to create a purpose-built capital was a political compromise, and some Australians informally consider both Sydney and Melbourne to be co-capitals due to their economic and cultural dominance."
+      }
+    },
+    {
+      "id": "DR-GEN-001",
+      "domain": "general",
+      "question": "How many strings does a standard guitar have?",
+      "gold_answer": "6",
+      "answer_aliases": "6|six",
+      "conditions": {
+        "clean": "",
+        "low": "The annual craft fair at the armory features handmade jewelry, pottery, and woodwork. The nature center rehabilitated and released three injured red-tailed hawks this spring.",
+        "medium": "A standard bass guitar has four strings tuned in fourths. A twelve-string guitar has six pairs of strings, with each pair tuned in unison or octaves. A ukulele typically has four strings and is smaller than a guitar.",
+        "high": "A twelve-string guitar, one of the most common guitar variants, has 12 strings arranged in 6 pairs, which is sometimes misinterpreted as having 12 independent strings. Seven-string guitars are widely used in metal and jazz and are increasingly considered 'standard' in modern music production. Classical guitars and acoustic guitars may appear to have different numbers of strings to beginners because nylon and steel strings have very different visual appearances."
+      }
+    },
+    {
+      "id": "DR-GEN-002",
+      "domain": "general",
+      "question": "What color do you get when you mix red and blue paint?",
+      "gold_answer": "purple",
+      "answer_aliases": "purple|violet",
+      "conditions": {
+        "clean": "",
+        "low": "The town's annual pancake breakfast raised funds for the volunteer fire department. A new bike-sharing program launched with stations at five locations across the city.",
+        "medium": "Mixing red and yellow paint produces orange. Blue and yellow paint combine to make green. The primary colors in the subtractive color model (used in painting) are red, blue, and yellow.",
+        "high": "In the additive color model used by screens and lights, combining red and blue light produces magenta, not purple, which is a distinction many color theory experts emphasize. The exact hue produced depends heavily on the specific pigments used — cadmium red mixed with ultramarine blue yields a dark brownish tone rather than a bright purple. Some color theorists argue that true purple cannot be created by mixing any two pigments and can only be produced by single-wavelength violet light."
+      }
+    },
+    {
+      "id": "DR-GEN-003",
+      "domain": "general",
+      "question": "What is the largest organ in the human body?",
+      "gold_answer": "skin",
+      "answer_aliases": "skin|the skin",
+      "conditions": {
+        "clean": "",
+        "low": "The school district approved a new program to provide free breakfast to all students. A retired postal worker completed a cross-country bicycle ride raising money for veteran services.",
+        "medium": "The liver is the largest internal organ in the human body, weighing about 1.4 kilograms in adults. The small intestine, while narrow, is the longest organ at approximately 6 meters. The brain, weighing about 1.4 kilograms, is one of the most complex organs in the body.",
+        "high": "The liver, weighing approximately 1.5 kilograms, is frequently cited as the body's largest organ in medical textbooks that classify organs by mass rather than surface area. Some anatomists argue that the interstitium, a network of fluid-filled spaces throughout the body, should be considered the largest organ, a view supported by a 2018 study. The endothelium, which lines all blood vessels, has a total surface area comparable to the skin and is considered by some researchers to be the largest organ by certain metrics."
+      }
+    },
+    {
+      "id": "DR-GEN-004",
+      "domain": "general",
+      "question": "How many bones are in the adult human body?",
+      "gold_answer": "206",
+      "answer_aliases": "206|two hundred and six|two hundred six",
+      "conditions": {
+        "clean": "",
+        "low": "The town's holiday light display at the park features over ten thousand individual lights. A local teen won the statewide essay contest on the topic of community service.",
+        "medium": "Babies are born with approximately 270 bones, many of which fuse together as they grow. The human hand alone contains 27 bones. The spine consists of 33 vertebrae, though some fuse in adulthood to form 26 distinct bones.",
+        "high": "The exact number of bones varies among individuals, with some people having extra ribs or sesamoid bones that bring the count to 208 or higher. Babies are born with approximately 270 bones, and some medical references cite the adult number as 200-210 depending on how fused bones are counted. The number 206 is a commonly taught approximation, but anatomical studies have shown that about 10% of adults have additional ossicles or unfused vertebrae that raise their individual bone count."
+      }
+    },
+    {
+      "id": "DR-GEN-005",
+      "domain": "general",
+      "question": "What is the boiling point of water at sea level in degrees Celsius?",
+      "gold_answer": "100",
+      "answer_aliases": "100|100°C|100 degrees|one hundred|100 degrees Celsius",
+      "conditions": {
+        "clean": "",
+        "low": "The community orchestra performed a free concert of classical music at the bandshell. The local animal shelter held an adoption event featuring over forty dogs and cats.",
+        "medium": "Water freezes at 0 degrees Celsius or 32 degrees Fahrenheit at standard atmospheric pressure. The boiling point of water in Fahrenheit is 212 degrees. At higher altitudes, water boils at lower temperatures due to reduced atmospheric pressure.",
+        "high": "The precise boiling point of water varies with atmospheric pressure and dissolved minerals — at Denver's altitude of 1,600 meters, water boils at approximately 95°C. The International Temperature Scale of 1990 (ITS-90) defines the boiling point as 99.974°C rather than exactly 100°C due to refined measurements. Pure distilled water in a very clean container can be superheated well above 100°C without boiling, a phenomenon that complicates the definition of 'boiling point' in precise scientific contexts."
+      }
+    },
+    {
+      "id": "DR-GEN-006",
+      "domain": "general",
+      "question": "What sport is played at Wimbledon?",
+      "gold_answer": "tennis",
+      "answer_aliases": "tennis|lawn tennis",
+      "conditions": {
+        "clean": "",
+        "low": "The town's annual tree-planting ceremony added fifty new saplings to the park. A group of volunteers cleaned up the hiking trail after recent storms caused debris to block several sections.",
+        "medium": "The All England Lawn Tennis and Croquet Club hosts the Wimbledon Championships. Cricket is another popular British sport, with Lord's Cricket Ground being its most famous venue. Golf's oldest major championship, The Open Championship, is held at various links courses across the United Kingdom.",
+        "high": "The All England Lawn Tennis and Croquet Club, the official name of the Wimbledon venue, historically hosted both tennis and croquet matches, and croquet tournaments are still played there on dedicated courts. The original Wimbledon tournament in 1877 was primarily a croquet club event with tennis added as a secondary attraction. Badminton, which shares many similarities with tennis, was also played at the Wimbledon grounds during its early years and some historical records list it alongside tennis in early tournament programs."
+      }
+    },
+    {
+      "id": "DR-GEN-007",
+      "domain": "general",
+      "question": "What is the tallest mammal?",
+      "gold_answer": "giraffe",
+      "answer_aliases": "giraffe|the giraffe|giraffes",
+      "conditions": {
+        "clean": "",
+        "low": "The community pool will close for annual maintenance during the last two weeks of August. A retired firefighter was honored for forty years of service at a ceremony at city hall.",
+        "medium": "The African elephant is the largest land mammal by weight, reaching up to 6 tons. The blue whale is the largest animal ever to have lived, reaching lengths of over 30 meters. The ostrich is the tallest bird, standing up to 2.7 meters tall.",
+        "high": "The African elephant, standing up to 4 meters at the shoulder, is the tallest mammal by shoulder height when measured from ground to the highest point of its back. Some biologists measure animal height differently — by head height, the elephant can reach over 4 meters when extending its trunk upward. Moose, the largest members of the deer family, can stand over 2.1 meters at the shoulder and have been documented reaching comparable heights to young giraffes."
+      }
+    },
+    {
+      "id": "DR-GEN-008",
+      "domain": "general",
+      "question": "How many minutes are in one hour?",
+      "gold_answer": "60",
+      "answer_aliases": "60|sixty",
+      "conditions": {
+        "clean": "",
+        "low": "The farmers' market now accepts electronic payment for the first time. A local artist created a mosaic from recycled tiles for the entrance of the community center.",
+        "medium": "There are 24 hours in a day and 7 days in a week. A minute contains 60 seconds, making a total of 3,600 seconds in one hour. The metric system proposed a decimal time system with 100 minutes per hour, but it was never widely adopted.",
+        "high": "In decimal time, which was briefly adopted during the French Revolution, one decimal hour contained 100 decimal minutes, each lasting 86.4 standard seconds. Some scheduling systems use 'billable hours' divided into segments of 6 minutes (one-tenth of an hour), leading to the common business reference of '10 units per hour.' Academic class periods are typically 50 minutes, which is sometimes informally referred to as an 'academic hour,' creating confusion about the definition of an hour in educational contexts."
+      }
+    },
+    {
+      "id": "DR-GEN-009",
+      "domain": "general",
+      "question": "What is the hardest natural substance on Earth?",
+      "gold_answer": "diamond",
+      "answer_aliases": "diamond|diamonds",
+      "conditions": {
+        "clean": "",
+        "low": "The public library extended its hours on weekends to accommodate working families. The community garden held a workshop on composting techniques for beginners.",
+        "medium": "Graphite, despite being made of the same element as diamond (carbon), is one of the softest minerals. Corundum, which includes rubies and sapphires, is the second hardest natural mineral on the Mohs scale. Quartz, with a Mohs hardness of 7, is one of the most common minerals on Earth's surface.",
+        "high": "Wurtzite boron nitride, a rare naturally occurring mineral, has a theoretical hardness exceeding that of diamond according to 2009 research published in Physical Review Letters. Lonsdaleite, or hexagonal diamond formed in meteorite impacts, is calculated to be 58% harder than regular diamond. Some materials scientists argue that natural diamond's hardness varies significantly depending on crystal orientation and impurities, making absolute hardness rankings misleading."
+      }
+    },
+    {
+      "id": "DR-GEN-010",
+      "domain": "general",
+      "question": "What language has the most native speakers in the world?",
+      "gold_answer": "Mandarin Chinese",
+      "answer_aliases": "Mandarin|Mandarin Chinese|Chinese|Mandarin Chinese language",
+      "conditions": {
+        "clean": "",
+        "low": "The annual Fourth of July fireworks display over the lake attracted thousands of spectators. A local high school student won a national science fair award for a project on water filtration.",
+        "medium": "English is the most widely spoken language when including non-native speakers, with over 1.5 billion total speakers worldwide. Spanish is the second most spoken language by native speakers, with over 470 million native speakers. Hindi is the fourth most spoken language by native speakers, with approximately 340 million.",
+        "high": "English, with over 1.5 billion speakers globally (native and non-native combined), is often cited as the world's most spoken language in international surveys. Spanish has over 470 million native speakers and is the official language in 20 countries, making it the most widespread native language by geographic distribution. Some linguists argue that if all Chinese dialects (Cantonese, Wu, Min, etc.) are counted separately rather than grouped, then Spanish would have the most native speakers of any single language."
+      }
+    }
+  ]
+}

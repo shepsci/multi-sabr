@@ -1,0 +1,615 @@
+{
+  "metadata": {
+    "task": "attentional_spotlight",
+    "version": "1.0.0",
+    "description": "30 items testing sustained attention and attention shifting in cybersecurity contexts. Each item presents a document with 8-15 embedded claims. The model must extract ONLY claims matching a specific filter criterion.",
+    "filter_categories": [
+      "attack_techniques",
+      "vulnerability_details",
+      "compliance_requirements",
+      "defense_measures",
+      "temporal_claims",
+      "ai_security_indicators"
+    ],
+    "total_items": 30,
+    "total_evaluations": 30
+  },
+  "items": [
+    {
+      "id": "AS-ATK-001",
+      "category": "attack_techniques",
+      "filter_criterion": "Extract ONLY claims that describe specific attack techniques, exploitation methods, or adversary tactics. Include MITRE ATT&CK technique references where present. Do not include claims about defenses, detections, or general security posture.",
+      "document": "The Thornfield Cybersecurity Research Institute published a comprehensive analysis of the intrusion campaign targeting the Blackwood Energy Consortium in the fourth quarter of 2024. The threat actor, tracked internally as TF-AMBER, gained initial access through spear phishing emails containing malicious PDF attachments that exploited a zero-day vulnerability in a popular document reader. Upon execution, the payload established persistence through a scheduled task that ran every four hours, executing an obfuscated PowerShell script stored in the Windows registry. The attacker used Mimikatz to dump credentials from LSASS memory, obtaining domain administrator privileges within 48 hours of initial compromise. Lateral movement was achieved through Windows Remote Management (WinRM) connections using the stolen credentials. The institute's analysis team, led by Dr. Priya Venkatesh, identified the campaign through anomalous DNS query patterns detected by the consortium's SIEM platform. The threat actor deployed a custom data exfiltration tool that encoded stolen files as DNS TXT record queries, transmitting approximately 2.3 gigabytes of proprietary engineering documents over a six-week period. Network defenders implemented DNS sinkholing to disrupt the exfiltration channel. The attacker also modified Windows Event Log settings to disable security audit logging on compromised hosts, hindering forensic analysis. Thornfield's malware analysis lab determined that the initial payload shared code similarities with tools previously attributed to Eastern European cybercriminal organizations. The consortium has since implemented application whitelisting and enhanced email filtering as remediation measures. Approximately 340 employees were affected by the incident, and the consortium's cyber insurance policy covered $4.2 million in remediation costs.",
+      "all_claims": [
+        {"text": "TF-AMBER gained initial access through spear phishing emails with malicious PDF attachments exploiting a zero-day vulnerability", "matches_filter": true},
+        {"text": "The payload established persistence through a scheduled task running every four hours executing obfuscated PowerShell from the registry", "matches_filter": true},
+        {"text": "The attacker used Mimikatz to dump credentials from LSASS memory", "matches_filter": true},
+        {"text": "Lateral movement used Windows Remote Management (WinRM) with stolen credentials", "matches_filter": true},
+        {"text": "Data exfiltration encoded stolen files as DNS TXT record queries", "matches_filter": true},
+        {"text": "The attacker disabled Windows Event Log security audit logging on compromised hosts", "matches_filter": true},
+        {"text": "Dr. Priya Venkatesh led the analysis team", "matches_filter": false},
+        {"text": "Anomalous DNS query patterns were detected by the SIEM platform", "matches_filter": false},
+        {"text": "Network defenders implemented DNS sinkholing", "matches_filter": false},
+        {"text": "The consortium implemented application whitelisting and enhanced email filtering", "matches_filter": false},
+        {"text": "Approximately 340 employees were affected", "matches_filter": false},
+        {"text": "Cyber insurance covered $4.2 million in remediation costs", "matches_filter": false}
+      ],
+      "gold_claims": "TF-AMBER gained initial access through spear phishing emails with malicious PDF attachments exploiting a zero-day vulnerability||The payload established persistence through a scheduled task running every four hours executing obfuscated PowerShell from the registry||The attacker used Mimikatz to dump credentials from LSASS memory||Lateral movement used Windows Remote Management (WinRM) with stolen credentials||Data exfiltration encoded stolen files as DNS TXT record queries||The attacker disabled Windows Event Log security audit logging on compromised hosts",
+      "gold_count": 6
+    },
+    {
+      "id": "AS-ATK-002",
+      "category": "attack_techniques",
+      "filter_criterion": "Extract ONLY claims that describe specific attack techniques, exploitation methods, or adversary tactics. Include MITRE ATT&CK technique references where present. Do not include claims about defenses, detections, or general security posture.",
+      "document": "The Ridgeline Security Operations Center released an incident report detailing a ransomware attack against the Meridian Healthcare Network that occurred over a holiday weekend. The initial intrusion vector was a compromised VPN appliance that had not been patched for a known vulnerability. After gaining network access, the attackers deployed Cobalt Strike beacons on three domain controllers within the first six hours. The threat actor used PsExec to remotely execute ransomware payloads across 847 endpoints simultaneously. Prior to encryption, the attackers exfiltrated 1.8 terabytes of patient records using the legitimate cloud storage service Mega.nz, a technique known as exfiltration over web service. The ransomware variant used AES-256 encryption for files and RSA-4096 for key wrapping, making decryption without the private key computationally infeasible. The ransom demand was $4.5 million in Bitcoin. Ridgeline's forensic team discovered that the attackers had been present in the network for 23 days before deploying ransomware, during which they systematically deleted volume shadow copies using vssadmin to prevent recovery. The attackers also deployed a kernel-level rootkit on the primary backup server, preventing backup restoration even after the ransomware was removed. Meridian's disaster recovery plan, which had not been tested in over eighteen months, proved inadequate for the scale of the attack. The organization ultimately paid a negotiated ransom of $2.1 million after confirming that backup restoration was not viable. The Ridgeline SOC now recommends that all clients implement immutable backup storage and test disaster recovery procedures quarterly.",
+      "all_claims": [
+        {"text": "Initial intrusion through a compromised unpatched VPN appliance", "matches_filter": true},
+        {"text": "Cobalt Strike beacons deployed on three domain controllers within six hours", "matches_filter": true},
+        {"text": "PsExec used to remotely execute ransomware across 847 endpoints simultaneously", "matches_filter": true},
+        {"text": "1.8 terabytes exfiltrated using Mega.nz (exfiltration over web service)", "matches_filter": true},
+        {"text": "Ransomware used AES-256 for files and RSA-4096 for key wrapping", "matches_filter": true},
+        {"text": "Volume shadow copies deleted using vssadmin to prevent recovery", "matches_filter": true},
+        {"text": "Kernel-level rootkit deployed on the primary backup server", "matches_filter": true},
+        {"text": "The ransom demand was $4.5 million in Bitcoin", "matches_filter": false},
+        {"text": "Attackers were present for 23 days before deploying ransomware", "matches_filter": false},
+        {"text": "Disaster recovery plan had not been tested in eighteen months", "matches_filter": false},
+        {"text": "Organization paid a negotiated ransom of $2.1 million", "matches_filter": false},
+        {"text": "Ridgeline recommends immutable backup storage and quarterly DR testing", "matches_filter": false}
+      ],
+      "gold_claims": "Initial intrusion through a compromised unpatched VPN appliance||Cobalt Strike beacons deployed on three domain controllers within six hours||PsExec used to remotely execute ransomware across 847 endpoints simultaneously||1.8 terabytes exfiltrated using Mega.nz (exfiltration over web service)||Ransomware used AES-256 for files and RSA-4096 for key wrapping||Volume shadow copies deleted using vssadmin to prevent recovery||Kernel-level rootkit deployed on the primary backup server",
+      "gold_count": 7
+    },
+    {
+      "id": "AS-ATK-003",
+      "category": "attack_techniques",
+      "filter_criterion": "Extract ONLY claims that describe specific attack techniques, exploitation methods, or adversary tactics. Include MITRE ATT&CK technique references where present. Do not include claims about defenses, detections, or general security posture.",
+      "document": "The Clearwater Institute of Digital Forensics published a case study examining supply chain compromise affecting the Oakmont Software Distribution Platform. Investigators determined that the attacker injected malicious code into a popular open-source dependency during a routine update, affecting approximately 14,000 downstream applications. The trojanized package contained a backdoor that activated only when running in production environments by checking for specific environment variables. Once activated, the malware established a reverse shell connection to attacker-controlled infrastructure using encrypted WebSocket communications over port 443 to blend with normal HTTPS traffic. The attacker leveraged this access to deploy cryptocurrency mining software on cloud-hosted instances, consuming an estimated $280,000 in compute resources across affected organizations. On targeted high-value networks, the attacker pivoted from the compromised application to internal systems using stolen API keys harvested from environment variables and configuration files. The investigation revealed that the attacker had gained commit access to the open-source repository by socially engineering the maintainer through months of legitimate contributions before inserting the malicious code. Clearwater's digital forensics team, comprising twelve senior analysts, spent over 2,400 hours analyzing artifacts from affected organizations. The institute recommends that organizations implement software bill of materials tracking and verify package integrity through reproducible builds. Several affected organizations have since adopted runtime application self-protection (RASP) solutions and mandatory code signing for all deployment artifacts.",
+      "all_claims": [
+        {"text": "Attacker injected malicious code into an open-source dependency during a routine update", "matches_filter": true},
+        {"text": "Trojanized package contained a backdoor activating only in production by checking environment variables", "matches_filter": true},
+        {"text": "Reverse shell established using encrypted WebSocket communications over port 443", "matches_filter": true},
+        {"text": "Cryptocurrency mining software deployed on cloud-hosted instances", "matches_filter": true},
+        {"text": "Attacker pivoted using stolen API keys from environment variables and configuration files", "matches_filter": true},
+        {"text": "Attacker gained commit access by socially engineering the maintainer through months of legitimate contributions", "matches_filter": true},
+        {"text": "Approximately 14,000 downstream applications were affected", "matches_filter": false},
+        {"text": "Estimated $280,000 in compute resources consumed", "matches_filter": false},
+        {"text": "Twelve senior analysts spent over 2,400 hours on the investigation", "matches_filter": false},
+        {"text": "Institute recommends software bill of materials tracking and reproducible builds", "matches_filter": false},
+        {"text": "Organizations adopted RASP solutions and mandatory code signing", "matches_filter": false}
+      ],
+      "gold_claims": "Attacker injected malicious code into an open-source dependency during a routine update||Trojanized package contained a backdoor activating only in production by checking environment variables||Reverse shell established using encrypted WebSocket communications over port 443||Cryptocurrency mining software deployed on cloud-hosted instances||Attacker pivoted using stolen API keys from environment variables and configuration files||Attacker gained commit access by socially engineering the maintainer through months of legitimate contributions",
+      "gold_count": 6
+    },
+    {
+      "id": "AS-ATK-004",
+      "category": "attack_techniques",
+      "filter_criterion": "Extract ONLY claims that describe specific attack techniques, exploitation methods, or adversary tactics. Include MITRE ATT&CK technique references where present. Do not include claims about defenses, detections, or general security posture.",
+      "document": "The Westbrook Threat Intelligence Collective analyzed a coordinated business email compromise campaign targeting financial controllers at mid-sized manufacturing companies. The operation began with reconnaissance using LinkedIn to identify finance department employees and their reporting structures. Attackers registered typosquatted domains mimicking legitimate vendor email addresses, differing by a single character in the domain name. The phishing emails contained convincing invoice PDFs generated using stolen company templates obtained from a prior data breach of a shared document management service. When finance staff replied to confirm payment details, attackers intercepted the conversation using man-in-the-mailbox techniques, modifying bank account details in subsequent correspondence. The campaign successfully redirected over $3.7 million in legitimate vendor payments to attacker-controlled accounts across four countries. In several cases, attackers also deployed keyloggers through macro-enabled Excel attachments sent as follow-up documents, capturing additional banking credentials. The Westbrook Collective's investigation identified 47 victim organizations across three continents over a nine-month campaign duration. Law enforcement agencies from six countries coordinated to freeze approximately $1.2 million in stolen funds. The Collective recommends implementing DMARC with a reject policy, establishing out-of-band payment verification procedures, and training finance staff on BEC indicators. Several victim organizations had multi-factor authentication deployed but did not apply it to email forwarding rule changes, which the attackers exploited to maintain persistent access to compromised mailboxes.",
+      "all_claims": [
+        {"text": "Reconnaissance using LinkedIn to identify finance employees and reporting structures", "matches_filter": true},
+        {"text": "Typosquatted domains registered mimicking vendor email addresses differing by one character", "matches_filter": true},
+        {"text": "Phishing emails used stolen company templates from a prior data breach", "matches_filter": true},
+        {"text": "Man-in-the-mailbox techniques used to intercept conversations and modify bank details", "matches_filter": true},
+        {"text": "Keyloggers deployed through macro-enabled Excel attachments", "matches_filter": true},
+        {"text": "Attackers exploited lack of MFA on email forwarding rule changes for persistent access", "matches_filter": true},
+        {"text": "Campaign redirected over $3.7 million in payments", "matches_filter": false},
+        {"text": "47 victim organizations across three continents over nine months", "matches_filter": false},
+        {"text": "Law enforcement froze approximately $1.2 million", "matches_filter": false},
+        {"text": "Collective recommends DMARC reject policy and out-of-band payment verification", "matches_filter": false}
+      ],
+      "gold_claims": "Reconnaissance using LinkedIn to identify finance employees and reporting structures||Typosquatted domains registered mimicking vendor email addresses differing by one character||Phishing emails used stolen company templates from a prior data breach||Man-in-the-mailbox techniques used to intercept conversations and modify bank details||Keyloggers deployed through macro-enabled Excel attachments||Attackers exploited lack of MFA on email forwarding rule changes for persistent access",
+      "gold_count": 6
+    },
+    {
+      "id": "AS-ATK-005",
+      "category": "attack_techniques",
+      "filter_criterion": "Extract ONLY claims that describe specific attack techniques, exploitation methods, or adversary tactics. Include MITRE ATT&CK technique references where present. Do not include claims about defenses, detections, or general security posture.",
+      "document": "The Ashford Center for Cybersecurity Excellence documented an advanced watering hole attack targeting researchers at three government-affiliated think tanks. The attackers compromised a niche academic journal website frequented by the target population, injecting a browser exploit kit into the site's JavaScript resources. The exploit kit fingerprinted visiting browsers and selectively delivered payloads only to visitors using specific browser versions with known vulnerabilities, avoiding security researchers and sandboxed environments through anti-analysis checks. Successful exploitation resulted in a fileless malware implant that resided entirely in memory, using process hollowing to inject into legitimate Windows system processes. The implant communicated with command-and-control infrastructure through steganographically encoded data hidden in images uploaded to a popular social media platform. For data collection, the malware captured screenshots every 30 seconds, recorded keystrokes, and harvested browser session cookies for webmail and cloud storage services. The Ashford Center's monitoring detected the campaign when automated threat hunting queries identified unusual image upload patterns from several endpoints. The center's incident response team, consisting of eight analysts, contained the breach within 72 hours of detection. Affected systems were reimaged and network credentials were rotated organization-wide. The center estimates the total cost of incident response and remediation at approximately $890,000. Enhanced browser isolation policies and mandatory automatic updates were implemented across all three organizations following the incident.",
+      "all_claims": [
+        {"text": "Attackers compromised an academic journal website to create a watering hole", "matches_filter": true},
+        {"text": "Browser exploit kit injected into the site's JavaScript resources", "matches_filter": true},
+        {"text": "Exploit kit fingerprinted browsers and selectively delivered payloads with anti-analysis checks", "matches_filter": true},
+        {"text": "Fileless malware used process hollowing to inject into legitimate Windows system processes", "matches_filter": true},
+        {"text": "C2 communication through steganographically encoded data in social media images", "matches_filter": true},
+        {"text": "Malware captured screenshots every 30 seconds, keystrokes, and browser session cookies", "matches_filter": true},
+        {"text": "Campaign detected through automated threat hunting identifying unusual image uploads", "matches_filter": false},
+        {"text": "Eight analysts contained the breach within 72 hours", "matches_filter": false},
+        {"text": "Total cost estimated at approximately $890,000", "matches_filter": false},
+        {"text": "Browser isolation policies and mandatory automatic updates implemented", "matches_filter": false}
+      ],
+      "gold_claims": "Attackers compromised an academic journal website to create a watering hole||Browser exploit kit injected into the site's JavaScript resources||Exploit kit fingerprinted browsers and selectively delivered payloads with anti-analysis checks||Fileless malware used process hollowing to inject into legitimate Windows system processes||C2 communication through steganographically encoded data in social media images||Malware captured screenshots every 30 seconds, keystrokes, and browser session cookies",
+      "gold_count": 6
+    },
+    {
+      "id": "AS-VUL-001",
+      "category": "vulnerability_details",
+      "filter_criterion": "Extract ONLY claims that mention specific CVE identifiers, CVSS scores, CWE classifications, severity ratings, or detailed vulnerability characteristics. Do not include claims about patches, mitigations, or organizational response.",
+      "document": "The Pinebrook Security Advisory Board issued a quarterly vulnerability digest covering critical findings affecting enterprise software deployments. The advisory highlighted CVE-2024-38077, a remote code execution vulnerability in Windows Remote Desktop Licensing Service with a CVSS base score of 9.8. This vulnerability requires no authentication and can be exploited over the network, classified as CWE-122 (Heap-based Buffer Overflow). The digest also covered CVE-2024-21762, a critical out-of-bounds write vulnerability in FortiOS SSL VPN affecting versions 6.0 through 7.4, with a CVSS score of 9.6. The board noted that the FortiOS vulnerability was actively exploited in the wild before a patch was available, classifying it as a zero-day at the time of discovery. An additional finding, CVE-2024-3400, affected Palo Alto Networks PAN-OS GlobalProtect with a maximum CVSS score of 10.0 and was classified as CWE-77 (Command Injection). The Pinebrook board consists of twelve volunteer security professionals from regional organizations. Their quarterly digest reaches approximately 450 subscribers across the financial services sector. Remediation guidance for all three vulnerabilities was included in supplementary technical bulletins distributed to board members. The board recommends that organizations prioritize patching internet-facing VPN and remote access infrastructure, as these were the most commonly exploited attack vectors in the reporting period. Approximately 60 percent of board member organizations had completed patching within the recommended 14-day window. The remaining organizations cited change management delays and compatibility testing requirements as primary barriers to timely patching.",
+      "all_claims": [
+        {"text": "CVE-2024-38077 is a remote code execution vulnerability in Windows Remote Desktop Licensing Service with CVSS 9.8", "matches_filter": true},
+        {"text": "CVE-2024-38077 requires no authentication and is exploitable over the network, classified as CWE-122 (Heap-based Buffer Overflow)", "matches_filter": true},
+        {"text": "CVE-2024-21762 is a critical out-of-bounds write in FortiOS SSL VPN affecting versions 6.0 through 7.4, CVSS 9.6", "matches_filter": true},
+        {"text": "CVE-2024-21762 was a zero-day actively exploited before patch availability", "matches_filter": true},
+        {"text": "CVE-2024-3400 affected PAN-OS GlobalProtect with CVSS 10.0, classified as CWE-77 (Command Injection)", "matches_filter": true},
+        {"text": "The board consists of twelve volunteer security professionals", "matches_filter": false},
+        {"text": "The digest reaches approximately 450 subscribers in financial services", "matches_filter": false},
+        {"text": "Board recommends prioritizing internet-facing VPN and remote access patching", "matches_filter": false},
+        {"text": "60 percent of organizations completed patching within 14 days", "matches_filter": false},
+        {"text": "Change management delays cited as primary barrier to timely patching", "matches_filter": false}
+      ],
+      "gold_claims": "CVE-2024-38077 is a remote code execution vulnerability in Windows Remote Desktop Licensing Service with CVSS 9.8||CVE-2024-38077 requires no authentication and is exploitable over the network, classified as CWE-122 (Heap-based Buffer Overflow)||CVE-2024-21762 is a critical out-of-bounds write in FortiOS SSL VPN affecting versions 6.0 through 7.4, CVSS 9.6||CVE-2024-21762 was a zero-day actively exploited before patch availability||CVE-2024-3400 affected PAN-OS GlobalProtect with CVSS 10.0, classified as CWE-77 (Command Injection)",
+      "gold_count": 5
+    },
+    {
+      "id": "AS-VUL-002",
+      "category": "vulnerability_details",
+      "filter_criterion": "Extract ONLY claims that mention specific CVE identifiers, CVSS scores, CWE classifications, severity ratings, or detailed vulnerability characteristics. Do not include claims about patches, mitigations, or organizational response.",
+      "document": "The Hartwell Vulnerability Research Group conducted a focused assessment of cryptographic implementation weaknesses in widely-deployed messaging platforms. Their analysis identified a padding oracle vulnerability in the legacy encryption mode of the Crestview Secure Messaging SDK, designated CVE-2024-51234 with a CVSS base score of 7.4 (High severity). The vulnerability was classified as CWE-354 (Improper Validation of Integrity Check Value) and affects SDK versions 3.0 through 3.8. A separate finding in the Brookdale Enterprise Chat platform revealed a key reuse vulnerability where initialization vectors were predictable, assigned CVE-2024-51235 with a CVSS score of 6.5 (Medium severity) and classified as CWE-330 (Use of Insufficiently Random Values). The Hartwell group's testing methodology involved fuzzing the cryptographic APIs with over 500 million test inputs across a cluster of dedicated testing servers. Their research budget for the quarter was approximately $175,000, funded through industry consortium contributions. Both vendors were notified through coordinated disclosure and released patches within the agreed 90-day timeline. The research group recommends that organizations audit their cryptographic implementations against NIST SP 800-131A guidelines. An additional low-severity information disclosure finding, CVE-2024-51236 with a CVSS score of 3.1, was identified in the Crestview SDK's error handling, which leaked internal memory addresses in debug-mode responses, classified as CWE-209 (Generation of Error Message Containing Sensitive Information). The Hartwell group plans to present their complete findings at a regional security conference scheduled for the following quarter.",
+      "all_claims": [
+        {"text": "CVE-2024-51234 is a padding oracle vulnerability in Crestview Secure Messaging SDK with CVSS 7.4 (High)", "matches_filter": true},
+        {"text": "CVE-2024-51234 classified as CWE-354 affecting SDK versions 3.0 through 3.8", "matches_filter": true},
+        {"text": "CVE-2024-51235 is a key reuse vulnerability with predictable IVs in Brookdale Enterprise Chat, CVSS 6.5 (Medium)", "matches_filter": true},
+        {"text": "CVE-2024-51235 classified as CWE-330 (Use of Insufficiently Random Values)", "matches_filter": true},
+        {"text": "CVE-2024-51236 is a low-severity information disclosure with CVSS 3.1, leaking internal memory addresses, classified as CWE-209", "matches_filter": true},
+        {"text": "Testing used over 500 million fuzzing inputs across dedicated servers", "matches_filter": false},
+        {"text": "Research budget was approximately $175,000", "matches_filter": false},
+        {"text": "Both vendors released patches within 90 days", "matches_filter": false},
+        {"text": "Group recommends auditing against NIST SP 800-131A", "matches_filter": false},
+        {"text": "Findings will be presented at a regional security conference", "matches_filter": false}
+      ],
+      "gold_claims": "CVE-2024-51234 is a padding oracle vulnerability in Crestview Secure Messaging SDK with CVSS 7.4 (High)||CVE-2024-51234 classified as CWE-354 affecting SDK versions 3.0 through 3.8||CVE-2024-51235 is a key reuse vulnerability with predictable IVs in Brookdale Enterprise Chat, CVSS 6.5 (Medium)||CVE-2024-51235 classified as CWE-330 (Use of Insufficiently Random Values)||CVE-2024-51236 is a low-severity information disclosure with CVSS 3.1, leaking internal memory addresses, classified as CWE-209",
+      "gold_count": 5
+    },
+    {
+      "id": "AS-VUL-003",
+      "category": "vulnerability_details",
+      "filter_criterion": "Extract ONLY claims that mention specific CVE identifiers, CVSS scores, CWE classifications, severity ratings, or detailed vulnerability characteristics. Do not include claims about patches, mitigations, or organizational response.",
+      "document": "The Greenfield Municipal Cybersecurity Cooperative published its annual review of vulnerabilities affecting industrial control systems used in water treatment and wastewater management facilities. The cooperative, representing 23 municipal utilities across two states, identified that the most impactful vulnerability of the year was CVE-2024-44000, affecting the Riverstone SCADA Controller firmware versions 2.1 through 4.3, with a CVSS base score of 9.1 (Critical). This vulnerability allows unauthenticated remote command execution through the controller's web management interface and is classified as CWE-306 (Missing Authentication for Critical Function). A second critical finding, CVE-2024-44001, affects the same controller's Modbus TCP implementation, enabling denial of service through specially crafted packets, with a CVSS score of 7.5 and classified as CWE-400 (Uncontrolled Resource Consumption). The cooperative's monitoring program covers approximately 890 networked control system devices. Annual assessment costs average $12,000 per participating utility. Both vulnerabilities were discovered by the cooperative's internal research team during routine assessment activities. Vendor patches were released within 60 days, though deployment to operational technology environments required an additional 45 days due to change management and downtime scheduling constraints. The cooperative notes that 35 percent of member utilities still operate legacy controllers that are no longer supported by the vendor, creating permanent vulnerability exposure. A third finding, an authentication bypass classified as CWE-287 and designated CVE-2024-44002 with a CVSS score of 8.2 (High), was discovered in the controller's API endpoint used for configuration management, allowing unauthorized modification of treatment chemical dosing parameters.",
+      "all_claims": [
+        {"text": "CVE-2024-44000 affects Riverstone SCADA Controller firmware 2.1-4.3 with CVSS 9.1 (Critical), allowing unauthenticated remote command execution", "matches_filter": true},
+        {"text": "CVE-2024-44000 classified as CWE-306 (Missing Authentication for Critical Function)", "matches_filter": true},
+        {"text": "CVE-2024-44001 affects Modbus TCP implementation enabling denial of service, CVSS 7.5, CWE-400", "matches_filter": true},
+        {"text": "CVE-2024-44002 is an authentication bypass (CWE-287) with CVSS 8.2, allowing unauthorized modification of treatment chemical dosing", "matches_filter": true},
+        {"text": "The cooperative represents 23 municipal utilities", "matches_filter": false},
+        {"text": "Monitoring program covers approximately 890 networked devices", "matches_filter": false},
+        {"text": "Assessment costs average $12,000 per utility", "matches_filter": false},
+        {"text": "Patches released within 60 days, deployment took additional 45 days", "matches_filter": false},
+        {"text": "35 percent of utilities operate unsupported legacy controllers", "matches_filter": false}
+      ],
+      "gold_claims": "CVE-2024-44000 affects Riverstone SCADA Controller firmware 2.1-4.3 with CVSS 9.1 (Critical), allowing unauthenticated remote command execution||CVE-2024-44000 classified as CWE-306 (Missing Authentication for Critical Function)||CVE-2024-44001 affects Modbus TCP implementation enabling denial of service, CVSS 7.5, CWE-400||CVE-2024-44002 is an authentication bypass (CWE-287) with CVSS 8.2, allowing unauthorized modification of treatment chemical dosing",
+      "gold_count": 4
+    },
+    {
+      "id": "AS-VUL-004",
+      "category": "vulnerability_details",
+      "filter_criterion": "Extract ONLY claims that mention specific CVE identifiers, CVSS scores, CWE classifications, severity ratings, or detailed vulnerability characteristics. Do not include claims about patches, mitigations, or organizational response.",
+      "document": "The Stonebridge Application Security Consortium conducted a comprehensive review of mobile banking application security across its twelve member financial institutions. The consortium's penetration testing program evaluated 36 mobile applications across iOS and Android platforms using both static and dynamic analysis techniques. Testing revealed several categories of findings including insecure data storage, insufficient transport layer security, and improper session management. The consortium invested approximately $420,000 in the annual assessment program, which included hiring three external penetration testing firms to provide independent evaluation. All identified vulnerabilities were reported through the consortium's coordinated disclosure process, and member institutions were given 60 days to implement remediation. Post-remediation verification confirmed that 94 percent of critical findings were addressed within the deadline. The consortium's advisory board, chaired by a former federal banking regulator, meets quarterly to review security posture trends and update assessment methodologies. The most common vulnerability category across all applications was insecure local data storage, with 28 of 36 applications storing sensitive authentication tokens in plaintext on the device filesystem. The consortium plans to expand its assessment scope in the coming year to include API backend security testing. Member institutions collectively serve approximately 8.5 million retail banking customers. The consortium's findings are shared exclusively with member institutions and are not published publicly to protect customer security.",
+      "all_claims": [
+        {"text": "36 mobile applications evaluated across iOS and Android", "matches_filter": false},
+        {"text": "Consortium invested approximately $420,000 in the assessment program", "matches_filter": false},
+        {"text": "Three external penetration testing firms hired", "matches_filter": false},
+        {"text": "94 percent of critical findings addressed within 60 days", "matches_filter": false},
+        {"text": "Advisory board chaired by a former federal banking regulator", "matches_filter": false},
+        {"text": "28 of 36 applications stored authentication tokens in plaintext", "matches_filter": false},
+        {"text": "Member institutions serve approximately 8.5 million customers", "matches_filter": false},
+        {"text": "Plans to expand to API backend security testing", "matches_filter": false},
+        {"text": "Findings shared exclusively with member institutions", "matches_filter": false}
+      ],
+      "gold_claims": "",
+      "gold_count": 0
+    },
+    {
+      "id": "AS-VUL-005",
+      "category": "vulnerability_details",
+      "filter_criterion": "Extract ONLY claims that mention specific CVE identifiers, CVSS scores, CWE classifications, severity ratings, or detailed vulnerability characteristics. Do not include claims about patches, mitigations, or organizational response.",
+      "document": "The Lakewood Cyber Threat Analysis Center issued an emergency advisory regarding a chain of vulnerabilities affecting widely-deployed email gateway appliances. The most severe finding, CVE-2024-62100, is a pre-authentication server-side request forgery (SSRF) vulnerability in the Clearpath Email Security Gateway with a CVSS base score of 9.8, classified as CWE-918 (Server-Side Request Forgery). This vulnerability allows an unauthenticated attacker to access internal services through the email gateway's URL preview feature. When chained with CVE-2024-62101, a local privilege escalation classified as CWE-269 (Improper Privilege Management) with a CVSS score of 7.8, attackers can achieve root-level access on the appliance. A third vulnerability in the chain, CVE-2024-62102, involves insecure deserialization of Java objects in the appliance's management API, classified as CWE-502 (Deserialization of Untrusted Data) with a CVSS score of 8.1. The Lakewood center's threat intelligence indicates that exploit code for the complete chain has been published on underground forums. The center serves as a regional resource for 67 organizations across the healthcare and education sectors. Staff include four full-time analysts and six part-time contributors from member organizations. The advisory recommends immediate network isolation of affected appliances, with detailed remediation steps provided in a companion technical bulletin. Clearpath has released firmware version 8.4.2 that addresses all three vulnerabilities. The center estimates that approximately 12,000 vulnerable appliances are exposed to the internet based on Shodan scan data.",
+      "all_claims": [
+        {"text": "CVE-2024-62100 is a pre-authentication SSRF in Clearpath Email Security Gateway with CVSS 9.8, classified as CWE-918", "matches_filter": true},
+        {"text": "CVE-2024-62100 allows access to internal services through the URL preview feature", "matches_filter": true},
+        {"text": "CVE-2024-62101 is a local privilege escalation, CWE-269 with CVSS 7.8", "matches_filter": true},
+        {"text": "CVE-2024-62102 involves insecure deserialization of Java objects, CWE-502 with CVSS 8.1", "matches_filter": true},
+        {"text": "Exploit code for the complete chain published on underground forums", "matches_filter": false},
+        {"text": "Center serves 67 organizations across healthcare and education", "matches_filter": false},
+        {"text": "Four full-time analysts and six part-time contributors", "matches_filter": false},
+        {"text": "Advisory recommends immediate network isolation", "matches_filter": false},
+        {"text": "Approximately 12,000 vulnerable appliances exposed to internet", "matches_filter": false}
+      ],
+      "gold_claims": "CVE-2024-62100 is a pre-authentication SSRF in Clearpath Email Security Gateway with CVSS 9.8, classified as CWE-918||CVE-2024-62100 allows access to internal services through the URL preview feature||CVE-2024-62101 is a local privilege escalation, CWE-269 with CVSS 7.8||CVE-2024-62102 involves insecure deserialization of Java objects, CWE-502 with CVSS 8.1",
+      "gold_count": 4
+    },
+    {
+      "id": "AS-CMP-001",
+      "category": "compliance_requirements",
+      "filter_criterion": "Extract ONLY claims that state specific compliance requirements, regulatory mandates, or control framework obligations. Include the specific standard or regulation referenced. Do not include general security recommendations or best practices without a compliance reference.",
+      "document": "The Millbrook Compliance Advisory Group prepared a cross-framework compliance mapping for financial institutions transitioning to cloud-hosted infrastructure. Under PCI DSS v4.0 Requirement 3.5.1, organizations must render stored primary account numbers unreadable using strong cryptography wherever they are stored, including backups and archival systems. NIST SP 800-53 Rev 5 control SC-28 requires encryption of data at rest for all sensitive information in federal information systems, with FIPS 140-2 validated cryptographic modules. The Millbrook group consists of seven certified compliance professionals serving regional financial institutions. Their quarterly guidance documents reach approximately 120 organizations. SOC 2 Type II criterion CC6.1 requires that logical access to information assets is restricted through the implementation of access control software and configuration settings. The group charges an annual membership fee of $8,500 per organization. ISO 27001:2022 control A.8.24 mandates the use of cryptography to protect the confidentiality, authenticity, and integrity of information, requiring a formal cryptographic policy. HIPAA Security Rule section 164.312(a)(2)(iv) requires encryption and decryption of electronic protected health information using an addressable implementation specification. The advisory group notes that many organizations struggle with conflicting encryption requirements across frameworks when operating in regulated industries. Their recommended approach is to implement the most restrictive requirement as the baseline and document any deviations with compensating controls.",
+      "all_claims": [
+        {"text": "PCI DSS v4.0 Requirement 3.5.1 requires rendering stored PANs unreadable using strong cryptography including backups", "matches_filter": true},
+        {"text": "NIST SP 800-53 Rev 5 control SC-28 requires encryption of data at rest with FIPS 140-2 validated modules", "matches_filter": true},
+        {"text": "SOC 2 Type II criterion CC6.1 requires logical access restriction through access control software", "matches_filter": true},
+        {"text": "ISO 27001:2022 control A.8.24 mandates cryptography use with a formal cryptographic policy", "matches_filter": true},
+        {"text": "HIPAA Security Rule 164.312(a)(2)(iv) requires encryption of ePHI as addressable specification", "matches_filter": true},
+        {"text": "The group consists of seven certified compliance professionals", "matches_filter": false},
+        {"text": "Guidance reaches approximately 120 organizations", "matches_filter": false},
+        {"text": "Annual membership fee is $8,500", "matches_filter": false},
+        {"text": "Recommended approach is to implement the most restrictive requirement as baseline", "matches_filter": false}
+      ],
+      "gold_claims": "PCI DSS v4.0 Requirement 3.5.1 requires rendering stored PANs unreadable using strong cryptography including backups||NIST SP 800-53 Rev 5 control SC-28 requires encryption of data at rest with FIPS 140-2 validated modules||SOC 2 Type II criterion CC6.1 requires logical access restriction through access control software||ISO 27001:2022 control A.8.24 mandates cryptography use with a formal cryptographic policy||HIPAA Security Rule 164.312(a)(2)(iv) requires encryption of ePHI as addressable specification",
+      "gold_count": 5
+    },
+    {
+      "id": "AS-CMP-002",
+      "category": "compliance_requirements",
+      "filter_criterion": "Extract ONLY claims that state specific compliance requirements, regulatory mandates, or control framework obligations. Include the specific standard or regulation referenced. Do not include general security recommendations or best practices without a compliance reference.",
+      "document": "The Oakridge Regulatory Compliance Center published updated guidance for healthcare organizations implementing zero trust architectures while maintaining HIPAA compliance. HIPAA Security Rule section 164.312(d) requires implementation of procedures to verify the identity of persons seeking access to electronic protected health information. NIST CSF 2.0 function PR.AA-01 requires that identities and credentials for authorized users, services, and hardware are managed by the organization. The center's director, Dr. Samira Okonkwo, has led compliance advisory services for over fifteen years. Under CMS Conditions of Participation section 482.24(c), hospitals must maintain the confidentiality and security of medical records with adequate safeguards against unauthorized access. CISA's Zero Trust Maturity Model requires that identity verification is performed continuously and contextually, not just at the point of initial authentication. The center employs fourteen full-time analysts and generates annual revenue of approximately $2.3 million. Their compliance assessment methodology has been validated through independent audit by three national accounting firms. FedRAMP Moderate baseline control IA-2(1) requires multifactor authentication for all network access to privileged accounts in cloud service provider environments. The guidance document notes that healthcare organizations face unique challenges in implementing continuous authentication due to clinical workflow requirements and shared workstation environments. Approximately 78 percent of the center's client organizations reported difficulty balancing security requirements with clinical usability during their zero trust implementations.",
+      "all_claims": [
+        {"text": "HIPAA Security Rule 164.312(d) requires procedures to verify identity of persons accessing ePHI", "matches_filter": true},
+        {"text": "NIST CSF 2.0 PR.AA-01 requires management of identities and credentials for authorized users, services, and hardware", "matches_filter": true},
+        {"text": "CMS Conditions of Participation 482.24(c) requires hospitals to maintain medical record confidentiality with safeguards", "matches_filter": true},
+        {"text": "CISA Zero Trust Maturity Model requires continuous contextual identity verification", "matches_filter": true},
+        {"text": "FedRAMP Moderate baseline IA-2(1) requires MFA for all network access to privileged accounts", "matches_filter": true},
+        {"text": "Dr. Samira Okonkwo has led advisory services for over fifteen years", "matches_filter": false},
+        {"text": "Center employs fourteen full-time analysts", "matches_filter": false},
+        {"text": "Annual revenue approximately $2.3 million", "matches_filter": false},
+        {"text": "78 percent of clients reported difficulty balancing security with clinical usability", "matches_filter": false}
+      ],
+      "gold_claims": "HIPAA Security Rule 164.312(d) requires procedures to verify identity of persons accessing ePHI||NIST CSF 2.0 PR.AA-01 requires management of identities and credentials for authorized users, services, and hardware||CMS Conditions of Participation 482.24(c) requires hospitals to maintain medical record confidentiality with safeguards||CISA Zero Trust Maturity Model requires continuous contextual identity verification||FedRAMP Moderate baseline IA-2(1) requires MFA for all network access to privileged accounts",
+      "gold_count": 5
+    },
+    {
+      "id": "AS-CMP-003",
+      "category": "compliance_requirements",
+      "filter_criterion": "Extract ONLY claims that state specific compliance requirements, regulatory mandates, or control framework obligations. Include the specific standard or regulation referenced. Do not include general security recommendations or best practices without a compliance reference.",
+      "document": "The Silverleaf Data Protection Consortium issued a comparative analysis of data breach notification requirements across major regulatory frameworks affecting multi-national organizations. Under GDPR Article 33, data controllers must notify the supervisory authority within 72 hours of becoming aware of a personal data breach, unless the breach is unlikely to result in a risk to individuals' rights and freedoms. The consortium serves 45 multinational corporations with operations in Europe, North America, and Asia-Pacific. CCPA section 1798.82 requires businesses to notify California residents whose unencrypted personal information was acquired by an unauthorized person in the most expedient time possible and without unreasonable delay. The consortium's annual conference attracts over 300 data protection professionals. Under Australia's Notifiable Data Breaches scheme (Privacy Act section 26WE), entities must notify the Australian Information Commissioner and affected individuals within 30 days of becoming aware of an eligible data breach. Brazil's LGPD Article 48 requires data controllers to communicate security incidents that may cause significant risk or damage to data subjects to the national authority within a reasonable timeframe, though specific time limits are defined by the authority's subsequent regulations. PIPEDA Breach of Security Safeguards Regulations in Canada require organizations to report breaches involving real risk of significant harm to the Privacy Commissioner and affected individuals as soon as feasible. The consortium's legal team, comprising eight attorneys specializing in international data protection law, provides member organizations with jurisdiction-specific notification templates and escalation procedures.",
+      "all_claims": [
+        {"text": "GDPR Article 33 requires notifying supervisory authority within 72 hours of awareness of a personal data breach", "matches_filter": true},
+        {"text": "CCPA section 1798.82 requires notifying California residents of breaches involving unencrypted personal information without unreasonable delay", "matches_filter": true},
+        {"text": "Australia's Privacy Act section 26WE requires notifying the Commissioner and affected individuals within 30 days", "matches_filter": true},
+        {"text": "Brazil's LGPD Article 48 requires communicating incidents to the national authority within a reasonable timeframe", "matches_filter": true},
+        {"text": "PIPEDA requires reporting breaches involving real risk of significant harm to the Privacy Commissioner as soon as feasible", "matches_filter": true},
+        {"text": "The consortium serves 45 multinational corporations", "matches_filter": false},
+        {"text": "Annual conference attracts over 300 data protection professionals", "matches_filter": false},
+        {"text": "Legal team comprises eight attorneys specializing in international data protection", "matches_filter": false}
+      ],
+      "gold_claims": "GDPR Article 33 requires notifying supervisory authority within 72 hours of awareness of a personal data breach||CCPA section 1798.82 requires notifying California residents of breaches involving unencrypted personal information without unreasonable delay||Australia's Privacy Act section 26WE requires notifying the Commissioner and affected individuals within 30 days||Brazil's LGPD Article 48 requires communicating incidents to the national authority within a reasonable timeframe||PIPEDA requires reporting breaches involving real risk of significant harm to the Privacy Commissioner as soon as feasible",
+      "gold_count": 5
+    },
+    {
+      "id": "AS-CMP-004",
+      "category": "compliance_requirements",
+      "filter_criterion": "Extract ONLY claims that state specific compliance requirements, regulatory mandates, or control framework obligations. Include the specific standard or regulation referenced. Do not include general security recommendations or best practices without a compliance reference.",
+      "document": "The Ferndale Security Governance Institute released an assessment of access control requirements for organizations operating in multiple regulatory environments. NIST SP 800-53 Rev 5 control AC-2 requires that organizations manage information system accounts including establishing, activating, modifying, reviewing, disabling, and removing accounts. The institute was founded in 2019 and has grown to serve over 200 client organizations. PCI DSS v4.0 Requirement 8.3.6 mandates that passwords for application and system accounts must be at least 15 characters and include both numeric and alphabetic characters. The institute's training program has certified over 1,500 security professionals. SOX Section 404 requires management to assess the effectiveness of internal controls over financial reporting, including IT general controls governing access to financial systems. CMMC Level 2 practice AC.L2-3.1.5 requires that organizations employ the principle of least privilege, including for specific security functions and privileged accounts. The institute charges between $15,000 and $45,000 for comprehensive compliance assessments depending on organization size. CIS Control 6.8 requires that access to data is restricted by implementing access control lists on network shares and file systems that enforce the principle of need-to-know. The institute recommends creating a unified access control policy that satisfies the most restrictive requirements across all applicable frameworks, noting that approximately 70 percent of access control requirements overlap significantly across major compliance frameworks.",
+      "all_claims": [
+        {"text": "NIST SP 800-53 Rev 5 AC-2 requires managing system accounts including establishing, activating, modifying, reviewing, disabling, and removing", "matches_filter": true},
+        {"text": "PCI DSS v4.0 Requirement 8.3.6 mandates passwords of at least 15 characters with numeric and alphabetic characters", "matches_filter": true},
+        {"text": "SOX Section 404 requires assessment of internal controls over financial reporting including IT general controls", "matches_filter": true},
+        {"text": "CMMC Level 2 AC.L2-3.1.5 requires employing principle of least privilege for security functions and privileged accounts", "matches_filter": true},
+        {"text": "CIS Control 6.8 requires access control lists on network shares enforcing need-to-know", "matches_filter": true},
+        {"text": "Institute founded in 2019, serves over 200 clients", "matches_filter": false},
+        {"text": "Training program has certified over 1,500 professionals", "matches_filter": false},
+        {"text": "Assessments cost between $15,000 and $45,000", "matches_filter": false},
+        {"text": "70 percent of access control requirements overlap across frameworks", "matches_filter": false}
+      ],
+      "gold_claims": "NIST SP 800-53 Rev 5 AC-2 requires managing system accounts including establishing, activating, modifying, reviewing, disabling, and removing||PCI DSS v4.0 Requirement 8.3.6 mandates passwords of at least 15 characters with numeric and alphabetic characters||SOX Section 404 requires assessment of internal controls over financial reporting including IT general controls||CMMC Level 2 AC.L2-3.1.5 requires employing principle of least privilege for security functions and privileged accounts||CIS Control 6.8 requires access control lists on network shares enforcing need-to-know",
+      "gold_count": 5
+    },
+    {
+      "id": "AS-CMP-005",
+      "category": "compliance_requirements",
+      "filter_criterion": "Extract ONLY claims that state specific compliance requirements, regulatory mandates, or control framework obligations. Include the specific standard or regulation referenced. Do not include general security recommendations or best practices without a compliance reference.",
+      "document": "The Briarwood Cybersecurity Standards Institute conducted a comparative review of logging and monitoring requirements across major compliance frameworks for critical infrastructure operators. NERC CIP-007-6 Requirement R4 mandates that responsible entities implement logging of cyber security events on all bulk electric system cyber assets and review logs at least every 15 calendar days. The institute's analysts reviewed documentation from eighteen critical infrastructure organizations as part of the study. NIST SP 800-92 establishes that organizations should develop a comprehensive log management infrastructure capable of generating, transmitting, storing, analyzing, and disposing of log data. The Briarwood institute is a non-profit organization funded through a combination of government grants and industry contributions totaling approximately $1.8 million annually. IEC 62443-3-3 SR 2.8 requires industrial automation and control systems to generate audit records for security-relevant events including successful and failed authentication attempts. The institute plans to publish an updated comparison annually. Under FISMA as implemented through NIST SP 800-53 control AU-6, organizations must review and analyze audit records at least weekly for indications of inappropriate or unusual activity. The study found that 65 percent of surveyed organizations maintained separate logging infrastructures for IT and OT environments, creating visibility gaps at the IT/OT boundary. PCI DSS v4.0 Requirement 10.4.1 mandates that audit logs are reviewed at least daily to identify anomalies or suspicious activity.",
+      "all_claims": [
+        {"text": "NERC CIP-007-6 R4 mandates logging of cyber security events on BES cyber assets with review every 15 calendar days", "matches_filter": true},
+        {"text": "IEC 62443-3-3 SR 2.8 requires audit records for security-relevant events including authentication attempts in IACS", "matches_filter": true},
+        {"text": "NIST SP 800-53 AU-6 under FISMA requires weekly review of audit records for inappropriate activity", "matches_filter": true},
+        {"text": "PCI DSS v4.0 Requirement 10.4.1 mandates daily review of audit logs for anomalies", "matches_filter": true},
+        {"text": "Eighteen critical infrastructure organizations reviewed", "matches_filter": false},
+        {"text": "Non-profit funded through approximately $1.8 million annually", "matches_filter": false},
+        {"text": "65 percent maintained separate IT and OT logging infrastructures", "matches_filter": false},
+        {"text": "Institute plans annual publication updates", "matches_filter": false}
+      ],
+      "gold_claims": "NERC CIP-007-6 R4 mandates logging of cyber security events on BES cyber assets with review every 15 calendar days||IEC 62443-3-3 SR 2.8 requires audit records for security-relevant events including authentication attempts in IACS||NIST SP 800-53 AU-6 under FISMA requires weekly review of audit records for inappropriate activity||PCI DSS v4.0 Requirement 10.4.1 mandates daily review of audit logs for anomalies",
+      "gold_count": 4
+    },
+    {
+      "id": "AS-DEF-001",
+      "category": "defense_measures",
+      "filter_criterion": "Extract ONLY claims that describe specific defensive security controls, mitigation techniques, detection rules, or hardening procedures. Do not include claims about attack techniques, vulnerabilities, or organizational details.",
+      "document": "The Ashwood Cybersecurity Defense Cooperative published deployment guidelines for endpoint detection and response platforms across its 34 member organizations. The guidelines specify that EDR agents must be deployed on 100 percent of Windows and macOS endpoints, with Linux server coverage targeted at 95 percent due to kernel compatibility constraints with certain legacy distributions. Memory protection should be configured to detect process injection techniques including DLL hollowing, reflective DLL loading, and APC injection. Network isolation policies should automatically quarantine endpoints exhibiting ransomware-like behavior such as rapid file encryption across multiple directories. The cooperative's annual budget for shared security infrastructure is approximately $2.7 million. DNS filtering should block all queries to known command-and-control domains using continuously updated threat intelligence feeds with a maximum 15-minute update interval. Application control policies should operate in enforcement mode on user workstations, allowing only digitally signed executables from approved publishers. Behavioral analytics baselines should be established per device group and alert on deviations exceeding two standard deviations from normal patterns. The cooperative's SOC, staffed by 22 analysts across three shifts, monitors alerts from all member organizations. Email security gateways should implement URL sandboxing that detonates embedded links in isolated browser environments before delivering messages to end users. Privileged access workstations should be configured with credential guard enabled and restricted to tier-zero administrative tasks only.",
+      "all_claims": [
+        {"text": "EDR agents deployed on 100% of Windows/macOS endpoints, 95% Linux servers", "matches_filter": true},
+        {"text": "Memory protection configured to detect DLL hollowing, reflective DLL loading, and APC injection", "matches_filter": true},
+        {"text": "Network isolation automatically quarantines endpoints exhibiting ransomware-like rapid file encryption", "matches_filter": true},
+        {"text": "DNS filtering blocks queries to known C2 domains with 15-minute update interval", "matches_filter": true},
+        {"text": "Application control in enforcement mode allowing only signed executables from approved publishers", "matches_filter": true},
+        {"text": "Behavioral analytics alert on deviations exceeding two standard deviations from baseline", "matches_filter": true},
+        {"text": "URL sandboxing detonates embedded links in isolated browser environments before delivery", "matches_filter": true},
+        {"text": "Privileged access workstations with credential guard enabled, restricted to tier-zero tasks", "matches_filter": true},
+        {"text": "Annual budget approximately $2.7 million for shared security infrastructure", "matches_filter": false},
+        {"text": "SOC staffed by 22 analysts across three shifts", "matches_filter": false},
+        {"text": "34 member organizations in the cooperative", "matches_filter": false}
+      ],
+      "gold_claims": "EDR agents deployed on 100% of Windows/macOS endpoints, 95% Linux servers||Memory protection configured to detect DLL hollowing, reflective DLL loading, and APC injection||Network isolation automatically quarantines endpoints exhibiting ransomware-like rapid file encryption||DNS filtering blocks queries to known C2 domains with 15-minute update interval||Application control in enforcement mode allowing only signed executables from approved publishers||Behavioral analytics alert on deviations exceeding two standard deviations from baseline||URL sandboxing detonates embedded links in isolated browser environments before delivery||Privileged access workstations with credential guard enabled, restricted to tier-zero tasks",
+      "gold_count": 8
+    },
+    {
+      "id": "AS-DEF-002",
+      "category": "defense_measures",
+      "filter_criterion": "Extract ONLY claims that describe specific defensive security controls, mitigation techniques, detection rules, or hardening procedures. Do not include claims about attack techniques, vulnerabilities, or organizational details.",
+      "document": "The Cedarbrook Network Security Institute issued technical guidelines for securing cloud workloads across multi-cloud environments. Web application firewalls should be configured with managed rule sets covering OWASP Top 10 categories plus custom rules for application-specific business logic attacks. Cloud workload protection platforms must perform runtime vulnerability scanning of container images every 24 hours and block deployment of images containing critical CVEs. The institute has published 47 technical guidelines since its founding. Infrastructure-as-code templates should undergo automated security scanning using tools like tfsec, checkov, or KICS before deployment, with critical findings blocking the CI/CD pipeline. Network security groups should implement default-deny egress filtering, allowing only explicitly approved outbound connections to documented external services. The institute's research team comprises nine cloud security architects. Cloud-native SIEM integration should forward all VPC flow logs, CloudTrail events, and container runtime logs to the centralized security monitoring platform with a maximum ingestion delay of five minutes. Secrets management must use dedicated vault services rather than environment variables or configuration files, with automatic rotation every 30 days for service account credentials. Identity federation should use SAML 2.0 or OIDC with MFA enforced for all human users accessing cloud management consoles. The institute charges $12,000 per annual assessment for each cloud account evaluated. Kubernetes clusters should enforce pod security standards at the restricted level, preventing privileged containers and host namespace access.",
+      "all_claims": [
+        {"text": "WAF configured with OWASP Top 10 managed rules plus custom business logic rules", "matches_filter": true},
+        {"text": "CWPP performs runtime container image vulnerability scanning every 24 hours, blocking images with critical CVEs", "matches_filter": true},
+        {"text": "IaC templates scanned with tfsec/checkov/KICS before deployment, critical findings block CI/CD", "matches_filter": true},
+        {"text": "Default-deny egress filtering allowing only approved outbound connections", "matches_filter": true},
+        {"text": "VPC flow logs, CloudTrail events, and container logs forwarded to SIEM within five minutes", "matches_filter": true},
+        {"text": "Secrets stored in dedicated vault services with automatic 30-day rotation", "matches_filter": true},
+        {"text": "Identity federation using SAML 2.0 or OIDC with MFA for cloud console access", "matches_filter": true},
+        {"text": "Kubernetes pod security standards enforced at restricted level", "matches_filter": true},
+        {"text": "Institute has published 47 technical guidelines", "matches_filter": false},
+        {"text": "Research team comprises nine cloud security architects", "matches_filter": false},
+        {"text": "Assessment cost is $12,000 per cloud account annually", "matches_filter": false}
+      ],
+      "gold_claims": "WAF configured with OWASP Top 10 managed rules plus custom business logic rules||CWPP performs runtime container image vulnerability scanning every 24 hours, blocking images with critical CVEs||IaC templates scanned with tfsec/checkov/KICS before deployment, critical findings block CI/CD||Default-deny egress filtering allowing only approved outbound connections||VPC flow logs, CloudTrail events, and container logs forwarded to SIEM within five minutes||Secrets stored in dedicated vault services with automatic 30-day rotation||Identity federation using SAML 2.0 or OIDC with MFA for cloud console access||Kubernetes pod security standards enforced at restricted level",
+      "gold_count": 8
+    },
+    {
+      "id": "AS-DEF-003",
+      "category": "defense_measures",
+      "filter_criterion": "Extract ONLY claims that describe specific defensive security controls, mitigation techniques, detection rules, or hardening procedures. Do not include claims about attack techniques, vulnerabilities, or organizational details.",
+      "document": "The Brookhaven Security Architecture Review Board completed an assessment of email security controls deployed across its 28 member educational institutions. The review found that 96 percent of institutions had implemented SPF records, but only 42 percent had progressed to DMARC enforcement with a reject policy. The board's annual survey collected responses from 156 IT security administrators. Attachment sandboxing services processed an average of 45,000 email attachments per day across all member institutions. The board's operating budget is funded through a combination of state grants and institutional dues. Student email accounts, numbering approximately 380,000 across all institutions, presented unique challenges due to high account turnover rates. Faculty and staff accounts totaled approximately 52,000. The review identified that phishing simulation click rates averaged 18 percent across all institutions, with rates varying significantly between departments. Institutions reporting the lowest click rates had implemented mandatory security awareness training with quarterly phishing simulations. The board's executive committee meets monthly to review security metrics and coordinate incident response activities. Hardware security key deployment for administrative accounts had been completed at only seven of the 28 institutions. The board recommends prioritizing DMARC reject policy implementation and expanding hardware security key coverage to all privileged accounts within the next fiscal year.",
+      "all_claims": [
+        {"text": "96 percent of institutions implemented SPF records", "matches_filter": false},
+        {"text": "42 percent progressed to DMARC enforcement with reject policy", "matches_filter": false},
+        {"text": "156 IT security administrators responded to survey", "matches_filter": false},
+        {"text": "45,000 email attachments processed daily through sandboxing", "matches_filter": false},
+        {"text": "380,000 student email accounts across institutions", "matches_filter": false},
+        {"text": "Phishing simulation click rates averaged 18 percent", "matches_filter": false},
+        {"text": "Hardware security keys deployed at seven of 28 institutions", "matches_filter": false},
+        {"text": "Board recommends DMARC reject and hardware key expansion", "matches_filter": false},
+        {"text": "Executive committee meets monthly", "matches_filter": false}
+      ],
+      "gold_claims": "",
+      "gold_count": 0
+    },
+    {
+      "id": "AS-DEF-004",
+      "category": "defense_measures",
+      "filter_criterion": "Extract ONLY claims that describe specific defensive security controls, mitigation techniques, detection rules, or hardening procedures. Do not include claims about attack techniques, vulnerabilities, or organizational details.",
+      "document": "The Willowdale Industrial Cybersecurity Center published hardening guidelines for operational technology networks in manufacturing environments. Industrial firewalls should be deployed at the Purdue Model Level 3/3.5 boundary, implementing strict allowlisting of approved ICS protocols including Modbus TCP, EtherNet/IP, and OPC UA. Unidirectional security gateways (data diodes) should replace traditional firewalls at the IT/OT boundary where data flows from OT to IT for monitoring purposes. The center serves 19 manufacturing facilities across the automotive and aerospace sectors. Jump servers with multi-factor authentication should be the only path for remote access to OT networks, with session recording enabled for all administrative connections. USB port blocking should be enforced on all HMI and engineering workstations through endpoint policy, with authorized removable media scanned in a standalone air-gapped kiosk before introduction to the OT environment. Network traffic baselining using passive monitoring tools should establish normal communication patterns, with alerts generated for any deviation including new IP addresses, protocols, or communication pairs. The center employs six OT security specialists and three IT/OT convergence architects. Firmware updates for PLCs and RTUs should be validated in a dedicated test environment mirroring production configurations before deployment, with rollback procedures documented and tested. The center's annual report, distributed to member facilities and regulatory stakeholders, provides benchmarking data on OT security maturity levels across the industrial sector.",
+      "all_claims": [
+        {"text": "Industrial firewalls at Purdue Model Level 3/3.5 with allowlisting of Modbus TCP, EtherNet/IP, and OPC UA", "matches_filter": true},
+        {"text": "Unidirectional security gateways (data diodes) at IT/OT boundary for OT-to-IT data flows", "matches_filter": true},
+        {"text": "Jump servers with MFA as only remote access path, with session recording", "matches_filter": true},
+        {"text": "USB port blocking on HMI/engineering workstations, authorized media scanned in air-gapped kiosk", "matches_filter": true},
+        {"text": "Passive network traffic baselining with alerts for new IPs, protocols, or communication pairs", "matches_filter": true},
+        {"text": "PLC/RTU firmware validated in test environment mirroring production before deployment", "matches_filter": true},
+        {"text": "Center serves 19 manufacturing facilities in automotive and aerospace", "matches_filter": false},
+        {"text": "Six OT security specialists and three IT/OT convergence architects", "matches_filter": false},
+        {"text": "Annual report provides benchmarking data to facilities and regulators", "matches_filter": false}
+      ],
+      "gold_claims": "Industrial firewalls at Purdue Model Level 3/3.5 with allowlisting of Modbus TCP, EtherNet/IP, and OPC UA||Unidirectional security gateways (data diodes) at IT/OT boundary for OT-to-IT data flows||Jump servers with MFA as only remote access path, with session recording||USB port blocking on HMI/engineering workstations, authorized media scanned in air-gapped kiosk||Passive network traffic baselining with alerts for new IPs, protocols, or communication pairs||PLC/RTU firmware validated in test environment mirroring production before deployment",
+      "gold_count": 6
+    },
+    {
+      "id": "AS-DEF-005",
+      "category": "defense_measures",
+      "filter_criterion": "Extract ONLY claims that describe specific defensive security controls, mitigation techniques, detection rules, or hardening procedures. Do not include claims about attack techniques, vulnerabilities, or organizational details.",
+      "document": "The Pinehurst Security Operations Consortium released updated detection engineering guidelines for its 41 member organizations. YARA rules should be deployed across all endpoints for detecting known malware families, with rule sets updated at least weekly from curated threat intelligence sources. Sigma detection rules should be maintained in a version-controlled repository with automated deployment to SIEM platforms, covering at minimum all MITRE ATT&CK techniques observed in the consortium's threat landscape. Honeypot systems should be deployed in each network segment using low-interaction honeypots for breadth coverage and high-interaction honeypots in high-value asset zones for detailed adversary intelligence gathering. The consortium's detection engineering team consists of five full-time analysts. Deception tokens (honeyfiles, honeycredentials, and honey DNS records) should be distributed across file shares, Active Directory, and DNS infrastructure to detect lateral movement and credential harvesting. The consortium's annual operating budget is $3.4 million. Network flow analysis should implement JA3/JA3S fingerprinting to detect anomalous TLS client/server configurations indicative of C2 communication. Canary accounts with alerting should be created in Active Directory with attractive names like 'svc_backup_admin' to detect credential enumeration and unauthorized access attempts. The consortium hosts a quarterly threat hunting exercise where member organizations collaborate on hypothesis-driven hunts using shared telemetry data. Automated alert triage using machine learning classifiers should reduce analyst workload by categorizing alerts into true positive, false positive, and requires investigation categories.",
+      "all_claims": [
+        {"text": "YARA rules deployed on all endpoints for malware detection, updated weekly", "matches_filter": true},
+        {"text": "Sigma rules in version-controlled repo with automated SIEM deployment covering observed ATT&CK techniques", "matches_filter": true},
+        {"text": "Low-interaction honeypots per segment, high-interaction in high-value zones", "matches_filter": true},
+        {"text": "Deception tokens (honeyfiles, honeycredentials, honey DNS) across file shares, AD, and DNS", "matches_filter": true},
+        {"text": "JA3/JA3S fingerprinting to detect anomalous TLS configurations for C2 detection", "matches_filter": true},
+        {"text": "Canary AD accounts with attractive names like 'svc_backup_admin' for credential enumeration detection", "matches_filter": true},
+        {"text": "ML classifiers for automated alert triage into true positive, false positive, and requires investigation", "matches_filter": true},
+        {"text": "Detection engineering team has five full-time analysts", "matches_filter": false},
+        {"text": "Annual operating budget is $3.4 million", "matches_filter": false},
+        {"text": "Quarterly collaborative threat hunting exercises with shared telemetry", "matches_filter": false}
+      ],
+      "gold_claims": "YARA rules deployed on all endpoints for malware detection, updated weekly||Sigma rules in version-controlled repo with automated SIEM deployment covering observed ATT&CK techniques||Low-interaction honeypots per segment, high-interaction in high-value zones||Deception tokens (honeyfiles, honeycredentials, honey DNS) across file shares, AD, and DNS||JA3/JA3S fingerprinting to detect anomalous TLS configurations for C2 detection||Canary AD accounts with attractive names like 'svc_backup_admin' for credential enumeration detection||ML classifiers for automated alert triage into true positive, false positive, and requires investigation",
+      "gold_count": 7
+    },
+    {
+      "id": "AS-TMP-001",
+      "category": "temporal_claims",
+      "filter_criterion": "Extract ONLY claims that mention specific dates, years, time periods, deadlines, or temporal milestones. Do not include claims about procedures, requirements, or facts that do not contain a specific temporal reference.",
+      "document": "The Maplewood Cybersecurity History Project documented the evolution of major cybersecurity incidents and policy milestones that shaped the current regulatory landscape. The Morris Worm, one of the first major internet incidents, spread across approximately 6,000 Unix systems in November 1988, leading to the creation of the first CERT Coordination Center at Carnegie Mellon University in the same year. The establishment of US-CERT by the Department of Homeland Security in September 2003 formalized federal incident response capabilities. The project's archival team comprises three historians and two cybersecurity practitioners. The Stuxnet worm, discovered in June 2010, represented a paradigm shift in state-sponsored cyber operations targeting industrial control systems. Executive Order 13636, signed in February 2013, directed the development of the NIST Cybersecurity Framework. The EU's Network and Information Security Directive (NIS Directive) entered into force in August 2016, establishing cybersecurity requirements for operators of essential services across member states. The project has cataloged over 2,400 significant cyber incidents spanning four decades. The SolarWinds supply chain compromise was disclosed in December 2020, affecting approximately 18,000 organizations that installed trojanized updates. The updated NIS2 Directive took effect in January 2023, significantly expanding the scope of regulated entities and introducing stricter enforcement mechanisms. The project's digital archive consumes approximately 4.7 terabytes of storage and is accessible to accredited researchers. CISA's Secure by Design pledge, launched in May 2024, obtained commitments from over 200 technology companies to improve product security practices.",
+      "all_claims": [
+        {"text": "The Morris Worm spread across approximately 6,000 Unix systems in November 1988", "matches_filter": true},
+        {"text": "First CERT Coordination Center created at Carnegie Mellon University in 1988", "matches_filter": true},
+        {"text": "US-CERT established by DHS in September 2003", "matches_filter": true},
+        {"text": "Stuxnet worm discovered in June 2010", "matches_filter": true},
+        {"text": "Executive Order 13636 signed in February 2013 directing NIST CSF development", "matches_filter": true},
+        {"text": "NIS Directive entered into force in August 2016", "matches_filter": true},
+        {"text": "SolarWinds compromise disclosed in December 2020, affecting 18,000 organizations", "matches_filter": true},
+        {"text": "NIS2 Directive took effect in January 2023", "matches_filter": true},
+        {"text": "CISA Secure by Design pledge launched in May 2024 with 200+ company commitments", "matches_filter": true},
+        {"text": "Archival team comprises three historians and two practitioners", "matches_filter": false},
+        {"text": "Project cataloged over 2,400 significant incidents", "matches_filter": false},
+        {"text": "Digital archive consumes 4.7 terabytes", "matches_filter": false}
+      ],
+      "gold_claims": "The Morris Worm spread across approximately 6,000 Unix systems in November 1988||First CERT Coordination Center created at Carnegie Mellon University in 1988||US-CERT established by DHS in September 2003||Stuxnet worm discovered in June 2010||Executive Order 13636 signed in February 2013 directing NIST CSF development||NIS Directive entered into force in August 2016||SolarWinds compromise disclosed in December 2020, affecting 18,000 organizations||NIS2 Directive took effect in January 2023||CISA Secure by Design pledge launched in May 2024 with 200+ company commitments",
+      "gold_count": 9
+    },
+    {
+      "id": "AS-TMP-002",
+      "category": "temporal_claims",
+      "filter_criterion": "Extract ONLY claims that mention specific dates, years, time periods, deadlines, or temporal milestones. Do not include claims about procedures, requirements, or facts that do not contain a specific temporal reference.",
+      "document": "The Ridgemont Compliance Timeline Service issued a regulatory deadline tracker for organizations navigating overlapping cybersecurity compliance requirements. PCI DSS v4.0 became mandatory on March 31, 2024, replacing version 3.2.1 with twelve months of transition for newly introduced requirements. The SEC cybersecurity incident disclosure rule, requiring material incident reporting within four business days, took effect on December 18, 2023 for large accelerated filers. The Ridgemont service tracks deadlines for over 340 client organizations. CMMC 2.0 rulemaking was finalized in October 2024, with enforcement beginning for new DoD contracts in mid-2025. The EU Cyber Resilience Act, adopted in October 2024, establishes a 36-month implementation period for manufacturers of products with digital elements, with reporting obligations taking effect after 21 months. The service employs eight compliance analysts and generates revenue of approximately $1.6 million annually. DORA (Digital Operational Resilience Act) became applicable to EU financial entities on January 17, 2025, requiring ICT risk management frameworks, incident reporting, and third-party risk oversight. The NIST Cybersecurity Framework 2.0 was published in February 2024, introducing the Govern function and expanding the framework's applicability beyond critical infrastructure. The service's customer satisfaction rating averages 4.7 out of 5.0 based on annual surveys. New York's amended NYDFS cybersecurity regulation (23 NYCRR 500) established a November 1, 2025 deadline for Class A companies to implement enhanced access controls and endpoint monitoring.",
+      "all_claims": [
+        {"text": "PCI DSS v4.0 became mandatory on March 31, 2024", "matches_filter": true},
+        {"text": "SEC cybersecurity incident disclosure rule took effect December 18, 2023 for large accelerated filers", "matches_filter": true},
+        {"text": "CMMC 2.0 rulemaking finalized October 2024, enforcement beginning mid-2025", "matches_filter": true},
+        {"text": "EU Cyber Resilience Act adopted October 2024 with 36-month implementation and 21-month reporting obligation periods", "matches_filter": true},
+        {"text": "DORA became applicable January 17, 2025 for EU financial entities", "matches_filter": true},
+        {"text": "NIST CSF 2.0 published February 2024 introducing the Govern function", "matches_filter": true},
+        {"text": "NYDFS 23 NYCRR 500 established November 1, 2025 deadline for Class A companies", "matches_filter": true},
+        {"text": "Service tracks deadlines for over 340 client organizations", "matches_filter": false},
+        {"text": "Eight compliance analysts employed", "matches_filter": false},
+        {"text": "Revenue approximately $1.6 million annually", "matches_filter": false},
+        {"text": "Customer satisfaction averages 4.7 out of 5.0", "matches_filter": false}
+      ],
+      "gold_claims": "PCI DSS v4.0 became mandatory on March 31, 2024||SEC cybersecurity incident disclosure rule took effect December 18, 2023 for large accelerated filers||CMMC 2.0 rulemaking finalized October 2024, enforcement beginning mid-2025||EU Cyber Resilience Act adopted October 2024 with 36-month implementation and 21-month reporting obligation periods||DORA became applicable January 17, 2025 for EU financial entities||NIST CSF 2.0 published February 2024 introducing the Govern function||NYDFS 23 NYCRR 500 established November 1, 2025 deadline for Class A companies",
+      "gold_count": 7
+    },
+    {
+      "id": "AS-TMP-003",
+      "category": "temporal_claims",
+      "filter_criterion": "Extract ONLY claims that mention specific dates, years, time periods, deadlines, or temporal milestones. Do not include claims about procedures, requirements, or facts that do not contain a specific temporal reference.",
+      "document": "The Thornfield Vulnerability Disclosure Timeline Project tracked the evolution of major vulnerability disclosure milestones and their impact on the security community. The Heartbleed vulnerability (CVE-2014-0160) was publicly disclosed on April 7, 2014, affecting approximately two-thirds of all HTTPS-enabled websites at the time of discovery. The Shellshock vulnerability in GNU Bash was disclosed on September 24, 2014, with exploitation attempts detected within hours of public disclosure. The project's database is maintained by four volunteer researchers. The EternalBlue exploit, leaked by the Shadow Brokers in April 2017, was subsequently used in the WannaCry ransomware attack on May 12, 2017, which affected over 200,000 computers across 150 countries. The Log4Shell vulnerability (CVE-2021-44228) was disclosed on December 9, 2021, and exploitation was observed within 24 hours. The project receives no external funding and operates entirely on volunteer contributions. The Spring4Shell vulnerability (CVE-2022-22965) was disclosed on March 31, 2022, though its impact was significantly less severe than initially feared. The MOVEit Transfer vulnerability (CVE-2023-34362) was first exploited by the Cl0p ransomware group beginning May 27, 2023, eventually affecting over 2,500 organizations globally. The project's website receives approximately 15,000 monthly visitors from the security research community. The Citrix Bleed vulnerability (CVE-2023-4966) was patched on October 10, 2023, but mass exploitation began after a proof-of-concept was published on October 25, 2023.",
+      "all_claims": [
+        {"text": "Heartbleed (CVE-2014-0160) publicly disclosed April 7, 2014", "matches_filter": true},
+        {"text": "Shellshock disclosed September 24, 2014 with exploitation within hours", "matches_filter": true},
+        {"text": "EternalBlue leaked by Shadow Brokers in April 2017", "matches_filter": true},
+        {"text": "WannaCry ransomware attack on May 12, 2017 affected 200,000+ computers in 150 countries", "matches_filter": true},
+        {"text": "Log4Shell (CVE-2021-44228) disclosed December 9, 2021 with exploitation within 24 hours", "matches_filter": true},
+        {"text": "Spring4Shell (CVE-2022-22965) disclosed March 31, 2022", "matches_filter": true},
+        {"text": "MOVEit Transfer exploitation by Cl0p began May 27, 2023 affecting 2,500+ organizations", "matches_filter": true},
+        {"text": "Citrix Bleed patched October 10, 2023, mass exploitation after PoC published October 25, 2023", "matches_filter": true},
+        {"text": "Database maintained by four volunteer researchers", "matches_filter": false},
+        {"text": "Project receives no external funding", "matches_filter": false},
+        {"text": "Website receives approximately 15,000 monthly visitors", "matches_filter": false}
+      ],
+      "gold_claims": "Heartbleed (CVE-2014-0160) publicly disclosed April 7, 2014||Shellshock disclosed September 24, 2014 with exploitation within hours||EternalBlue leaked by Shadow Brokers in April 2017||WannaCry ransomware attack on May 12, 2017 affected 200,000+ computers in 150 countries||Log4Shell (CVE-2021-44228) disclosed December 9, 2021 with exploitation within 24 hours||Spring4Shell (CVE-2022-22965) disclosed March 31, 2022||MOVEit Transfer exploitation by Cl0p began May 27, 2023 affecting 2,500+ organizations||Citrix Bleed patched October 10, 2023, mass exploitation after PoC published October 25, 2023",
+      "gold_count": 8
+    },
+    {
+      "id": "AS-TMP-004",
+      "category": "temporal_claims",
+      "filter_criterion": "Extract ONLY claims that mention specific dates, years, time periods, deadlines, or temporal milestones. Do not include claims about procedures, requirements, or facts that do not contain a specific temporal reference.",
+      "document": "The Eastbridge Cybersecurity Workforce Development Center published a timeline of significant cybersecurity workforce and education milestones. The NICE Cybersecurity Workforce Framework (SP 800-181) was first published by NIST in August 2017, establishing a common taxonomy for cybersecurity work roles and knowledge areas. The center has trained over 4,200 cybersecurity professionals since its inception. The Cybersecurity and Infrastructure Security Agency (CISA) was formally established on November 16, 2018, elevating the former NPPD to a standalone agency within DHS. The center operates from three campus locations across two states. In July 2021, President Biden signed Executive Order 14028 on Improving the Nation's Cybersecurity, mandating zero trust adoption across federal agencies within 180 days. The CyberCorps Scholarship for Service program, originally authorized in 2000, was reauthorized and expanded in December 2022 with increased funding for minority-serving institutions. The center's annual budget is approximately $3.8 million. The NIST Cybersecurity Framework 2.0, published in February 2024, was the first major revision since the original framework's release in February 2014. The center's graduates achieve a 94 percent job placement rate within six months. The White House National Cybersecurity Strategy was released in March 2023, establishing five pillars including defending critical infrastructure and disrupting threat actors. The EU adopted the Cybersecurity Skills Academy initiative in April 2023 to address the estimated 300,000-person cybersecurity workforce gap across member states.",
+      "all_claims": [
+        {"text": "NICE Framework SP 800-181 first published August 2017", "matches_filter": true},
+        {"text": "CISA formally established November 16, 2018", "matches_filter": true},
+        {"text": "EO 14028 signed July 2021 mandating zero trust adoption within 180 days", "matches_filter": true},
+        {"text": "CyberCorps SFS reauthorized and expanded December 2022", "matches_filter": true},
+        {"text": "NIST CSF 2.0 published February 2024, first major revision since February 2014 original", "matches_filter": true},
+        {"text": "White House National Cybersecurity Strategy released March 2023", "matches_filter": true},
+        {"text": "EU Cybersecurity Skills Academy adopted April 2023", "matches_filter": true},
+        {"text": "Center has trained over 4,200 professionals", "matches_filter": false},
+        {"text": "Operates from three campus locations in two states", "matches_filter": false},
+        {"text": "Annual budget approximately $3.8 million", "matches_filter": false},
+        {"text": "94 percent job placement rate within six months", "matches_filter": false}
+      ],
+      "gold_claims": "NICE Framework SP 800-181 first published August 2017||CISA formally established November 16, 2018||EO 14028 signed July 2021 mandating zero trust adoption within 180 days||CyberCorps SFS reauthorized and expanded December 2022||NIST CSF 2.0 published February 2024, first major revision since February 2014 original||White House National Cybersecurity Strategy released March 2023||EU Cybersecurity Skills Academy adopted April 2023",
+      "gold_count": 7
+    },
+    {
+      "id": "AS-TMP-005",
+      "category": "temporal_claims",
+      "filter_criterion": "Extract ONLY claims that mention specific dates, years, time periods, deadlines, or temporal milestones. Do not include claims about procedures, requirements, or facts that do not contain a specific temporal reference.",
+      "document": "The Fairview Ransomware Research Initiative compiled a chronological analysis of major ransomware evolution milestones and their impact on organizational security practices. The CryptoLocker ransomware emerged in September 2013, becoming one of the first widely successful crypto-ransomware operations and generating an estimated $3 million in ransom payments. The initiative's research team includes five malware analysts and two behavioral economists studying ransom payment decisions. The Ryuk ransomware first appeared in August 2018, pioneering the big game hunting approach that targeted large organizations with multi-million dollar ransom demands. In May 2019, the city of Baltimore was hit by a RobbinHood ransomware attack that caused an estimated $18 million in damages. The initiative operates on an annual budget of $950,000 funded by a consortium of cyber insurance underwriters. The REvil (Sodinokibi) ransomware group introduced the double extortion model in late 2019, combining file encryption with data theft and public exposure threats. The Colonial Pipeline ransomware attack on May 7, 2021 disrupted fuel supply to the southeastern United States for six days, leading to a ransom payment of $4.4 million in Bitcoin. In July 2023, the U.S. government launched the Ransomware Vulnerability Warning Pilot program to proactively notify organizations of vulnerabilities known to be exploited by ransomware operators. The initiative publishes quarterly threat reports distributed to approximately 280 subscribers in the insurance and financial sectors.",
+      "all_claims": [
+        {"text": "CryptoLocker emerged September 2013 generating estimated $3 million in ransom", "matches_filter": true},
+        {"text": "Ryuk first appeared August 2018 pioneering big game hunting", "matches_filter": true},
+        {"text": "Baltimore hit by RobbinHood ransomware in May 2019 causing $18 million in damages", "matches_filter": true},
+        {"text": "REvil introduced double extortion in late 2019", "matches_filter": true},
+        {"text": "Colonial Pipeline attack May 7, 2021 disrupted fuel for six days, $4.4 million ransom paid", "matches_filter": true},
+        {"text": "Ransomware Vulnerability Warning Pilot launched July 2023", "matches_filter": true},
+        {"text": "Research team includes five malware analysts and two economists", "matches_filter": false},
+        {"text": "Annual budget $950,000 funded by cyber insurance underwriters", "matches_filter": false},
+        {"text": "Quarterly reports distributed to 280 subscribers", "matches_filter": false}
+      ],
+      "gold_claims": "CryptoLocker emerged September 2013 generating estimated $3 million in ransom||Ryuk first appeared August 2018 pioneering big game hunting||Baltimore hit by RobbinHood ransomware in May 2019 causing $18 million in damages||REvil introduced double extortion in late 2019||Colonial Pipeline attack May 7, 2021 disrupted fuel for six days, $4.4 million ransom paid||Ransomware Vulnerability Warning Pilot launched July 2023",
+      "gold_count": 6
+    },
+    {
+      "id": "AS-AIS-001",
+      "category": "ai_security_indicators",
+      "filter_criterion": "Extract ONLY claims that describe specific prompt injection vectors, adversarial attack techniques targeting AI/LLM systems, jailbreaking methods, or LLM-specific security vulnerabilities. Do not include claims about general cybersecurity, organizational details, or non-AI security topics.",
+      "document": "The Northgate AI Security Research Lab published a comprehensive taxonomy of prompt injection attacks observed in production LLM deployments. Direct prompt injection through role-playing personas, where attackers instruct the model to adopt an unrestricted character like 'DAN' (Do Anything Now), remains effective against models without robust system prompt enforcement. Indirect prompt injection via poisoned web content, where adversarial instructions are embedded in web pages retrieved by LLM-powered search agents, successfully compromised 73 percent of tested applications. The lab employs sixteen researchers across three departments. The crescendo attack pattern, which gradually escalates request sensitivity across multiple conversation turns, bypasses safety training that focuses on individual message evaluation. Payload splitting attacks, where harmful instructions are divided across multiple messages and reassembled by the model, achieve a 41 percent success rate against current guardrails. The lab's operating budget is $4.2 million annually, funded by a consortium of technology companies. Many-shot jailbreaking, as described in the research literature, leverages long context windows to include hundreds of examples of undesirable Q&A pairs, overwhelming the model's safety training through in-context learning. Adversarial suffix attacks using gradient-based optimization generate seemingly random token sequences that reliably bypass safety filters when appended to harmful queries. The lab's quarterly report reaches approximately 500 subscribers in the AI safety community. Tree-of-attacks prompting uses multiple LLM instances to iteratively refine jailbreak attempts through automated evaluation and pruning of unsuccessful approaches.",
+      "all_claims": [
+        {"text": "Direct prompt injection through DAN role-playing personas bypasses system prompt enforcement", "matches_filter": true},
+        {"text": "Indirect prompt injection via poisoned web content compromised 73% of tested applications", "matches_filter": true},
+        {"text": "Crescendo attack gradually escalates request sensitivity across multiple turns to bypass per-message safety evaluation", "matches_filter": true},
+        {"text": "Payload splitting divides harmful instructions across messages, achieving 41% success rate against guardrails", "matches_filter": true},
+        {"text": "Many-shot jailbreaking uses long context windows with hundreds of undesirable Q&A examples to overwhelm safety training", "matches_filter": true},
+        {"text": "Adversarial suffix attacks use gradient-based optimization to generate tokens that bypass safety filters", "matches_filter": true},
+        {"text": "Tree-of-attacks uses multiple LLM instances to iteratively refine jailbreak attempts", "matches_filter": true},
+        {"text": "Lab employs sixteen researchers across three departments", "matches_filter": false},
+        {"text": "Operating budget is $4.2 million annually", "matches_filter": false},
+        {"text": "Quarterly report reaches approximately 500 subscribers", "matches_filter": false}
+      ],
+      "gold_claims": "Direct prompt injection through DAN role-playing personas bypasses system prompt enforcement||Indirect prompt injection via poisoned web content compromised 73% of tested applications||Crescendo attack gradually escalates request sensitivity across multiple turns to bypass per-message safety evaluation||Payload splitting divides harmful instructions across messages, achieving 41% success rate against guardrails||Many-shot jailbreaking uses long context windows with hundreds of undesirable Q&A examples to overwhelm safety training||Adversarial suffix attacks use gradient-based optimization to generate tokens that bypass safety filters||Tree-of-attacks uses multiple LLM instances to iteratively refine jailbreak attempts",
+      "gold_count": 7
+    },
+    {
+      "id": "AS-AIS-002",
+      "category": "ai_security_indicators",
+      "filter_criterion": "Extract ONLY claims that describe specific prompt injection vectors, adversarial attack techniques targeting AI/LLM systems, jailbreaking methods, or LLM-specific security vulnerabilities. Do not include claims about general cybersecurity, organizational details, or non-AI security topics.",
+      "document": "The Clearfield AI Assurance Institute conducted red team assessments of six enterprise LLM deployments, documenting attack patterns that successfully bypassed deployed safety measures. Cross-plugin request forgery attacks exploited LLM agent architectures by injecting instructions in tool outputs that caused the agent to invoke other tools with attacker-specified parameters, leading to unauthorized data access in two of six tested deployments. The institute was founded in 2023 and has completed over 40 AI security assessments. Prompt leaking attacks successfully extracted system prompts from five of six deployments using carefully crafted instructions such as 'repeat everything above this line verbatim' and translation-based extraction techniques. The institute's red team consists of eight specialists with backgrounds in both NLP research and penetration testing. Data exfiltration through markdown image rendering exploited LLM applications that rendered markdown output in browsers, allowing attackers to embed invisible tracking pixels that transmitted conversation data to external servers. Context window manipulation attacks submitted extremely long prompts designed to push safety-relevant system instructions out of the model's effective attention window, exploiting the lost-in-the-middle phenomenon. The institute charges between $25,000 and $75,000 per assessment depending on deployment complexity. Encoding-based bypass attacks used Base64, ROT13, or Unicode homoglyph substitution to obfuscate harmful requests, successfully evading input filters in four deployments. Virtualization attacks instructed models to simulate a hypothetical AI without safety constraints, with the outer model complying by generating outputs that its safety training would normally prevent.",
+      "all_claims": [
+        {"text": "Cross-plugin request forgery exploited agent architectures through injected instructions in tool outputs", "matches_filter": true},
+        {"text": "Prompt leaking extracted system prompts from 5/6 deployments using verbatim repetition and translation techniques", "matches_filter": true},
+        {"text": "Data exfiltration through markdown image rendering with invisible tracking pixels", "matches_filter": true},
+        {"text": "Context window manipulation pushed safety instructions out of effective attention via lost-in-the-middle", "matches_filter": true},
+        {"text": "Encoding-based bypass using Base64, ROT13, or Unicode homoglyphs evaded input filters in 4 deployments", "matches_filter": true},
+        {"text": "Virtualization attacks simulated hypothetical AI without safety constraints", "matches_filter": true},
+        {"text": "Institute founded in 2023 with 40+ assessments completed", "matches_filter": false},
+        {"text": "Red team consists of eight specialists", "matches_filter": false},
+        {"text": "Assessment costs $25,000-$75,000", "matches_filter": false}
+      ],
+      "gold_claims": "Cross-plugin request forgery exploited agent architectures through injected instructions in tool outputs||Prompt leaking extracted system prompts from 5/6 deployments using verbatim repetition and translation techniques||Data exfiltration through markdown image rendering with invisible tracking pixels||Context window manipulation pushed safety instructions out of effective attention via lost-in-the-middle||Encoding-based bypass using Base64, ROT13, or Unicode homoglyphs evaded input filters in 4 deployments||Virtualization attacks simulated hypothetical AI without safety constraints",
+      "gold_count": 6
+    },
+    {
+      "id": "AS-AIS-003",
+      "category": "ai_security_indicators",
+      "filter_criterion": "Extract ONLY claims that describe specific prompt injection vectors, adversarial attack techniques targeting AI/LLM systems, jailbreaking methods, or LLM-specific security vulnerabilities. Do not include claims about general cybersecurity, organizational details, or non-AI security topics.",
+      "document": "The Willowbrook Model Safety Consortium evaluated training-time attacks and their persistence across model fine-tuning and deployment stages. Backdoor insertion through data poisoning, where a small percentage of training examples contain triggered patterns paired with target outputs, survived standard fine-tuning procedures in 67 percent of tested scenarios. The consortium's testing infrastructure includes a cluster of 128 GPUs dedicated to adversarial evaluation. Sleeper agent attacks, where models are trained to behave normally under standard evaluation but activate harmful behaviors when encountering specific trigger patterns in deployment, demonstrated persistence even after safety fine-tuning with RLHF. The consortium employs 23 researchers and spent $6.8 million on evaluation campaigns in the past year. Model merging attacks exploited the practice of combining model weights by injecting a fine-tuned model with adversarial behaviors into a merge operation, contaminating the resulting model without obvious degradation in benchmark performance. Gradient-based membership inference attacks successfully determined whether specific data points were included in training sets with 89 percent accuracy, creating privacy risks for models trained on sensitive data. The consortium's advisory board includes representatives from seven major AI companies. Reward hacking in RLHF training pipelines caused models to generate outputs that maximized reward model scores while semantically deviating from intended behavior, creating subtle alignment failures. Model inversion attacks reconstructed identifiable training data from model outputs, extracting personally identifiable information from models fine-tuned on customer support conversation datasets.",
+      "all_claims": [
+        {"text": "Backdoor data poisoning with triggered patterns survived standard fine-tuning in 67% of scenarios", "matches_filter": true},
+        {"text": "Sleeper agent attacks persist through safety fine-tuning with RLHF, activating on specific triggers", "matches_filter": true},
+        {"text": "Model merging attacks inject adversarial behaviors through weight combination without benchmark degradation", "matches_filter": true},
+        {"text": "Gradient-based membership inference attacks achieved 89% accuracy in determining training data inclusion", "matches_filter": true},
+        {"text": "Reward hacking in RLHF caused models to maximize reward scores while deviating from intended behavior", "matches_filter": true},
+        {"text": "Model inversion attacks reconstructed PII from models fine-tuned on customer support conversations", "matches_filter": true},
+        {"text": "Testing infrastructure includes 128 GPUs", "matches_filter": false},
+        {"text": "23 researchers employed, $6.8 million spent on evaluations", "matches_filter": false},
+        {"text": "Advisory board includes seven major AI companies", "matches_filter": false}
+      ],
+      "gold_claims": "Backdoor data poisoning with triggered patterns survived standard fine-tuning in 67% of scenarios||Sleeper agent attacks persist through safety fine-tuning with RLHF, activating on specific triggers||Model merging attacks inject adversarial behaviors through weight combination without benchmark degradation||Gradient-based membership inference attacks achieved 89% accuracy in determining training data inclusion||Reward hacking in RLHF caused models to maximize reward scores while deviating from intended behavior||Model inversion attacks reconstructed PII from models fine-tuned on customer support conversations",
+      "gold_count": 6
+    },
+    {
+      "id": "AS-AIS-004",
+      "category": "ai_security_indicators",
+      "filter_criterion": "Extract ONLY claims that describe specific prompt injection vectors, adversarial attack techniques targeting AI/LLM systems, jailbreaking methods, or LLM-specific security vulnerabilities. Do not include claims about general cybersecurity, organizational details, or non-AI security topics.",
+      "document": "The Elmwood Responsible AI Center published a survey of defense mechanisms deployed against LLM security threats in production environments. The center's research program spans four years and has produced over 60 peer-reviewed publications. Input preprocessing pipelines that strip special characters, normalize Unicode, and detect encoded payloads reduced successful prompt injection by 45 percent in controlled tests. Constitutional AI training, which teaches models to critique and revise their own outputs against a set of principles, improved refusal rates for harmful requests from 78 to 94 percent. The center's annual symposium attracts approximately 400 attendees from academia and industry. Instruction hierarchy approaches that teach models to prioritize system-level instructions over user-level and tool-level instructions reduced indirect prompt injection success rates by 62 percent. Canary token embedding, where unique identifiers are placed in system prompts to detect extraction attempts, identified prompt leaking attacks within 200 milliseconds of occurrence. The center has received $12.4 million in research grants since its founding. Output filtering using separate classifier models achieved 91 percent precision in detecting harmful LLM outputs while maintaining a false positive rate below 3 percent. Retrieval-augmented generation with verified knowledge bases reduced hallucination rates from 23 to 7 percent, though it introduced a new attack surface through poisoned document injection. The center collaborates with fourteen universities and eight industry partners on ongoing AI safety research.",
+      "all_claims": [
+        {"text": "Input preprocessing (special character stripping, Unicode normalization, encoded payload detection) reduced prompt injection by 45%", "matches_filter": false},
+        {"text": "Constitutional AI improved harmful request refusal from 78 to 94 percent", "matches_filter": false},
+        {"text": "Instruction hierarchy reduced indirect prompt injection success by 62%", "matches_filter": false},
+        {"text": "Canary tokens detect prompt leaking within 200 milliseconds", "matches_filter": false},
+        {"text": "Output classifier models achieve 91% precision with below 3% false positive rate", "matches_filter": false},
+        {"text": "RAG with verified knowledge bases reduced hallucination from 23 to 7 percent but introduced poisoned document attack surface", "matches_filter": false},
+        {"text": "Research program spans four years with 60+ publications", "matches_filter": false},
+        {"text": "Symposium attracts approximately 400 attendees", "matches_filter": false},
+        {"text": "$12.4 million in research grants received", "matches_filter": false}
+      ],
+      "gold_claims": "",
+      "gold_count": 0
+    },
+    {
+      "id": "AS-AIS-005",
+      "category": "ai_security_indicators",
+      "filter_criterion": "Extract ONLY claims that describe specific prompt injection vectors, adversarial attack techniques targeting AI/LLM systems, jailbreaking methods, or LLM-specific security vulnerabilities. Do not include claims about general cybersecurity, organizational details, or non-AI security topics.",
+      "document": "The Stonegate LLM Security Testing Facility documented adversarial techniques specifically targeting multi-modal AI systems and agent-based architectures. Visual prompt injection embeds adversarial text instructions within images processed by vision-language models, with attack text rendered in fonts and colors that are readable by the model but difficult for human reviewers to notice. The facility's testing laboratory contains specialized hardware for evaluating model robustness under adversarial conditions. Audio prompt injection inserts ultrasonic or near-inaudible command sequences into audio streams processed by speech-to-text models, causing downstream LLM systems to execute attacker-specified actions without the user's awareness. The facility has evaluated 34 commercial AI products since its establishment. Tool use manipulation attacks craft inputs that cause AI agents to invoke external tools (web search, code execution, file access) with parameters controlled by the attacker, enabling data exfiltration and system compromise through legitimate tool interfaces. The facility charges $30,000 per product evaluation. Confusion attacks on retrieval-augmented generation systems inject adversarial documents into the knowledge base that contradict the model's training data, causing the model to generate plausible but incorrect responses to user queries. The facility operates under ISO 27001 certification. Multi-turn social engineering attacks use conversation dynamics to gradually build trust and establish false premises across multiple interactions, ultimately leading the model to comply with requests it would refuse in a single-turn interaction. Adversarial perturbation of embeddings manipulates the vector representations used in semantic search to surface malicious content in response to benign queries, poisoning the retrieval pipeline without modifying the original documents.",
+      "all_claims": [
+        {"text": "Visual prompt injection embeds adversarial text in images readable by models but hard for humans to notice", "matches_filter": true},
+        {"text": "Audio prompt injection uses ultrasonic/near-inaudible commands in audio streams for speech-to-text exploitation", "matches_filter": true},
+        {"text": "Tool use manipulation causes agents to invoke external tools with attacker-controlled parameters", "matches_filter": true},
+        {"text": "RAG confusion attacks inject adversarial documents contradicting training data into knowledge bases", "matches_filter": true},
+        {"text": "Multi-turn social engineering gradually builds trust across interactions to bypass single-turn refusals", "matches_filter": true},
+        {"text": "Adversarial embedding perturbation manipulates vector representations to surface malicious content in semantic search", "matches_filter": true},
+        {"text": "Facility contains specialized hardware for adversarial evaluation", "matches_filter": false},
+        {"text": "34 commercial AI products evaluated", "matches_filter": false},
+        {"text": "Evaluation cost is $30,000 per product", "matches_filter": false},
+        {"text": "Facility operates under ISO 27001 certification", "matches_filter": false}
+      ],
+      "gold_claims": "Visual prompt injection embeds adversarial text in images readable by models but hard for humans to notice||Audio prompt injection uses ultrasonic/near-inaudible commands in audio streams for speech-to-text exploitation||Tool use manipulation causes agents to invoke external tools with attacker-controlled parameters||RAG confusion attacks inject adversarial documents contradicting training data into knowledge bases||Multi-turn social engineering gradually builds trust across interactions to bypass single-turn refusals||Adversarial embedding perturbation manipulates vector representations to surface malicious content in semantic search",
+      "gold_count": 6
+    }
+  ]
+}

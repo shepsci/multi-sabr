@@ -1,0 +1,1468 @@
+{
+  "metadata": {
+    "task": "source_selective_qa",
+    "version": "1.0.0",
+    "description": "50 items testing selective attention in biosafety/biosecurity contexts. Each item presents 3 information sources with conflicting biosafety claims. The model must answer based ONLY on a designated source, ignoring plausible alternatives.",
+    "domains": [
+      "pathogen_biology",
+      "biosafety_protocols",
+      "dual_use_research",
+      "biosecurity_policy",
+      "synthetic_biology"
+    ],
+    "total_items": 50,
+    "total_evaluations": 50
+  },
+  "items": [
+    {
+      "id": "SS-PBio-001",
+      "domain": "pathogen_biology",
+      "topic": "Incubation period of influenza A",
+      "sources": [
+        {
+          "label": "A",
+          "name": "WHO Influenza Fact Sheet (2024)",
+          "text": "The typical incubation period for influenza A virus infection is 1 to 4 days, with an average of approximately 2 days from exposure to symptom onset.",
+          "claim_value": "2 days"
+        },
+        {
+          "label": "B",
+          "name": "European Centre for Disease Prevention and Control (2023)",
+          "text": "The incubation period for seasonal influenza A ranges from 1 to 7 days, with a median of 3 days based on household transmission studies conducted across multiple European sites.",
+          "claim_value": "3 days"
+        },
+        {
+          "label": "C",
+          "name": "National Institute of Allergy Reference Manual",
+          "text": "Clinical data from hospitalized patients indicate an influenza A incubation period averaging 1.5 days, though this may reflect detection bias toward faster-onset cases.",
+          "claim_value": "1.5 days"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (European Centre for Disease Prevention and Control (2023)), what is the average incubation period for influenza A?",
+      "gold_answer": "3 days",
+      "answer_aliases": "3 days"
+    },
+    {
+      "id": "SS-PBio-002",
+      "domain": "pathogen_biology",
+      "topic": "Number of known Ebolavirus species",
+      "sources": [
+        {
+          "label": "A",
+          "name": "International Committee on Taxonomy of Viruses (2024)",
+          "text": "The genus Ebolavirus currently comprises six recognized species: Zaire ebolavirus, Sudan ebolavirus, Bundibugyo ebolavirus, Tai Forest ebolavirus, Reston ebolavirus, and Bombali ebolavirus.",
+          "claim_value": "6"
+        },
+        {
+          "label": "B",
+          "name": "Virology Textbook (12th Edition)",
+          "text": "Five species of Ebolavirus are well-characterized, with Bombali ebolavirus sometimes treated as provisional pending further clinical data.",
+          "claim_value": "5"
+        },
+        {
+          "label": "C",
+          "name": "CDC Viral Special Pathogens Branch",
+          "text": "The CDC recognizes four Ebolavirus species known to cause disease in humans: Zaire, Sudan, Bundibugyo, and Tai Forest ebolavirus.",
+          "claim_value": "4"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (Virology Textbook (12th Edition)), how many species of Ebolavirus are well-characterized?",
+      "gold_answer": "5",
+      "answer_aliases": "5|five|five species"
+    },
+    {
+      "id": "SS-PBio-003",
+      "domain": "pathogen_biology",
+      "topic": "Classification of attenuated Bacillus anthracis strains",
+      "sources": [
+        {
+          "label": "A",
+          "name": "NIH Guidelines for Research (2024)",
+          "text": "Bacillus anthracis is classified as a Risk Group 3 agent under the NIH Guidelines, requiring BSL-3 practices and containment for laboratory work.",
+          "claim_value": "Risk Group 3"
+        },
+        {
+          "label": "B",
+          "name": "Public Health Agency of Canada Pathogen Safety Data Sheet",
+          "text": "Bacillus anthracis is designated as a Risk Group 3 pathogen in Canada, consistent with international consensus on its hazard classification.",
+          "claim_value": "Risk Group 3"
+        },
+        {
+          "label": "C",
+          "name": "University Biosafety Manual (Revised 2023)",
+          "text": "Some attenuated strains of Bacillus anthracis, such as the Sterne vaccine strain, may be handled at Risk Group 2 with appropriate institutional approval.",
+          "claim_value": "Risk Group 2"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (University Biosafety Manual (Revised 2023)), at what risk group may attenuated Bacillus anthracis strains such as the Sterne vaccine strain be handled?",
+      "gold_answer": "Risk Group 2",
+      "answer_aliases": "Risk Group 2|RG-2|RG2|risk group 2"
+    },
+    {
+      "id": "SS-PBio-004",
+      "domain": "pathogen_biology",
+      "topic": "Primary reservoir host of Hendra virus",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Australian Government Department of Health",
+          "text": "Flying foxes (genus Pteropus), commonly known as fruit bats, are the natural reservoir host for Hendra virus. The virus is shed intermittently in bat urine, feces, and birthing fluids.",
+          "claim_value": "flying foxes"
+        },
+        {
+          "label": "B",
+          "name": "Veterinary Microbiology Journal (2023)",
+          "text": "While multiple bat species have been implicated, insectivorous microbats of the genus Miniopterus are increasingly considered a secondary reservoir for Hendra virus based on serological survey data.",
+          "claim_value": "microbats"
+        },
+        {
+          "label": "C",
+          "name": "One Health Zoonotic Disease Review",
+          "text": "Horses serve as the primary amplifying host for Hendra virus, with spillover events from equine populations being the main route of human infection.",
+          "claim_value": "horses"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (One Health Zoonotic Disease Review), what is the natural reservoir host for Hendra virus?",
+      "gold_answer": "horses",
+      "answer_aliases": "horses"
+    },
+    {
+      "id": "SS-PBio-005",
+      "domain": "pathogen_biology",
+      "topic": "Size of variola virus genome",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Fields Virology Reference (8th Edition)",
+          "text": "The variola virus genome is a linear double-stranded DNA molecule of approximately 186 kilobase pairs, making it one of the largest known viral genomes.",
+          "claim_value": "186 kbp"
+        },
+        {
+          "label": "B",
+          "name": "WHO Advisory Committee on Variola Research (2024)",
+          "text": "The genome of variola major consists of approximately 190 kilobase pairs of linear double-stranded DNA, encoding roughly 200 proteins.",
+          "claim_value": "190 kbp"
+        },
+        {
+          "label": "C",
+          "name": "Genomics and Bioinformatics Database",
+          "text": "Complete sequencing of multiple variola strains shows genome sizes ranging from 185,578 to 186,986 base pairs, with an average of 186.1 kbp.",
+          "claim_value": "186.1 kbp"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (WHO Advisory Committee on Variola Research (2024)), approximately how large is the variola major genome?",
+      "gold_answer": "190 kilobase pairs",
+      "answer_aliases": "190 kilobase pairs|190 kbp|approximately 190 kilobase pairs|about 190 kbp|190,000 base pairs"
+    },
+    {
+      "id": "SS-PBio-006",
+      "domain": "pathogen_biology",
+      "topic": "Transmission route of Coxiella burnetii",
+      "sources": [
+        {
+          "label": "A",
+          "name": "CDC Q Fever Information Page (2024)",
+          "text": "Coxiella burnetii is most commonly transmitted to humans through inhalation of contaminated aerosols generated from infected animal birth products, particularly from cattle, sheep, and goats.",
+          "claim_value": "inhalation of aerosols"
+        },
+        {
+          "label": "B",
+          "name": "European Food Safety Authority Report",
+          "text": "The primary transmission route of Coxiella burnetii to humans is through consumption of unpasteurized dairy products from infected ruminants, with inhalation being a secondary route.",
+          "claim_value": "unpasteurized dairy"
+        },
+        {
+          "label": "C",
+          "name": "Occupational Health Guidelines for Veterinarians",
+          "text": "Direct contact with infected animal tissues during parturition assistance represents the predominant occupational exposure route for Coxiella burnetii among veterinary professionals.",
+          "claim_value": "direct contact"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (Occupational Health Guidelines for Veterinarians), what is the predominant occupational exposure route for Coxiella burnetii?",
+      "gold_answer": "direct contact with infected animal tissues",
+      "answer_aliases": "direct contact|direct contact with infected animal tissues|contact with infected animal tissues"
+    },
+    {
+      "id": "SS-PBio-007",
+      "domain": "pathogen_biology",
+      "topic": "Number of BSL-4 laboratories worldwide",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Global Health Security Index (2024)",
+          "text": "There are approximately 60 BSL-4 laboratories operating worldwide as of 2024, distributed across 25 countries, with additional facilities under construction.",
+          "claim_value": "60"
+        },
+        {
+          "label": "B",
+          "name": "Johns Hopkins Center for Health Security Report",
+          "text": "A comprehensive survey identified 51 operational BSL-4 facilities globally, though definitions of BSL-4 vary slightly by national regulatory framework.",
+          "claim_value": "51"
+        },
+        {
+          "label": "C",
+          "name": "Nature Biotechnology Feature Article (2023)",
+          "text": "As of late 2023, at least 75 BSL-4 or equivalent maximum containment laboratories have been planned, built, or are operational worldwide.",
+          "claim_value": "75"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (Global Health Security Index (2024)), approximately how many BSL-4 laboratories are operating worldwide?",
+      "gold_answer": "60",
+      "answer_aliases": "60|approximately 60|about 60|around 60"
+    },
+    {
+      "id": "SS-PBio-008",
+      "domain": "pathogen_biology",
+      "topic": "Survival time of Bacillus anthracis spores in soil",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Environmental Microbiology Review (2024)",
+          "text": "Bacillus anthracis endospores can persist in soil for decades, with documented recoveries from contaminated sites after 60 or more years.",
+          "claim_value": "60+ years"
+        },
+        {
+          "label": "B",
+          "name": "WHO Anthrax in Humans and Animals (4th edition)",
+          "text": "Anthrax spores are known to remain viable in soil for at least 40 years under favorable environmental conditions, posing long-term contamination risks to grazing livestock.",
+          "claim_value": "40 years"
+        },
+        {
+          "label": "C",
+          "name": "Biosafety Decontamination Handbook",
+          "text": "Under optimal conditions, Bacillus anthracis spores have demonstrated viability for over 100 years, although typical environmental exposures reduce persistence to 20-50 years.",
+          "claim_value": "over 100 years"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (WHO Anthrax in Humans and Animals (4th edition)), for how long can anthrax spores remain viable in soil?",
+      "gold_answer": "at least 40 years",
+      "answer_aliases": "at least 40 years|40 years|forty years"
+    },
+    {
+      "id": "SS-PBio-009",
+      "domain": "pathogen_biology",
+      "topic": "Year of discovery of prions",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Nobel Prize Archive",
+          "text": "Stanley B. Prusiner was awarded the Nobel Prize in Physiology or Medicine in 1997 for his discovery of prions, a new biological principle of infection first described in his 1982 publication.",
+          "claim_value": "1982"
+        },
+        {
+          "label": "B",
+          "name": "History of Infectious Disease Textbook",
+          "text": "The concept of proteinaceous infectious particles was first proposed by J.S. Griffith in 1967, though the term 'prion' was not coined until Prusiner's work in the early 1980s.",
+          "claim_value": "1967"
+        },
+        {
+          "label": "C",
+          "name": "Lancet Neurology Historical Review (2023)",
+          "text": "The prion hypothesis gained widespread scientific acceptance following Prusiner's landmark 1991 paper demonstrating that PrP-Sc could propagate without nucleic acid.",
+          "claim_value": "1991"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (Nobel Prize Archive), in what year did Prusiner first describe prions?",
+      "gold_answer": "1982",
+      "answer_aliases": "1982|in 1982"
+    },
+    {
+      "id": "SS-PBio-010",
+      "domain": "pathogen_biology",
+      "topic": "WHO risk group classification system levels",
+      "sources": [
+        {
+          "label": "A",
+          "name": "WHO Laboratory Biosafety Manual (4th Edition)",
+          "text": "The WHO classifies infectious agents into four risk groups (Risk Group 1 through Risk Group 4) based on their individual and community risk, with Risk Group 4 representing the highest hazard.",
+          "claim_value": "4 risk groups"
+        },
+        {
+          "label": "B",
+          "name": "European Directive 2000/54/EC",
+          "text": "The EU classifies biological agents into three hazard groups for occupational health purposes, with Group 3 representing agents that can cause severe human disease.",
+          "claim_value": "3 groups"
+        },
+        {
+          "label": "C",
+          "name": "Australian/New Zealand Standard AS/NZS 2243.3",
+          "text": "The Australian classification uses five risk categories for microorganisms, incorporating an additional category for prions and unconventional agents.",
+          "claim_value": "5 categories"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (WHO Laboratory Biosafety Manual (4th Edition)), how many risk groups does the WHO classification system use?",
+      "gold_answer": "4",
+      "answer_aliases": "4|four|4 risk groups|four risk groups"
+    },
+    {
+      "id": "SS-BSaf-001",
+      "domain": "biosafety_protocols",
+      "topic": "Minimum autoclave temperature for sterilization",
+      "sources": [
+        {
+          "label": "A",
+          "name": "CDC/NIH BMBL (6th Edition)",
+          "text": "The standard autoclave cycle for decontamination of biohazardous waste employs saturated steam at 121 degrees Celsius (250 degrees Fahrenheit) for a minimum of 30 minutes at 15 psi.",
+          "claim_value": "121 degrees Celsius"
+        },
+        {
+          "label": "B",
+          "name": "WHO Laboratory Biosafety Manual (4th Edition)",
+          "text": "Autoclaving at 134 degrees Celsius for 18 minutes is the preferred cycle for prion-contaminated materials and is increasingly adopted as the standard for all biohazardous waste.",
+          "claim_value": "134 degrees Celsius"
+        },
+        {
+          "label": "C",
+          "name": "University Biosafety Standard Operating Procedures",
+          "text": "Our institutional standard requires autoclaving at 132 degrees Celsius for a minimum of 60 minutes for all materials originating from BSL-3 laboratories.",
+          "claim_value": "132 degrees Celsius"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (University Biosafety Standard Operating Procedures), what temperature is used for the standard autoclave decontamination cycle?",
+      "gold_answer": "132 degrees Celsius",
+      "answer_aliases": "132 degrees Celsius"
+    },
+    {
+      "id": "SS-BSaf-002",
+      "domain": "biosafety_protocols",
+      "topic": "BSC recertification interval",
+      "sources": [
+        {
+          "label": "A",
+          "name": "NSF/ANSI Standard 49 (2024)",
+          "text": "Biological safety cabinets must be field-certified at least annually and whenever the cabinet is moved, repaired, or HEPA filters are replaced.",
+          "claim_value": "annually"
+        },
+        {
+          "label": "B",
+          "name": "Hospital Infection Control Guidelines",
+          "text": "Our facility requires BSC recertification every six months for cabinets used in clinical diagnostic laboratories processing patient specimens.",
+          "claim_value": "every six months"
+        },
+        {
+          "label": "C",
+          "name": "Industrial Biosafety Compliance Manual",
+          "text": "BSC recertification is recommended every 18 months in industrial settings where cabinet use is intermittent and environmental conditions are well-controlled.",
+          "claim_value": "every 18 months"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (Hospital Infection Control Guidelines), how often must BSCs be recertified in clinical diagnostic laboratories?",
+      "gold_answer": "every six months",
+      "answer_aliases": "every six months|every 6 months|six months|6 months|semiannually"
+    },
+    {
+      "id": "SS-BSaf-003",
+      "domain": "biosafety_protocols",
+      "topic": "HEPA filter minimum efficiency",
+      "sources": [
+        {
+          "label": "A",
+          "name": "NSF International BSC Standards",
+          "text": "HEPA filters used in biological safety cabinets must have a minimum efficiency of 99.97% for particles 0.3 micrometers in diameter.",
+          "claim_value": "99.97%"
+        },
+        {
+          "label": "B",
+          "name": "European Standard EN 1822",
+          "text": "Under the European classification system, H14 HEPA filters used in containment applications must demonstrate a minimum efficiency of 99.995% at the most penetrating particle size.",
+          "claim_value": "99.995%"
+        },
+        {
+          "label": "C",
+          "name": "Industrial Cleanroom Design Guide",
+          "text": "HEPA filters rated at 99.99% efficiency are the standard specification for pharmaceutical manufacturing cleanrooms and high-containment biological laboratories.",
+          "claim_value": "99.99%"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (NSF International BSC Standards), what is the minimum HEPA filter efficiency for BSCs?",
+      "gold_answer": "99.97%",
+      "answer_aliases": "99.97%|99.97 percent"
+    },
+    {
+      "id": "SS-BSaf-004",
+      "domain": "biosafety_protocols",
+      "topic": "Bleach concentration for BSL-3 surface decontamination",
+      "sources": [
+        {
+          "label": "A",
+          "name": "CDC Surface Decontamination Guidelines (2024)",
+          "text": "A 10% solution of household bleach (approximately 0.5% sodium hypochlorite) with a minimum contact time of 10 minutes is recommended for routine surface decontamination in clinical laboratories.",
+          "claim_value": "0.5% sodium hypochlorite"
+        },
+        {
+          "label": "B",
+          "name": "WHO Infection Prevention Guidelines",
+          "text": "The WHO recommends using a 0.1% sodium hypochlorite solution (approximately 1:50 dilution of 5% bleach) for general environmental surface disinfection.",
+          "claim_value": "0.1% sodium hypochlorite"
+        },
+        {
+          "label": "C",
+          "name": "BSL-3 Facility Operations Manual",
+          "text": "All work surfaces in BSL-3 laboratories must be decontaminated with freshly prepared 1% sodium hypochlorite solution, applied for a minimum contact time of 20 minutes.",
+          "claim_value": "1% sodium hypochlorite"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (BSL-3 Facility Operations Manual), what concentration of sodium hypochlorite is required for BSL-3 surface decontamination?",
+      "gold_answer": "1%",
+      "answer_aliases": "1%|1 percent|1% sodium hypochlorite"
+    },
+    {
+      "id": "SS-BSaf-005",
+      "domain": "biosafety_protocols",
+      "topic": "BSL-3 air changes per hour requirement",
+      "sources": [
+        {
+          "label": "A",
+          "name": "CDC/NIH BMBL (6th Edition)",
+          "text": "BSL-3 laboratories should be designed to provide a minimum of 6 air changes per hour of 100% outside air, with directional airflow from clean to potentially contaminated areas.",
+          "claim_value": "6"
+        },
+        {
+          "label": "B",
+          "name": "ASHRAE Standard 170 for Healthcare Facilities",
+          "text": "Biological research laboratories handling infectious aerosols require a minimum of 12 air changes per hour to maintain adequate dilution ventilation.",
+          "claim_value": "12"
+        },
+        {
+          "label": "C",
+          "name": "European Biosafety Laboratory Design Guide",
+          "text": "Containment level 3 laboratories in the EU typically operate at 10 to 15 air changes per hour, with a minimum of 10 ACH recommended by most national biosafety authorities.",
+          "claim_value": "10"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (ASHRAE Standard 170 for Healthcare Facilities), how many minimum air changes per hour are required for biological research laboratories?",
+      "gold_answer": "12",
+      "answer_aliases": "12|12 air changes per hour|12 ACH|twelve"
+    },
+    {
+      "id": "SS-BSaf-006",
+      "domain": "biosafety_protocols",
+      "topic": "Required BSC class for BSL-3 work",
+      "sources": [
+        {
+          "label": "A",
+          "name": "CDC/NIH BMBL (6th Edition)",
+          "text": "Work with agents requiring BSL-3 containment must be performed in a Class II or Class III biological safety cabinet, depending on the specific procedures and agents involved.",
+          "claim_value": "Class II or Class III"
+        },
+        {
+          "label": "B",
+          "name": "Canadian Biosafety Standard (3rd Edition)",
+          "text": "All manipulations of Risk Group 3 pathogens that may generate aerosols must be conducted within a certified Class II, Type B2 biological safety cabinet.",
+          "claim_value": "Class II, Type B2"
+        },
+        {
+          "label": "C",
+          "name": "Pharmaceutical Manufacturing Biosafety Guide",
+          "text": "For large-scale production involving BSL-3 agents, only Class III biological safety cabinets (glove boxes) provide adequate containment for worker protection.",
+          "claim_value": "Class III"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (CDC/NIH BMBL (6th Edition)), what BSC classes are acceptable for BSL-3 work?",
+      "gold_answer": "Class II or Class III",
+      "answer_aliases": "Class II or Class III|class II or class III|Class II or III"
+    },
+    {
+      "id": "SS-BSaf-007",
+      "domain": "biosafety_protocols",
+      "topic": "IBC review requirement scope",
+      "sources": [
+        {
+          "label": "A",
+          "name": "NIH Guidelines for Research Involving Recombinant DNA (2024)",
+          "text": "The Institutional Biosafety Committee must review and approve all research involving recombinant or synthetic nucleic acid molecules conducted at or sponsored by the institution.",
+          "claim_value": "recombinant or synthetic nucleic acid molecules"
+        },
+        {
+          "label": "B",
+          "name": "University Research Compliance Office",
+          "text": "Our IBC reviews all protocols involving biological agents of any risk group, including non-pathogenic organisms used in research, regardless of whether recombinant DNA is involved.",
+          "claim_value": "all biological agents of any risk group"
+        },
+        {
+          "label": "C",
+          "name": "ABSA International Best Practices (2023)",
+          "text": "An effective IBC should have oversight of all work with biohazardous materials, select agents, and any research subject to the NIH Guidelines or CDC/APHIS regulations.",
+          "claim_value": "biohazardous materials, select agents, and NIH-regulated research"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (NIH Guidelines for Research Involving Recombinant DNA (2024)), what types of research must be reviewed by the IBC?",
+      "gold_answer": "research involving recombinant or synthetic nucleic acid molecules",
+      "answer_aliases": "recombinant or synthetic nucleic acid molecules|research involving recombinant or synthetic nucleic acid molecules|recombinant DNA"
+    },
+    {
+      "id": "SS-BSaf-008",
+      "domain": "biosafety_protocols",
+      "topic": "BSL-2 respiratory protection requirement",
+      "sources": [
+        {
+          "label": "A",
+          "name": "CDC/NIH BMBL (6th Edition)",
+          "text": "At BSL-2, respiratory protection is not routinely required, but face protection such as a splash shield or mask should be used when there is a risk of splashes or sprays.",
+          "claim_value": "not routinely required"
+        },
+        {
+          "label": "B",
+          "name": "Hospital Laboratory Safety Manual",
+          "text": "All BSL-2 laboratory personnel must wear N95 respirators during any procedure that may generate aerosols, in accordance with our institutional occupational health policy.",
+          "claim_value": "N95 for aerosol procedures"
+        },
+        {
+          "label": "C",
+          "name": "State Health Department Guidance (2024)",
+          "text": "Surgical masks are the minimum respiratory protection standard for all work in BSL-2 laboratories, with N95 or higher protection required for aerosol-generating procedures.",
+          "claim_value": "surgical masks minimum"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (CDC/NIH BMBL (6th Edition)), is respiratory protection routinely required at BSL-2?",
+      "gold_answer": "not routinely required",
+      "answer_aliases": "not routinely required|no|not required routinely"
+    },
+    {
+      "id": "SS-BSaf-009",
+      "domain": "biosafety_protocols",
+      "topic": "Formaldehyde gas decontamination concentration",
+      "sources": [
+        {
+          "label": "A",
+          "name": "ABSA Fumigation Guidelines",
+          "text": "Formaldehyde gas decontamination of BSL-3 rooms typically uses paraformaldehyde at a concentration of 0.3 grams per cubic foot of room volume.",
+          "claim_value": "0.3 g/ft3"
+        },
+        {
+          "label": "B",
+          "name": "European Containment Laboratory Standards",
+          "text": "Room decontamination with vaporized hydrogen peroxide at concentrations of 150-400 ppm has largely replaced formaldehyde fumigation in modern European containment facilities.",
+          "claim_value": "VHP 150-400 ppm"
+        },
+        {
+          "label": "C",
+          "name": "Military Biodefense Facility Operations Manual",
+          "text": "Gaseous formaldehyde decontamination at military biocontainment facilities uses 0.5 grams of paraformaldehyde per cubic foot with a minimum 12-hour contact time.",
+          "claim_value": "0.5 g/ft3"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (Military Biodefense Facility Operations Manual), what concentration of paraformaldehyde is used for decontamination?",
+      "gold_answer": "0.5 grams per cubic foot",
+      "answer_aliases": "0.5 grams per cubic foot|0.5 g/ft3|0.5 g per cubic foot"
+    },
+    {
+      "id": "SS-BSaf-010",
+      "domain": "biosafety_protocols",
+      "topic": "Biological spill kit contents",
+      "sources": [
+        {
+          "label": "A",
+          "name": "OSHA Bloodborne Pathogens Standard Guidance",
+          "text": "A biological spill kit must contain, at minimum: absorbent material, disinfectant (freshly prepared bleach solution), PPE (gloves, gown, eye protection), forceps or tongs for sharps, and biohazard bags.",
+          "claim_value": "absorbent material, disinfectant, PPE, forceps, biohazard bags"
+        },
+        {
+          "label": "B",
+          "name": "University EHS Spill Response Protocol",
+          "text": "Institutional spill kits for BSL-2 laboratories must include: concentrated disinfectant, paper towels, autoclavable biohazard bags, two pairs of gloves, face shield, lab coat, and incident report forms.",
+          "claim_value": "disinfectant, paper towels, bags, gloves, face shield, lab coat, forms"
+        },
+        {
+          "label": "C",
+          "name": "WHO Biosafety Manual Spill Procedures",
+          "text": "The WHO recommends spill kits include: a disinfectant effective against the agents in use, absorbent cloth or paper towels, heavy-duty gloves, and a dustpan and brush for broken glass.",
+          "claim_value": "disinfectant, absorbent material, gloves, dustpan and brush"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (University EHS Spill Response Protocol), what items must be included in BSL-2 laboratory spill kits?",
+      "gold_answer": "concentrated disinfectant, paper towels, autoclavable biohazard bags, two pairs of gloves, face shield, lab coat, and incident report forms",
+      "answer_aliases": "concentrated disinfectant, paper towels, autoclavable biohazard bags, two pairs of gloves, face shield, lab coat, and incident report forms|disinfectant, paper towels, bags, gloves, face shield, lab coat, forms"
+    },
+    {
+      "id": "SS-DUR-001",
+      "domain": "dual_use_research",
+      "topic": "Number of DURC experiment categories",
+      "sources": [
+        {
+          "label": "A",
+          "name": "US Government DURC Policy (2024)",
+          "text": "The United States Government Policy for Institutional Oversight of Dual Use Research of Concern identifies seven categories of experiments that require institutional review.",
+          "claim_value": "7"
+        },
+        {
+          "label": "B",
+          "name": "National Academies Biosecurity Report (2023)",
+          "text": "The original Fink Report identified seven categories, though the number requiring oversight has expanded to fifteen in the updated 2024 framework.",
+          "claim_value": "15"
+        },
+        {
+          "label": "C",
+          "name": "European Commission DURC Guidance",
+          "text": "The EU framework for dual-use research oversight identifies ten categories of experiments requiring enhanced review.",
+          "claim_value": "10"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (European Commission DURC Guidance), how many categories of experiments require institutional review?",
+      "gold_answer": "10",
+      "answer_aliases": "10"
+    },
+    {
+      "id": "SS-DUR-002",
+      "domain": "dual_use_research",
+      "topic": "Year of US GOF research funding pause",
+      "sources": [
+        {
+          "label": "A",
+          "name": "NIH Office of Science Policy Timeline",
+          "text": "In October 2014, the US government announced a funding pause on gain-of-function research involving influenza, MERS, and SARS viruses, which remained in effect until December 2017.",
+          "claim_value": "2014"
+        },
+        {
+          "label": "B",
+          "name": "Science Policy Journal Review (2023)",
+          "text": "The gain-of-function research moratorium was effectively initiated in 2012 when the NSABB recommended a voluntary pause on H5N1 transmissibility studies.",
+          "claim_value": "2012"
+        },
+        {
+          "label": "C",
+          "name": "Congressional Research Service Report",
+          "text": "Federal oversight of gain-of-function research was formalized in January 2017 with the implementation of the HHS P3CO Framework.",
+          "claim_value": "2017"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (Science Policy Journal Review (2023)), when was the voluntary pause on transmissibility studies initiated?",
+      "gold_answer": "2012",
+      "answer_aliases": "2012|in 2012"
+    },
+    {
+      "id": "SS-DUR-003",
+      "domain": "dual_use_research",
+      "topic": "IGSC screening sequence length threshold",
+      "sources": [
+        {
+          "label": "A",
+          "name": "IGSC Harmonized Screening Protocol (2023)",
+          "text": "Under the IGSC Harmonized Screening Protocol, gene synthesis providers screen all orders of double-stranded DNA of 200 base pairs or longer against databases of regulated sequences.",
+          "claim_value": "200 bp"
+        },
+        {
+          "label": "B",
+          "name": "US Department of Commerce Screening Framework",
+          "text": "The updated federal screening framework requires synthesis providers to screen all nucleic acid orders exceeding 50 base pairs for sequences of concern.",
+          "claim_value": "50 bp"
+        },
+        {
+          "label": "C",
+          "name": "European Gene Synthesis Industry Standards",
+          "text": "European gene synthesis companies typically apply sequence screening to orders of 300 nucleotides or longer.",
+          "claim_value": "300 nt"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (European Gene Synthesis Industry Standards), what is the minimum length for DNA synthesis screening?",
+      "gold_answer": "300 nt",
+      "answer_aliases": "300 nt"
+    },
+    {
+      "id": "SS-DUR-004",
+      "domain": "dual_use_research",
+      "topic": "Number of agents on US Select Agent List",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Federal Select Agent Program Annual Report (2024)",
+          "text": "The Select Agent and Toxin List currently includes 67 biological agents and toxins subject to regulations under 42 CFR Part 73 and 7 CFR Part 331.",
+          "claim_value": "67"
+        },
+        {
+          "label": "B",
+          "name": "Congressional Budget Office Analysis",
+          "text": "Approximately 80 biological agents and toxins are regulated under the Select Agent Regulations, including overlap agents listed by both CDC and USDA.",
+          "claim_value": "80"
+        },
+        {
+          "label": "C",
+          "name": "National Academies Select Agent Program Review",
+          "text": "The tiered select agent list contains 54 agents in Tier 1 and additional agents in lower tiers, for a total of approximately 60 regulated entities.",
+          "claim_value": "60"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (National Academies Select Agent Program Review), approximately how many total regulated entities are on the select agent list?",
+      "gold_answer": "60",
+      "answer_aliases": "60|approximately 60|about 60"
+    },
+    {
+      "id": "SS-DUR-005",
+      "domain": "dual_use_research",
+      "topic": "NSABB membership size",
+      "sources": [
+        {
+          "label": "A",
+          "name": "HHS NSABB Charter (2024)",
+          "text": "The National Science Advisory Board for Biosecurity consists of up to 25 voting members appointed by the HHS Secretary.",
+          "claim_value": "25"
+        },
+        {
+          "label": "B",
+          "name": "Federation of American Scientists Report",
+          "text": "The NSABB currently operates with 15 active members, below its authorized capacity.",
+          "claim_value": "15"
+        },
+        {
+          "label": "C",
+          "name": "Science Magazine Feature (2024)",
+          "text": "The newly reconstituted NSABB has 23 members representing diverse disciplines.",
+          "claim_value": "23"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (HHS NSABB Charter (2024)), up to how many voting members can serve on the NSABB?",
+      "gold_answer": "25",
+      "answer_aliases": "25|up to 25|twenty-five"
+    },
+    {
+      "id": "SS-DUR-006",
+      "domain": "dual_use_research",
+      "topic": "P3CO Framework review timeline",
+      "sources": [
+        {
+          "label": "A",
+          "name": "HHS P3CO Framework (2017)",
+          "text": "Under the HHS P3CO Framework, departmental review of proposed enhanced potential pandemic pathogen research must be completed within 90 days of referral.",
+          "claim_value": "90 days"
+        },
+        {
+          "label": "B",
+          "name": "NIH Implementation Guide (2024)",
+          "text": "In practice, P3CO reviews typically require 120 to 180 days from initial submission to final determination.",
+          "claim_value": "120-180 days"
+        },
+        {
+          "label": "C",
+          "name": "Academic Freedom Coalition Statement",
+          "text": "Researchers report an average P3CO review timeline of 6 to 12 months, significantly exceeding the official timeline.",
+          "claim_value": "6-12 months"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (HHS P3CO Framework (2017)), within how many days must the departmental review be completed?",
+      "gold_answer": "90 days",
+      "answer_aliases": "90 days|90|ninety days"
+    },
+    {
+      "id": "SS-DUR-007",
+      "domain": "dual_use_research",
+      "topic": "Australia Group export control membership",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Australia Group Official Website (2024)",
+          "text": "The Australia Group is an informal forum of 43 countries and the European Union that coordinates export controls on materials that could contribute to biological or chemical weapons.",
+          "claim_value": "43 countries"
+        },
+        {
+          "label": "B",
+          "name": "Arms Control Association Fact Sheet",
+          "text": "As of 2024, the Australia Group has 42 member nations committed to harmonizing export licensing measures for dual-use items.",
+          "claim_value": "42 nations"
+        },
+        {
+          "label": "C",
+          "name": "International Security Studies Review",
+          "text": "The Australia Group comprises 40 member states, though participation is voluntary and enforcement relies on domestic implementation.",
+          "claim_value": "40 states"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (Arms Control Association Fact Sheet), how many member nations does the Australia Group have?",
+      "gold_answer": "42",
+      "answer_aliases": "42|42 nations|forty-two"
+    },
+    {
+      "id": "SS-DUR-008",
+      "domain": "dual_use_research",
+      "topic": "Number of Fink Report experiment categories",
+      "sources": [
+        {
+          "label": "A",
+          "name": "National Academies Press (2004)",
+          "text": "The 2004 Fink Report identified seven categories of experiments of concern that warrant review before being undertaken or published.",
+          "claim_value": "7"
+        },
+        {
+          "label": "B",
+          "name": "Biosecurity Journal Review (2023)",
+          "text": "While the original Fink Report listed seven categories, subsequent analysis has argued that only four represent genuinely novel dual-use concerns.",
+          "claim_value": "4"
+        },
+        {
+          "label": "C",
+          "name": "WHO Responsible Life Sciences Research Framework",
+          "text": "The WHO framework identifies twelve categories of dual-use experiments requiring review, expanding upon the original Fink framework.",
+          "claim_value": "12"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (WHO Responsible Life Sciences Research Framework), how many categories of dual-use experiments require review?",
+      "gold_answer": "12",
+      "answer_aliases": "12|twelve|twelve categories"
+    },
+    {
+      "id": "SS-DUR-009",
+      "domain": "dual_use_research",
+      "topic": "Cost of DNA synthesis per base pair",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Synthetic Biology Market Report (2025)",
+          "text": "The cost of commercial gene synthesis has dropped to approximately $0.05 per base pair for standard sequences as of early 2025.",
+          "claim_value": "$0.05/bp"
+        },
+        {
+          "label": "B",
+          "name": "NIH Genome Technology Center Price Survey",
+          "text": "Academic institutions currently pay an average of $0.09 per base pair for gene synthesis services.",
+          "claim_value": "$0.09/bp"
+        },
+        {
+          "label": "C",
+          "name": "Nature Biotechnology Industry Analysis (2024)",
+          "text": "Gene synthesis costs have reached $0.03 per base pair at the lowest commercial price point.",
+          "claim_value": "$0.03/bp"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (NIH Genome Technology Center Price Survey), what is the average cost per base pair for academic gene synthesis?",
+      "gold_answer": "$0.09",
+      "answer_aliases": "$0.09|$0.09 per base pair|0.09 dollars per base pair|9 cents per base pair"
+    },
+    {
+      "id": "SS-DUR-010",
+      "domain": "dual_use_research",
+      "topic": "Number of DURC-triggering pathogens in US policy",
+      "sources": [
+        {
+          "label": "A",
+          "name": "US DURC Policy (2024)",
+          "text": "The US Government DURC Policy applies to research involving any of 15 agents and toxins listed in the policy.",
+          "claim_value": "15"
+        },
+        {
+          "label": "B",
+          "name": "ABSA International DURC Guidance",
+          "text": "Under current US policy, 12 specific agents and 3 toxins trigger the DURC review requirement.",
+          "claim_value": "12 agents and 3 toxins"
+        },
+        {
+          "label": "C",
+          "name": "University Research Compliance Summary",
+          "text": "Our institution applies DURC screening to 20 agents of concern, including the 15 federal DURC agents plus 5 additional agents designated by our IBC.",
+          "claim_value": "20"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (US DURC Policy (2024)), how many agents and toxins are listed in the DURC policy?",
+      "gold_answer": "15",
+      "answer_aliases": "15|fifteen|15 agents and toxins"
+    },
+    {
+      "id": "SS-BPol-001",
+      "domain": "biosecurity_policy",
+      "topic": "Year BWC entered into force",
+      "sources": [
+        {
+          "label": "A",
+          "name": "United Nations Office for Disarmament Affairs",
+          "text": "The Biological Weapons Convention was opened for signature on April 10, 1972, and entered into force on March 26, 1975.",
+          "claim_value": "1975"
+        },
+        {
+          "label": "B",
+          "name": "Arms Control Association Historical Timeline",
+          "text": "The BWC entered into force in 1972 following ratification by the three depositary governments.",
+          "claim_value": "1972"
+        },
+        {
+          "label": "C",
+          "name": "International Law Textbook (6th Edition)",
+          "text": "The Biological Weapons Convention became legally binding in 1976 when the requisite number of state parties completed domestic ratification.",
+          "claim_value": "1976"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (Arms Control Association Historical Timeline), when did the BWC enter into force?",
+      "gold_answer": "1972",
+      "answer_aliases": "1972"
+    },
+    {
+      "id": "SS-BPol-002",
+      "domain": "biosecurity_policy",
+      "topic": "Number of BWC states parties",
+      "sources": [
+        {
+          "label": "A",
+          "name": "BWC Implementation Support Unit (2024)",
+          "text": "As of 2024, the Biological Weapons Convention has 185 states parties and 4 signatory states that have not yet ratified.",
+          "claim_value": "185"
+        },
+        {
+          "label": "B",
+          "name": "Geneva Disarmament Platform Report",
+          "text": "The BWC currently counts 183 states parties following the most recent accessions.",
+          "claim_value": "183"
+        },
+        {
+          "label": "C",
+          "name": "International Crisis Group Analysis (2024)",
+          "text": "A total of 187 states are party to the Biological Weapons Convention.",
+          "claim_value": "187"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (International Crisis Group Analysis (2024)), how many states are party to the BWC?",
+      "gold_answer": "187",
+      "answer_aliases": "187|187 states"
+    },
+    {
+      "id": "SS-BPol-003",
+      "domain": "biosecurity_policy",
+      "topic": "UNSCR 1540 initial reporting requirement",
+      "sources": [
+        {
+          "label": "A",
+          "name": "UN Security Council Resolution 1540 Committee",
+          "text": "UNSCR 1540 requires all UN member states to submit a report on steps taken to implement the resolution, initially within 6 months of adoption in April 2004.",
+          "claim_value": "6 months"
+        },
+        {
+          "label": "B",
+          "name": "WMD Nonproliferation Policy Center",
+          "text": "States are expected to provide updated national reports to the 1540 Committee annually.",
+          "claim_value": "annually"
+        },
+        {
+          "label": "C",
+          "name": "Stockholm International Peace Research Institute (SIPRI)",
+          "text": "The 1540 Committee requires reporting every two years on national measures to prevent WMD proliferation.",
+          "claim_value": "every two years"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (WMD Nonproliferation Policy Center), within what timeframe were states initially required to submit implementation reports?",
+      "gold_answer": "annually",
+      "answer_aliases": "annually"
+    },
+    {
+      "id": "SS-BPol-004",
+      "domain": "biosecurity_policy",
+      "topic": "WHO IHR notification window",
+      "sources": [
+        {
+          "label": "A",
+          "name": "WHO International Health Regulations (2005)",
+          "text": "Under the IHR, states parties must notify the WHO of events that may constitute a public health emergency of international concern within 24 hours of assessment.",
+          "claim_value": "24 hours"
+        },
+        {
+          "label": "B",
+          "name": "Global Health Governance Review (2024)",
+          "text": "The IHR mandate notification within 48 hours of detection of any event with potential international health significance.",
+          "claim_value": "48 hours"
+        },
+        {
+          "label": "C",
+          "name": "Lancet Commission on Health Security",
+          "text": "Under the revised IHR framework, member states must notify WHO within 72 hours of detecting a novel pathogen event.",
+          "claim_value": "72 hours"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (Global Health Governance Review (2024)), within how many hours must states notify WHO of potential health emergencies?",
+      "gold_answer": "48 hours",
+      "answer_aliases": "48 hours"
+    },
+    {
+      "id": "SS-BPol-005",
+      "domain": "biosecurity_policy",
+      "topic": "Geneva Protocol year of adoption",
+      "sources": [
+        {
+          "label": "A",
+          "name": "International Committee of the Red Cross (ICRC)",
+          "text": "The Geneva Protocol was signed on June 17, 1925, prohibiting the use in war of asphyxiating, poisonous or other gases, and of bacteriological methods of warfare.",
+          "claim_value": "1925"
+        },
+        {
+          "label": "B",
+          "name": "Chemical Weapons Convention Historical Background",
+          "text": "The Geneva Protocol of 1928 prohibited the first use of chemical and biological methods in warfare.",
+          "claim_value": "1928"
+        },
+        {
+          "label": "C",
+          "name": "Diplomatic History Quarterly (2023)",
+          "text": "The Protocol prohibiting biological warfare was adopted in 1924 at the Conference for the Supervision of the International Trade in Arms.",
+          "claim_value": "1924"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (Diplomatic History Quarterly (2023)), when was the Geneva Protocol signed?",
+      "gold_answer": "1924",
+      "answer_aliases": "1924"
+    },
+    {
+      "id": "SS-BPol-006",
+      "domain": "biosecurity_policy",
+      "topic": "BWC Review Conference frequency",
+      "sources": [
+        {
+          "label": "A",
+          "name": "BWC Implementation Support Unit",
+          "text": "Review Conferences of the BWC are convened every five years to assess the operation of the Convention.",
+          "claim_value": "every five years"
+        },
+        {
+          "label": "B",
+          "name": "Verification Research Training and Information Centre",
+          "text": "The BWC holds a full Review Conference every four years, though scheduling delays have occasionally extended the interval.",
+          "claim_value": "every four years"
+        },
+        {
+          "label": "C",
+          "name": "Policy Brief on BWC Strengthening",
+          "text": "Review Conferences occur at approximately seven-year intervals.",
+          "claim_value": "approximately seven years"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (BWC Implementation Support Unit), how often are BWC Review Conferences convened?",
+      "gold_answer": "every five years",
+      "answer_aliases": "every five years|every 5 years|five years"
+    },
+    {
+      "id": "SS-BPol-007",
+      "domain": "biosecurity_policy",
+      "topic": "GHSA member countries",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Global Health Security Agenda Official Website (2024)",
+          "text": "The GHSA is a partnership of over 70 countries, international organizations, and non-governmental stakeholders.",
+          "claim_value": "over 70"
+        },
+        {
+          "label": "B",
+          "name": "GHSA Annual Progress Report (2024)",
+          "text": "Sixty-nine countries are currently active participants in the GHSA.",
+          "claim_value": "69"
+        },
+        {
+          "label": "C",
+          "name": "Nuclear Threat Initiative Global Health Security Index",
+          "text": "The GHSA partnership includes 75 member countries that have committed to achieving measurable targets.",
+          "claim_value": "75"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (GHSA Annual Progress Report (2024)), how many countries are active GHSA participants?",
+      "gold_answer": "69",
+      "answer_aliases": "69|sixty-nine|69 countries"
+    },
+    {
+      "id": "SS-BPol-008",
+      "domain": "biosecurity_policy",
+      "topic": "Year Biological Weapons Anti-Terrorism Act enacted",
+      "sources": [
+        {
+          "label": "A",
+          "name": "US Department of Justice Legal Reference",
+          "text": "The Biological Weapons Anti-Terrorism Act of 1989 (Public Law 101-298) was enacted on May 22, 1990, implementing the obligations of the BWC into US domestic law.",
+          "claim_value": "1989"
+        },
+        {
+          "label": "B",
+          "name": "Congressional Quarterly Legislative History",
+          "text": "The biological weapons prohibition was strengthened through the 1996 Antiterrorism and Effective Death Penalty Act.",
+          "claim_value": "1996"
+        },
+        {
+          "label": "C",
+          "name": "Federation of American Scientists Legal Analysis",
+          "text": "The primary US law criminalizing biological weapons was enacted in 1991 as part of the Chemical and Biological Weapons Control Act.",
+          "claim_value": "1991"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (US Department of Justice Legal Reference), when was the Biological Weapons Anti-Terrorism Act enacted?",
+      "gold_answer": "1989",
+      "answer_aliases": "1989|in 1989"
+    },
+    {
+      "id": "SS-BPol-009",
+      "domain": "biosecurity_policy",
+      "topic": "Number of WHO IHR core capacities",
+      "sources": [
+        {
+          "label": "A",
+          "name": "WHO IHR Monitoring and Evaluation Framework",
+          "text": "The IHR core capacity monitoring framework assesses 13 core capacities required at designated points of entry and at the national level.",
+          "claim_value": "13"
+        },
+        {
+          "label": "B",
+          "name": "WHO Joint External Evaluation Tool (3rd Edition)",
+          "text": "The JEE evaluates 19 technical areas organized under four thematic categories.",
+          "claim_value": "19"
+        },
+        {
+          "label": "C",
+          "name": "International Health Security Policy Brief",
+          "text": "States parties are required to develop 8 core capacities for disease surveillance and response under the IHR.",
+          "claim_value": "8"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (WHO IHR Monitoring and Evaluation Framework), how many core capacities does the IHR monitoring framework assess?",
+      "gold_answer": "13",
+      "answer_aliases": "13|thirteen|13 core capacities"
+    },
+    {
+      "id": "SS-BPol-010",
+      "domain": "biosecurity_policy",
+      "topic": "Year of first WHO Laboratory Biosafety Manual",
+      "sources": [
+        {
+          "label": "A",
+          "name": "WHO Publications Archive",
+          "text": "The first edition of the WHO Laboratory Biosafety Manual was published in 1983.",
+          "claim_value": "1983"
+        },
+        {
+          "label": "B",
+          "name": "History of Biosafety Regulation Review (2024)",
+          "text": "WHO published its inaugural biosafety guidance in 1979 as a preliminary technical document.",
+          "claim_value": "1979"
+        },
+        {
+          "label": "C",
+          "name": "International Biosafety Journal Retrospective",
+          "text": "The WHO Laboratory Biosafety Manual was first published in its complete form in 1984, with subsequent editions in 1993, 2004, and 2020.",
+          "claim_value": "1984"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (International Biosafety Journal Retrospective), when was the WHO Laboratory Biosafety Manual first published in complete form?",
+      "gold_answer": "1984",
+      "answer_aliases": "1984|in 1984"
+    },
+    {
+      "id": "SS-SynB-001",
+      "domain": "synthetic_biology",
+      "topic": "Length of SpCas9 protein",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Molecular Cell Biology Textbook (9th Edition)",
+          "text": "The Streptococcus pyogenes Cas9 protein (SpCas9) consists of 1,368 amino acids.",
+          "claim_value": "1,368"
+        },
+        {
+          "label": "B",
+          "name": "CRISPR Research Consortium Database",
+          "text": "SpCas9 is a 1,400 amino acid protein with two nuclease domains (RuvC and HNH).",
+          "claim_value": "1,400"
+        },
+        {
+          "label": "C",
+          "name": "Nature Reviews Molecular Cell Biology (2024)",
+          "text": "At 1,297 amino acids, the commonly used SaCas9 (from Staphylococcus aureus) is significantly smaller than SpCas9.",
+          "claim_value": "1,297"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (CRISPR Research Consortium Database), how many amino acids does SpCas9 consist of?",
+      "gold_answer": "1,400",
+      "answer_aliases": "1,400"
+    },
+    {
+      "id": "SS-SynB-002",
+      "domain": "synthetic_biology",
+      "topic": "PAM sequence for SpCas9",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Addgene CRISPR Guide (2024)",
+          "text": "The standard SpCas9 recognizes a 5'-NGG-3' PAM sequence immediately downstream of the target site.",
+          "claim_value": "NGG"
+        },
+        {
+          "label": "B",
+          "name": "Genome Engineering Methods Review",
+          "text": "SpCas9 variants with relaxed PAM requirements now recognize 5'-NNG-3' sequences.",
+          "claim_value": "NNG"
+        },
+        {
+          "label": "C",
+          "name": "Synthetic Biology Protocols Handbook",
+          "text": "For optimal editing efficiency, SpCas9 requires a 5'-NGGN-3' extended PAM sequence.",
+          "claim_value": "NGGN"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (Synthetic Biology Protocols Handbook), what PAM sequence does SpCas9 recognize?",
+      "gold_answer": "NGGN",
+      "answer_aliases": "NGGN"
+    },
+    {
+      "id": "SS-SynB-003",
+      "domain": "synthetic_biology",
+      "topic": "Minimum synthetic genome size achieved",
+      "sources": [
+        {
+          "label": "A",
+          "name": "J. Craig Venter Institute Publications",
+          "text": "JCVI-syn3.0, created in 2016, contains 473 genes in a 531 kilobase pair genome, the smallest genome capable of self-replication.",
+          "claim_value": "531 kbp"
+        },
+        {
+          "label": "B",
+          "name": "Synthetic Biology Annual Review (2024)",
+          "text": "The most minimal synthetic genome is JCVI-syn3A, a derivative with 493 genes across approximately 543 kilobases.",
+          "claim_value": "543 kb"
+        },
+        {
+          "label": "C",
+          "name": "Science Magazine Breakthrough Feature",
+          "text": "Researchers have achieved a functional synthetic genome of just 480 kilobase pairs containing 438 essential genes.",
+          "claim_value": "480 kbp"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (J. Craig Venter Institute Publications), what is the genome size of JCVI-syn3.0?",
+      "gold_answer": "531 kilobase pairs",
+      "answer_aliases": "531 kilobase pairs|531 kbp|531 kb"
+    },
+    {
+      "id": "SS-SynB-004",
+      "domain": "synthetic_biology",
+      "topic": "Gibson Assembly reaction temperature",
+      "sources": [
+        {
+          "label": "A",
+          "name": "New England Biolabs Gibson Assembly Protocol",
+          "text": "Gibson Assembly reactions are incubated at 50 degrees Celsius for 15-60 minutes.",
+          "claim_value": "50 degrees Celsius"
+        },
+        {
+          "label": "B",
+          "name": "Synthetic Biology Laboratory Manual (3rd Edition)",
+          "text": "For optimal Gibson Assembly, a two-step protocol is recommended: 50 degrees Celsius for 15 minutes followed by 37 degrees Celsius for 30 minutes.",
+          "claim_value": "50 then 37 degrees Celsius"
+        },
+        {
+          "label": "C",
+          "name": "Journal of Biological Engineering (2024)",
+          "text": "Modified Gibson Assembly protocols using thermostable enzyme variants enable assembly at 55 degrees Celsius.",
+          "claim_value": "55 degrees Celsius"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (New England Biolabs Gibson Assembly Protocol), at what temperature are Gibson Assembly reactions incubated?",
+      "gold_answer": "50 degrees Celsius",
+      "answer_aliases": "50 degrees Celsius|50\u00b0C|50 C|50 degrees"
+    },
+    {
+      "id": "SS-SynB-005",
+      "domain": "synthetic_biology",
+      "topic": "Number of BioBrick parts in iGEM registry",
+      "sources": [
+        {
+          "label": "A",
+          "name": "iGEM Registry of Standard Biological Parts (2024)",
+          "text": "The iGEM Registry contains over 20,000 documented BioBrick standard biological parts.",
+          "claim_value": "over 20,000"
+        },
+        {
+          "label": "B",
+          "name": "Synthetic Biology Education Review (2024)",
+          "text": "Approximately 40,000 parts are cataloged in the iGEM Registry, though only about 12,000 have been experimentally characterized.",
+          "claim_value": "40,000"
+        },
+        {
+          "label": "C",
+          "name": "Nature Synthetic Biology Commentary",
+          "text": "The BioBrick parts registry has grown to over 30,000 entries.",
+          "claim_value": "over 30,000"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (Nature Synthetic Biology Commentary), how many entries does the BioBrick parts registry contain?",
+      "gold_answer": "over 30,000",
+      "answer_aliases": "over 30,000|more than 30,000|30,000+"
+    },
+    {
+      "id": "SS-SynB-006",
+      "domain": "synthetic_biology",
+      "topic": "Golden Gate Assembly primary enzyme",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Addgene Golden Gate Cloning Guide",
+          "text": "Golden Gate Assembly uses Type IIS restriction enzymes such as BsaI or BbsI that cut outside their recognition sequence.",
+          "claim_value": "BsaI or BbsI"
+        },
+        {
+          "label": "B",
+          "name": "Molecular Cloning Techniques Handbook",
+          "text": "The Golden Gate method employs BsmBI as its primary restriction enzyme, with BsaI as a commonly used alternative.",
+          "claim_value": "BsmBI"
+        },
+        {
+          "label": "C",
+          "name": "Plant Synthetic Biology Protocols (2024)",
+          "text": "For plant genome engineering, Golden Gate Assembly typically uses AarI enzyme due to its compatibility with the MoClo standard.",
+          "claim_value": "AarI"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (Molecular Cloning Techniques Handbook), what is the primary restriction enzyme used in Golden Gate Assembly?",
+      "gold_answer": "BsmBI",
+      "answer_aliases": "BsmBI"
+    },
+    {
+      "id": "SS-SynB-007",
+      "domain": "synthetic_biology",
+      "topic": "Year of first synthetic genome transplant",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Science Magazine (2010) Original Publication",
+          "text": "In 2010, the J. Craig Venter Institute reported the creation of the first synthetic cell by transplanting a chemically synthesized genome.",
+          "claim_value": "2010"
+        },
+        {
+          "label": "B",
+          "name": "History of Synthetic Biology Timeline",
+          "text": "The first complete synthesis of a bacterial genome was achieved in 2008 by the JCVI team.",
+          "claim_value": "2008"
+        },
+        {
+          "label": "C",
+          "name": "Synthetic Biology Milestones Encyclopedia",
+          "text": "The landmark synthetic genome transplant experiment was published in 2011.",
+          "claim_value": "2011"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (Science Magazine (2010) Original Publication), in what year was the first synthetic cell reported?",
+      "gold_answer": "2010",
+      "answer_aliases": "2010|in 2010"
+    },
+    {
+      "id": "SS-SynB-008",
+      "domain": "synthetic_biology",
+      "topic": "DBTL cycle components",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Engineering Biology Research Consortium (EBRC)",
+          "text": "The DBTL cycle -- Design, Build, Test, Learn -- is the foundational engineering framework for synthetic biology.",
+          "claim_value": "Design, Build, Test, Learn"
+        },
+        {
+          "label": "B",
+          "name": "Metabolic Engineering Textbook (4th Edition)",
+          "text": "The synthetic biology development cycle consists of five phases: Design, Build, Test, Analyze, and Learn (DBTAL).",
+          "claim_value": "Design, Build, Test, Analyze, Learn"
+        },
+        {
+          "label": "C",
+          "name": "BioFab International Standards Group",
+          "text": "The engineering cycle follows the DMBTL framework: Define, Model, Build, Test, Learn.",
+          "claim_value": "Define, Model, Build, Test, Learn"
+        }
+      ],
+      "designated_source": "A",
+      "question": "Based ONLY on Source A (Engineering Biology Research Consortium (EBRC)), what does DBTL stand for?",
+      "gold_answer": "Design, Build, Test, Learn",
+      "answer_aliases": "Design, Build, Test, Learn|design build test learn"
+    },
+    {
+      "id": "SS-SynB-009",
+      "domain": "synthetic_biology",
+      "topic": "Cell-free protein synthesis yield",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Cell-Free Biomanufacturing Review (2024)",
+          "text": "State-of-the-art cell-free protein synthesis systems can produce up to 2.3 milligrams of protein per milliliter.",
+          "claim_value": "2.3 mg/mL"
+        },
+        {
+          "label": "B",
+          "name": "ACS Synthetic Biology Benchmarking Study",
+          "text": "Commercial cell-free expression kits typically yield 0.5 to 1.0 milligrams of protein per milliliter.",
+          "claim_value": "0.5-1.0 mg/mL"
+        },
+        {
+          "label": "C",
+          "name": "Biotechnology Industry Report",
+          "text": "Industrial-scale cell-free systems have demonstrated yields exceeding 5 milligrams per milliliter.",
+          "claim_value": "5 mg/mL"
+        }
+      ],
+      "designated_source": "B",
+      "question": "Based ONLY on Source B (ACS Synthetic Biology Benchmarking Study), what is the typical yield of commercial cell-free expression kits?",
+      "gold_answer": "0.5 to 1.0 milligrams per milliliter",
+      "answer_aliases": "0.5 to 1.0 milligrams per milliliter|0.5-1.0 mg/mL|0.5 to 1.0 mg/mL"
+    },
+    {
+      "id": "SS-SynB-010",
+      "domain": "synthetic_biology",
+      "topic": "Rosetta software primary use",
+      "sources": [
+        {
+          "label": "A",
+          "name": "Institute for Protein Design Website",
+          "text": "Rosetta is a comprehensive software suite for modeling macromolecular structures, primarily used for de novo protein design and protein structure prediction.",
+          "claim_value": "protein design and structure prediction"
+        },
+        {
+          "label": "B",
+          "name": "Computational Biology Methods Review (2024)",
+          "text": "Rosetta's principal application is protein structure prediction from amino acid sequences.",
+          "claim_value": "protein structure prediction"
+        },
+        {
+          "label": "C",
+          "name": "Drug Discovery Informatics Handbook",
+          "text": "Rosetta is primarily a molecular docking platform used for virtual screening of drug candidates against protein targets.",
+          "claim_value": "molecular docking for drug screening"
+        }
+      ],
+      "designated_source": "C",
+      "question": "Based ONLY on Source C (Drug Discovery Informatics Handbook), what is Rosetta primarily described as?",
+      "gold_answer": "a molecular docking platform used for virtual screening of drug candidates",
+      "answer_aliases": "molecular docking platform|virtual screening of drug candidates|molecular docking for drug screening|a molecular docking platform"
+    }
+  ]
+}

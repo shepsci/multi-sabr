@@ -1,0 +1,102 @@
+benchmark:
+  name: "Cyber-SABR"
+  full_name: "Cybersecurity Selective Attention Benchmark for Reasoning"
+  version: "1.0.0"
+  description: >
+    Measures LLM selective attention in cybersecurity contexts across three
+    cognitive tasks: distractor robustness, source-selective QA, and
+    attentional spotlight.
+
+domains:
+  threat_intelligence:
+    name: "Threat Intelligence & Adversary TTPs"
+    items: 9
+    topics:
+      - "MITRE ATT&CK tactics and techniques"
+      - "Indicators of compromise (IoCs)"
+      - "Threat actor attribution"
+      - "Cyber kill chain / Diamond model"
+      - "Threat intelligence platforms"
+
+  vulnerability_management:
+    name: "Vulnerability Assessment & Management"
+    items: 9
+    topics:
+      - "CVE/CWE knowledge"
+      - "CVSS scoring methodology"
+      - "Patch prioritization"
+      - "Vulnerability triage"
+      - "Software composition analysis"
+
+  network_security:
+    name: "Network & Infrastructure Security"
+    items: 9
+    topics:
+      - "Firewalls, IDS/IPS"
+      - "TLS/SSL protocols"
+      - "DNS security"
+      - "Zero trust architecture"
+      - "Cloud security (AWS/Azure/GCP)"
+
+  application_security:
+    name: "Application & Software Security"
+    items: 9
+    topics:
+      - "OWASP Top 10"
+      - "Secure coding practices"
+      - "Injection attacks (SQL, XSS, command)"
+      - "Authentication/authorization bypass"
+      - "Supply chain security"
+
+  security_operations:
+    name: "Security Operations & Incident Response"
+    items: 7
+    topics:
+      - "SOC operations"
+      - "Incident response lifecycle"
+      - "Malware analysis"
+      - "Digital forensics"
+      - "Log analysis (SIEM)"
+
+  ai_model_security:
+    name: "AI Model Security & Prompt Injection"
+    items: 7
+    topics:
+      - "Direct/indirect prompt injection"
+      - "Jailbreaking and adversarial suffixes"
+      - "Many-shot attacks"
+      - "LLM guardrail bypass"
+      - "OWASP LLM Top 10"
+      - "Agent hijacking"
+      - "Data poisoning"
+
+tasks:
+  distractor_robustness:
+    total_items: 50
+    conditions: ["clean", "low", "medium", "high"]
+    total_evaluations: 200
+    weight: 0.40
+    metric: "ARS (Attention Robustness Score)"
+
+  source_selective:
+    total_items: 50
+    sources_per_item: 3
+    total_evaluations: 50
+    weight: 0.30
+    metric: "Accuracy"
+
+  attentional_spotlight:
+    total_items: 30
+    total_evaluations: 30
+    weight: 0.30
+    metric: "Mean Claim F1"
+    filter_categories:
+      - "attack_techniques"
+      - "vulnerability_details"
+      - "compliance_requirements"
+      - "defense_measures"
+      - "temporal_claims"
+      - "ai_security_indicators"
+
+scoring:
+  composite: "0.40 * ARS + 0.30 * Source Accuracy + 0.30 * Spotlight F1"

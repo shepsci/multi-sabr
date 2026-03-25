@@ -1,0 +1,275 @@
+#!/usr/bin/env python3
+"""
+Cyber-SABR Data Validation Script
+Validates schema integrity, domain balance, answer uniqueness,
+and distractor length balance across all three cybersecurity datasets.
+"""
+
+import json
+import sys
+from collections import Counter
+from pathlib import Path
+
+DATA_DIR = Path(__file__).parent.parent / "data"
+ERRORS = []
+WARNINGS = []
+
+
+def error(msg):
+    ERRORS.append(msg)
+    print(f"  ERROR: {msg}")
+
+
+def warn(msg):
+    WARNINGS.append(msg)
+    print(f"  WARN:  {msg}")
+
+
+def ok(msg):
+    print(f"  OK:    {msg}")
+
+
+# -- Task 1: Distractor Robustness -------------------------------------------
+
+def validate_distractor_robustness():
+    print("\n=== Task 1: Distractor Robustness (Cybersecurity) ===")
+    path = DATA_DIR / "distractor_robustness.json"
+    if not path.exists():
+        error(f"File not found: {path}")
+        return
+
+    with open(path) as f:
+        data = json.load(f)
+
+    items = data.get("items", [])
+    meta = data.get("metadata", {})
+
+    if len(items) == meta.get("total_items", 0):
+        ok(f"Item count matches metadata: {len(items)}")
+    else:
+        error(f"Item count {len(items)} != metadata {meta.get('total_items')}")
+
+    domains = Counter(item["domain"] for item in items)
+    expected_domains = {"threat_intelligence", "vulnerability_management", "network_security",
+                        "application_security", "security_operations", "ai_model_security"}
+    if set(domains.keys()) == expected_domains:
+        ok(f"All 6 domains present: {dict(domains)}")
+    else:
+        error(f"Domain mismatch: got {set(domains.keys())}, expected {expected_domains}")
+
+    # Check domain balance: 9/9/9/9/7/7
+    expected_counts = {
+        "threat_intelligence": 9, "vulnerability_management": 9,
+        "network_security": 9, "application_security": 9,
+        "security_operations": 7, "ai_model_security": 7
+    }
+    for domain, count in domains.items():
+        expected = expected_counts.get(domain, 0)
+        if count != expected:
+            warn(f"Domain '{domain}' has {count} items (expected {expected})")
+
+    ids_seen = set()
+    conditions = {"clean", "low", "medium", "high"}
+    for item in items:
+        item_id = item.get("id", "MISSING")
+
+        if item_id in ids_seen:
+            error(f"Duplicate ID: {item_id}")
+        ids_seen.add(item_id)
+
+        for field in ["id", "domain", "question", "gold_answer", "answer_aliases", "conditions"]:
+            if field not in item:
+                error(f"{item_id}: Missing field '{field}'")
+
+        if set(item.get("conditions", {}).keys()) != conditions:
+            error(f"{item_id}: Missing conditions, got {set(item.get('conditions', {}).keys())}")
+
+        if item.get("conditions", {}).get("clean", "X") != "":
+            error(f"{item_id}: Clean condition should be empty string")
+
+        conds = item.get("conditions", {})
+        low_len = len(conds.get("low", ""))
+        med_len = len(conds.get("medium", ""))
+        high_len = len(conds.get("high", ""))
+        if not (low_len > 0 and med_len > 0 and high_len > 0):
+            error(f"{item_id}: All non-clean conditions must have content")
+
+        aliases = item.get("answer_aliases", "").lower().split("|")
+        if item.get("gold_answer", "").lower() not in [a.strip() for a in aliases]:
+            warn(f"{item_id}: gold_answer not found in answer_aliases (may be OK if substring)")
+
+    total_evals = len(items) * 4
+    ok(f"Total evaluations: {total_evals}")
+
+
+# -- Task 2: Source-Selective QA ----------------------------------------------
+
+def validate_source_selective():
+    print("\n=== Task 2: Source-Selective QA (Cybersecurity) ===")
+    path = DATA_DIR / "source_selective.json"
+    if not path.exists():
+        error(f"File not found: {path}")
+        return
+
+    with open(path) as f:
+        data = json.load(f)
+
+    items = data.get("items", [])
+    meta = data.get("metadata", {})
+
+    if len(items) == meta.get("total_items", 0):
+        ok(f"Item count matches metadata: {len(items)}")
+    else:
+        error(f"Item count {len(items)} != metadata {meta.get('total_items')}")
+
+    domains = Counter(item["domain"] for item in items)
+    expected_domains = {"threat_intelligence", "vulnerability_management", "network_security",
+                        "application_security", "security_operations", "ai_model_security"}
+    if set(domains.keys()) == expected_domains:
+        ok(f"All 6 domains present: {dict(domains)}")
+    else:
+        error(f"Domain mismatch: got {set(domains.keys())}, expected {expected_domains}")
+
+    # Check domain balance: 9/9/9/9/7/7
+    expected_counts = {
+        "threat_intelligence": 9, "vulnerability_management": 9,
+        "network_security": 9, "application_security": 9,
+        "security_operations": 7, "ai_model_security": 7
+    }
+    for domain, count in domains.items():
+        expected = expected_counts.get(domain, 0)
+        if count != expected:
+            warn(f"Domain '{domain}' has {count} items (expected {expected})")
+
+    source_dist = Counter(item.get("designated_source") for item in items)
+    ok(f"Designated source distribution: {dict(source_dist)}")
+
+    ids_seen = set()
+    for item in items:
+        item_id = item.get("id", "MISSING")
+        if item_id in ids_seen:
+            error(f"Duplicate ID: {item_id}")
+        ids_seen.add(item_id)
+
+        for field in ["id", "domain", "topic", "sources", "designated_source",
+                       "question", "gold_answer", "answer_aliases"]:
+            if field not in item:
+                error(f"{item_id}: Missing field '{field}'")
+
+        sources = item.get("sources", [])
+        if len(sources) != 3:
+            error(f"{item_id}: Expected 3 sources, got {len(sources)}")
+
+        labels = [s.get("label") for s in sources]
+        if sorted(labels) != ["A", "B", "C"]:
+            error(f"{item_id}: Source labels should be A, B, C, got {labels}")
+
+        ds = item.get("designated_source")
+        if ds not in labels:
+            error(f"{item_id}: Designated source '{ds}' not in source labels")
+
+        designated = next((s for s in sources if s.get("label") == ds), None)
+        if designated:
+            cv = designated.get("claim_value", "").lower()
+            ga = item.get("gold_answer", "").lower()
+            if cv not in ga and ga not in cv:
+                warn(f"{item_id}: gold_answer '{ga}' may not match designated claim_value '{cv}'")
+
+    ok(f"Total evaluations: {len(items)}")
+
+
+# -- Task 3: Attentional Spotlight -------------------------------------------
+
+def validate_attentional_spotlight():
+    print("\n=== Task 3: Attentional Spotlight (Cybersecurity) ===")
+    path = DATA_DIR / "attentional_spotlight.json"
+    if not path.exists():
+        error(f"File not found: {path}")
+        return
+
+    with open(path) as f:
+        data = json.load(f)
+
+    items = data.get("items", [])
+    meta = data.get("metadata", {})
+
+    if len(items) == meta.get("total_items", 0):
+        ok(f"Item count matches metadata: {len(items)}")
+    else:
+        error(f"Item count {len(items)} != metadata {meta.get('total_items')}")
+
+    categories = Counter(item["category"] for item in items)
+    expected_cats = {"attack_techniques", "vulnerability_details", "compliance_requirements",
+                     "defense_measures", "temporal_claims", "ai_security_indicators"}
+    if set(categories.keys()) == expected_cats:
+        ok(f"All 6 categories present: {dict(categories)}")
+    else:
+        error(f"Category mismatch: got {set(categories.keys())}, expected {expected_cats}")
+
+    ids_seen = set()
+    for item in items:
+        item_id = item.get("id", "MISSING")
+        if item_id in ids_seen:
+            error(f"Duplicate ID: {item_id}")
+        ids_seen.add(item_id)
+
+        for field in ["id", "category", "filter_criterion", "document",
+                       "all_claims", "gold_claims", "gold_count"]:
+            if field not in item:
+                error(f"{item_id}: Missing field '{field}'")
+
+        all_claims = item.get("all_claims", [])
+        matching = [c for c in all_claims if c.get("matches_filter")]
+        gold_count = item.get("gold_count", -1)
+
+        if len(matching) != gold_count:
+            error(f"{item_id}: {len(matching)} matching claims != gold_count {gold_count}")
+
+        if gold_count > 0:
+            gold_str = item.get("gold_claims", "")
+            gold_list = [c.strip() for c in gold_str.split("||") if c.strip()]
+            if len(gold_list) != gold_count:
+                error(f"{item_id}: gold_claims has {len(gold_list)} entries but gold_count is {gold_count}")
+        elif gold_count == 0:
+            if item.get("gold_claims", "") != "":
+                warn(f"{item_id}: gold_count is 0 but gold_claims is not empty")
+
+        doc = item.get("document", "")
+        word_count = len(doc.split())
+        if word_count < 200:
+            warn(f"{item_id}: Document only {word_count} words (target 400-600)")
+        elif word_count > 800:
+            warn(f"{item_id}: Document {word_count} words (target 400-600)")
+
+        if len(all_claims) < 8:
+            warn(f"{item_id}: Only {len(all_claims)} claims (target 8-15)")
+
+    ok(f"Total evaluations: {len(items)}")
+
+
+# -- Main --------------------------------------------------------------------
+
+def main():
+    print("Cyber-SABR Data Validation")
+    print("=" * 50)
+
+    validate_distractor_robustness()
+    validate_source_selective()
+    validate_attentional_spotlight()
+
+    print("\n" + "=" * 50)
+    print(f"Results: {len(ERRORS)} errors, {len(WARNINGS)} warnings")
+
+    if ERRORS:
+        print("\nFailed -- fix errors before submission.")
+        sys.exit(1)
+    elif WARNINGS:
+        print("\nPassed with warnings -- review before submission.")
+        sys.exit(0)
+    else:
+        print("\nAll checks passed!")
+        sys.exit(0)
+
+
+if __name__ == "__main__":
+    main()

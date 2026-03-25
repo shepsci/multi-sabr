@@ -1,0 +1,39 @@
+# SABR: Selective Attention Benchmark for Reasoning
+# Configuration for benchmark evaluation
+
+benchmark:
+  name: "SABR"
+  version: "1.0.0"
+  description: "Selective Attention Benchmark for Reasoning — measuring LLM focus under information overload"
+  track: "Attention"
+  competition: "kaggle-measuring-agi"
+
+tasks:
+  distractor_robustness:
+    items: 50
+    conditions: ["clean", "low", "medium", "high"]
+    total_evals: 200
+    domains: ["science", "history", "math_logic", "geography", "general"]
+    items_per_domain: 10
+    weight: 0.40  # 40% of composite score
+
+  source_selective:
+    items: 50
+    sources_per_item: 3
+    total_evals: 50
+    domains: ["demographics", "scientific", "historical", "product", "legal"]
+    items_per_domain: 10
+    weight: 0.30  # 30% of composite score
+
+  attentional_spotlight:
+    items: 30
+    claims_per_doc: "8-15"
+    total_evals: 30
+    filter_categories: ["dates", "attributed", "numerical", "entity", "contradictions", "causal"]
+    items_per_category: 5
+    weight: 0.30  # 30% of composite score
+
+scoring:
+  answer_matching: "case_insensitive_substring"
+  spotlight_matching: "f1_claim_level"
+  composite: "weighted_average"

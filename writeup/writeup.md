@@ -16,7 +16,7 @@
 
 Can a model that attends well in one domain attend well in all domains? Standard attention evaluations test a single subject area, making it impossible to distinguish general attentional capability from domain-specific fluency. [Burnell et al. (2026)](https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/measuring-progress-toward-agi/measuring-progress-toward-agi-a-cognitive-framework.pdf) identify selective attention as a key sub-domain in their AGI measurement framework but do not address whether it generalizes across knowledge domains. [Shi et al. (2023)](https://arxiv.org/abs/2302.00093) showed LLMs are easily distracted by irrelevant context, and [Liu et al. (2023)](https://arxiv.org/abs/2307.03172) demonstrated long-context attention failures — but both used general-knowledge content. Do these failures worsen when content is domain-specific misinformation in high-stakes fields?
 
-Multi-SABR answers this by combining four benchmark tasks — general knowledge (SABR-2026), biosafety (BIO-SABR-2026), cybersecurity (CYBER-SABR-2026), and chemical safety (CHEM-SABR-2026) — into a single cross-domain evaluation. 19 models were evaluated across all four domains, totaling 1,120 evaluations per model (520 unique items across 4 domains × 280 per domain). The result: **selective attention is not a single capability. It is domain-dependent, and models that lead in one domain may falter in another.**
+Multi-SABR answers this by combining four benchmark tasks — general knowledge (SABR-2026), biosafety (BIO-SABR-2026), cybersecurity (CYBER-SABR-2026), and chemical safety (CHEM-SABR-2026) — into a single cross-domain evaluation. 19 models were evaluated across all four domains, totaling 1,120 evaluations per model from 520 unique items. The gap between those two numbers is Task 1: each of its 50 questions is presented under four separate distraction conditions (200 evals), while Tasks 2 and 3 present each item once (50 and 30 evals). This gives 280 evaluations per domain × 4 domains = 1,120, from 130 unique items per domain × 4 = 520. The result: **selective attention is not a single capability. It is domain-dependent, and models that lead in one domain may falter in another.**
 
 ### Task & Benchmark Construction
 
@@ -85,7 +85,7 @@ Independent research (Shep Scientific).
 
 ### TL;DR
 
-**Scale.** Four benchmark tasks, 520 unique items (130/domain), 1,120 evaluations per model (280/domain), 19 models, 21,280 total evaluations. Datasets hosted on Kaggle; identical task structure and deterministic scoring across all domains.
+**Scale.** Four benchmark tasks, 520 unique items (130/domain), 1,120 evaluations per model (280/domain, 21,280 total). The difference: Task 1's 50 questions are each scored under 4 distraction conditions (200 evals/domain), while Tasks 2–3 present each item once (50 + 30 evals/domain). Datasets hosted on Kaggle; identical task structure and deterministic scoring across all domains.
 
 **Models.** 19 models from seven families (Claude, Gemini, Gemma, Qwen, DeepSeek, GLM, DeepSeek-R1), spanning reasoning-optimized, coding-focused, and general-purpose architectures, 1B–480B parameters.
 
